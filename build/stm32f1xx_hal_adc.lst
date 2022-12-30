@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccKF9RRg.s 			page 1
+ARM GAS  /tmp/ccYjHxry.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
   29:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   (+) Interrupt generation at the end of regular conversion, end of injected
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       conversion, and in case of analog watchdog or overrun events.
-ARM GAS  /tmp/ccKF9RRg.s 			page 2
+ARM GAS  /tmp/ccYjHxry.s 			page 2
 
 
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
   86:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                (+++) __ADC1_CLK_ENABLE();
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                (+++) PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                (+++) PeriphClkInit.AdcClockSelection = RCC_ADCPCLK2_DIV2;
-ARM GAS  /tmp/ccKF9RRg.s 			page 3
+ARM GAS  /tmp/ccYjHxry.s 			page 3
 
 
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                (+++) HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit);
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  143:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     (#) Optionally, perform an automatic ADC calibration to improve the
  144:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         conversion accuracy
  145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         using function HAL_ADCEx_Calibration_Start().
-ARM GAS  /tmp/ccKF9RRg.s 			page 4
+ARM GAS  /tmp/ccYjHxry.s 			page 4
 
 
  146:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  200:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                 using function HAL_ADC_Stop_IT()
  201:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
  202:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****      [..]
-ARM GAS  /tmp/ccKF9RRg.s 			page 5
+ARM GAS  /tmp/ccYjHxry.s 			page 5
 
 
  203:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  257:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****        (+) LevelOutOfWindowCallback       : ADC analog watchdog 1 callback
  258:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****        (+) ErrorCallback                  : ADC error callback
  259:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****        (+) InjectedConvCpltCallback       : ADC group injected conversion complete callback
-ARM GAS  /tmp/ccKF9RRg.s 			page 6
+ARM GAS  /tmp/ccYjHxry.s 			page 6
 
 
  260:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****        (+) MspInitCallback                : ADC Msp Init callback
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  314:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * All rights reserved.</center></h2>
  315:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   *
  316:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * This software component is licensed by ST under BSD 3-Clause license,
-ARM GAS  /tmp/ccKF9RRg.s 			page 7
+ARM GAS  /tmp/ccYjHxry.s 			page 7
 
 
  317:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * the "License"; You may not use this file except in compliance with the
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  371:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @{
  372:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   */
  373:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /**
-ARM GAS  /tmp/ccKF9RRg.s 			page 8
+ARM GAS  /tmp/ccYjHxry.s 			page 8
 
 
  374:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @}
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  428:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Check ADC handle */
  429:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   if(hadc == NULL)
  430:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccKF9RRg.s 			page 9
+ARM GAS  /tmp/ccYjHxry.s 			page 9
 
 
  431:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     return HAL_ERROR;
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  485:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
  486:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
  487:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Stop potential conversion on going, on regular and injected groups */
-ARM GAS  /tmp/ccKF9RRg.s 			page 10
+ARM GAS  /tmp/ccYjHxry.s 			page 10
 
 
  488:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Disable ADC peripheral */
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  542:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         /* cannot be enabled simultaneously.                                */
  543:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         
  544:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         /* Update ADC state machine to error */
-ARM GAS  /tmp/ccKF9RRg.s 			page 11
+ARM GAS  /tmp/ccYjHxry.s 			page 11
 
 
  545:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         SET_BIT(hadc->State, HAL_ADC_STATE_ERROR_CONFIG);
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  599:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
  600:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Set the ADC state */
  601:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       ADC_STATE_CLR_SET(hadc->State,
-ARM GAS  /tmp/ccKF9RRg.s 			page 12
+ARM GAS  /tmp/ccYjHxry.s 			page 12
 
 
  602:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                         HAL_ADC_STATE_BUSY_INTERNAL,
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  656:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Disable ADC peripheral */
  657:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   tmp_hal_status = ADC_ConversionStop_Disable(hadc);
  658:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
-ARM GAS  /tmp/ccKF9RRg.s 			page 13
+ARM GAS  /tmp/ccYjHxry.s 			page 13
 
 
  659:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  713:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                                     ADC_SQR1_SQ16 | ADC_SQR1_SQ15 | 
  714:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                                     ADC_SQR1_SQ14 | ADC_SQR1_SQ13  );
  715:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     
-ARM GAS  /tmp/ccKF9RRg.s 			page 14
+ARM GAS  /tmp/ccYjHxry.s 			page 14
 
 
  716:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     /* Reset register SQR1 */
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  770:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     /* Set ADC state */
  771:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     hadc->State = HAL_ADC_STATE_RESET; 
  772:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
-ARM GAS  /tmp/ccKF9RRg.s 			page 15
+ARM GAS  /tmp/ccYjHxry.s 			page 15
 
 
  773:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  803:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Prevent unused argument(s) compilation warning */
  804:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   UNUSED(hadc);
   54              		.loc 1 804 3 view .LVU4
-ARM GAS  /tmp/ccKF9RRg.s 			page 16
+ARM GAS  /tmp/ccYjHxry.s 			page 16
 
 
  805:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* NOTE : This function should not be modified. When the callback is needed,
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  846:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       case HAL_ADC_CONVERSION_COMPLETE_CB_ID :
  847:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         hadc->ConvCpltCallback = pCallback;
  848:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         break;
-ARM GAS  /tmp/ccKF9RRg.s 			page 17
+ARM GAS  /tmp/ccYjHxry.s 			page 17
 
 
  849:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  903:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
  904:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   else
  905:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccKF9RRg.s 			page 18
+ARM GAS  /tmp/ccYjHxry.s 			page 18
 
 
  906:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     /* Update the error code */
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  960:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         break;
  961:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
  962:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       case HAL_ADC_MSPINIT_CB_ID :
-ARM GAS  /tmp/ccKF9RRg.s 			page 19
+ARM GAS  /tmp/ccYjHxry.s 			page 19
 
 
  963:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         hadc->MspInitCallback = HAL_ADC_MspInit; /* Legacy weak MspInit              */
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1017:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
 1018:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /** @defgroup ADC_Exported_Functions_Group2 IO operation functions
 1019:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****  *  @brief    Input and Output operation functions
-ARM GAS  /tmp/ccKF9RRg.s 			page 20
+ARM GAS  /tmp/ccYjHxry.s 			page 20
 
 
 1020:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****  *
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1074:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Set ADC state (ADC independent or master) */
 1075:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       CLEAR_BIT(hadc->State, HAL_ADC_STATE_MULTIMODE_SLAVE);
 1076:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
-ARM GAS  /tmp/ccKF9RRg.s 			page 21
+ARM GAS  /tmp/ccYjHxry.s 			page 21
 
 
 1077:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* If conversions on group regular are also triggering group injected,  */
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1131:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Start ADC conversion on regular group with SW start */
 1132:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       SET_BIT(hadc->Instance->CR2, (ADC_CR2_SWSTART | ADC_CR2_EXTTRIG));
 1133:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
-ARM GAS  /tmp/ccKF9RRg.s 			page 22
+ARM GAS  /tmp/ccYjHxry.s 			page 22
 
 
 1134:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     else
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1188:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
 1189:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /**
 1190:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @brief  Wait for regular group conversion to be completed.
-ARM GAS  /tmp/ccKF9RRg.s 			page 23
+ARM GAS  /tmp/ccYjHxry.s 			page 23
 
 
 1191:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @note   This function cannot be used in a particular setup: ADC configured 
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
   98              	.LVL5:
 1217:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
 1218:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Verification that ADC configuration is compliant with polling for        */
-ARM GAS  /tmp/ccKF9RRg.s 			page 24
+ARM GAS  /tmp/ccYjHxry.s 			page 24
 
 
 1219:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* each conversion:                                                         */
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1252:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Check if timeout is disabled (set to infinite wait) */
 1253:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       if(Timeout != HAL_MAX_DELAY)
 1254:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
-ARM GAS  /tmp/ccKF9RRg.s 			page 25
+ARM GAS  /tmp/ccYjHxry.s 			page 25
 
 
 1255:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         if((Timeout == 0U) || ((HAL_GetTick() - tickstart ) > Timeout))
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  147              		.loc 1 1280 44 discriminator 5 view .LVU31
  148 0056 DA68     		ldr	r2, [r3, #12]
  149 0058 484B     		ldr	r3, .L32+12
-ARM GAS  /tmp/ccKF9RRg.s 			page 26
+ARM GAS  /tmp/ccYjHxry.s 			page 26
 
 
  150 005a 1A42     		tst	r2, r3
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1308:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
 1309:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Update ADC state machine */
 1310:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   SET_BIT(hadc->State, HAL_ADC_STATE_REG_EOC);
-ARM GAS  /tmp/ccKF9RRg.s 			page 27
+ARM GAS  /tmp/ccYjHxry.s 			page 27
 
 
 1311:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  197              		.loc 1 1255 9 is_stmt 1 view .LVU46
 1255:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         {
  198              		.loc 1 1255 11 is_stmt 0 view .LVU47
-ARM GAS  /tmp/ccKF9RRg.s 			page 28
+ARM GAS  /tmp/ccYjHxry.s 			page 28
 
 
  199 0090 002C     		cmp	r4, #0
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1280:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     
  241              		.loc 1 1280 44 discriminator 15 view .LVU60
  242 00cc DA68     		ldr	r2, [r3, #12]
-ARM GAS  /tmp/ccKF9RRg.s 			page 29
+ARM GAS  /tmp/ccYjHxry.s 			page 29
 
 
  243 00ce 2C4B     		ldr	r3, .L32+16
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1282:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
  287              		.loc 1 1282 41 is_stmt 1 view .LVU71
  288 00fc 019B     		ldr	r3, [sp, #4]
-ARM GAS  /tmp/ccKF9RRg.s 			page 30
+ARM GAS  /tmp/ccYjHxry.s 			page 30
 
 
  289 00fe B342     		cmp	r3, r6
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  328              		.loc 1 1310 3 view .LVU86
  329 0132 AB6A     		ldr	r3, [r5, #40]
  330 0134 43F40073 		orr	r3, r3, #512
-ARM GAS  /tmp/ccKF9RRg.s 			page 31
+ARM GAS  /tmp/ccYjHxry.s 			page 31
 
 
  331 0138 AB62     		str	r3, [r5, #40]
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  373 017c 92244900 		.word	4793490
  374 0180 49922400 		.word	2396745
  375              		.cfi_endproc
-ARM GAS  /tmp/ccKF9RRg.s 			page 32
+ARM GAS  /tmp/ccYjHxry.s 			page 32
 
 
  376              	.LFE71:
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  412              		.loc 1 1351 15 view .LVU106
  413 000e 8046     		mov	r8, r0
  414              	.LVL20:
-ARM GAS  /tmp/ccKF9RRg.s 			page 33
+ARM GAS  /tmp/ccYjHxry.s 			page 33
 
 
 1352:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  450 003a 0320     		movs	r0, #3
  451 003c 0EE0     		b	.L39
  452              	.L43:
-ARM GAS  /tmp/ccKF9RRg.s 			page 34
+ARM GAS  /tmp/ccYjHxry.s 			page 34
 
 
 1359:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1387:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /**
 1388:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @brief  Enables ADC, starts conversion of regular group with interruption.
 1389:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   *         Interruptions enabled in this function:
-ARM GAS  /tmp/ccKF9RRg.s 			page 35
+ARM GAS  /tmp/ccYjHxry.s 			page 35
 
 
 1390:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   *          - EOC (end of conversion of regular group)
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1444:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
 1445:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     
 1446:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     /* State machine update: Check if an injected conversion is ongoing */
-ARM GAS  /tmp/ccKF9RRg.s 			page 36
+ARM GAS  /tmp/ccYjHxry.s 			page 36
 
 
 1447:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     if (HAL_IS_BIT_SET(hadc->State, HAL_ADC_STATE_INJ_BUSY))
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1501:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   *         case of auto_injection mode), disable interrution of 
 1502:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   *         end-of-conversion, disable ADC peripheral.
 1503:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @param  hadc: ADC handle
-ARM GAS  /tmp/ccKF9RRg.s 			page 37
+ARM GAS  /tmp/ccYjHxry.s 			page 37
 
 
 1504:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @retval None
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1558:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @param  hadc: ADC handle
 1559:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @param  pData: The destination Buffer address.
 1560:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @param  Length: The length of data to be transferred from ADC peripheral to memory.
-ARM GAS  /tmp/ccKF9RRg.s 			page 38
+ARM GAS  /tmp/ccYjHxry.s 			page 38
 
 
 1561:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @retval None
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1615:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         ADC_STATE_CLR_SET(hadc->State, HAL_ADC_STATE_INJ_EOC, HAL_ADC_STATE_INJ_BUSY);
 1616:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
 1617:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
-ARM GAS  /tmp/ccKF9RRg.s 			page 39
+ARM GAS  /tmp/ccYjHxry.s 			page 39
 
 
 1618:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1672:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         SET_BIT(hadc->Instance->CR2, ADC_CR2_EXTTRIG);
 1673:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
 1674:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
-ARM GAS  /tmp/ccKF9RRg.s 			page 40
+ARM GAS  /tmp/ccYjHxry.s 			page 40
 
 
 1675:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     else
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1729:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
 1730:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Check if DMA channel effectively disabled */
 1731:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       if (tmp_hal_status == HAL_OK)
-ARM GAS  /tmp/ccKF9RRg.s 			page 41
+ARM GAS  /tmp/ccYjHxry.s 			page 41
 
 
 1732:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1780:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* Return ADC converted value */ 
 1781:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   return hadc->Instance->DR;
  496              		.loc 1 1781 3 view .LVU135
-ARM GAS  /tmp/ccKF9RRg.s 			page 42
+ARM GAS  /tmp/ccYjHxry.s 			page 42
 
 
  497              		.loc 1 1781 14 is_stmt 0 view .LVU136
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1818:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         __HAL_ADC_DISABLE_IT(hadc, ADC_IT_EOC);
 1819:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         
 1820:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         /* Set ADC state */
-ARM GAS  /tmp/ccKF9RRg.s 			page 43
+ARM GAS  /tmp/ccYjHxry.s 			page 43
 
 
 1821:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         CLEAR_BIT(hadc->State, HAL_ADC_STATE_REG_BUSY);   
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1875:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
 1876:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
 1877:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       /* Conversion complete callback */ 
-ARM GAS  /tmp/ccKF9RRg.s 			page 44
+ARM GAS  /tmp/ccYjHxry.s 			page 44
 
 
 1878:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** #if (USE_HAL_ADC_REGISTER_CALLBACKS == 1)
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  525              		.cfi_endproc
  526              	.LFE79:
  528              		.section	.text.ADC_DMAConvCplt,"ax",%progbits
-ARM GAS  /tmp/ccKF9RRg.s 			page 45
+ARM GAS  /tmp/ccYjHxry.s 			page 45
 
 
  529              		.align	1
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1970:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @}
 1971:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   */
 1972:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
-ARM GAS  /tmp/ccKF9RRg.s 			page 46
+ARM GAS  /tmp/ccYjHxry.s 			page 46
 
 
 1973:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /** @defgroup ADC_Exported_Functions_Group3 Peripheral Control functions
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2027:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                ADC_SQR3_RK(ADC_SQR3_SQ1, sConfig->Rank)    ,
 2028:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                ADC_SQR3_RK(sConfig->Channel, sConfig->Rank) );
 2029:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
-ARM GAS  /tmp/ccKF9RRg.s 			page 47
+ARM GAS  /tmp/ccYjHxry.s 			page 47
 
 
 2030:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* For Rank 7 to 12 */
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2084:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         }
 2085:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
 2086:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
-ARM GAS  /tmp/ccKF9RRg.s 			page 48
+ARM GAS  /tmp/ccYjHxry.s 			page 48
 
 
 2087:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     else
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2141:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     /* Enable the ADC Analog watchdog interrupt */
 2142:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     __HAL_ADC_ENABLE_IT(hadc, ADC_IT_AWD);
 2143:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
-ARM GAS  /tmp/ccKF9RRg.s 			page 49
+ARM GAS  /tmp/ccYjHxry.s 			page 49
 
 
 2144:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   else
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2198:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
 2199:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** /**
 2200:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @brief  return the ADC state
-ARM GAS  /tmp/ccKF9RRg.s 			page 50
+ARM GAS  /tmp/ccYjHxry.s 			page 50
 
 
 2201:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   * @param  hadc: ADC handle
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2255:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     wait_loop_index = (ADC_STAB_DELAY_US * (SystemCoreClock / 1000000U));
 2256:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     while(wait_loop_index != 0U)
 2257:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
-ARM GAS  /tmp/ccKF9RRg.s 			page 51
+ARM GAS  /tmp/ccYjHxry.s 			page 51
 
 
 2258:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       wait_loop_index--;
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2312:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     while(ADC_IS_ENABLE(hadc) != RESET)
 2313:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
 2314:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       if((HAL_GetTick() - tickstart) > ADC_DISABLE_TIMEOUT)
-ARM GAS  /tmp/ccKF9RRg.s 			page 52
+ARM GAS  /tmp/ccYjHxry.s 			page 52
 
 
 2315:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
@@ -3118,7 +3118,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  557              		.loc 1 2349 5 is_stmt 1 view .LVU149
  558 000c 9A6A     		ldr	r2, [r3, #40]
  559 000e 42F40072 		orr	r2, r2, #512
-ARM GAS  /tmp/ccKF9RRg.s 			page 53
+ARM GAS  /tmp/ccYjHxry.s 			page 53
 
 
  560 0012 9A62     		str	r2, [r3, #40]
@@ -3178,7 +3178,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  582 002a 1A7B     		ldrb	r2, [r3, #12]	@ zero_extendqisi2
 2356:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****        (hadc->Init.ContinuousConvMode == DISABLE)   )
  583              		.loc 1 2356 51 discriminator 1 view .LVU157
-ARM GAS  /tmp/ccKF9RRg.s 			page 54
+ARM GAS  /tmp/ccYjHxry.s 			page 54
 
 
  584 002c 002A     		cmp	r2, #0
@@ -3238,7 +3238,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  630              		@ link register save eliminated.
 1933:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   /* NOTE : This function should not be modified. When the callback is needed,
  631              		.loc 1 1933 3 view .LVU169
-ARM GAS  /tmp/ccKF9RRg.s 			page 55
+ARM GAS  /tmp/ccYjHxry.s 			page 55
 
 
 1937:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  670              		.align	1
  671              		.weak	HAL_ADC_LevelOutOfWindowCallback
  672              		.syntax unified
-ARM GAS  /tmp/ccKF9RRg.s 			page 56
+ARM GAS  /tmp/ccYjHxry.s 			page 56
 
 
  673              		.thumb
@@ -3358,7 +3358,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  719 000c 18D0     		beq	.L57
 1800:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
  720              		.loc 1 1800 5 is_stmt 1 view .LVU188
-ARM GAS  /tmp/ccKF9RRg.s 			page 57
+ARM GAS  /tmp/ccYjHxry.s 			page 57
 
 
 1800:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
@@ -3418,7 +3418,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  760              		.loc 1 1842 5 view .LVU203
  761 0044 12F0800F 		tst	r2, #128
  762 0048 22D0     		beq	.L60
-ARM GAS  /tmp/ccKF9RRg.s 			page 58
+ARM GAS  /tmp/ccYjHxry.s 			page 58
 
 
 1844:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
@@ -3478,7 +3478,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  802              	.LVL41:
 1885:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     }
  803              		.loc 1 1885 7 view .LVU219
-ARM GAS  /tmp/ccKF9RRg.s 			page 59
+ARM GAS  /tmp/ccYjHxry.s 			page 59
 
 
  804 0088 2368     		ldr	r3, [r4]
@@ -3538,7 +3538,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  844 00c0 B7D1     		bne	.L59
 1825:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****         }
  845              		.loc 1 1825 11 is_stmt 1 view .LVU234
-ARM GAS  /tmp/ccKF9RRg.s 			page 60
+ARM GAS  /tmp/ccYjHxry.s 			page 60
 
 
  846 00c2 A36A     		ldr	r3, [r4, #40]
@@ -3598,7 +3598,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  889 0108 1A60     		str	r2, [r3]
 1909:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
  890              		.loc 1 1909 1 is_stmt 0 view .LVU246
-ARM GAS  /tmp/ccKF9RRg.s 			page 61
+ARM GAS  /tmp/ccYjHxry.s 			page 61
 
 
  891 010a CAE7     		b	.L56
@@ -3658,7 +3658,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  936              		.loc 1 2408 22 is_stmt 0 view .LVU253
  937 0002 406A     		ldr	r0, [r0, #36]
  938              	.LVL47:
-ARM GAS  /tmp/ccKF9RRg.s 			page 62
+ARM GAS  /tmp/ccYjHxry.s 			page 62
 
 
 2409:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -3718,7 +3718,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  978              	.LVL50:
 2010:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
  979              		.loc 1 2010 3 view .LVU261
-ARM GAS  /tmp/ccKF9RRg.s 			page 63
+ARM GAS  /tmp/ccYjHxry.s 			page 63
 
 
 2010:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -3778,7 +3778,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2048:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
  1019              		.loc 1 2048 14 is_stmt 0 view .LVU277
  1020 0040 0A68     		ldr	r2, [r1]
-ARM GAS  /tmp/ccKF9RRg.s 			page 64
+ARM GAS  /tmp/ccYjHxry.s 			page 64
 
 
 2048:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
@@ -3838,7 +3838,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1063              		.cfi_restore 5
  1064              		.cfi_restore 4
  1065              		.cfi_def_cfa_offset 0
-ARM GAS  /tmp/ccKF9RRg.s 			page 65
+ARM GAS  /tmp/ccYjHxry.s 			page 65
 
 
  1066 007a 7047     		bx	lr
@@ -3898,7 +3898,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1113 00c8 20EA0C00 		bic	r0, r0, ip
  1114 00cc 8D68     		ldr	r5, [r1, #8]
  1115 00ce 05FA02F2 		lsl	r2, r5, r2
-ARM GAS  /tmp/ccKF9RRg.s 			page 66
+ARM GAS  /tmp/ccYjHxry.s 			page 66
 
 
  1116 00d2 0243     		orrs	r2, r2, r0
@@ -3958,7 +3958,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1156 0104 B4E7     		b	.L79
  1157              	.L90:
 2079:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****           while(wait_loop_index != 0U)
-ARM GAS  /tmp/ccKF9RRg.s 			page 67
+ARM GAS  /tmp/ccYjHxry.s 			page 67
 
 
  1158              		.loc 1 2079 11 is_stmt 1 view .LVU311
@@ -4018,7 +4018,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1199              		.loc 1 2019 3 view .LVU324
  1200 0132 A0E7     		b	.L73
  1201              	.L92:
-ARM GAS  /tmp/ccKF9RRg.s 			page 68
+ARM GAS  /tmp/ccYjHxry.s 			page 68
 
 
  1202              		.align	2
@@ -4078,7 +4078,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2134:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
  1246              		.loc 1 2134 3 discriminator 2 view .LVU337
 2139:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccKF9RRg.s 			page 69
+ARM GAS  /tmp/ccYjHxry.s 			page 69
 
 
  1247              		.loc 1 2139 3 discriminator 2 view .LVU338
@@ -4138,7 +4138,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1288 0046 30BC     		pop	{r4, r5}
  1289              		.cfi_remember_state
  1290              		.cfi_restore 5
-ARM GAS  /tmp/ccKF9RRg.s 			page 70
+ARM GAS  /tmp/ccYjHxry.s 			page 70
 
 
  1291              		.cfi_restore 4
@@ -4198,7 +4198,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1340              	.LVL72:
 2208:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
  1341              		.loc 1 2208 1 view .LVU359
-ARM GAS  /tmp/ccKF9RRg.s 			page 71
+ARM GAS  /tmp/ccYjHxry.s 			page 71
 
 
  1342 0002 7047     		bx	lr
@@ -4258,7 +4258,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1393              	.LVL76:
 2242:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
  1394              		.loc 1 2242 3 view .LVU367
-ARM GAS  /tmp/ccKF9RRg.s 			page 72
+ARM GAS  /tmp/ccYjHxry.s 			page 72
 
 
 2242:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -4318,7 +4318,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1434              		.loc 1 2262 17 is_stmt 0 view .LVU382
  1435 0038 FFF7FEFF 		bl	HAL_GetTick
  1436              	.LVL77:
-ARM GAS  /tmp/ccKF9RRg.s 			page 73
+ARM GAS  /tmp/ccYjHxry.s 			page 73
 
 
 2262:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1475 006c 0023     		movs	r3, #0
  1476 006e 84F82430 		strb	r3, [r4, #36]
 2279:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
-ARM GAS  /tmp/ccKF9RRg.s 			page 74
+ARM GAS  /tmp/ccYjHxry.s 			page 74
 
 
  1477              		.loc 1 2279 11 view .LVU399
@@ -4438,7 +4438,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1523 0000 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
  1524 0004 012B     		cmp	r3, #1
  1525 0006 68D0     		beq	.L128
-ARM GAS  /tmp/ccKF9RRg.s 			page 75
+ARM GAS  /tmp/ccYjHxry.s 			page 75
 
 
 1047:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   HAL_StatusTypeDef tmp_hal_status = HAL_OK;
@@ -4498,7 +4498,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1565              		.loc 1 1079 10 view .LVU424
  1566 003c 12F4806F 		tst	r2, #1024
  1567 0040 05D0     		beq	.L123
-ARM GAS  /tmp/ccKF9RRg.s 			page 76
+ARM GAS  /tmp/ccYjHxry.s 			page 76
 
 
 1081:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
@@ -4558,7 +4558,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1608              		.loc 1 1072 9 is_stmt 0 discriminator 1 view .LVU438
  1609 0082 A2F58062 		sub	r2, r2, #1024
  1610 0086 5268     		ldr	r2, [r2, #4]
-ARM GAS  /tmp/ccKF9RRg.s 			page 77
+ARM GAS  /tmp/ccYjHxry.s 			page 77
 
 
  1611 0088 12F4702F 		tst	r2, #983040
@@ -4618,7 +4618,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1143:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   }
  1655              		.loc 1 1143 5 view .LVU449
  1656 00d2 0023     		movs	r3, #0
-ARM GAS  /tmp/ccKF9RRg.s 			page 78
+ARM GAS  /tmp/ccYjHxry.s 			page 78
 
 
  1657 00d4 84F82430 		strb	r3, [r4, #36]
@@ -4678,7 +4678,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1704              		.cfi_offset 14, -4
  1705 000a 0446     		mov	r4, r0
 1403:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     
-ARM GAS  /tmp/ccKF9RRg.s 			page 79
+ARM GAS  /tmp/ccYjHxry.s 			page 79
 
 
  1706              		.loc 1 1403 3 is_stmt 1 discriminator 2 view .LVU459
@@ -4738,7 +4738,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1746 004c A262     		str	r2, [r4, #40]
  1747              	.L143:
 1447:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
-ARM GAS  /tmp/ccKF9RRg.s 			page 80
+ARM GAS  /tmp/ccYjHxry.s 			page 80
 
 
  1748              		.loc 1 1447 5 view .LVU474
@@ -4798,7 +4798,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1789 0090 5268     		ldr	r2, [r2, #4]
  1790 0092 12F4702F 		tst	r2, #983040
  1791 0096 CCD0     		beq	.L141
-ARM GAS  /tmp/ccKF9RRg.s 			page 81
+ARM GAS  /tmp/ccYjHxry.s 			page 81
 
 
 1436:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       
@@ -4858,7 +4858,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1835 00dc 0023     		movs	r3, #0
  1836 00de 84F82430 		strb	r3, [r4, #36]
  1837              	.L139:
-ARM GAS  /tmp/ccKF9RRg.s 			page 82
+ARM GAS  /tmp/ccYjHxry.s 			page 82
 
 
 1497:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
@@ -4918,7 +4918,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1573:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
  1887              		.loc 1 1573 3 view .LVU506
 1573:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
-ARM GAS  /tmp/ccKF9RRg.s 			page 83
+ARM GAS  /tmp/ccYjHxry.s 			page 83
 
 
  1888              		.loc 1 1573 6 is_stmt 0 view .LVU507
@@ -4978,7 +4978,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  1928              		.loc 1 1594 9 is_stmt 0 view .LVU521
  1929 0040 2268     		ldr	r2, [r4]
 1594:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
-ARM GAS  /tmp/ccKF9RRg.s 			page 84
+ARM GAS  /tmp/ccYjHxry.s 			page 84
 
 
  1930              		.loc 1 1594 8 view .LVU522
@@ -5038,7 +5038,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 1637:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
  1970              		.loc 1 1637 42 view .LVU537
  1971 007c 294A     		ldr	r2, .L174+8
-ARM GAS  /tmp/ccKF9RRg.s 			page 85
+ARM GAS  /tmp/ccYjHxry.s 			page 85
 
 
  1972 007e 9A62     		str	r2, [r3, #40]
@@ -5098,7 +5098,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2011              		.loc 1 1664 10 view .LVU552
  2012 00b4 B2F5602F 		cmp	r2, #917504
  2013 00b8 24D0     		beq	.L173
-ARM GAS  /tmp/ccKF9RRg.s 			page 86
+ARM GAS  /tmp/ccYjHxry.s 			page 86
 
 
 1672:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
@@ -5158,7 +5158,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2058              	.LVL99:
  2059              	.L173:
 1667:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       }
-ARM GAS  /tmp/ccKF9RRg.s 			page 87
+ARM GAS  /tmp/ccYjHxry.s 			page 87
 
 
  2060              		.loc 1 1667 9 view .LVU563
@@ -5218,7 +5218,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2110              		.cfi_offset 4, -12
  2111              		.cfi_offset 5, -8
  2112              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccKF9RRg.s 			page 88
+ARM GAS  /tmp/ccYjHxry.s 			page 88
 
 
 2300:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -5278,7 +5278,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
 2314:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
  2152              		.loc 1 2314 7 is_stmt 1 view .LVU585
 2314:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
-ARM GAS  /tmp/ccKF9RRg.s 			page 89
+ARM GAS  /tmp/ccYjHxry.s 			page 89
 
 
  2153              		.loc 1 2314 11 is_stmt 0 view .LVU586
@@ -5338,7 +5338,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2198              		.cfi_startproc
  2199              		@ args = 0, pretend = 0, frame = 0
  2200              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccKF9RRg.s 			page 90
+ARM GAS  /tmp/ccYjHxry.s 			page 90
 
 
  423:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   uint32_t tmp_cr1 = 0U;
@@ -5398,7 +5398,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2236              	.LVL112:
  497:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       (tmp_hal_status == HAL_OK)                                  )
  2237              		.loc 1 497 3 is_stmt 1 view .LVU617
-ARM GAS  /tmp/ccKF9RRg.s 			page 91
+ARM GAS  /tmp/ccYjHxry.s 			page 91
 
 
  497:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       (tmp_hal_status == HAL_OK)                                  )
@@ -5458,7 +5458,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  530:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
  2277              		.loc 1 530 19 is_stmt 0 discriminator 6 view .LVU633
  2278 004a 267D     		ldrb	r6, [r4, #20]	@ zero_extendqisi2
-ARM GAS  /tmp/ccKF9RRg.s 			page 92
+ARM GAS  /tmp/ccYjHxry.s 			page 92
 
 
  530:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****     {
@@ -5518,7 +5518,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2321              	.LVL117:
  581:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                ADC_SQR1_L          ,
  2322              		.loc 1 581 5 is_stmt 0 view .LVU646
-ARM GAS  /tmp/ccKF9RRg.s 			page 93
+ARM GAS  /tmp/ccYjHxry.s 			page 93
 
 
  2323 0084 EB62     		str	r3, [r5, #44]
@@ -5578,7 +5578,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2364              	.LVL122:
  2365              	.L202:
  532:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****       {
-ARM GAS  /tmp/ccKF9RRg.s 			page 94
+ARM GAS  /tmp/ccYjHxry.s 			page 94
 
 
  2366              		.loc 1 532 7 is_stmt 1 view .LVU660
@@ -5638,7 +5638,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  629:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c **** 
  2410              		.loc 1 629 1 view .LVU671
  2411 00fa 70BD     		pop	{r4, r5, r6, pc}
-ARM GAS  /tmp/ccKF9RRg.s 			page 95
+ARM GAS  /tmp/ccYjHxry.s 			page 95
 
 
  2412              	.LVL128:
@@ -5698,7 +5698,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2460              		.loc 1 650 3 is_stmt 1 view .LVU679
  653:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
  2461              		.loc 1 653 3 view .LVU680
-ARM GAS  /tmp/ccKF9RRg.s 			page 96
+ARM GAS  /tmp/ccYjHxry.s 			page 96
 
 
  2462 0008 836A     		ldr	r3, [r0, #40]
@@ -5758,7 +5758,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  687:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                                       ADC_SMPR1_SMP14 | ADC_SMPR1_SMP13 | ADC_SMPR1_SMP12 | 
  2504              		.loc 1 687 5 view .LVU693
  2505 003e 2268     		ldr	r2, [r4]
-ARM GAS  /tmp/ccKF9RRg.s 			page 97
+ARM GAS  /tmp/ccYjHxry.s 			page 97
 
 
  2506 0040 D368     		ldr	r3, [r2, #12]
@@ -5818,7 +5818,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2552 00a8 D36A     		ldr	r3, [r2, #44]
  2553 00aa 03F07F43 		and	r3, r3, #-16777216
  2554 00ae D362     		str	r3, [r2, #44]
-ARM GAS  /tmp/ccKF9RRg.s 			page 98
+ARM GAS  /tmp/ccYjHxry.s 			page 98
 
 
  717:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                                     ADC_SQR1_SQ16 | ADC_SQR1_SQ15 | 
@@ -5878,7 +5878,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2598 00f0 0125     		movs	r5, #1
  2599 00f2 94E7     		b	.L207
  2600              	.L213:
-ARM GAS  /tmp/ccKF9RRg.s 			page 99
+ARM GAS  /tmp/ccYjHxry.s 			page 99
 
 
  2601              		.align	2
@@ -5938,7 +5938,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2645 0016 38B9     		cbnz	r0, .L216
 1177:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****                       HAL_ADC_STATE_REG_BUSY | HAL_ADC_STATE_INJ_BUSY,
  2646              		.loc 1 1177 5 is_stmt 1 view .LVU725
-ARM GAS  /tmp/ccKF9RRg.s 			page 100
+ARM GAS  /tmp/ccYjHxry.s 			page 100
 
 
  2647 0018 A36A     		ldr	r3, [r4, #40]
@@ -5998,7 +5998,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2691              		.loc 1 1514 3 view .LVU737
  2692 0000 90F82430 		ldrb	r3, [r0, #36]	@ zero_extendqisi2
  2693 0004 012B     		cmp	r3, #1
-ARM GAS  /tmp/ccKF9RRg.s 			page 101
+ARM GAS  /tmp/ccYjHxry.s 			page 101
 
 
  2694 0006 18D0     		beq	.L225
@@ -6058,7 +6058,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2734              		.cfi_def_cfa_offset 0
  2735              		.cfi_restore 4
  2736              		.cfi_restore 14
-ARM GAS  /tmp/ccKF9RRg.s 			page 102
+ARM GAS  /tmp/ccYjHxry.s 			page 102
 
 
 1514:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   
@@ -6118,7 +6118,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2780              		.loc 1 1719 3 is_stmt 1 discriminator 2 view .LVU764
 1719:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c ****   {
  2781              		.loc 1 1719 6 is_stmt 0 discriminator 2 view .LVU765
-ARM GAS  /tmp/ccKF9RRg.s 			page 103
+ARM GAS  /tmp/ccYjHxry.s 			page 103
 
 
  2782 0016 48B9     		cbnz	r0, .L232
@@ -6178,7 +6178,7 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2820 0042 23F00103 		bic	r3, r3, #1
  2821 0046 43F00103 		orr	r3, r3, #1
  2822 004a A362     		str	r3, [r4, #40]
-ARM GAS  /tmp/ccKF9RRg.s 			page 104
+ARM GAS  /tmp/ccYjHxry.s 			page 104
 
 
  2823 004c EEE7     		b	.L232
@@ -6216,77 +6216,77 @@ ARM GAS  /tmp/ccKF9RRg.s 			page 1
  2853              		.file 10 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
  2854              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h"
  2855              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  /tmp/ccKF9RRg.s 			page 105
+ARM GAS  /tmp/ccYjHxry.s 			page 105
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f1xx_hal_adc.c
-     /tmp/ccKF9RRg.s:19     .text.HAL_ADC_MspInit:0000000000000000 $t
-     /tmp/ccKF9RRg.s:25     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
-     /tmp/ccKF9RRg.s:40     .text.HAL_ADC_MspDeInit:0000000000000000 $t
-     /tmp/ccKF9RRg.s:46     .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
-     /tmp/ccKF9RRg.s:61     .text.HAL_ADC_PollForConversion:0000000000000000 $t
-     /tmp/ccKF9RRg.s:67     .text.HAL_ADC_PollForConversion:0000000000000000 HAL_ADC_PollForConversion
-     /tmp/ccKF9RRg.s:370    .text.HAL_ADC_PollForConversion:0000000000000170 $d
-     /tmp/ccKF9RRg.s:379    .text.HAL_ADC_PollForEvent:0000000000000000 $t
-     /tmp/ccKF9RRg.s:385    .text.HAL_ADC_PollForEvent:0000000000000000 HAL_ADC_PollForEvent
-     /tmp/ccKF9RRg.s:481    .text.HAL_ADC_GetValue:0000000000000000 $t
-     /tmp/ccKF9RRg.s:487    .text.HAL_ADC_GetValue:0000000000000000 HAL_ADC_GetValue
-     /tmp/ccKF9RRg.s:508    .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
-     /tmp/ccKF9RRg.s:514    .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
-     /tmp/ccKF9RRg.s:529    .text.ADC_DMAConvCplt:0000000000000000 $t
-     /tmp/ccKF9RRg.s:535    .text.ADC_DMAConvCplt:0000000000000000 ADC_DMAConvCplt
-     /tmp/ccKF9RRg.s:617    .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 $t
-     /tmp/ccKF9RRg.s:623    .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 HAL_ADC_ConvHalfCpltCallback
-     /tmp/ccKF9RRg.s:638    .text.ADC_DMAHalfConvCplt:0000000000000000 $t
-     /tmp/ccKF9RRg.s:644    .text.ADC_DMAHalfConvCplt:0000000000000000 ADC_DMAHalfConvCplt
-     /tmp/ccKF9RRg.s:670    .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 $t
-     /tmp/ccKF9RRg.s:676    .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 HAL_ADC_LevelOutOfWindowCallback
-     /tmp/ccKF9RRg.s:691    .text.HAL_ADC_IRQHandler:0000000000000000 $t
-     /tmp/ccKF9RRg.s:697    .text.HAL_ADC_IRQHandler:0000000000000000 HAL_ADC_IRQHandler
-     /tmp/ccKF9RRg.s:896    .text.HAL_ADC_ErrorCallback:0000000000000000 $t
-     /tmp/ccKF9RRg.s:902    .text.HAL_ADC_ErrorCallback:0000000000000000 HAL_ADC_ErrorCallback
-     /tmp/ccKF9RRg.s:917    .text.ADC_DMAError:0000000000000000 $t
-     /tmp/ccKF9RRg.s:923    .text.ADC_DMAError:0000000000000000 ADC_DMAError
-     /tmp/ccKF9RRg.s:956    .text.HAL_ADC_ConfigChannel:0000000000000000 $t
-     /tmp/ccKF9RRg.s:962    .text.HAL_ADC_ConfigChannel:0000000000000000 HAL_ADC_ConfigChannel
-     /tmp/ccKF9RRg.s:1204   .text.HAL_ADC_ConfigChannel:0000000000000134 $d
-     /tmp/ccKF9RRg.s:1211   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1217   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 HAL_ADC_AnalogWDGConfig
-     /tmp/ccKF9RRg.s:1318   .text.HAL_ADC_AnalogWDGConfig:000000000000005c $d
-     /tmp/ccKF9RRg.s:1323   .text.HAL_ADC_GetState:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1329   .text.HAL_ADC_GetState:0000000000000000 HAL_ADC_GetState
-     /tmp/ccKF9RRg.s:1347   .text.HAL_ADC_GetError:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1353   .text.HAL_ADC_GetError:0000000000000000 HAL_ADC_GetError
-     /tmp/ccKF9RRg.s:1371   .text.ADC_Enable:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1377   .text.ADC_Enable:0000000000000000 ADC_Enable
-     /tmp/ccKF9RRg.s:1500   .text.ADC_Enable:0000000000000080 $d
-     /tmp/ccKF9RRg.s:1506   .text.HAL_ADC_Start:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1512   .text.HAL_ADC_Start:0000000000000000 HAL_ADC_Start
-     /tmp/ccKF9RRg.s:1674   .text.HAL_ADC_Start:00000000000000e0 $d
-     /tmp/ccKF9RRg.s:1680   .text.HAL_ADC_Start_IT:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1686   .text.HAL_ADC_Start_IT:0000000000000000 HAL_ADC_Start_IT
-     /tmp/ccKF9RRg.s:1853   .text.HAL_ADC_Start_IT:00000000000000e8 $d
-     /tmp/ccKF9RRg.s:1859   .text.HAL_ADC_Start_DMA:0000000000000000 $t
-     /tmp/ccKF9RRg.s:1865   .text.HAL_ADC_Start_DMA:0000000000000000 HAL_ADC_Start_DMA
-     /tmp/ccKF9RRg.s:2084   .text.HAL_ADC_Start_DMA:000000000000011c $d
-     /tmp/ccKF9RRg.s:2093   .text.ADC_ConversionStop_Disable:0000000000000000 $t
-     /tmp/ccKF9RRg.s:2099   .text.ADC_ConversionStop_Disable:0000000000000000 ADC_ConversionStop_Disable
-     /tmp/ccKF9RRg.s:2188   .text.HAL_ADC_Init:0000000000000000 $t
-     /tmp/ccKF9RRg.s:2194   .text.HAL_ADC_Init:0000000000000000 HAL_ADC_Init
-     /tmp/ccKF9RRg.s:2427   .text.HAL_ADC_Init:0000000000000100 $d
-     /tmp/ccKF9RRg.s:2433   .text.HAL_ADC_DeInit:0000000000000000 $t
-ARM GAS  /tmp/ccKF9RRg.s 			page 106
+     /tmp/ccYjHxry.s:19     .text.HAL_ADC_MspInit:0000000000000000 $t
+     /tmp/ccYjHxry.s:25     .text.HAL_ADC_MspInit:0000000000000000 HAL_ADC_MspInit
+     /tmp/ccYjHxry.s:40     .text.HAL_ADC_MspDeInit:0000000000000000 $t
+     /tmp/ccYjHxry.s:46     .text.HAL_ADC_MspDeInit:0000000000000000 HAL_ADC_MspDeInit
+     /tmp/ccYjHxry.s:61     .text.HAL_ADC_PollForConversion:0000000000000000 $t
+     /tmp/ccYjHxry.s:67     .text.HAL_ADC_PollForConversion:0000000000000000 HAL_ADC_PollForConversion
+     /tmp/ccYjHxry.s:370    .text.HAL_ADC_PollForConversion:0000000000000170 $d
+     /tmp/ccYjHxry.s:379    .text.HAL_ADC_PollForEvent:0000000000000000 $t
+     /tmp/ccYjHxry.s:385    .text.HAL_ADC_PollForEvent:0000000000000000 HAL_ADC_PollForEvent
+     /tmp/ccYjHxry.s:481    .text.HAL_ADC_GetValue:0000000000000000 $t
+     /tmp/ccYjHxry.s:487    .text.HAL_ADC_GetValue:0000000000000000 HAL_ADC_GetValue
+     /tmp/ccYjHxry.s:508    .text.HAL_ADC_ConvCpltCallback:0000000000000000 $t
+     /tmp/ccYjHxry.s:514    .text.HAL_ADC_ConvCpltCallback:0000000000000000 HAL_ADC_ConvCpltCallback
+     /tmp/ccYjHxry.s:529    .text.ADC_DMAConvCplt:0000000000000000 $t
+     /tmp/ccYjHxry.s:535    .text.ADC_DMAConvCplt:0000000000000000 ADC_DMAConvCplt
+     /tmp/ccYjHxry.s:617    .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 $t
+     /tmp/ccYjHxry.s:623    .text.HAL_ADC_ConvHalfCpltCallback:0000000000000000 HAL_ADC_ConvHalfCpltCallback
+     /tmp/ccYjHxry.s:638    .text.ADC_DMAHalfConvCplt:0000000000000000 $t
+     /tmp/ccYjHxry.s:644    .text.ADC_DMAHalfConvCplt:0000000000000000 ADC_DMAHalfConvCplt
+     /tmp/ccYjHxry.s:670    .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 $t
+     /tmp/ccYjHxry.s:676    .text.HAL_ADC_LevelOutOfWindowCallback:0000000000000000 HAL_ADC_LevelOutOfWindowCallback
+     /tmp/ccYjHxry.s:691    .text.HAL_ADC_IRQHandler:0000000000000000 $t
+     /tmp/ccYjHxry.s:697    .text.HAL_ADC_IRQHandler:0000000000000000 HAL_ADC_IRQHandler
+     /tmp/ccYjHxry.s:896    .text.HAL_ADC_ErrorCallback:0000000000000000 $t
+     /tmp/ccYjHxry.s:902    .text.HAL_ADC_ErrorCallback:0000000000000000 HAL_ADC_ErrorCallback
+     /tmp/ccYjHxry.s:917    .text.ADC_DMAError:0000000000000000 $t
+     /tmp/ccYjHxry.s:923    .text.ADC_DMAError:0000000000000000 ADC_DMAError
+     /tmp/ccYjHxry.s:956    .text.HAL_ADC_ConfigChannel:0000000000000000 $t
+     /tmp/ccYjHxry.s:962    .text.HAL_ADC_ConfigChannel:0000000000000000 HAL_ADC_ConfigChannel
+     /tmp/ccYjHxry.s:1204   .text.HAL_ADC_ConfigChannel:0000000000000134 $d
+     /tmp/ccYjHxry.s:1211   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 $t
+     /tmp/ccYjHxry.s:1217   .text.HAL_ADC_AnalogWDGConfig:0000000000000000 HAL_ADC_AnalogWDGConfig
+     /tmp/ccYjHxry.s:1318   .text.HAL_ADC_AnalogWDGConfig:000000000000005c $d
+     /tmp/ccYjHxry.s:1323   .text.HAL_ADC_GetState:0000000000000000 $t
+     /tmp/ccYjHxry.s:1329   .text.HAL_ADC_GetState:0000000000000000 HAL_ADC_GetState
+     /tmp/ccYjHxry.s:1347   .text.HAL_ADC_GetError:0000000000000000 $t
+     /tmp/ccYjHxry.s:1353   .text.HAL_ADC_GetError:0000000000000000 HAL_ADC_GetError
+     /tmp/ccYjHxry.s:1371   .text.ADC_Enable:0000000000000000 $t
+     /tmp/ccYjHxry.s:1377   .text.ADC_Enable:0000000000000000 ADC_Enable
+     /tmp/ccYjHxry.s:1500   .text.ADC_Enable:0000000000000080 $d
+     /tmp/ccYjHxry.s:1506   .text.HAL_ADC_Start:0000000000000000 $t
+     /tmp/ccYjHxry.s:1512   .text.HAL_ADC_Start:0000000000000000 HAL_ADC_Start
+     /tmp/ccYjHxry.s:1674   .text.HAL_ADC_Start:00000000000000e0 $d
+     /tmp/ccYjHxry.s:1680   .text.HAL_ADC_Start_IT:0000000000000000 $t
+     /tmp/ccYjHxry.s:1686   .text.HAL_ADC_Start_IT:0000000000000000 HAL_ADC_Start_IT
+     /tmp/ccYjHxry.s:1853   .text.HAL_ADC_Start_IT:00000000000000e8 $d
+     /tmp/ccYjHxry.s:1859   .text.HAL_ADC_Start_DMA:0000000000000000 $t
+     /tmp/ccYjHxry.s:1865   .text.HAL_ADC_Start_DMA:0000000000000000 HAL_ADC_Start_DMA
+     /tmp/ccYjHxry.s:2084   .text.HAL_ADC_Start_DMA:000000000000011c $d
+     /tmp/ccYjHxry.s:2093   .text.ADC_ConversionStop_Disable:0000000000000000 $t
+     /tmp/ccYjHxry.s:2099   .text.ADC_ConversionStop_Disable:0000000000000000 ADC_ConversionStop_Disable
+     /tmp/ccYjHxry.s:2188   .text.HAL_ADC_Init:0000000000000000 $t
+     /tmp/ccYjHxry.s:2194   .text.HAL_ADC_Init:0000000000000000 HAL_ADC_Init
+     /tmp/ccYjHxry.s:2427   .text.HAL_ADC_Init:0000000000000100 $d
+     /tmp/ccYjHxry.s:2433   .text.HAL_ADC_DeInit:0000000000000000 $t
+ARM GAS  /tmp/ccYjHxry.s 			page 106
 
 
-     /tmp/ccKF9RRg.s:2439   .text.HAL_ADC_DeInit:0000000000000000 HAL_ADC_DeInit
-     /tmp/ccKF9RRg.s:2603   .text.HAL_ADC_DeInit:00000000000000f4 $d
-     /tmp/ccKF9RRg.s:2609   .text.HAL_ADC_Stop:0000000000000000 $t
-     /tmp/ccKF9RRg.s:2615   .text.HAL_ADC_Stop:0000000000000000 HAL_ADC_Stop
-     /tmp/ccKF9RRg.s:2675   .text.HAL_ADC_Stop_IT:0000000000000000 $t
-     /tmp/ccKF9RRg.s:2681   .text.HAL_ADC_Stop_IT:0000000000000000 HAL_ADC_Stop_IT
-     /tmp/ccKF9RRg.s:2746   .text.HAL_ADC_Stop_DMA:0000000000000000 $t
-     /tmp/ccKF9RRg.s:2752   .text.HAL_ADC_Stop_DMA:0000000000000000 HAL_ADC_Stop_DMA
+     /tmp/ccYjHxry.s:2439   .text.HAL_ADC_DeInit:0000000000000000 HAL_ADC_DeInit
+     /tmp/ccYjHxry.s:2603   .text.HAL_ADC_DeInit:00000000000000f4 $d
+     /tmp/ccYjHxry.s:2609   .text.HAL_ADC_Stop:0000000000000000 $t
+     /tmp/ccYjHxry.s:2615   .text.HAL_ADC_Stop:0000000000000000 HAL_ADC_Stop
+     /tmp/ccYjHxry.s:2675   .text.HAL_ADC_Stop_IT:0000000000000000 $t
+     /tmp/ccYjHxry.s:2681   .text.HAL_ADC_Stop_IT:0000000000000000 HAL_ADC_Stop_IT
+     /tmp/ccYjHxry.s:2746   .text.HAL_ADC_Stop_DMA:0000000000000000 $t
+     /tmp/ccYjHxry.s:2752   .text.HAL_ADC_Stop_DMA:0000000000000000 HAL_ADC_Stop_DMA
 
 UNDEFINED SYMBOLS
 HAL_GetTick

@@ -43,7 +43,7 @@ uint8_t serveMenuFunc(struct menu_status *, uint8_t *, struct setup_data *);
 
 
 uint8_t drawMenuScreen(enum screens);
-static uint8_t setMenuTexts(char *, const char *);
+uint8_t setMenuTexts(char *, const char *);
 
 
 extern char menu_titles[MENUS_NUM][100];
