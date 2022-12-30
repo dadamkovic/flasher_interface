@@ -1,0 +1,224 @@
+ARM GAS  /tmp/ccNvSgN5.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"comm_interface.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/comm_interface.c"
+  18              		.section	.text.initComms,"ax",%progbits
+  19              		.align	1
+  20              		.global	initComms
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  25              	initComms:
+  26              	.LVL0:
+  27              	.LFB65:
+   1:Core/Src/comm_interface.c **** #include "comm_interface.h"
+   2:Core/Src/comm_interface.c **** 
+   3:Core/Src/comm_interface.c **** 
+   4:Core/Src/comm_interface.c **** uint8_t initComms(struct comm_data *comm_data_h){
+  28              		.loc 1 4 49 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 4 49 is_stmt 0 view .LVU1
+  33 0000 38B5     		push	{r3, r4, r5, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 3, -16
+  36              		.cfi_offset 4, -12
+  37              		.cfi_offset 5, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0446     		mov	r4, r0
+   5:Core/Src/comm_interface.c ****   comm_data_h->flasher_handle = &huart1;
+  40              		.loc 1 5 3 is_stmt 1 view .LVU2
+  41              		.loc 1 5 31 is_stmt 0 view .LVU3
+  42 0004 0F4B     		ldr	r3, .L3
+  43 0006 4360     		str	r3, [r0, #4]
+   6:Core/Src/comm_interface.c ****   comm_data_h->plotter_handle = &huart3;
+  44              		.loc 1 6 3 is_stmt 1 view .LVU4
+  45              		.loc 1 6 31 is_stmt 0 view .LVU5
+  46 0008 0F4B     		ldr	r3, .L3+4
+  47 000a 0360     		str	r3, [r0]
+   7:Core/Src/comm_interface.c ****   memset(&(comm_data_h->flasher_rx),'\0',RX_BUFF_SIZE);
+  48              		.loc 1 7 3 is_stmt 1 view .LVU6
+  49 000c FF25     		movs	r5, #255
+  50 000e 2A46     		mov	r2, r5
+  51 0010 0021     		movs	r1, #0
+ARM GAS  /tmp/ccNvSgN5.s 			page 2
+
+
+  52 0012 00F20620 		addw	r0, r0, #518
+  53              	.LVL1:
+  54              		.loc 1 7 3 is_stmt 0 view .LVU7
+  55 0016 FFF7FEFF 		bl	memset
+  56              	.LVL2:
+   8:Core/Src/comm_interface.c ****   memset(&(comm_data_h->plotter_rx),'\0',RX_BUFF_SIZE);
+  57              		.loc 1 8 3 is_stmt 1 view .LVU8
+  58 001a 2A46     		mov	r2, r5
+  59 001c 0021     		movs	r1, #0
+  60 001e 04F10800 		add	r0, r4, #8
+  61 0022 FFF7FEFF 		bl	memset
+  62              	.LVL3:
+   9:Core/Src/comm_interface.c ****   memset(&(comm_data_h->flasher_tx),'\0',TX_BUFF_SIZE);
+  63              		.loc 1 9 3 view .LVU9
+  64 0026 2A46     		mov	r2, r5
+  65 0028 0021     		movs	r1, #0
+  66 002a 04F20530 		addw	r0, r4, #773
+  67 002e FFF7FEFF 		bl	memset
+  68              	.LVL4:
+  10:Core/Src/comm_interface.c ****   memset(&(comm_data_h->plotter_tx),'\0',TX_BUFF_SIZE);
+  69              		.loc 1 10 3 view .LVU10
+  70 0032 2A46     		mov	r2, r5
+  71 0034 0021     		movs	r1, #0
+  72 0036 04F20710 		addw	r0, r4, #263
+  73 003a FFF7FEFF 		bl	memset
+  74              	.LVL5:
+  11:Core/Src/comm_interface.c **** 
+  12:Core/Src/comm_interface.c ****   return RETURN_OK;
+  75              		.loc 1 12 3 view .LVU11
+  13:Core/Src/comm_interface.c **** }
+  76              		.loc 1 13 1 is_stmt 0 view .LVU12
+  77 003e 0020     		movs	r0, #0
+  78 0040 38BD     		pop	{r3, r4, r5, pc}
+  79              	.LVL6:
+  80              	.L4:
+  81              		.loc 1 13 1 view .LVU13
+  82 0042 00BF     		.align	2
+  83              	.L3:
+  84 0044 00000000 		.word	huart1
+  85 0048 00000000 		.word	huart3
+  86              		.cfi_endproc
+  87              	.LFE65:
+  89              		.section	.text.serveCommunication,"ax",%progbits
+  90              		.align	1
+  91              		.global	serveCommunication
+  92              		.syntax unified
+  93              		.thumb
+  94              		.thumb_func
+  96              	serveCommunication:
+  97              	.LVL7:
+  98              	.LFB66:
+  14:Core/Src/comm_interface.c **** 
+  15:Core/Src/comm_interface.c **** uint8_t serveCommunication(struct comm_data *comm_data_h){
+  99              		.loc 1 15 58 is_stmt 1 view -0
+ 100              		.cfi_startproc
+ 101              		@ args = 0, pretend = 0, frame = 0
+ 102              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccNvSgN5.s 			page 3
+
+
+ 103              		@ link register save eliminated.
+  16:Core/Src/comm_interface.c **** 
+  17:Core/Src/comm_interface.c ****   return RETURN_OK;
+ 104              		.loc 1 17 3 view .LVU15
+  18:Core/Src/comm_interface.c **** }
+ 105              		.loc 1 18 1 is_stmt 0 view .LVU16
+ 106 0000 0020     		movs	r0, #0
+ 107              	.LVL8:
+ 108              		.loc 1 18 1 view .LVU17
+ 109 0002 7047     		bx	lr
+ 110              		.cfi_endproc
+ 111              	.LFE66:
+ 113              		.section	.text.recieveFeedback,"ax",%progbits
+ 114              		.align	1
+ 115              		.global	recieveFeedback
+ 116              		.syntax unified
+ 117              		.thumb
+ 118              		.thumb_func
+ 120              	recieveFeedback:
+ 121              	.LVL9:
+ 122              	.LFB67:
+  19:Core/Src/comm_interface.c **** 
+  20:Core/Src/comm_interface.c **** uint8_t recieveFeedback(struct setup_data *setup_data_h, struct comm_data *comm_data_h){
+ 123              		.loc 1 20 88 is_stmt 1 view -0
+ 124              		.cfi_startproc
+ 125              		@ args = 0, pretend = 0, frame = 0
+ 126              		@ frame_needed = 0, uses_anonymous_args = 0
+ 127              		@ link register save eliminated.
+  21:Core/Src/comm_interface.c ****   
+  22:Core/Src/comm_interface.c ****   return RETURN_OK;
+ 128              		.loc 1 22 3 view .LVU19
+  23:Core/Src/comm_interface.c **** }
+ 129              		.loc 1 23 1 is_stmt 0 view .LVU20
+ 130 0000 0020     		movs	r0, #0
+ 131              	.LVL10:
+ 132              		.loc 1 23 1 view .LVU21
+ 133 0002 7047     		bx	lr
+ 134              		.cfi_endproc
+ 135              	.LFE67:
+ 137              		.section	.text.reportFail,"ax",%progbits
+ 138              		.align	1
+ 139              		.global	reportFail
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 144              	reportFail:
+ 145              	.LVL11:
+ 146              	.LFB68:
+  24:Core/Src/comm_interface.c **** 
+  25:Core/Src/comm_interface.c **** uint8_t reportFail(struct setup_data *setup_data_h, struct comm_data *comm_data_h){
+ 147              		.loc 1 25 83 is_stmt 1 view -0
+ 148              		.cfi_startproc
+ 149              		@ args = 0, pretend = 0, frame = 0
+ 150              		@ frame_needed = 0, uses_anonymous_args = 0
+ 151              		@ link register save eliminated.
+  26:Core/Src/comm_interface.c ****   
+  27:Core/Src/comm_interface.c ****   return RETURN_OK;
+ARM GAS  /tmp/ccNvSgN5.s 			page 4
+
+
+ 152              		.loc 1 27 3 view .LVU23
+  28:Core/Src/comm_interface.c **** }
+ 153              		.loc 1 28 1 is_stmt 0 view .LVU24
+ 154 0000 0020     		movs	r0, #0
+ 155              	.LVL12:
+ 156              		.loc 1 28 1 view .LVU25
+ 157 0002 7047     		bx	lr
+ 158              		.cfi_endproc
+ 159              	.LFE68:
+ 161              		.text
+ 162              	.Letext0:
+ 163              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 164              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 165              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 166              		.file 5 "/usr/lib/gcc/arm-none-eabi/12.2.0/include/stddef.h"
+ 167              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 168              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 169              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 170              		.file 9 "Core/Inc/main.h"
+ 171              		.file 10 "Core/Inc/usart.h"
+ 172              		.file 11 "/usr/arm-none-eabi/include/string.h"
+ 173              		.file 12 "<built-in>"
+ARM GAS  /tmp/ccNvSgN5.s 			page 5
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 comm_interface.c
+     /tmp/ccNvSgN5.s:19     .text.initComms:0000000000000000 $t
+     /tmp/ccNvSgN5.s:25     .text.initComms:0000000000000000 initComms
+     /tmp/ccNvSgN5.s:84     .text.initComms:0000000000000044 $d
+     /tmp/ccNvSgN5.s:90     .text.serveCommunication:0000000000000000 $t
+     /tmp/ccNvSgN5.s:96     .text.serveCommunication:0000000000000000 serveCommunication
+     /tmp/ccNvSgN5.s:114    .text.recieveFeedback:0000000000000000 $t
+     /tmp/ccNvSgN5.s:120    .text.recieveFeedback:0000000000000000 recieveFeedback
+     /tmp/ccNvSgN5.s:138    .text.reportFail:0000000000000000 $t
+     /tmp/ccNvSgN5.s:144    .text.reportFail:0000000000000000 reportFail
+
+UNDEFINED SYMBOLS
+memset
+huart1
+huart3

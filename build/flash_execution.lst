@@ -1,0 +1,159 @@
+ARM GAS  /tmp/ccuD5RtX.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"flash_execution.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/flash_execution.c"
+  18              		.section	.rodata.initSetupData.str1.4,"aMS",%progbits,1
+  19              		.align	2
+  20              	.LC0:
+  21 0000 4E6F2046 		.ascii	"No Fail\000"
+  21      61696C00 
+  22              		.section	.text.initSetupData,"ax",%progbits
+  23              		.align	1
+  24              		.global	initSetupData
+  25              		.syntax unified
+  26              		.thumb
+  27              		.thumb_func
+  29              	initSetupData:
+  30              	.LVL0:
+  31              	.LFB65:
+   1:Core/Src/flash_execution.c **** #include "flash_execution.h"
+   2:Core/Src/flash_execution.c **** 
+   3:Core/Src/flash_execution.c **** 
+   4:Core/Src/flash_execution.c **** 
+   5:Core/Src/flash_execution.c **** uint8_t initSetupData(struct setup_data *setup_data_h){
+  32              		.loc 1 5 55 view -0
+  33              		.cfi_startproc
+  34              		@ args = 0, pretend = 0, frame = 0
+  35              		@ frame_needed = 0, uses_anonymous_args = 0
+  36              		.loc 1 5 55 is_stmt 0 view .LVU1
+  37 0000 10B5     		push	{r4, lr}
+  38              		.cfi_def_cfa_offset 8
+  39              		.cfi_offset 4, -8
+  40              		.cfi_offset 14, -4
+   6:Core/Src/flash_execution.c ****  
+   7:Core/Src/flash_execution.c ****   setup_data_h->exec_status = Idle;
+  41              		.loc 1 7 3 is_stmt 1 view .LVU2
+  42              		.loc 1 7 29 is_stmt 0 view .LVU3
+  43 0002 0423     		movs	r3, #4
+  44 0004 0370     		strb	r3, [r0]
+   8:Core/Src/flash_execution.c ****   setup_data_h->flash_matrix_dims[0] = 0;
+  45              		.loc 1 8 3 is_stmt 1 view .LVU4
+  46              		.loc 1 8 38 is_stmt 0 view .LVU5
+  47 0006 0024     		movs	r4, #0
+  48 0008 8471     		strb	r4, [r0, #6]
+   9:Core/Src/flash_execution.c ****   setup_data_h->flash_matrix_dims[1] = 0;
+ARM GAS  /tmp/ccuD5RtX.s 			page 2
+
+
+  49              		.loc 1 9 3 is_stmt 1 view .LVU6
+  50              		.loc 1 9 38 is_stmt 0 view .LVU7
+  51 000a C471     		strb	r4, [r0, #7]
+  10:Core/Src/flash_execution.c ****   setup_data_h->flash_matrix_pos[0] = 0;
+  52              		.loc 1 10 3 is_stmt 1 view .LVU8
+  53              		.loc 1 10 37 is_stmt 0 view .LVU9
+  54 000c 0472     		strb	r4, [r0, #8]
+  11:Core/Src/flash_execution.c ****   setup_data_h->flash_matrix_pos[1] = 0;
+  55              		.loc 1 11 3 is_stmt 1 view .LVU10
+  56              		.loc 1 11 37 is_stmt 0 view .LVU11
+  57 000e 4472     		strb	r4, [r0, #9]
+  12:Core/Src/flash_execution.c ****   setup_data_h->offset_x = 0;
+  58              		.loc 1 12 3 is_stmt 1 view .LVU12
+  59              		.loc 1 12 26 is_stmt 0 view .LVU13
+  60 0010 4480     		strh	r4, [r0, #2]	@ movhi
+  13:Core/Src/flash_execution.c ****   setup_data_h->offset_y = 0;
+  61              		.loc 1 13 3 is_stmt 1 view .LVU14
+  62              		.loc 1 13 26 is_stmt 0 view .LVU15
+  63 0012 8480     		strh	r4, [r0, #4]	@ movhi
+  14:Core/Src/flash_execution.c ****   strncpy(setup_data_h->fail_msg,"No Fail",ERR_ARRAY_SIZE);
+  64              		.loc 1 14 3 is_stmt 1 view .LVU16
+  65 0014 FF22     		movs	r2, #255
+  66 0016 0349     		ldr	r1, .L3
+  67 0018 0A30     		adds	r0, r0, #10
+  68              	.LVL1:
+  69              		.loc 1 14 3 is_stmt 0 view .LVU17
+  70 001a FFF7FEFF 		bl	strncpy
+  71              	.LVL2:
+  15:Core/Src/flash_execution.c ****   return RETURN_OK;
+  72              		.loc 1 15 3 is_stmt 1 view .LVU18
+  16:Core/Src/flash_execution.c **** }
+  73              		.loc 1 16 1 is_stmt 0 view .LVU19
+  74 001e 2046     		mov	r0, r4
+  75 0020 10BD     		pop	{r4, pc}
+  76              	.L4:
+  77 0022 00BF     		.align	2
+  78              	.L3:
+  79 0024 00000000 		.word	.LC0
+  80              		.cfi_endproc
+  81              	.LFE65:
+  83              		.section	.text.parseInstruction,"ax",%progbits
+  84              		.align	1
+  85              		.global	parseInstruction
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  90              	parseInstruction:
+  91              	.LVL3:
+  92              	.LFB66:
+  17:Core/Src/flash_execution.c **** 
+  18:Core/Src/flash_execution.c **** 
+  19:Core/Src/flash_execution.c **** uint8_t parseInstruction(struct setup_data *setup_data_h, struct comm_data *comm_data_h){
+  93              		.loc 1 19 89 is_stmt 1 view -0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+ARM GAS  /tmp/ccuD5RtX.s 			page 3
+
+
+  20:Core/Src/flash_execution.c ****   
+  21:Core/Src/flash_execution.c ****   return RETURN_OK;
+  98              		.loc 1 21 3 view .LVU21
+  22:Core/Src/flash_execution.c **** }...
+  99              		.loc 1 22 1 is_stmt 0 view .LVU22
+ 100 0000 0020     		movs	r0, #0
+ 101              	.LVL4:
+ 102              		.loc 1 22 1 view .LVU23
+ 103 0002 7047     		bx	lr
+ 104              		.cfi_endproc
+ 105              	.LFE66:
+ 107              		.text
+ 108              	.Letext0:
+ 109              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 110              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 111              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 112              		.file 5 "/usr/lib/gcc/arm-none-eabi/12.2.0/include/stddef.h"
+ 113              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 114              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 115              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 116              		.file 9 "Core/Inc/main.h"
+ 117              		.file 10 "/usr/arm-none-eabi/include/string.h"
+ARM GAS  /tmp/ccuD5RtX.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 flash_execution.c
+     /tmp/ccuD5RtX.s:19     .rodata.initSetupData.str1.4:0000000000000000 $d
+     /tmp/ccuD5RtX.s:23     .text.initSetupData:0000000000000000 $t
+     /tmp/ccuD5RtX.s:29     .text.initSetupData:0000000000000000 initSetupData
+     /tmp/ccuD5RtX.s:79     .text.initSetupData:0000000000000024 $d
+     /tmp/ccuD5RtX.s:84     .text.parseInstruction:0000000000000000 $t
+     /tmp/ccuD5RtX.s:90     .text.parseInstruction:0000000000000000 parseInstruction
+
+UNDEFINED SYMBOLS
+strncpy
