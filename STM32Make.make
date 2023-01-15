@@ -40,7 +40,7 @@ Core/Lib/st7735/fonts.c \
 Core/Lib/st7735/st7735.c \
 Core/Src/adc.c \
 Core/Src/comm_interface.c \
-Core/Src/flash_execution.c \
+Core/Src/execution.c \
 Core/Src/gpio.c \
 Core/Src/joypad.c \
 Core/Src/main.c \
@@ -50,6 +50,7 @@ Core/Src/stm32f1xx_hal_msp.c \
 Core/Src/stm32f1xx_it.c \
 Core/Src/system_stm32f1xx.c \
 Core/Src/usart.c \
+Core/Src/utils.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c \

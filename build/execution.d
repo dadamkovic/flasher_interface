@@ -1,5 +1,5 @@
-build/main.o: Core/Src/main.c Core/Inc/main.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+build/execution.o: Core/Src/execution.c Core/Inc/execution.h \
+ Core/Inc/main.h Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  Core/Inc/stm32f1xx_hal_conf.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -22,12 +22,8 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
- Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Core/Inc/adc.h \
- Core/Inc/main.h Core/Inc/spi.h Core/Inc/usart.h Core/Inc/gpio.h \
- Core/Inc/joypad.h Core/Inc/adc.h Core/Inc/menu.h Core/Inc/execution.h \
- Core/Inc/utils.h Core/Lib/st7735/st7735.h Core/Lib/st7735/fonts.h \
- Core/Inc/execution.h Core/Inc/comm_interface.h Core/Inc/pin_mapping.h \
- Core/Inc/usart.h
+ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h Core/Inc/utils.h
+Core/Inc/execution.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
@@ -55,19 +51,4 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-Core/Inc/adc.h:
-Core/Inc/main.h:
-Core/Inc/spi.h:
-Core/Inc/usart.h:
-Core/Inc/gpio.h:
-Core/Inc/joypad.h:
-Core/Inc/adc.h:
-Core/Inc/menu.h:
-Core/Inc/execution.h:
 Core/Inc/utils.h:
-Core/Lib/st7735/st7735.h:
-Core/Lib/st7735/fonts.h:
-Core/Inc/execution.h:
-Core/Inc/comm_interface.h:
-Core/Inc/pin_mapping.h:
-Core/Inc/usart.h:

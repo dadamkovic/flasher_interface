@@ -27,7 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "joypad.h"
 #include "menu.h"
-#include "flash_execution.h"
+#include "execution.h"
 #include "comm_interface.h"
 
 
@@ -50,7 +50,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+volatile uint8_t select_button = 0;
+volatile uint8_t cancel_button = 0; 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,6 +109,8 @@ int main(void)
   initSetupData(&setup_handle);
   initComms(&comm_handle);
 
+  uint32_t sys_time = HAL_GetTick();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -119,24 +122,29 @@ int main(void)
     //updates the meny screen
     serveMenuScreen(&menu_handle, joypad_vals);
     //performs function selected on the menu
-    serveMenuFunc(&menu_handle, joypad_vals, &setup_handle);
-    //main loop when the machine is flashing parts
-    if(parseInstruction(&setup_handle, &comm_handle) == RETURN_FAIL){
-      setup_handle.exec_status = Fail;
-      break;
-    }
+    serveMenuFunc(&menu_handle, joypad_vals, &setup_handle, &comm_handle);
     
-    if(serveCommunication(&comm_handle) == RETURN_FAIL){
-      setup_handle.exec_status = Fail;
-      break;
+    if(select_button){
+      select_button = 0;
+      if((HAL_GetTick() - sys_time) >= 1000){
+        menu_handle.exec_menu = true;
+        sys_time = HAL_GetTick();
+      }
     }
 
-    
+    if(cancel_button){
+      cancel_button = 0;
+      if((HAL_GetTick() - sys_time) >= 1000){
+        menu_handle.exit_menu = true;
+        sys_time = HAL_GetTick();
+      }
     }
 
     //in case of fail we inform the user of what happened
     if(setup_handle.exec_status == Fail){
       reportFail(&setup_handle, &comm_handle);
+    }
+  }
     
     //for now endless cycle
     //TODO: Communication with interface while in error for possible recovery
@@ -147,7 +155,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+  
   /* USER CODE END 3 */
 }
 
@@ -199,6 +207,24 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
+//placeholder IRQ handler for GPIO
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+  switch (GPIO_Pin)
+  {
+  case select_Pin:
+    //HAL_GPIO_TogglePin(buzzer_GPIO_Port, buzzer_Pin);
+    select_button = true;
+    break;
+  case cancel_Pin:
+    cancel_button = true;
+    break;
+  
+  default:
+    break;
+  }
+
+
+}
 /* USER CODE END 4 */
 
 /**

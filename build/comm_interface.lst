@@ -1,32 +1,32 @@
-ARM GAS  /tmp/ccwvOB56.s 			page 1
+ARM GAS  /tmp/ccfsJD7S.s 			page 1
 
 
    1              		.cpu cortex-m3
-   2              		.arch armv7-m
-   3              		.fpu softvfp
-   4              		.eabi_attribute 20, 1
-   5              		.eabi_attribute 21, 1
-   6              		.eabi_attribute 23, 3
-   7              		.eabi_attribute 24, 1
-   8              		.eabi_attribute 25, 1
-   9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
-  11              		.eabi_attribute 34, 1
-  12              		.eabi_attribute 18, 4
-  13              		.file	"comm_interface.c"
-  14              		.text
-  15              	.Ltext0:
-  16              		.cfi_sections	.debug_frame
-  17              		.file 1 "Core/Src/comm_interface.c"
-  18              		.section	.text.initComms,"ax",%progbits
-  19              		.align	1
-  20              		.global	initComms
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  25              	initComms:
-  26              	.LVL0:
-  27              	.LFB65:
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"comm_interface.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.initComms,"ax",%progbits
+  16              		.align	1
+  17              		.global	initComms
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	initComms:
+  25              	.LVL0:
+  26              	.LFB65:
+  27              		.file 1 "Core/Src/comm_interface.c"
    1:Core/Src/comm_interface.c **** #include "comm_interface.h"
    2:Core/Src/comm_interface.c **** 
    3:Core/Src/comm_interface.c **** 
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccwvOB56.s 			page 1
   49 000c FF25     		movs	r5, #255
   50 000e 2A46     		mov	r2, r5
   51 0010 0021     		movs	r1, #0
-ARM GAS  /tmp/ccwvOB56.s 			page 2
+ARM GAS  /tmp/ccfsJD7S.s 			page 2
 
 
   52 0012 00F20620 		addw	r0, r0, #518
@@ -109,114 +109,114 @@ ARM GAS  /tmp/ccwvOB56.s 			page 1
   92              		.syntax unified
   93              		.thumb
   94              		.thumb_func
-  96              	serveCommunication:
-  97              	.LVL7:
-  98              	.LFB66:
+  95              		.fpu softvfp
+  97              	serveCommunication:
+  98              	.LVL7:
+  99              	.LFB66:
   14:Core/Src/comm_interface.c **** 
   15:Core/Src/comm_interface.c **** uint8_t serveCommunication(struct comm_data *comm_data_h){
-  99              		.loc 1 15 58 is_stmt 1 view -0
- 100              		.cfi_startproc
- 101              		@ args = 0, pretend = 0, frame = 0
- 102              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccwvOB56.s 			page 3
+ 100              		.loc 1 15 58 is_stmt 1 view -0
+ 101              		.cfi_startproc
+ 102              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccfsJD7S.s 			page 3
 
 
- 103              		@ link register save eliminated.
+ 103              		@ frame_needed = 0, uses_anonymous_args = 0
+ 104              		@ link register save eliminated.
   16:Core/Src/comm_interface.c **** 
   17:Core/Src/comm_interface.c ****   return RETURN_OK;
- 104              		.loc 1 17 3 view .LVU15
+ 105              		.loc 1 17 3 view .LVU15
   18:Core/Src/comm_interface.c **** }
- 105              		.loc 1 18 1 is_stmt 0 view .LVU16
- 106 0000 0020     		movs	r0, #0
- 107              	.LVL8:
- 108              		.loc 1 18 1 view .LVU17
- 109 0002 7047     		bx	lr
- 110              		.cfi_endproc
- 111              	.LFE66:
- 113              		.section	.text.recieveFeedback,"ax",%progbits
- 114              		.align	1
- 115              		.global	recieveFeedback
- 116              		.syntax unified
- 117              		.thumb
- 118              		.thumb_func
- 120              	recieveFeedback:
- 121              	.LVL9:
- 122              	.LFB67:
+ 106              		.loc 1 18 1 is_stmt 0 view .LVU16
+ 107 0000 0020     		movs	r0, #0
+ 108              	.LVL8:
+ 109              		.loc 1 18 1 view .LVU17
+ 110 0002 7047     		bx	lr
+ 111              		.cfi_endproc
+ 112              	.LFE66:
+ 114              		.section	.text.recieveFeedback,"ax",%progbits
+ 115              		.align	1
+ 116              		.global	recieveFeedback
+ 117              		.syntax unified
+ 118              		.thumb
+ 119              		.thumb_func
+ 120              		.fpu softvfp
+ 122              	recieveFeedback:
+ 123              	.LVL9:
+ 124              	.LFB67:
   19:Core/Src/comm_interface.c **** 
   20:Core/Src/comm_interface.c **** uint8_t recieveFeedback(struct setup_data *setup_data_h, struct comm_data *comm_data_h){
- 123              		.loc 1 20 88 is_stmt 1 view -0
- 124              		.cfi_startproc
- 125              		@ args = 0, pretend = 0, frame = 0
- 126              		@ frame_needed = 0, uses_anonymous_args = 0
- 127              		@ link register save eliminated.
+ 125              		.loc 1 20 88 is_stmt 1 view -0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 0
+ 128              		@ frame_needed = 0, uses_anonymous_args = 0
+ 129              		@ link register save eliminated.
   21:Core/Src/comm_interface.c ****   
   22:Core/Src/comm_interface.c ****   return RETURN_OK;
- 128              		.loc 1 22 3 view .LVU19
+ 130              		.loc 1 22 3 view .LVU19
   23:Core/Src/comm_interface.c **** }
- 129              		.loc 1 23 1 is_stmt 0 view .LVU20
- 130 0000 0020     		movs	r0, #0
- 131              	.LVL10:
- 132              		.loc 1 23 1 view .LVU21
- 133 0002 7047     		bx	lr
- 134              		.cfi_endproc
- 135              	.LFE67:
- 137              		.section	.text.reportFail,"ax",%progbits
- 138              		.align	1
- 139              		.global	reportFail
- 140              		.syntax unified
- 141              		.thumb
- 142              		.thumb_func
- 144              	reportFail:
- 145              	.LVL11:
- 146              	.LFB68:
+ 131              		.loc 1 23 1 is_stmt 0 view .LVU20
+ 132 0000 0020     		movs	r0, #0
+ 133              	.LVL10:
+ 134              		.loc 1 23 1 view .LVU21
+ 135 0002 7047     		bx	lr
+ 136              		.cfi_endproc
+ 137              	.LFE67:
+ 139              		.section	.text.reportFail,"ax",%progbits
+ 140              		.align	1
+ 141              		.global	reportFail
+ 142              		.syntax unified
+ 143              		.thumb
+ 144              		.thumb_func
+ 145              		.fpu softvfp
+ 147              	reportFail:
+ 148              	.LVL11:
+ 149              	.LFB68:
   24:Core/Src/comm_interface.c **** 
   25:Core/Src/comm_interface.c **** uint8_t reportFail(struct setup_data *setup_data_h, struct comm_data *comm_data_h){
- 147              		.loc 1 25 83 is_stmt 1 view -0
- 148              		.cfi_startproc
- 149              		@ args = 0, pretend = 0, frame = 0
- 150              		@ frame_needed = 0, uses_anonymous_args = 0
- 151              		@ link register save eliminated.
+ 150              		.loc 1 25 83 is_stmt 1 view -0
+ 151              		.cfi_startproc
+ 152              		@ args = 0, pretend = 0, frame = 0
+ 153              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccfsJD7S.s 			page 4
+
+
+ 154              		@ link register save eliminated.
   26:Core/Src/comm_interface.c ****   
   27:Core/Src/comm_interface.c ****   return RETURN_OK;
-ARM GAS  /tmp/ccwvOB56.s 			page 4
-
-
- 152              		.loc 1 27 3 view .LVU23
+ 155              		.loc 1 27 3 view .LVU23
   28:Core/Src/comm_interface.c **** }
- 153              		.loc 1 28 1 is_stmt 0 view .LVU24
- 154 0000 0020     		movs	r0, #0
- 155              	.LVL12:
- 156              		.loc 1 28 1 view .LVU25
- 157 0002 7047     		bx	lr
- 158              		.cfi_endproc
- 159              	.LFE68:
- 161              		.text
- 162              	.Letext0:
- 163              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 164              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 165              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 166              		.file 5 "/usr/lib/gcc/arm-none-eabi/12.2.0/include/stddef.h"
- 167              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 168              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 169              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 170              		.file 9 "Core/Inc/main.h"
- 171              		.file 10 "Core/Inc/usart.h"
- 172              		.file 11 "/usr/arm-none-eabi/include/string.h"
- 173              		.file 12 "<built-in>"
-ARM GAS  /tmp/ccwvOB56.s 			page 5
+ 156              		.loc 1 28 1 is_stmt 0 view .LVU24
+ 157 0000 0020     		movs	r0, #0
+ 158              	.LVL12:
+ 159              		.loc 1 28 1 view .LVU25
+ 160 0002 7047     		bx	lr
+ 161              		.cfi_endproc
+ 162              	.LFE68:
+ 164              		.text
+ 165              	.Letext0:
+ 166              		.file 2 "/usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h"
+ 167              		.file 3 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 168              		.file 4 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 169              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 170              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 171              		.file 7 "Core/Inc/main.h"
+ 172              		.file 8 "Core/Inc/usart.h"
+ 173              		.file 9 "<built-in>"
+ARM GAS  /tmp/ccfsJD7S.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 comm_interface.c
-     /tmp/ccwvOB56.s:19     .text.initComms:0000000000000000 $t
-     /tmp/ccwvOB56.s:25     .text.initComms:0000000000000000 initComms
-     /tmp/ccwvOB56.s:84     .text.initComms:0000000000000044 $d
-     /tmp/ccwvOB56.s:90     .text.serveCommunication:0000000000000000 $t
-     /tmp/ccwvOB56.s:96     .text.serveCommunication:0000000000000000 serveCommunication
-     /tmp/ccwvOB56.s:114    .text.recieveFeedback:0000000000000000 $t
-     /tmp/ccwvOB56.s:120    .text.recieveFeedback:0000000000000000 recieveFeedback
-     /tmp/ccwvOB56.s:138    .text.reportFail:0000000000000000 $t
-     /tmp/ccwvOB56.s:144    .text.reportFail:0000000000000000 reportFail
+     /tmp/ccfsJD7S.s:16     .text.initComms:0000000000000000 $t
+     /tmp/ccfsJD7S.s:24     .text.initComms:0000000000000000 initComms
+     /tmp/ccfsJD7S.s:84     .text.initComms:0000000000000044 $d
+     /tmp/ccfsJD7S.s:90     .text.serveCommunication:0000000000000000 $t
+     /tmp/ccfsJD7S.s:97     .text.serveCommunication:0000000000000000 serveCommunication
+     /tmp/ccfsJD7S.s:115    .text.recieveFeedback:0000000000000000 $t
+     /tmp/ccfsJD7S.s:122    .text.recieveFeedback:0000000000000000 recieveFeedback
+     /tmp/ccfsJD7S.s:140    .text.reportFail:0000000000000000 $t
+     /tmp/ccfsJD7S.s:147    .text.reportFail:0000000000000000 reportFail
 
 UNDEFINED SYMBOLS
 memset

@@ -1,5 +1,4 @@
-build/flash_execution.o: Core/Src/flash_execution.c \
- Core/Inc/flash_execution.h Core/Inc/main.h \
+build/utils.o: Core/Src/utils.c Core/Inc/utils.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  Core/Inc/stm32f1xx_hal_conf.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -24,7 +23,7 @@ build/flash_execution.o: Core/Src/flash_execution.c \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-Core/Inc/flash_execution.h:
+Core/Inc/utils.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:

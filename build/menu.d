@@ -23,7 +23,7 @@ build/menu.o: Core/Src/menu.c Core/Inc/menu.h Core/Inc/main.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h \
  Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- Core/Inc/flash_execution.h Core/Lib/st7735/st7735.h \
+ Core/Inc/execution.h Core/Inc/utils.h Core/Lib/st7735/st7735.h \
  Core/Lib/st7735/fonts.h Core/Inc/spi.h
 Core/Inc/menu.h:
 Core/Inc/main.h:
@@ -53,7 +53,8 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-Core/Inc/flash_execution.h:
+Core/Inc/execution.h:
+Core/Inc/utils.h:
 Core/Lib/st7735/st7735.h:
 Core/Lib/st7735/fonts.h:
 Core/Inc/spi.h:

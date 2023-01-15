@@ -36,20 +36,21 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+
 #define RX_BUFF_SIZE 255
 #define TX_BUFF_SIZE 255
 #define ERR_ARRAY_SIZE 255
 #define MAX_TEXT_S 100  //max num of characters on one line of display
 
 
-struct comm_data{
+typedef struct comm_data{
   UART_HandleTypeDef *plotter_handle;
   UART_HandleTypeDef *flasher_handle;
-  uint8_t plotter_rx[RX_BUFF_SIZE];
-  uint8_t plotter_tx[TX_BUFF_SIZE];
-  uint8_t flasher_rx[RX_BUFF_SIZE];
-  uint8_t flasher_tx[TX_BUFF_SIZE];
-};
+  char plotter_rx[RX_BUFF_SIZE];
+  char plotter_tx[TX_BUFF_SIZE];
+  char flasher_rx[RX_BUFF_SIZE];
+  char flasher_tx[TX_BUFF_SIZE];
+}comm_data;
 
 enum execution_status{
   Movement,
@@ -59,14 +60,14 @@ enum execution_status{
   Idle,
   Fail};
 
-struct setup_data{
+typedef struct setup_data{
   enum execution_status exec_status;
   uint16_t offset_x;
   uint16_t offset_y;
   uint8_t flash_matrix_dims[2];
   uint8_t flash_matrix_pos[2];
   char fail_msg[ERR_ARRAY_SIZE];
-};
+}setup_data;
 
 
 /* USER CODE END ET */
@@ -93,8 +94,10 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define select_Pin GPIO_PIN_0
 #define select_GPIO_Port GPIOB
+#define select_EXTI_IRQn EXTI0_IRQn
 #define cancel_Pin GPIO_PIN_1
 #define cancel_GPIO_Port GPIOB
+#define cancel_EXTI_IRQn EXTI1_IRQn
 #define buzzer_Pin GPIO_PIN_11
 #define buzzer_GPIO_Port GPIOA
 #define st7735_res_Pin GPIO_PIN_6
@@ -103,6 +106,7 @@ void Error_Handler(void);
 #define st7735_dc_GPIO_Port GPIOB
 #define st7735_cs_Pin GPIO_PIN_8
 #define st7735_cs_GPIO_Port GPIOB
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

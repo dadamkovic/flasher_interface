@@ -4,7 +4,7 @@
   "files.associations": {
     "main.h": "c",
     "comm_interface.h": "c",
-    "flash_execution.h": "c",
+    "execution.h": "c",
     "usart.h": "c",
     "menu.h": "c",
     "joypad.h": "c",
