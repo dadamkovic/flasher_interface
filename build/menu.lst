@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccZPmZxG.s 			page 1
+ARM GAS  /tmp/cc1FHjKq.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -29,100 +29,98 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
   27              	.LFB67:
    1:Core/Src/menu.c **** #include "menu.h"
    2:Core/Src/menu.c **** 
-   3:Core/Src/menu.c **** char menu_titles[MENUS_NUM][100];
-   4:Core/Src/menu.c **** char menu_cont[MENUS_NUM][100];
+   3:Core/Src/menu.c **** char menu_titles[MENUS_NUM+1][MAX_TEXT_S];
+   4:Core/Src/menu.c **** char menu_cont[MENUS_NUM+1][MAX_TEXT_S];
    5:Core/Src/menu.c **** 
    6:Core/Src/menu.c **** uint8_t initMenu(struct menu_status *menu_h){
    7:Core/Src/menu.c ****   ST7735_Init();
-   8:Core/Src/menu.c ****   menu_h->curr_screen = Home_screen;
-   9:Core/Src/menu.c ****   menu_h->update_needed = true;
-  10:Core/Src/menu.c ****   menu_h->alarm_count = 0;
-  11:Core/Src/menu.c **** 
-  12:Core/Src/menu.c ****   setMenuTexts(menu_titles[Home_screen],"Plotter ON");
-  13:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
-  14:Core/Src/menu.c ****   setMenuTexts(menu_titles[Zero_pos],"Set Zero Pos.");
-  15:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_auto],"Auto. Setup");
-  16:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_manual],"Man. Setup");
-  17:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_zero],"Set (0,0)-pos");
-  18:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_move],"Set next-pos");
-  19:Core/Src/menu.c ****   setMenuTexts(menu_titles[Success_screen],"SUCCESS!");
-  20:Core/Src/menu.c ****   setMenuTexts(menu_titles[Fail_screen],"FAILED!");
-  21:Core/Src/menu.c ****   setMenuTexts(menu_titles[Next_batch],"Run Next?");
-  22:Core/Src/menu.c ****   setMenuTexts(menu_titles[MENUS_NUM],"NEVER REACHED");
-  23:Core/Src/menu.c **** 
-  24:Core/Src/menu.c ****   setMenuTexts(menu_cont[Home_screen],"");
-  25:Core/Src/menu.c ****   setMenuTexts(menu_cont[Manual_move],"Manually move plotter using joypad");
-  26:Core/Src/menu.c ****   setMenuTexts(menu_cont[Zero_pos],"Set current possition as origin (0,0)");
-  27:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_auto],"Automatically setup the flash pin positions");
-  28:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_manual],"Manually setup the flash pin positions");
-  29:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_zero],"Set start position");
-  30:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_move],"Set next position");
-  31:Core/Src/menu.c ****   setMenuTexts(menu_cont[Success_screen],"");
-ARM GAS  /tmp/ccZPmZxG.s 			page 2
+   8:Core/Src/menu.c ****   ST7735_FillScreen(ST7735_GRAY);
+   9:Core/Src/menu.c ****   menu_h->curr_screen = Home_screen;
+  10:Core/Src/menu.c ****   menu_h->update_needed = true;
+  11:Core/Src/menu.c ****   menu_h->alarm_count = 0;
+  12:Core/Src/menu.c **** 
+  13:Core/Src/menu.c ****   setMenuTexts(menu_titles[Home_screen],"Plotter ON");
+  14:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
+  15:Core/Src/menu.c ****   setMenuTexts(menu_titles[Zero_pos],"Set Zero Pos.");
+  16:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_auto],"Auto. Setup");
+  17:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_manual],"Man. Setup");
+  18:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_zero],"Set (0,0)-pos");
+  19:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_move],"Set next-pos");
+  20:Core/Src/menu.c ****   setMenuTexts(menu_titles[Success_screen],"SUCCESS!");
+  21:Core/Src/menu.c ****   setMenuTexts(menu_titles[Fail_screen],"FAILED!");
+  22:Core/Src/menu.c ****   setMenuTexts(menu_titles[Next_batch],"Run Next?");
+  23:Core/Src/menu.c ****   setMenuTexts(menu_titles[MENUS_NUM],"NEVER REACHED");
+  24:Core/Src/menu.c **** 
+  25:Core/Src/menu.c ****   setMenuTexts(menu_cont[Home_screen],"");
+  26:Core/Src/menu.c ****   setMenuTexts(menu_cont[Manual_move],"Manually move plotter using joypad");
+  27:Core/Src/menu.c ****   setMenuTexts(menu_cont[Zero_pos],"Set current possition as origin (0,0)");
+  28:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_auto],"Automatically setup the flash pin positions");
+  29:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_manual],"Manually setup the flash pin positions");
+  30:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_zero],"Set start position");
+  31:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_move],"Set next position");
+ARM GAS  /tmp/cc1FHjKq.s 			page 2
 
 
-  32:Core/Src/menu.c ****   setMenuTexts(menu_cont[Fail_screen],"");
-  33:Core/Src/menu.c ****   setMenuTexts(menu_cont[Next_batch],"Press SELECT when next batch loaded.\nPress CANCEL to stop fl
-  34:Core/Src/menu.c **** 
-  35:Core/Src/menu.c ****   return RETURN_OK;
-  36:Core/Src/menu.c **** }
-  37:Core/Src/menu.c **** 
-  38:Core/Src/menu.c **** uint8_t serveMenuScreen(struct menu_status *menu_h, uint8_t *joy_vals){
-  39:Core/Src/menu.c ****   if(menu_h->update_needed == true){
-  40:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
-  41:Core/Src/menu.c ****     menu_h->update_needed = false;
-  42:Core/Src/menu.c ****   }
-  43:Core/Src/menu.c ****   
-  44:Core/Src/menu.c ****   //make sure that home screen gets displayed for 1s then change to next screen
-  45:Core/Src/menu.c ****   if(menu_h->curr_screen == Home_screen){
-  46:Core/Src/menu.c ****     HAL_Delay(1000);
-  47:Core/Src/menu.c ****     menu_h->curr_screen = Manual_move;
-  48:Core/Src/menu.c ****     menu_h->update_needed = true;
-  49:Core/Src/menu.c ****   }
-  50:Core/Src/menu.c **** 
-  51:Core/Src/menu.c ****   //joypad to the right so switch to next screen
-  52:Core/Src/menu.c ****   else if(joy_vals[1] > 220){
-  53:Core/Src/menu.c ****     if(menu_h->curr_screen < MENUS_NUM)menu_h->curr_screen = (menu_h->curr_screen + 1);
-  54:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
-  55:Core/Src/menu.c ****     menu_h->update_needed = true;
-  56:Core/Src/menu.c ****   } 
-  57:Core/Src/menu.c **** 
-  58:Core/Src/menu.c ****   //joypad to the left so switch to previous screen
-  59:Core/Src/menu.c ****   else if(joy_vals[1] < 30){
-  60:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
-  61:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
-  62:Core/Src/menu.c ****     menu_h->update_needed = true;
-  63:Core/Src/menu.c ****   } 
-  64:Core/Src/menu.c **** 
-  65:Core/Src/menu.c ****   else;
+  32:Core/Src/menu.c ****   setMenuTexts(menu_cont[Success_screen],"");
+  33:Core/Src/menu.c ****   setMenuTexts(menu_cont[Fail_screen],"");
+  34:Core/Src/menu.c ****   setMenuTexts(menu_cont[Next_batch],"Press SELECT when next batch loaded.\nPress CANCEL to stop fl
+  35:Core/Src/menu.c **** 
+  36:Core/Src/menu.c ****   return RETURN_OK;
+  37:Core/Src/menu.c **** }
+  38:Core/Src/menu.c **** 
+  39:Core/Src/menu.c **** uint8_t serveMenuScreen(struct menu_status *menu_h, uint8_t *joy_vals){
+  40:Core/Src/menu.c **** 
+  41:Core/Src/menu.c ****   //joypad to the right so switch to next screen
+  42:Core/Src/menu.c ****   if(joy_vals[1] > 220){
+  43:Core/Src/menu.c ****     if(menu_h->curr_screen < (MENUS_NUM-1))menu_h->curr_screen = (menu_h->curr_screen + 1);
+  44:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+  45:Core/Src/menu.c ****     menu_h->update_needed = true;
+  46:Core/Src/menu.c ****   } 
+  47:Core/Src/menu.c **** 
+  48:Core/Src/menu.c ****   //joypad to the left so switch to previous screen
+  49:Core/Src/menu.c ****   else if(joy_vals[1] < 30){
+  50:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
+  51:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+  52:Core/Src/menu.c ****     menu_h->update_needed = true;
+  53:Core/Src/menu.c ****   } 
+  54:Core/Src/menu.c **** 
+  55:Core/Src/menu.c ****   else;
+  56:Core/Src/menu.c **** 
+  57:Core/Src/menu.c ****   if(menu_h->update_needed == true){
+  58:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
+  59:Core/Src/menu.c ****     menu_h->update_needed = false;
+  60:Core/Src/menu.c ****     if(menu_h->curr_screen == Home_screen){
+  61:Core/Src/menu.c ****       menu_h->curr_screen += 1;
+  62:Core/Src/menu.c ****       menu_h->update_needed = true; 
+  63:Core/Src/menu.c ****     }
+  64:Core/Src/menu.c ****     HAL_Delay(500);
+  65:Core/Src/menu.c ****   }
   66:Core/Src/menu.c **** 
-  67:Core/Src/menu.c **** 
-  68:Core/Src/menu.c **** 
-  69:Core/Src/menu.c ****   return RETURN_OK;
-  70:Core/Src/menu.c **** }
-  71:Core/Src/menu.c **** 
-  72:Core/Src/menu.c **** uint8_t serveMenuFunc(struct menu_status *menu_h, uint8_t *joy_vals, struct setup_data *setup_data_
-  28              		.loc 1 72 102 view -0
+  67:Core/Src/menu.c ****   return RETURN_OK;
+  68:Core/Src/menu.c **** }
+  69:Core/Src/menu.c **** 
+  70:Core/Src/menu.c **** uint8_t serveMenuFunc(struct menu_status *menu_h, uint8_t *joy_vals, struct setup_data *setup_data_
+  28              		.loc 1 70 102 view -0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              		@ link register save eliminated.
-  73:Core/Src/menu.c **** 
-  74:Core/Src/menu.c ****   return RETURN_OK;
-  33              		.loc 1 74 3 view .LVU1
-  75:Core/Src/menu.c **** }
-  34              		.loc 1 75 1 is_stmt 0 view .LVU2
+  71:Core/Src/menu.c **** 
+  72:Core/Src/menu.c ****   return RETURN_OK;
+  33              		.loc 1 72 3 view .LVU1
+  73:Core/Src/menu.c **** }
+  34              		.loc 1 73 1 is_stmt 0 view .LVU2
   35 0000 0020     		movs	r0, #0
   36              	.LVL1:
-  37              		.loc 1 75 1 view .LVU3
+  37              		.loc 1 73 1 view .LVU3
   38 0002 7047     		bx	lr
   39              		.cfi_endproc
   40              	.LFE67:
-ARM GAS  /tmp/ccZPmZxG.s 			page 3
-
-
   42              		.section	.text.drawMenuScreen,"ax",%progbits
   43              		.align	1
+ARM GAS  /tmp/cc1FHjKq.s 			page 3
+
+
   44              		.global	drawMenuScreen
   45              		.syntax unified
   46              		.thumb
@@ -130,13 +128,13 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
   49              	drawMenuScreen:
   50              	.LVL2:
   51              	.LFB68:
-  76:Core/Src/menu.c **** 
-  77:Core/Src/menu.c **** uint8_t drawMenuScreen(enum screens req_screen){
-  52              		.loc 1 77 48 is_stmt 1 view -0
+  74:Core/Src/menu.c **** 
+  75:Core/Src/menu.c **** uint8_t drawMenuScreen(enum screens req_screen){
+  52              		.loc 1 75 48 is_stmt 1 view -0
   53              		.cfi_startproc
   54              		@ args = 0, pretend = 0, frame = 0
   55              		@ frame_needed = 0, uses_anonymous_args = 0
-  56              		.loc 1 77 48 is_stmt 0 view .LVU5
+  56              		.loc 1 75 48 is_stmt 0 view .LVU5
   57 0000 70B5     		push	{r4, r5, r6, lr}
   58              		.cfi_def_cfa_offset 16
   59              		.cfi_offset 4, -16
@@ -146,20 +144,20 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
   63 0002 84B0     		sub	sp, sp, #16
   64              		.cfi_def_cfa_offset 32
   65 0004 0446     		mov	r4, r0
-  78:Core/Src/menu.c ****   //grey background
-  79:Core/Src/menu.c ****   ST7735_FillScreen(ST7735_GRAY);
-  66              		.loc 1 79 3 is_stmt 1 view .LVU6
+  76:Core/Src/menu.c ****   //grey background
+  77:Core/Src/menu.c ****   ST7735_FillScreen(ST7735_GRAY);
+  66              		.loc 1 77 3 is_stmt 1 view .LVU6
   67 0006 4AF21450 		movw	r0, #42260
   68              	.LVL3:
-  69              		.loc 1 79 3 is_stmt 0 view .LVU7
+  69              		.loc 1 77 3 is_stmt 0 view .LVU7
   70 000a FFF7FEFF 		bl	ST7735_FillScreen
   71              	.LVL4:
-  80:Core/Src/menu.c ****   ST7735_WriteJustifyString(10, menu_titles[req_screen], Font_11x18, ST7735_RED,ST7735_GRAY,JUST_CE
-  72              		.loc 1 80 3 is_stmt 1 view .LVU8
-  73              		.loc 1 80 44 is_stmt 0 view .LVU9
+  78:Core/Src/menu.c ****   ST7735_WriteJustifyString(10, menu_titles[req_screen], Font_11x18, ST7735_RED,ST7735_GRAY,JUST_CE
+  72              		.loc 1 78 3 is_stmt 1 view .LVU8
+  73              		.loc 1 78 44 is_stmt 0 view .LVU9
   74 000e 6423     		movs	r3, #100
   75 0010 03FB04F4 		mul	r4, r3, r4
-  76              		.loc 1 80 3 view .LVU10
+  76              		.loc 1 78 3 view .LVU10
   77 0014 0E4B     		ldr	r3, .L4
   78 0016 0222     		movs	r2, #2
   79 0018 0292     		str	r2, [sp, #8]
@@ -173,16 +171,16 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
   87 002c 0A20     		movs	r0, #10
   88 002e FFF7FEFF 		bl	ST7735_WriteJustifyString
   89              	.LVL5:
-  81:Core/Src/menu.c ****   ST7735_WriteJustifyString(50, menu_cont[req_screen], Font_7x10, ST7735_BLUE,ST7735_GRAY,JUST_LEFT
-  90              		.loc 1 81 3 is_stmt 1 view .LVU11
+  79:Core/Src/menu.c ****   ST7735_WriteJustifyString(50, menu_cont[req_screen], Font_7x10, ST7735_BLUE,ST7735_GRAY,JUST_LEFT
+  90              		.loc 1 79 3 is_stmt 1 view .LVU11
   91 0032 094B     		ldr	r3, .L4+8
   92 0034 0025     		movs	r5, #0
   93 0036 0295     		str	r5, [sp, #8]
-ARM GAS  /tmp/ccZPmZxG.s 			page 4
-
-
   94 0038 0196     		str	r6, [sp, #4]
   95 003a 1F22     		movs	r2, #31
+ARM GAS  /tmp/cc1FHjKq.s 			page 4
+
+
   96 003c 0092     		str	r2, [sp]
   97 003e 0CCB     		ldm	r3, {r2, r3}
   98 0040 0649     		ldr	r1, .L4+12
@@ -190,11 +188,11 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
  100 0044 3220     		movs	r0, #50
  101 0046 FFF7FEFF 		bl	ST7735_WriteJustifyString
  102              	.LVL6:
-  82:Core/Src/menu.c **** 
-  83:Core/Src/menu.c ****   return RETURN_OK;
- 103              		.loc 1 83 3 view .LVU12
-  84:Core/Src/menu.c **** }
- 104              		.loc 1 84 1 is_stmt 0 view .LVU13
+  80:Core/Src/menu.c **** 
+  81:Core/Src/menu.c ****   return RETURN_OK;
+ 103              		.loc 1 81 3 view .LVU12
+  82:Core/Src/menu.c **** }
+ 104              		.loc 1 82 1 is_stmt 0 view .LVU13
  105 004a 2846     		mov	r0, r5
  106 004c 04B0     		add	sp, sp, #16
  107              		.cfi_def_cfa_offset 16
@@ -218,622 +216,631 @@ ARM GAS  /tmp/ccZPmZxG.s 			page 1
  127              	serveMenuScreen:
  128              	.LVL7:
  129              	.LFB66:
-  38:Core/Src/menu.c ****   if(menu_h->update_needed == true){
- 130              		.loc 1 38 71 is_stmt 1 view -0
+  39:Core/Src/menu.c **** 
+ 130              		.loc 1 39 71 is_stmt 1 view -0
  131              		.cfi_startproc
  132              		@ args = 0, pretend = 0, frame = 0
  133              		@ frame_needed = 0, uses_anonymous_args = 0
-  38:Core/Src/menu.c ****   if(menu_h->update_needed == true){
- 134              		.loc 1 38 71 is_stmt 0 view .LVU15
- 135 0000 38B5     		push	{r3, r4, r5, lr}
- 136              		.cfi_def_cfa_offset 16
- 137              		.cfi_offset 3, -16
- 138              		.cfi_offset 4, -12
- 139              		.cfi_offset 5, -8
- 140              		.cfi_offset 14, -4
- 141 0002 0446     		mov	r4, r0
- 142 0004 0D46     		mov	r5, r1
-  39:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
- 143              		.loc 1 39 3 is_stmt 1 view .LVU16
-  39:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
- 144              		.loc 1 39 12 is_stmt 0 view .LVU17
- 145 0006 4378     		ldrb	r3, [r0, #1]	@ zero_extendqisi2
-ARM GAS  /tmp/ccZPmZxG.s 			page 5
+  39:Core/Src/menu.c **** 
+ 134              		.loc 1 39 71 is_stmt 0 view .LVU15
+ 135 0000 10B5     		push	{r4, lr}
+ 136              		.cfi_def_cfa_offset 8
+ 137              		.cfi_offset 4, -8
+ 138              		.cfi_offset 14, -4
+ 139 0002 0446     		mov	r4, r0
+  42:Core/Src/menu.c ****     if(menu_h->curr_screen < (MENUS_NUM-1))menu_h->curr_screen = (menu_h->curr_screen + 1);
+ 140              		.loc 1 42 3 is_stmt 1 view .LVU16
+  42:Core/Src/menu.c ****     if(menu_h->curr_screen < (MENUS_NUM-1))menu_h->curr_screen = (menu_h->curr_screen + 1);
+ 141              		.loc 1 42 14 is_stmt 0 view .LVU17
+ 142 0004 4B78     		ldrb	r3, [r1, #1]	@ zero_extendqisi2
+  42:Core/Src/menu.c ****     if(menu_h->curr_screen < (MENUS_NUM-1))menu_h->curr_screen = (menu_h->curr_screen + 1);
+ 143              		.loc 1 42 5 view .LVU18
+ 144 0006 DC2B     		cmp	r3, #220
+ 145 0008 0ED9     		bls	.L7
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ARM GAS  /tmp/cc1FHjKq.s 			page 5
 
 
-  39:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
- 146              		.loc 1 39 5 view .LVU18
- 147 0008 012B     		cmp	r3, #1
- 148 000a 0DD0     		beq	.L16
- 149              	.LVL8:
- 150              	.L7:
-  45:Core/Src/menu.c ****     HAL_Delay(1000);
- 151              		.loc 1 45 3 is_stmt 1 view .LVU19
-  45:Core/Src/menu.c ****     HAL_Delay(1000);
- 152              		.loc 1 45 12 is_stmt 0 view .LVU20
- 153 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
-  45:Core/Src/menu.c ****     HAL_Delay(1000);
- 154              		.loc 1 45 5 view .LVU21
- 155 000e 012B     		cmp	r3, #1
- 156 0010 10D0     		beq	.L17
-  52:Core/Src/menu.c ****     if(menu_h->curr_screen < MENUS_NUM)menu_h->curr_screen = (menu_h->curr_screen + 1);
- 157              		.loc 1 52 8 is_stmt 1 view .LVU22
-  52:Core/Src/menu.c ****     if(menu_h->curr_screen < MENUS_NUM)menu_h->curr_screen = (menu_h->curr_screen + 1);
- 158              		.loc 1 52 19 is_stmt 0 view .LVU23
- 159 0012 6A78     		ldrb	r2, [r5, #1]	@ zero_extendqisi2
-  52:Core/Src/menu.c ****     if(menu_h->curr_screen < MENUS_NUM)menu_h->curr_screen = (menu_h->curr_screen + 1);
- 160              		.loc 1 52 10 view .LVU24
- 161 0014 DC2A     		cmp	r2, #220
- 162 0016 19D9     		bls	.L10
-  53:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
- 163              		.loc 1 53 5 is_stmt 1 view .LVU25
-  53:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
- 164              		.loc 1 53 7 is_stmt 0 view .LVU26
- 165 0018 0A2B     		cmp	r3, #10
- 166 001a 14D8     		bhi	.L11
-  53:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
- 167              		.loc 1 53 40 is_stmt 1 discriminator 1 view .LVU27
-  53:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
- 168              		.loc 1 53 83 is_stmt 0 discriminator 1 view .LVU28
- 169 001c 0133     		adds	r3, r3, #1
-  53:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
- 170              		.loc 1 53 60 discriminator 1 view .LVU29
- 171 001e 2370     		strb	r3, [r4]
- 172              	.L12:
-  55:Core/Src/menu.c ****   } 
- 173              		.loc 1 55 5 is_stmt 1 view .LVU30
-  55:Core/Src/menu.c ****   } 
- 174              		.loc 1 55 27 is_stmt 0 view .LVU31
- 175 0020 0123     		movs	r3, #1
- 176 0022 6370     		strb	r3, [r4, #1]
- 177              	.L9:
-  69:Core/Src/menu.c **** }
- 178              		.loc 1 69 3 is_stmt 1 view .LVU32
-  70:Core/Src/menu.c **** 
- 179              		.loc 1 70 1 is_stmt 0 view .LVU33
- 180 0024 0020     		movs	r0, #0
- 181 0026 38BD     		pop	{r3, r4, r5, pc}
- 182              	.LVL9:
- 183              	.L16:
-  40:Core/Src/menu.c ****     menu_h->update_needed = false;
- 184              		.loc 1 40 5 is_stmt 1 view .LVU34
- 185 0028 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
-ARM GAS  /tmp/ccZPmZxG.s 			page 6
+ 146              		.loc 1 43 5 is_stmt 1 view .LVU19
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ 147              		.loc 1 43 14 is_stmt 0 view .LVU20
+ 148 000a 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ 149              		.loc 1 43 7 view .LVU21
+ 150 000c 092B     		cmp	r3, #9
+ 151 000e 08D8     		bhi	.L8
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ 152              		.loc 1 43 44 is_stmt 1 discriminator 1 view .LVU22
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ 153              		.loc 1 43 87 is_stmt 0 discriminator 1 view .LVU23
+ 154 0010 0133     		adds	r3, r3, #1
+  43:Core/Src/menu.c ****     else menu_h->curr_screen = Manual_move;
+ 155              		.loc 1 43 64 discriminator 1 view .LVU24
+ 156 0012 0370     		strb	r3, [r0]
+ 157              	.L9:
+  45:Core/Src/menu.c ****   } 
+ 158              		.loc 1 45 5 is_stmt 1 view .LVU25
+  45:Core/Src/menu.c ****   } 
+ 159              		.loc 1 45 27 is_stmt 0 view .LVU26
+ 160 0014 0123     		movs	r3, #1
+ 161 0016 6370     		strb	r3, [r4, #1]
+ 162              	.L10:
+  57:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
+ 163              		.loc 1 57 3 is_stmt 1 view .LVU27
+  57:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
+ 164              		.loc 1 57 12 is_stmt 0 view .LVU28
+ 165 0018 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+  57:Core/Src/menu.c ****     drawMenuScreen(menu_h->curr_screen);
+ 166              		.loc 1 57 5 view .LVU29
+ 167 001a 012B     		cmp	r3, #1
+ 168 001c 11D0     		beq	.L16
+ 169              	.LVL8:
+ 170              	.L13:
+  67:Core/Src/menu.c **** }
+ 171              		.loc 1 67 3 is_stmt 1 view .LVU30
+  68:Core/Src/menu.c **** 
+ 172              		.loc 1 68 1 is_stmt 0 view .LVU31
+ 173 001e 0020     		movs	r0, #0
+ 174 0020 10BD     		pop	{r4, pc}
+ 175              	.LVL9:
+ 176              	.L8:
+  44:Core/Src/menu.c ****     menu_h->update_needed = true;
+ 177              		.loc 1 44 10 is_stmt 1 view .LVU32
+  44:Core/Src/menu.c ****     menu_h->update_needed = true;
+ 178              		.loc 1 44 30 is_stmt 0 view .LVU33
+ 179 0022 0223     		movs	r3, #2
+ 180 0024 0370     		strb	r3, [r0]
+ 181 0026 F5E7     		b	.L9
+ 182              	.L7:
+  49:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
+ 183              		.loc 1 49 8 is_stmt 1 view .LVU34
+  49:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
+ 184              		.loc 1 49 10 is_stmt 0 view .LVU35
+ 185 0028 1D2B     		cmp	r3, #29
+ 186 002a F5D8     		bhi	.L10
+ARM GAS  /tmp/cc1FHjKq.s 			page 6
 
 
- 186              	.LVL10:
-  40:Core/Src/menu.c ****     menu_h->update_needed = false;
- 187              		.loc 1 40 5 is_stmt 0 view .LVU35
- 188 002a FFF7FEFF 		bl	drawMenuScreen
- 189              	.LVL11:
-  41:Core/Src/menu.c ****   }
- 190              		.loc 1 41 5 is_stmt 1 view .LVU36
-  41:Core/Src/menu.c ****   }
- 191              		.loc 1 41 27 is_stmt 0 view .LVU37
- 192 002e 0023     		movs	r3, #0
- 193 0030 6370     		strb	r3, [r4, #1]
- 194 0032 EBE7     		b	.L7
- 195              	.L17:
-  46:Core/Src/menu.c ****     menu_h->curr_screen = Manual_move;
- 196              		.loc 1 46 5 is_stmt 1 view .LVU38
- 197 0034 4FF47A70 		mov	r0, #1000
- 198 0038 FFF7FEFF 		bl	HAL_Delay
- 199              	.LVL12:
-  47:Core/Src/menu.c ****     menu_h->update_needed = true;
- 200              		.loc 1 47 5 view .LVU39
-  47:Core/Src/menu.c ****     menu_h->update_needed = true;
- 201              		.loc 1 47 25 is_stmt 0 view .LVU40
- 202 003c 0223     		movs	r3, #2
- 203 003e 2370     		strb	r3, [r4]
-  48:Core/Src/menu.c ****   }
- 204              		.loc 1 48 5 is_stmt 1 view .LVU41
-  48:Core/Src/menu.c ****   }
- 205              		.loc 1 48 27 is_stmt 0 view .LVU42
- 206 0040 0123     		movs	r3, #1
- 207 0042 6370     		strb	r3, [r4, #1]
- 208 0044 EEE7     		b	.L9
- 209              	.L11:
-  54:Core/Src/menu.c ****     menu_h->update_needed = true;
- 210              		.loc 1 54 10 is_stmt 1 view .LVU43
-  54:Core/Src/menu.c ****     menu_h->update_needed = true;
- 211              		.loc 1 54 30 is_stmt 0 view .LVU44
- 212 0046 0223     		movs	r3, #2
- 213 0048 2370     		strb	r3, [r4]
- 214 004a E9E7     		b	.L12
- 215              	.L10:
-  59:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
- 216              		.loc 1 59 8 is_stmt 1 view .LVU45
-  59:Core/Src/menu.c ****     if(menu_h->curr_screen > Manual_move)menu_h->curr_screen = (menu_h->curr_screen - 1);
- 217              		.loc 1 59 10 is_stmt 0 view .LVU46
- 218 004c 1D2A     		cmp	r2, #29
- 219 004e E9D8     		bhi	.L9
-  60:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
- 220              		.loc 1 60 5 is_stmt 1 view .LVU47
-  60:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
- 221              		.loc 1 60 7 is_stmt 0 view .LVU48
- 222 0050 022B     		cmp	r3, #2
- 223 0052 04D9     		bls	.L13
-  60:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
- 224              		.loc 1 60 42 is_stmt 1 discriminator 1 view .LVU49
-  60:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
- 225              		.loc 1 60 85 is_stmt 0 discriminator 1 view .LVU50
- 226 0054 013B     		subs	r3, r3, #1
-ARM GAS  /tmp/ccZPmZxG.s 			page 7
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 187              		.loc 1 50 5 is_stmt 1 view .LVU36
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 188              		.loc 1 50 14 is_stmt 0 view .LVU37
+ 189 002c 0378     		ldrb	r3, [r0]	@ zero_extendqisi2
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 190              		.loc 1 50 7 view .LVU38
+ 191 002e 022B     		cmp	r3, #2
+ 192 0030 04D9     		bls	.L11
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 193              		.loc 1 50 42 is_stmt 1 discriminator 1 view .LVU39
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 194              		.loc 1 50 85 is_stmt 0 discriminator 1 view .LVU40
+ 195 0032 013B     		subs	r3, r3, #1
+  50:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
+ 196              		.loc 1 50 62 discriminator 1 view .LVU41
+ 197 0034 0370     		strb	r3, [r0]
+ 198              	.L12:
+  52:Core/Src/menu.c ****   } 
+ 199              		.loc 1 52 5 is_stmt 1 view .LVU42
+  52:Core/Src/menu.c ****   } 
+ 200              		.loc 1 52 27 is_stmt 0 view .LVU43
+ 201 0036 0123     		movs	r3, #1
+ 202 0038 6370     		strb	r3, [r4, #1]
+ 203 003a EDE7     		b	.L10
+ 204              	.L11:
+  51:Core/Src/menu.c ****     menu_h->update_needed = true;
+ 205              		.loc 1 51 10 is_stmt 1 view .LVU44
+  51:Core/Src/menu.c ****     menu_h->update_needed = true;
+ 206              		.loc 1 51 30 is_stmt 0 view .LVU45
+ 207 003c 0523     		movs	r3, #5
+ 208 003e 0370     		strb	r3, [r0]
+ 209 0040 F9E7     		b	.L12
+ 210              	.L16:
+  58:Core/Src/menu.c ****     menu_h->update_needed = false;
+ 211              		.loc 1 58 5 is_stmt 1 view .LVU46
+ 212 0042 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 213              	.LVL10:
+  58:Core/Src/menu.c ****     menu_h->update_needed = false;
+ 214              		.loc 1 58 5 is_stmt 0 view .LVU47
+ 215 0044 FFF7FEFF 		bl	drawMenuScreen
+ 216              	.LVL11:
+  59:Core/Src/menu.c ****     if(menu_h->curr_screen == Home_screen){
+ 217              		.loc 1 59 5 is_stmt 1 view .LVU48
+  59:Core/Src/menu.c ****     if(menu_h->curr_screen == Home_screen){
+ 218              		.loc 1 59 27 is_stmt 0 view .LVU49
+ 219 0048 0023     		movs	r3, #0
+ 220 004a 6370     		strb	r3, [r4, #1]
+  60:Core/Src/menu.c ****       menu_h->curr_screen += 1;
+ 221              		.loc 1 60 5 is_stmt 1 view .LVU50
+  60:Core/Src/menu.c ****       menu_h->curr_screen += 1;
+ 222              		.loc 1 60 14 is_stmt 0 view .LVU51
+ 223 004c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+  60:Core/Src/menu.c ****       menu_h->curr_screen += 1;
+ 224              		.loc 1 60 7 view .LVU52
+ 225 004e 012B     		cmp	r3, #1
+ 226 0050 04D0     		beq	.L17
+ARM GAS  /tmp/cc1FHjKq.s 			page 7
 
 
-  60:Core/Src/menu.c ****     else menu_h->curr_screen = Grid_setup_manual;
- 227              		.loc 1 60 62 discriminator 1 view .LVU51
- 228 0056 2370     		strb	r3, [r4]
- 229              	.L14:
-  62:Core/Src/menu.c ****   } 
- 230              		.loc 1 62 5 is_stmt 1 view .LVU52
-  62:Core/Src/menu.c ****   } 
- 231              		.loc 1 62 27 is_stmt 0 view .LVU53
- 232 0058 0123     		movs	r3, #1
- 233 005a 6370     		strb	r3, [r4, #1]
- 234 005c E2E7     		b	.L9
- 235              	.L13:
-  61:Core/Src/menu.c ****     menu_h->update_needed = true;
- 236              		.loc 1 61 10 is_stmt 1 view .LVU54
-  61:Core/Src/menu.c ****     menu_h->update_needed = true;
- 237              		.loc 1 61 30 is_stmt 0 view .LVU55
- 238 005e 0523     		movs	r3, #5
- 239 0060 2370     		strb	r3, [r4]
- 240 0062 F9E7     		b	.L14
- 241              		.cfi_endproc
- 242              	.LFE66:
- 244              		.section	.text.setMenuTexts,"ax",%progbits
- 245              		.align	1
- 246              		.global	setMenuTexts
- 247              		.syntax unified
- 248              		.thumb
- 249              		.thumb_func
- 251              	setMenuTexts:
- 252              	.LVL13:
- 253              	.LFB69:
-  85:Core/Src/menu.c **** 
-  86:Core/Src/menu.c **** 
-  87:Core/Src/menu.c **** uint8_t setMenuTexts(char *dest, const char *cont){
- 254              		.loc 1 87 51 is_stmt 1 view -0
- 255              		.cfi_startproc
- 256              		@ args = 0, pretend = 0, frame = 0
- 257              		@ frame_needed = 0, uses_anonymous_args = 0
- 258              		.loc 1 87 51 is_stmt 0 view .LVU57
- 259 0000 38B5     		push	{r3, r4, r5, lr}
- 260              		.cfi_def_cfa_offset 16
- 261              		.cfi_offset 3, -16
- 262              		.cfi_offset 4, -12
- 263              		.cfi_offset 5, -8
- 264              		.cfi_offset 14, -4
- 265 0002 0546     		mov	r5, r0
- 266 0004 0C46     		mov	r4, r1
-  88:Core/Src/menu.c ****   uint8_t cont_size = strlen(cont)+1;
- 267              		.loc 1 88 3 is_stmt 1 view .LVU58
- 268              		.loc 1 88 23 is_stmt 0 view .LVU59
- 269 0006 0846     		mov	r0, r1
- 270              	.LVL14:
- 271              		.loc 1 88 23 view .LVU60
- 272 0008 FFF7FEFF 		bl	strlen
- 273              	.LVL15:
- 274              		.loc 1 88 35 view .LVU61
- 275 000c C2B2     		uxtb	r2, r0
- 276              		.loc 1 88 11 view .LVU62
-ARM GAS  /tmp/ccZPmZxG.s 			page 8
+ 227              	.L14:
+  64:Core/Src/menu.c ****   }
+ 228              		.loc 1 64 5 is_stmt 1 view .LVU53
+ 229 0052 4FF4FA70 		mov	r0, #500
+ 230 0056 FFF7FEFF 		bl	HAL_Delay
+ 231              	.LVL12:
+ 232 005a E0E7     		b	.L13
+ 233              	.L17:
+  61:Core/Src/menu.c ****       menu_h->update_needed = true; 
+ 234              		.loc 1 61 7 view .LVU54
+  61:Core/Src/menu.c ****       menu_h->update_needed = true; 
+ 235              		.loc 1 61 27 is_stmt 0 view .LVU55
+ 236 005c 0133     		adds	r3, r3, #1
+ 237 005e 2370     		strb	r3, [r4]
+  62:Core/Src/menu.c ****     }
+ 238              		.loc 1 62 7 is_stmt 1 view .LVU56
+  62:Core/Src/menu.c ****     }
+ 239              		.loc 1 62 29 is_stmt 0 view .LVU57
+ 240 0060 0123     		movs	r3, #1
+ 241 0062 6370     		strb	r3, [r4, #1]
+ 242 0064 F5E7     		b	.L14
+ 243              		.cfi_endproc
+ 244              	.LFE66:
+ 246              		.section	.text.setMenuTexts,"ax",%progbits
+ 247              		.align	1
+ 248              		.global	setMenuTexts
+ 249              		.syntax unified
+ 250              		.thumb
+ 251              		.thumb_func
+ 253              	setMenuTexts:
+ 254              	.LVL13:
+ 255              	.LFB69:
+  83:Core/Src/menu.c **** 
+  84:Core/Src/menu.c **** 
+  85:Core/Src/menu.c **** uint8_t setMenuTexts(char *dest, const char *cont){
+ 256              		.loc 1 85 51 is_stmt 1 view -0
+ 257              		.cfi_startproc
+ 258              		@ args = 0, pretend = 0, frame = 0
+ 259              		@ frame_needed = 0, uses_anonymous_args = 0
+ 260              		.loc 1 85 51 is_stmt 0 view .LVU59
+ 261 0000 38B5     		push	{r3, r4, r5, lr}
+ 262              		.cfi_def_cfa_offset 16
+ 263              		.cfi_offset 3, -16
+ 264              		.cfi_offset 4, -12
+ 265              		.cfi_offset 5, -8
+ 266              		.cfi_offset 14, -4
+ 267 0002 0546     		mov	r5, r0
+ 268 0004 0C46     		mov	r4, r1
+  86:Core/Src/menu.c ****   uint8_t cont_size = strlen(cont)+1;
+ 269              		.loc 1 86 3 is_stmt 1 view .LVU60
+ 270              		.loc 1 86 23 is_stmt 0 view .LVU61
+ 271 0006 0846     		mov	r0, r1
+ 272              	.LVL14:
+ 273              		.loc 1 86 23 view .LVU62
+ 274 0008 FFF7FEFF 		bl	strlen
+ 275              	.LVL15:
+ 276              		.loc 1 86 35 view .LVU63
+ARM GAS  /tmp/cc1FHjKq.s 			page 8
 
 
- 277 000e 0132     		adds	r2, r2, #1
- 278              	.LVL16:
-  89:Core/Src/menu.c ****   strncpy(dest,cont,cont_size);
- 279              		.loc 1 89 3 is_stmt 1 view .LVU63
- 280 0010 D2B2     		uxtb	r2, r2
- 281              		.loc 1 89 3 is_stmt 0 view .LVU64
- 282 0012 2146     		mov	r1, r4
- 283 0014 2846     		mov	r0, r5
- 284 0016 FFF7FEFF 		bl	strncpy
- 285              	.LVL17:
-  90:Core/Src/menu.c ****   return RETURN_OK;
- 286              		.loc 1 90 3 is_stmt 1 view .LVU65
-  91:Core/Src/menu.c **** }
- 287              		.loc 1 91 1 is_stmt 0 view .LVU66
- 288 001a 0020     		movs	r0, #0
- 289 001c 38BD     		pop	{r3, r4, r5, pc}
- 290              		.loc 1 91 1 view .LVU67
- 291              		.cfi_endproc
- 292              	.LFE69:
- 294              		.section	.rodata.initMenu.str1.4,"aMS",%progbits,1
- 295              		.align	2
- 296              	.LC0:
- 297 0000 506C6F74 		.ascii	"Plotter ON\000"
- 297      74657220 
- 297      4F4E00
- 298 000b 00       		.align	2
- 299              	.LC1:
- 300 000c 496E6974 		.ascii	"Init. man move\000"
- 300      2E206D61 
- 300      6E206D6F 
- 300      766500
- 301 001b 00       		.align	2
- 302              	.LC2:
- 303 001c 53657420 		.ascii	"Set Zero Pos.\000"
- 303      5A65726F 
- 303      20506F73 
- 303      2E00
- 304 002a 0000     		.align	2
- 305              	.LC3:
- 306 002c 4175746F 		.ascii	"Auto. Setup\000"
- 306      2E205365 
- 306      74757000 
- 307              		.align	2
- 308              	.LC4:
- 309 0038 4D616E2E 		.ascii	"Man. Setup\000"
- 309      20536574 
- 309      757000
- 310 0043 00       		.align	2
- 311              	.LC5:
- 312 0044 53657420 		.ascii	"Set (0,0)-pos\000"
- 312      28302C30 
- 312      292D706F 
- 312      7300
- 313 0052 0000     		.align	2
- 314              	.LC6:
- 315 0054 53657420 		.ascii	"Set next-pos\000"
- 315      6E657874 
-ARM GAS  /tmp/ccZPmZxG.s 			page 9
+ 277 000c C2B2     		uxtb	r2, r0
+ 278              		.loc 1 86 11 view .LVU64
+ 279 000e 0132     		adds	r2, r2, #1
+ 280              	.LVL16:
+  87:Core/Src/menu.c ****   strncpy(dest,cont,cont_size);
+ 281              		.loc 1 87 3 is_stmt 1 view .LVU65
+ 282 0010 D2B2     		uxtb	r2, r2
+ 283              		.loc 1 87 3 is_stmt 0 view .LVU66
+ 284 0012 2146     		mov	r1, r4
+ 285 0014 2846     		mov	r0, r5
+ 286 0016 FFF7FEFF 		bl	strncpy
+ 287              	.LVL17:
+  88:Core/Src/menu.c ****   return RETURN_OK;
+ 288              		.loc 1 88 3 is_stmt 1 view .LVU67
+  89:Core/Src/menu.c **** }
+ 289              		.loc 1 89 1 is_stmt 0 view .LVU68
+ 290 001a 0020     		movs	r0, #0
+ 291 001c 38BD     		pop	{r3, r4, r5, pc}
+ 292              		.loc 1 89 1 view .LVU69
+ 293              		.cfi_endproc
+ 294              	.LFE69:
+ 296              		.section	.rodata.initMenu.str1.4,"aMS",%progbits,1
+ 297              		.align	2
+ 298              	.LC0:
+ 299 0000 506C6F74 		.ascii	"Plotter ON\000"
+ 299      74657220 
+ 299      4F4E00
+ 300 000b 00       		.align	2
+ 301              	.LC1:
+ 302 000c 496E6974 		.ascii	"Init. man move\000"
+ 302      2E206D61 
+ 302      6E206D6F 
+ 302      766500
+ 303 001b 00       		.align	2
+ 304              	.LC2:
+ 305 001c 53657420 		.ascii	"Set Zero Pos.\000"
+ 305      5A65726F 
+ 305      20506F73 
+ 305      2E00
+ 306 002a 0000     		.align	2
+ 307              	.LC3:
+ 308 002c 4175746F 		.ascii	"Auto. Setup\000"
+ 308      2E205365 
+ 308      74757000 
+ 309              		.align	2
+ 310              	.LC4:
+ 311 0038 4D616E2E 		.ascii	"Man. Setup\000"
+ 311      20536574 
+ 311      757000
+ 312 0043 00       		.align	2
+ 313              	.LC5:
+ 314 0044 53657420 		.ascii	"Set (0,0)-pos\000"
+ 314      28302C30 
+ 314      292D706F 
+ 314      7300
+ 315 0052 0000     		.align	2
+ 316              	.LC6:
+ARM GAS  /tmp/cc1FHjKq.s 			page 9
 
 
- 315      2D706F73 
- 315      00
- 316 0061 000000   		.align	2
- 317              	.LC7:
- 318 0064 53554343 		.ascii	"SUCCESS!\000"
- 318      45535321 
- 318      00
- 319 006d 000000   		.align	2
- 320              	.LC8:
- 321 0070 4641494C 		.ascii	"FAILED!\000"
- 321      45442100 
- 322              		.align	2
- 323              	.LC9:
- 324 0078 52756E20 		.ascii	"Run Next?\000"
- 324      4E657874 
- 324      3F00
- 325 0082 0000     		.align	2
- 326              	.LC10:
- 327 0084 4E455645 		.ascii	"NEVER REACHED\000"
- 327      52205245 
- 327      41434845 
- 327      4400
- 328 0092 0000     		.align	2
- 329              	.LC11:
- 330 0094 00       		.ascii	"\000"
- 331 0095 000000   		.align	2
- 332              	.LC12:
- 333 0098 4D616E75 		.ascii	"Manually move plotter using joypad\000"
- 333      616C6C79 
- 333      206D6F76 
- 333      6520706C 
- 333      6F747465 
- 334 00bb 00       		.align	2
- 335              	.LC13:
- 336 00bc 53657420 		.ascii	"Set current possition as origin (0,0)\000"
- 336      63757272 
- 336      656E7420 
- 336      706F7373 
- 336      6974696F 
- 337 00e2 0000     		.align	2
- 338              	.LC14:
- 339 00e4 4175746F 		.ascii	"Automatically setup the flash pin positions\000"
- 339      6D617469 
- 339      63616C6C 
- 339      79207365 
- 339      74757020 
- 340              		.align	2
- 341              	.LC15:
- 342 0110 4D616E75 		.ascii	"Manually setup the flash pin positions\000"
- 342      616C6C79 
- 342      20736574 
- 342      75702074 
- 342      68652066 
- 343 0137 00       		.align	2
- 344              	.LC16:
- 345 0138 53657420 		.ascii	"Set start position\000"
- 345      73746172 
-ARM GAS  /tmp/ccZPmZxG.s 			page 10
+ 317 0054 53657420 		.ascii	"Set next-pos\000"
+ 317      6E657874 
+ 317      2D706F73 
+ 317      00
+ 318 0061 000000   		.align	2
+ 319              	.LC7:
+ 320 0064 53554343 		.ascii	"SUCCESS!\000"
+ 320      45535321 
+ 320      00
+ 321 006d 000000   		.align	2
+ 322              	.LC8:
+ 323 0070 4641494C 		.ascii	"FAILED!\000"
+ 323      45442100 
+ 324              		.align	2
+ 325              	.LC9:
+ 326 0078 52756E20 		.ascii	"Run Next?\000"
+ 326      4E657874 
+ 326      3F00
+ 327 0082 0000     		.align	2
+ 328              	.LC10:
+ 329 0084 4E455645 		.ascii	"NEVER REACHED\000"
+ 329      52205245 
+ 329      41434845 
+ 329      4400
+ 330 0092 0000     		.align	2
+ 331              	.LC11:
+ 332 0094 00       		.ascii	"\000"
+ 333 0095 000000   		.align	2
+ 334              	.LC12:
+ 335 0098 4D616E75 		.ascii	"Manually move plotter using joypad\000"
+ 335      616C6C79 
+ 335      206D6F76 
+ 335      6520706C 
+ 335      6F747465 
+ 336 00bb 00       		.align	2
+ 337              	.LC13:
+ 338 00bc 53657420 		.ascii	"Set current possition as origin (0,0)\000"
+ 338      63757272 
+ 338      656E7420 
+ 338      706F7373 
+ 338      6974696F 
+ 339 00e2 0000     		.align	2
+ 340              	.LC14:
+ 341 00e4 4175746F 		.ascii	"Automatically setup the flash pin positions\000"
+ 341      6D617469 
+ 341      63616C6C 
+ 341      79207365 
+ 341      74757020 
+ 342              		.align	2
+ 343              	.LC15:
+ 344 0110 4D616E75 		.ascii	"Manually setup the flash pin positions\000"
+ 344      616C6C79 
+ 344      20736574 
+ 344      75702074 
+ 344      68652066 
+ 345 0137 00       		.align	2
+ 346              	.LC16:
+ARM GAS  /tmp/cc1FHjKq.s 			page 10
 
 
- 345      7420706F 
- 345      73697469 
- 345      6F6E00
- 346 014b 00       		.align	2
- 347              	.LC17:
- 348 014c 53657420 		.ascii	"Set next position\000"
- 348      6E657874 
- 348      20706F73 
- 348      6974696F 
- 348      6E00
- 349 015e 0000     		.align	2
- 350              	.LC18:
- 351 0160 50726573 		.ascii	"Press SELECT when next batch loaded.\012Press CANCE"
- 351      73205345 
- 351      4C454354 
- 351      20776865 
- 351      6E206E65 
- 352 0190 4C20746F 		.ascii	"L to stop flashing.\000"
- 352      2073746F 
- 352      7020666C 
- 352      61736869 
- 352      6E672E00 
- 353              		.section	.text.initMenu,"ax",%progbits
- 354              		.align	1
- 355              		.global	initMenu
- 356              		.syntax unified
- 357              		.thumb
- 358              		.thumb_func
- 360              	initMenu:
- 361              	.LVL18:
- 362              	.LFB65:
+ 347 0138 53657420 		.ascii	"Set start position\000"
+ 347      73746172 
+ 347      7420706F 
+ 347      73697469 
+ 347      6F6E00
+ 348 014b 00       		.align	2
+ 349              	.LC17:
+ 350 014c 53657420 		.ascii	"Set next position\000"
+ 350      6E657874 
+ 350      20706F73 
+ 350      6974696F 
+ 350      6E00
+ 351 015e 0000     		.align	2
+ 352              	.LC18:
+ 353 0160 50726573 		.ascii	"Press SELECT when next batch loaded.\012Press CANCE"
+ 353      73205345 
+ 353      4C454354 
+ 353      20776865 
+ 353      6E206E65 
+ 354 0190 4C20746F 		.ascii	"L to stop flashing.\000"
+ 354      2073746F 
+ 354      7020666C 
+ 354      61736869 
+ 354      6E672E00 
+ 355              		.section	.text.initMenu,"ax",%progbits
+ 356              		.align	1
+ 357              		.global	initMenu
+ 358              		.syntax unified
+ 359              		.thumb
+ 360              		.thumb_func
+ 362              	initMenu:
+ 363              	.LVL18:
+ 364              	.LFB65:
    6:Core/Src/menu.c ****   ST7735_Init();
- 363              		.loc 1 6 45 is_stmt 1 view -0
- 364              		.cfi_startproc
- 365              		@ args = 0, pretend = 0, frame = 0
- 366              		@ frame_needed = 0, uses_anonymous_args = 0
+ 365              		.loc 1 6 45 is_stmt 1 view -0
+ 366              		.cfi_startproc
+ 367              		@ args = 0, pretend = 0, frame = 0
+ 368              		@ frame_needed = 0, uses_anonymous_args = 0
    6:Core/Src/menu.c ****   ST7735_Init();
- 367              		.loc 1 6 45 is_stmt 0 view .LVU69
- 368 0000 70B5     		push	{r4, r5, r6, lr}
- 369              		.cfi_def_cfa_offset 16
- 370              		.cfi_offset 4, -16
- 371              		.cfi_offset 5, -12
- 372              		.cfi_offset 6, -8
- 373              		.cfi_offset 14, -4
- 374 0002 0446     		mov	r4, r0
-   7:Core/Src/menu.c ****   menu_h->curr_screen = Home_screen;
- 375              		.loc 1 7 3 is_stmt 1 view .LVU70
- 376 0004 FFF7FEFF 		bl	ST7735_Init
- 377              	.LVL19:
-   8:Core/Src/menu.c ****   menu_h->update_needed = true;
- 378              		.loc 1 8 3 view .LVU71
-   8:Core/Src/menu.c ****   menu_h->update_needed = true;
- 379              		.loc 1 8 23 is_stmt 0 view .LVU72
- 380 0008 0123     		movs	r3, #1
- 381 000a 2370     		strb	r3, [r4]
-   9:Core/Src/menu.c ****   menu_h->alarm_count = 0;
- 382              		.loc 1 9 3 is_stmt 1 view .LVU73
-ARM GAS  /tmp/ccZPmZxG.s 			page 11
+ 369              		.loc 1 6 45 is_stmt 0 view .LVU71
+ 370 0000 70B5     		push	{r4, r5, r6, lr}
+ 371              		.cfi_def_cfa_offset 16
+ 372              		.cfi_offset 4, -16
+ 373              		.cfi_offset 5, -12
+ 374              		.cfi_offset 6, -8
+ 375              		.cfi_offset 14, -4
+ 376 0002 0446     		mov	r4, r0
+   7:Core/Src/menu.c ****   ST7735_FillScreen(ST7735_GRAY);
+ 377              		.loc 1 7 3 is_stmt 1 view .LVU72
+ 378 0004 FFF7FEFF 		bl	ST7735_Init
+ 379              	.LVL19:
+   8:Core/Src/menu.c ****   menu_h->curr_screen = Home_screen;
+ 380              		.loc 1 8 3 view .LVU73
+ 381 0008 4AF21450 		movw	r0, #42260
+ 382 000c FFF7FEFF 		bl	ST7735_FillScreen
+ 383              	.LVL20:
+   9:Core/Src/menu.c ****   menu_h->update_needed = true;
+ARM GAS  /tmp/cc1FHjKq.s 			page 11
 
 
-   9:Core/Src/menu.c ****   menu_h->alarm_count = 0;
- 383              		.loc 1 9 25 is_stmt 0 view .LVU74
- 384 000c 6370     		strb	r3, [r4, #1]
-  10:Core/Src/menu.c **** 
- 385              		.loc 1 10 3 is_stmt 1 view .LVU75
-  10:Core/Src/menu.c **** 
- 386              		.loc 1 10 23 is_stmt 0 view .LVU76
- 387 000e 0026     		movs	r6, #0
- 388 0010 A670     		strb	r6, [r4, #2]
-  12:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
- 389              		.loc 1 12 3 is_stmt 1 view .LVU77
- 390 0012 364C     		ldr	r4, .L22
- 391              	.LVL20:
-  12:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
- 392              		.loc 1 12 3 is_stmt 0 view .LVU78
- 393 0014 3649     		ldr	r1, .L22+4
- 394 0016 2046     		mov	r0, r4
- 395 0018 FFF7FEFF 		bl	setMenuTexts
- 396              	.LVL21:
-  13:Core/Src/menu.c ****   setMenuTexts(menu_titles[Zero_pos],"Set Zero Pos.");
- 397              		.loc 1 13 3 is_stmt 1 view .LVU79
- 398 001c 3549     		ldr	r1, .L22+8
- 399 001e 04F16400 		add	r0, r4, #100
- 400 0022 FFF7FEFF 		bl	setMenuTexts
- 401              	.LVL22:
-  14:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_auto],"Auto. Setup");
- 402              		.loc 1 14 3 view .LVU80
- 403 0026 3449     		ldr	r1, .L22+12
- 404 0028 04F1C800 		add	r0, r4, #200
- 405 002c FFF7FEFF 		bl	setMenuTexts
- 406              	.LVL23:
-  15:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_manual],"Man. Setup");
- 407              		.loc 1 15 3 view .LVU81
- 408 0030 3249     		ldr	r1, .L22+16
- 409 0032 04F59670 		add	r0, r4, #300
- 410 0036 FFF7FEFF 		bl	setMenuTexts
- 411              	.LVL24:
-  16:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_zero],"Set (0,0)-pos");
- 412              		.loc 1 16 3 view .LVU82
- 413 003a 3149     		ldr	r1, .L22+20
- 414 003c 04F5C870 		add	r0, r4, #400
- 415 0040 FFF7FEFF 		bl	setMenuTexts
- 416              	.LVL25:
-  17:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_move],"Set next-pos");
- 417              		.loc 1 17 3 view .LVU83
- 418 0044 2F49     		ldr	r1, .L22+24
- 419 0046 04F5FA70 		add	r0, r4, #500
- 420 004a FFF7FEFF 		bl	setMenuTexts
- 421              	.LVL26:
-  18:Core/Src/menu.c ****   setMenuTexts(menu_titles[Success_screen],"SUCCESS!");
- 422              		.loc 1 18 3 view .LVU84
- 423 004e 2E49     		ldr	r1, .L22+28
- 424 0050 04F51670 		add	r0, r4, #600
- 425 0054 FFF7FEFF 		bl	setMenuTexts
- 426              	.LVL27:
-  19:Core/Src/menu.c ****   setMenuTexts(menu_titles[Fail_screen],"FAILED!");
- 427              		.loc 1 19 3 view .LVU85
-ARM GAS  /tmp/ccZPmZxG.s 			page 12
+ 384              		.loc 1 9 3 view .LVU74
+   9:Core/Src/menu.c ****   menu_h->update_needed = true;
+ 385              		.loc 1 9 23 is_stmt 0 view .LVU75
+ 386 0010 0123     		movs	r3, #1
+ 387 0012 2370     		strb	r3, [r4]
+  10:Core/Src/menu.c ****   menu_h->alarm_count = 0;
+ 388              		.loc 1 10 3 is_stmt 1 view .LVU76
+  10:Core/Src/menu.c ****   menu_h->alarm_count = 0;
+ 389              		.loc 1 10 25 is_stmt 0 view .LVU77
+ 390 0014 6370     		strb	r3, [r4, #1]
+  11:Core/Src/menu.c **** 
+ 391              		.loc 1 11 3 is_stmt 1 view .LVU78
+  11:Core/Src/menu.c **** 
+ 392              		.loc 1 11 23 is_stmt 0 view .LVU79
+ 393 0016 0026     		movs	r6, #0
+ 394 0018 A670     		strb	r6, [r4, #2]
+  13:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
+ 395              		.loc 1 13 3 is_stmt 1 view .LVU80
+ 396 001a 364C     		ldr	r4, .L22
+ 397              	.LVL21:
+  13:Core/Src/menu.c ****   setMenuTexts(menu_titles[Manual_move],"Init. man move");
+ 398              		.loc 1 13 3 is_stmt 0 view .LVU81
+ 399 001c 3649     		ldr	r1, .L22+4
+ 400 001e 2046     		mov	r0, r4
+ 401 0020 FFF7FEFF 		bl	setMenuTexts
+ 402              	.LVL22:
+  14:Core/Src/menu.c ****   setMenuTexts(menu_titles[Zero_pos],"Set Zero Pos.");
+ 403              		.loc 1 14 3 is_stmt 1 view .LVU82
+ 404 0024 3549     		ldr	r1, .L22+8
+ 405 0026 04F16400 		add	r0, r4, #100
+ 406 002a FFF7FEFF 		bl	setMenuTexts
+ 407              	.LVL23:
+  15:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_auto],"Auto. Setup");
+ 408              		.loc 1 15 3 view .LVU83
+ 409 002e 3449     		ldr	r1, .L22+12
+ 410 0030 04F1C800 		add	r0, r4, #200
+ 411 0034 FFF7FEFF 		bl	setMenuTexts
+ 412              	.LVL24:
+  16:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_manual],"Man. Setup");
+ 413              		.loc 1 16 3 view .LVU84
+ 414 0038 3249     		ldr	r1, .L22+16
+ 415 003a 04F59670 		add	r0, r4, #300
+ 416 003e FFF7FEFF 		bl	setMenuTexts
+ 417              	.LVL25:
+  17:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_zero],"Set (0,0)-pos");
+ 418              		.loc 1 17 3 view .LVU85
+ 419 0042 3149     		ldr	r1, .L22+20
+ 420 0044 04F5C870 		add	r0, r4, #400
+ 421 0048 FFF7FEFF 		bl	setMenuTexts
+ 422              	.LVL26:
+  18:Core/Src/menu.c ****   setMenuTexts(menu_titles[Grid_setup_move],"Set next-pos");
+ 423              		.loc 1 18 3 view .LVU86
+ 424 004c 2F49     		ldr	r1, .L22+24
+ 425 004e 04F5FA70 		add	r0, r4, #500
+ 426 0052 FFF7FEFF 		bl	setMenuTexts
+ 427              	.LVL27:
+  19:Core/Src/menu.c ****   setMenuTexts(menu_titles[Success_screen],"SUCCESS!");
+ARM GAS  /tmp/cc1FHjKq.s 			page 12
 
 
- 428 0058 2C49     		ldr	r1, .L22+32
- 429 005a 04F52F70 		add	r0, r4, #700
- 430 005e FFF7FEFF 		bl	setMenuTexts
- 431              	.LVL28:
-  20:Core/Src/menu.c ****   setMenuTexts(menu_titles[Next_batch],"Run Next?");
- 432              		.loc 1 20 3 view .LVU86
- 433 0062 2B49     		ldr	r1, .L22+36
- 434 0064 04F54870 		add	r0, r4, #800
- 435 0068 FFF7FEFF 		bl	setMenuTexts
- 436              	.LVL29:
-  21:Core/Src/menu.c ****   setMenuTexts(menu_titles[MENUS_NUM],"NEVER REACHED");
- 437              		.loc 1 21 3 view .LVU87
- 438 006c 2949     		ldr	r1, .L22+40
- 439 006e 04F56170 		add	r0, r4, #900
- 440 0072 FFF7FEFF 		bl	setMenuTexts
- 441              	.LVL30:
-  22:Core/Src/menu.c **** 
- 442              		.loc 1 22 3 view .LVU88
- 443 0076 2849     		ldr	r1, .L22+44
- 444 0078 04F57A70 		add	r0, r4, #1000
- 445 007c FFF7FEFF 		bl	setMenuTexts
- 446              	.LVL31:
-  24:Core/Src/menu.c ****   setMenuTexts(menu_cont[Manual_move],"Manually move plotter using joypad");
- 447              		.loc 1 24 3 view .LVU89
- 448 0080 264D     		ldr	r5, .L22+48
- 449 0082 274C     		ldr	r4, .L22+52
- 450 0084 2946     		mov	r1, r5
- 451 0086 2046     		mov	r0, r4
- 452 0088 FFF7FEFF 		bl	setMenuTexts
- 453              	.LVL32:
-  25:Core/Src/menu.c ****   setMenuTexts(menu_cont[Zero_pos],"Set current possition as origin (0,0)");
- 454              		.loc 1 25 3 view .LVU90
- 455 008c 2549     		ldr	r1, .L22+56
- 456 008e 04F16400 		add	r0, r4, #100
- 457 0092 FFF7FEFF 		bl	setMenuTexts
- 458              	.LVL33:
-  26:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_auto],"Automatically setup the flash pin positions");
- 459              		.loc 1 26 3 view .LVU91
- 460 0096 2449     		ldr	r1, .L22+60
- 461 0098 04F1C800 		add	r0, r4, #200
- 462 009c FFF7FEFF 		bl	setMenuTexts
- 463              	.LVL34:
-  27:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_manual],"Manually setup the flash pin positions");
- 464              		.loc 1 27 3 view .LVU92
- 465 00a0 2249     		ldr	r1, .L22+64
- 466 00a2 04F59670 		add	r0, r4, #300
- 467 00a6 FFF7FEFF 		bl	setMenuTexts
- 468              	.LVL35:
-  28:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_zero],"Set start position");
- 469              		.loc 1 28 3 view .LVU93
- 470 00aa 2149     		ldr	r1, .L22+68
- 471 00ac 04F5C870 		add	r0, r4, #400
- 472 00b0 FFF7FEFF 		bl	setMenuTexts
- 473              	.LVL36:
-  29:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_move],"Set next position");
- 474              		.loc 1 29 3 view .LVU94
- 475 00b4 1F49     		ldr	r1, .L22+72
-ARM GAS  /tmp/ccZPmZxG.s 			page 13
+ 428              		.loc 1 19 3 view .LVU87
+ 429 0056 2E49     		ldr	r1, .L22+28
+ 430 0058 04F51670 		add	r0, r4, #600
+ 431 005c FFF7FEFF 		bl	setMenuTexts
+ 432              	.LVL28:
+  20:Core/Src/menu.c ****   setMenuTexts(menu_titles[Fail_screen],"FAILED!");
+ 433              		.loc 1 20 3 view .LVU88
+ 434 0060 2C49     		ldr	r1, .L22+32
+ 435 0062 04F52F70 		add	r0, r4, #700
+ 436 0066 FFF7FEFF 		bl	setMenuTexts
+ 437              	.LVL29:
+  21:Core/Src/menu.c ****   setMenuTexts(menu_titles[Next_batch],"Run Next?");
+ 438              		.loc 1 21 3 view .LVU89
+ 439 006a 2B49     		ldr	r1, .L22+36
+ 440 006c 04F54870 		add	r0, r4, #800
+ 441 0070 FFF7FEFF 		bl	setMenuTexts
+ 442              	.LVL30:
+  22:Core/Src/menu.c ****   setMenuTexts(menu_titles[MENUS_NUM],"NEVER REACHED");
+ 443              		.loc 1 22 3 view .LVU90
+ 444 0074 2949     		ldr	r1, .L22+40
+ 445 0076 04F56170 		add	r0, r4, #900
+ 446 007a FFF7FEFF 		bl	setMenuTexts
+ 447              	.LVL31:
+  23:Core/Src/menu.c **** 
+ 448              		.loc 1 23 3 view .LVU91
+ 449 007e 2849     		ldr	r1, .L22+44
+ 450 0080 04F57A70 		add	r0, r4, #1000
+ 451 0084 FFF7FEFF 		bl	setMenuTexts
+ 452              	.LVL32:
+  25:Core/Src/menu.c ****   setMenuTexts(menu_cont[Manual_move],"Manually move plotter using joypad");
+ 453              		.loc 1 25 3 view .LVU92
+ 454 0088 264D     		ldr	r5, .L22+48
+ 455 008a 274C     		ldr	r4, .L22+52
+ 456 008c 2946     		mov	r1, r5
+ 457 008e 2046     		mov	r0, r4
+ 458 0090 FFF7FEFF 		bl	setMenuTexts
+ 459              	.LVL33:
+  26:Core/Src/menu.c ****   setMenuTexts(menu_cont[Zero_pos],"Set current possition as origin (0,0)");
+ 460              		.loc 1 26 3 view .LVU93
+ 461 0094 2549     		ldr	r1, .L22+56
+ 462 0096 04F16400 		add	r0, r4, #100
+ 463 009a FFF7FEFF 		bl	setMenuTexts
+ 464              	.LVL34:
+  27:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_auto],"Automatically setup the flash pin positions");
+ 465              		.loc 1 27 3 view .LVU94
+ 466 009e 2449     		ldr	r1, .L22+60
+ 467 00a0 04F1C800 		add	r0, r4, #200
+ 468 00a4 FFF7FEFF 		bl	setMenuTexts
+ 469              	.LVL35:
+  28:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_manual],"Manually setup the flash pin positions");
+ 470              		.loc 1 28 3 view .LVU95
+ 471 00a8 2249     		ldr	r1, .L22+64
+ 472 00aa 04F59670 		add	r0, r4, #300
+ 473 00ae FFF7FEFF 		bl	setMenuTexts
+ 474              	.LVL36:
+  29:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_zero],"Set start position");
+ 475              		.loc 1 29 3 view .LVU96
+ARM GAS  /tmp/cc1FHjKq.s 			page 13
 
 
- 476 00b6 04F5FA70 		add	r0, r4, #500
- 477 00ba FFF7FEFF 		bl	setMenuTexts
- 478              	.LVL37:
-  30:Core/Src/menu.c ****   setMenuTexts(menu_cont[Success_screen],"");
- 479              		.loc 1 30 3 view .LVU95
- 480 00be 1E49     		ldr	r1, .L22+76
- 481 00c0 04F51670 		add	r0, r4, #600
- 482 00c4 FFF7FEFF 		bl	setMenuTexts
- 483              	.LVL38:
-  31:Core/Src/menu.c ****   setMenuTexts(menu_cont[Fail_screen],"");
- 484              		.loc 1 31 3 view .LVU96
- 485 00c8 2946     		mov	r1, r5
- 486 00ca 04F52F70 		add	r0, r4, #700
- 487 00ce FFF7FEFF 		bl	setMenuTexts
- 488              	.LVL39:
-  32:Core/Src/menu.c ****   setMenuTexts(menu_cont[Next_batch],"Press SELECT when next batch loaded.\nPress CANCEL to stop fl
- 489              		.loc 1 32 3 view .LVU97
- 490 00d2 2946     		mov	r1, r5
- 491 00d4 04F54870 		add	r0, r4, #800
- 492 00d8 FFF7FEFF 		bl	setMenuTexts
- 493              	.LVL40:
-  33:Core/Src/menu.c **** 
- 494              		.loc 1 33 3 view .LVU98
- 495 00dc 1749     		ldr	r1, .L22+80
- 496 00de 04F56170 		add	r0, r4, #900
- 497 00e2 FFF7FEFF 		bl	setMenuTexts
- 498              	.LVL41:
-  35:Core/Src/menu.c **** }
- 499              		.loc 1 35 3 view .LVU99
-  36:Core/Src/menu.c **** 
- 500              		.loc 1 36 1 is_stmt 0 view .LVU100
- 501 00e6 3046     		mov	r0, r6
- 502 00e8 70BD     		pop	{r4, r5, r6, pc}
- 503              	.L23:
- 504 00ea 00BF     		.align	2
- 505              	.L22:
- 506 00ec 64000000 		.word	menu_titles+100
- 507 00f0 00000000 		.word	.LC0
- 508 00f4 0C000000 		.word	.LC1
- 509 00f8 1C000000 		.word	.LC2
- 510 00fc 2C000000 		.word	.LC3
- 511 0100 38000000 		.word	.LC4
- 512 0104 44000000 		.word	.LC5
- 513 0108 54000000 		.word	.LC6
- 514 010c 64000000 		.word	.LC7
- 515 0110 70000000 		.word	.LC8
- 516 0114 78000000 		.word	.LC9
- 517 0118 84000000 		.word	.LC10
- 518 011c 94000000 		.word	.LC11
- 519 0120 64000000 		.word	menu_cont+100
- 520 0124 98000000 		.word	.LC12
- 521 0128 BC000000 		.word	.LC13
- 522 012c E4000000 		.word	.LC14
- 523 0130 10010000 		.word	.LC15
- 524 0134 38010000 		.word	.LC16
- 525 0138 4C010000 		.word	.LC17
- 526 013c 60010000 		.word	.LC18
-ARM GAS  /tmp/ccZPmZxG.s 			page 14
+ 476 00b2 2149     		ldr	r1, .L22+68
+ 477 00b4 04F5C870 		add	r0, r4, #400
+ 478 00b8 FFF7FEFF 		bl	setMenuTexts
+ 479              	.LVL37:
+  30:Core/Src/menu.c ****   setMenuTexts(menu_cont[Grid_setup_move],"Set next position");
+ 480              		.loc 1 30 3 view .LVU97
+ 481 00bc 1F49     		ldr	r1, .L22+72
+ 482 00be 04F5FA70 		add	r0, r4, #500
+ 483 00c2 FFF7FEFF 		bl	setMenuTexts
+ 484              	.LVL38:
+  31:Core/Src/menu.c ****   setMenuTexts(menu_cont[Success_screen],"");
+ 485              		.loc 1 31 3 view .LVU98
+ 486 00c6 1E49     		ldr	r1, .L22+76
+ 487 00c8 04F51670 		add	r0, r4, #600
+ 488 00cc FFF7FEFF 		bl	setMenuTexts
+ 489              	.LVL39:
+  32:Core/Src/menu.c ****   setMenuTexts(menu_cont[Fail_screen],"");
+ 490              		.loc 1 32 3 view .LVU99
+ 491 00d0 2946     		mov	r1, r5
+ 492 00d2 04F52F70 		add	r0, r4, #700
+ 493 00d6 FFF7FEFF 		bl	setMenuTexts
+ 494              	.LVL40:
+  33:Core/Src/menu.c ****   setMenuTexts(menu_cont[Next_batch],"Press SELECT when next batch loaded.\nPress CANCEL to stop fl
+ 495              		.loc 1 33 3 view .LVU100
+ 496 00da 2946     		mov	r1, r5
+ 497 00dc 04F54870 		add	r0, r4, #800
+ 498 00e0 FFF7FEFF 		bl	setMenuTexts
+ 499              	.LVL41:
+  34:Core/Src/menu.c **** 
+ 500              		.loc 1 34 3 view .LVU101
+ 501 00e4 1749     		ldr	r1, .L22+80
+ 502 00e6 04F56170 		add	r0, r4, #900
+ 503 00ea FFF7FEFF 		bl	setMenuTexts
+ 504              	.LVL42:
+  36:Core/Src/menu.c **** }
+ 505              		.loc 1 36 3 view .LVU102
+  37:Core/Src/menu.c **** 
+ 506              		.loc 1 37 1 is_stmt 0 view .LVU103
+ 507 00ee 3046     		mov	r0, r6
+ 508 00f0 70BD     		pop	{r4, r5, r6, pc}
+ 509              	.L23:
+ 510 00f2 00BF     		.align	2
+ 511              	.L22:
+ 512 00f4 64000000 		.word	menu_titles+100
+ 513 00f8 00000000 		.word	.LC0
+ 514 00fc 0C000000 		.word	.LC1
+ 515 0100 1C000000 		.word	.LC2
+ 516 0104 2C000000 		.word	.LC3
+ 517 0108 38000000 		.word	.LC4
+ 518 010c 44000000 		.word	.LC5
+ 519 0110 54000000 		.word	.LC6
+ 520 0114 64000000 		.word	.LC7
+ 521 0118 70000000 		.word	.LC8
+ 522 011c 78000000 		.word	.LC9
+ 523 0120 84000000 		.word	.LC10
+ 524 0124 94000000 		.word	.LC11
+ 525 0128 64000000 		.word	menu_cont+100
+ARM GAS  /tmp/cc1FHjKq.s 			page 14
 
 
- 527              		.cfi_endproc
- 528              	.LFE65:
- 530              		.global	menu_cont
- 531              		.section	.bss.menu_cont,"aw",%nobits
- 532              		.align	2
- 535              	menu_cont:
- 536 0000 00000000 		.space	1100
- 536      00000000 
- 536      00000000 
- 536      00000000 
- 536      00000000 
- 537              		.global	menu_titles
- 538              		.section	.bss.menu_titles,"aw",%nobits
- 539              		.align	2
- 542              	menu_titles:
- 543 0000 00000000 		.space	1100
- 543      00000000 
- 543      00000000 
- 543      00000000 
- 543      00000000 
- 544              		.text
- 545              	.Letext0:
- 546              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 547              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 548              		.file 4 "/usr/lib/gcc/arm-none-eabi/12.2.0/include/stddef.h"
- 549              		.file 5 "Core/Inc/main.h"
- 550              		.file 6 "Core/Lib/st7735/fonts.h"
- 551              		.file 7 "Core/Lib/st7735/st7735.h"
- 552              		.file 8 "Core/Inc/menu.h"
- 553              		.file 9 "/usr/arm-none-eabi/include/string.h"
- 554              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
-ARM GAS  /tmp/ccZPmZxG.s 			page 15
+ 526 012c 98000000 		.word	.LC12
+ 527 0130 BC000000 		.word	.LC13
+ 528 0134 E4000000 		.word	.LC14
+ 529 0138 10010000 		.word	.LC15
+ 530 013c 38010000 		.word	.LC16
+ 531 0140 4C010000 		.word	.LC17
+ 532 0144 60010000 		.word	.LC18
+ 533              		.cfi_endproc
+ 534              	.LFE65:
+ 536              		.global	menu_cont
+ 537              		.section	.bss.menu_cont,"aw",%nobits
+ 538              		.align	2
+ 541              	menu_cont:
+ 542 0000 00000000 		.space	1200
+ 542      00000000 
+ 542      00000000 
+ 542      00000000 
+ 542      00000000 
+ 543              		.global	menu_titles
+ 544              		.section	.bss.menu_titles,"aw",%nobits
+ 545              		.align	2
+ 548              	menu_titles:
+ 549 0000 00000000 		.space	1200
+ 549      00000000 
+ 549      00000000 
+ 549      00000000 
+ 549      00000000 
+ 550              		.text
+ 551              	.Letext0:
+ 552              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
+ 553              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
+ 554              		.file 4 "/usr/lib/gcc/arm-none-eabi/12.2.0/include/stddef.h"
+ 555              		.file 5 "Core/Inc/main.h"
+ 556              		.file 6 "Core/Lib/st7735/fonts.h"
+ 557              		.file 7 "Core/Lib/st7735/st7735.h"
+ 558              		.file 8 "Core/Inc/menu.h"
+ 559              		.file 9 "/usr/arm-none-eabi/include/string.h"
+ 560              		.file 10 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  /tmp/cc1FHjKq.s 			page 15
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 menu.c
-     /tmp/ccZPmZxG.s:19     .text.serveMenuFunc:0000000000000000 $t
-     /tmp/ccZPmZxG.s:25     .text.serveMenuFunc:0000000000000000 serveMenuFunc
-     /tmp/ccZPmZxG.s:43     .text.drawMenuScreen:0000000000000000 $t
-     /tmp/ccZPmZxG.s:49     .text.drawMenuScreen:0000000000000000 drawMenuScreen
-     /tmp/ccZPmZxG.s:113    .text.drawMenuScreen:0000000000000050 $d
-     /tmp/ccZPmZxG.s:542    .bss.menu_titles:0000000000000000 menu_titles
-     /tmp/ccZPmZxG.s:535    .bss.menu_cont:0000000000000000 menu_cont
-     /tmp/ccZPmZxG.s:121    .text.serveMenuScreen:0000000000000000 $t
-     /tmp/ccZPmZxG.s:127    .text.serveMenuScreen:0000000000000000 serveMenuScreen
-     /tmp/ccZPmZxG.s:245    .text.setMenuTexts:0000000000000000 $t
-     /tmp/ccZPmZxG.s:251    .text.setMenuTexts:0000000000000000 setMenuTexts
-     /tmp/ccZPmZxG.s:295    .rodata.initMenu.str1.4:0000000000000000 $d
-     /tmp/ccZPmZxG.s:354    .text.initMenu:0000000000000000 $t
-     /tmp/ccZPmZxG.s:360    .text.initMenu:0000000000000000 initMenu
-     /tmp/ccZPmZxG.s:506    .text.initMenu:00000000000000ec $d
-     /tmp/ccZPmZxG.s:532    .bss.menu_cont:0000000000000000 $d
-     /tmp/ccZPmZxG.s:539    .bss.menu_titles:0000000000000000 $d
+     /tmp/cc1FHjKq.s:19     .text.serveMenuFunc:0000000000000000 $t
+     /tmp/cc1FHjKq.s:25     .text.serveMenuFunc:0000000000000000 serveMenuFunc
+     /tmp/cc1FHjKq.s:43     .text.drawMenuScreen:0000000000000000 $t
+     /tmp/cc1FHjKq.s:49     .text.drawMenuScreen:0000000000000000 drawMenuScreen
+     /tmp/cc1FHjKq.s:113    .text.drawMenuScreen:0000000000000050 $d
+     /tmp/cc1FHjKq.s:548    .bss.menu_titles:0000000000000000 menu_titles
+     /tmp/cc1FHjKq.s:541    .bss.menu_cont:0000000000000000 menu_cont
+     /tmp/cc1FHjKq.s:121    .text.serveMenuScreen:0000000000000000 $t
+     /tmp/cc1FHjKq.s:127    .text.serveMenuScreen:0000000000000000 serveMenuScreen
+     /tmp/cc1FHjKq.s:247    .text.setMenuTexts:0000000000000000 $t
+     /tmp/cc1FHjKq.s:253    .text.setMenuTexts:0000000000000000 setMenuTexts
+     /tmp/cc1FHjKq.s:297    .rodata.initMenu.str1.4:0000000000000000 $d
+     /tmp/cc1FHjKq.s:356    .text.initMenu:0000000000000000 $t
+     /tmp/cc1FHjKq.s:362    .text.initMenu:0000000000000000 initMenu
+     /tmp/cc1FHjKq.s:512    .text.initMenu:00000000000000f4 $d
+     /tmp/cc1FHjKq.s:538    .bss.menu_cont:0000000000000000 $d
+     /tmp/cc1FHjKq.s:545    .bss.menu_titles:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 ST7735_FillScreen

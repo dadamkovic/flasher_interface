@@ -20,3 +20,9 @@ uint8_t parseInstruction(struct setup_data *setup_data_h, struct comm_data *comm
   
   return RETURN_OK;
 }
+
+static uint8_t setZero(struct comm_data *comm_data_h){
+  char command[TX_BUFF_SIZE];
+
+  return RETURN_OK;
+}

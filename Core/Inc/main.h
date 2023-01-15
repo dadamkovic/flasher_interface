@@ -39,6 +39,7 @@ extern "C" {
 #define RX_BUFF_SIZE 255
 #define TX_BUFF_SIZE 255
 #define ERR_ARRAY_SIZE 255
+#define MAX_TEXT_S 100  //max num of characters on one line of display
 
 
 struct comm_data{

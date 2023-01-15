@@ -5,9 +5,6 @@
 #include "flash_execution.h"
 #include "st7735.h"
 
-#define TITLE_IDX 0
-#define CONT_IDX 1
-
 
 enum screens{
   None,
@@ -45,9 +42,6 @@ uint8_t serveMenuFunc(struct menu_status *, uint8_t *, struct setup_data *);
 uint8_t drawMenuScreen(enum screens);
 uint8_t setMenuTexts(char *, const char *);
 
-
-extern char menu_titles[MENUS_NUM][100];
-extern char menu_cont[MENUS_NUM][100];
 
 
 

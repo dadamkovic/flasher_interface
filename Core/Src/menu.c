@@ -1,10 +1,11 @@
 #include "menu.h"
 
-char menu_titles[MENUS_NUM][100];
-char menu_cont[MENUS_NUM][100];
+char menu_titles[MENUS_NUM+1][MAX_TEXT_S];
+char menu_cont[MENUS_NUM+1][MAX_TEXT_S];
 
 uint8_t initMenu(struct menu_status *menu_h){
   ST7735_Init();
+  ST7735_FillScreen(ST7735_GRAY);
   menu_h->curr_screen = Home_screen;
   menu_h->update_needed = true;
   menu_h->alarm_count = 0;
@@ -36,21 +37,10 @@ uint8_t initMenu(struct menu_status *menu_h){
 }
 
 uint8_t serveMenuScreen(struct menu_status *menu_h, uint8_t *joy_vals){
-  if(menu_h->update_needed == true){
-    drawMenuScreen(menu_h->curr_screen);
-    menu_h->update_needed = false;
-  }
-  
-  //make sure that home screen gets displayed for 1s then change to next screen
-  if(menu_h->curr_screen == Home_screen){
-    HAL_Delay(1000);
-    menu_h->curr_screen = Manual_move;
-    menu_h->update_needed = true;
-  }
 
   //joypad to the right so switch to next screen
-  else if(joy_vals[1] > 220){
-    if(menu_h->curr_screen < MENUS_NUM)menu_h->curr_screen = (menu_h->curr_screen + 1);
+  if(joy_vals[1] > 220){
+    if(menu_h->curr_screen < (MENUS_NUM-1))menu_h->curr_screen = (menu_h->curr_screen + 1);
     else menu_h->curr_screen = Manual_move;
     menu_h->update_needed = true;
   } 
@@ -64,13 +54,21 @@ uint8_t serveMenuScreen(struct menu_status *menu_h, uint8_t *joy_vals){
 
   else;
 
-
+  if(menu_h->update_needed == true){
+    drawMenuScreen(menu_h->curr_screen);
+    menu_h->update_needed = false;
+    if(menu_h->curr_screen == Home_screen){
+      menu_h->curr_screen += 1;
+      menu_h->update_needed = true; 
+    }
+    HAL_Delay(500);
+  }
 
   return RETURN_OK;
 }
 
 uint8_t serveMenuFunc(struct menu_status *menu_h, uint8_t *joy_vals, struct setup_data *setup_data_h){
-
+  
   return RETURN_OK;
 }
 
