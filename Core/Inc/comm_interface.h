@@ -5,9 +5,9 @@
 #include "pin_mapping.h"
 
 
-uint8_t initComms(struct comm_data *);
-uint8_t serveCommunication(struct comm_data *);
-uint8_t recieveFeedback(struct setup_data *, struct comm_data *);
-uint8_t reportFail(struct setup_data *, struct comm_data *);
+uint8_t initComms(struct CommData *);
+uint8_t serveCommunication(struct CommData *);
+uint8_t recieveFeedback(struct SetupData *, struct CommData *);
+uint8_t reportFail(struct SetupData *, struct CommData *);
 
 #endif

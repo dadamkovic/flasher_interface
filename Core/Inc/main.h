@@ -43,14 +43,14 @@ extern "C" {
 #define MAX_TEXT_S 100  //max num of characters on one line of display
 
 
-typedef struct comm_data{
+typedef struct CommData{
   UART_HandleTypeDef *plotter_handle;
   UART_HandleTypeDef *flasher_handle;
   char plotter_rx[RX_BUFF_SIZE];
   char plotter_tx[TX_BUFF_SIZE];
   char flasher_rx[RX_BUFF_SIZE];
   char flasher_tx[TX_BUFF_SIZE];
-}comm_data;
+}CommData;
 
 enum execution_status{
   Movement,
@@ -60,14 +60,14 @@ enum execution_status{
   Idle,
   Fail};
 
-typedef struct setup_data{
+typedef struct SetupData{
   enum execution_status exec_status;
   uint16_t offset_x;
   uint16_t offset_y;
   uint8_t flash_matrix_dims[2];
   uint8_t flash_matrix_pos[2];
   char fail_msg[ERR_ARRAY_SIZE];
-}setup_data;
+}SetupData;
 
 
 /* USER CODE END ET */

@@ -100,14 +100,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   uint8_t joypad_vals[2] = {0,0};
-  struct menu_status menu_handle;
-  struct setup_data setup_handle;
-  struct comm_data comm_handle;
+ 
+  SetupData setup_h;
+  CommData comm_h;
 
   //draws the initial menu screen
-  initMenu(&menu_handle);
-  initSetupData(&setup_handle);
-  initComms(&comm_handle);
+  Menu *menu_h = menuInit();
+  initSetupData(&setup_h);
+  initComms(&comm_h);
 
   uint32_t sys_time = HAL_GetTick();
 
@@ -117,33 +117,31 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    //fetches values of the joypad 
-    getJoypadVals(joypad_vals);
-    //updates the meny screen
-    serveMenuScreen(&menu_handle, joypad_vals);
-    //performs function selected on the menu
-    serveMenuFunc(&menu_handle, joypad_vals, &setup_handle, &comm_handle);
     
+    //fetches values of the joypad 
+    joyGetVals(joypad_vals);
+    //updates the meny screen
+    menuServeMenu(&menu_h, joypad_vals);
+    //performs function selected on the menu
+    menuServeFunc(menu_h, joypad_vals, &setup_h, &comm_h);
+    
+    //we switch directly to exec menu
+    //@todo maybe create a wrapper function for the exec switch
     if(select_button){
       select_button = 0;
-      if((HAL_GetTick() - sys_time) >= 1000){
-        menu_handle.exec_menu = true;
-        sys_time = HAL_GetTick();
+      if(((HAL_GetTick() - sys_time) >= 1000) && (menu_h->exec_m != NULL)){
+        menu_h = menu_h->exec_m;
       }
     }
 
+    //we switch back to main screen
     if(cancel_button){
       cancel_button = 0;
       if((HAL_GetTick() - sys_time) >= 1000){
-        menu_handle.exit_menu = true;
-        sys_time = HAL_GetTick();
+        menuResetMenu(&menu_h);
       }
     }
 
-    //in case of fail we inform the user of what happened
-    if(setup_handle.exec_status == Fail){
-      reportFail(&setup_handle, &comm_handle);
-    }
   }
     
     //for now endless cycle

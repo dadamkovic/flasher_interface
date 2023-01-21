@@ -12,7 +12,7 @@
 #include "utils.h"
 
 /**
- * @brief converts float to string with precison of 2 decimal places. Can only convert
+ * @brief Converts float to string with precison of 2 decimal places. Can only convert
  *        numbers that are up to 12 unit points long
  * 
  * @param x float to be converted
@@ -45,6 +45,14 @@ char *floatToChar(float x, char *p) {
     return p;
 }
 
+
+/**
+ * @brief Simple wrapper around the strncpy to copy according to the string size
+ * 
+ * @param dest Pointer to destiantion
+ * @param cont Pointer to content
+ * @return uint8_t RETURN_OK
+ */
 uint8_t copyString(char *dest, const char *cont){
     uint8_t cont_size = strlen(cont)+1;
     strncpy(dest,cont,cont_size);
@@ -53,6 +61,13 @@ uint8_t copyString(char *dest, const char *cont){
 }
 
 
+/**
+ * @brief Wrapper that checks how much data is in buffer, sends it and clears afterwards
+ * 
+ * @param uart_h UART_HandleTypeDef handle
+ * @param data Pointer to char array with data to send
+ * @return uint8_t RETURN_FAIL | RETURN_OK
+ */
 uint8_t uartSendData(UART_HandleTypeDef *uart_h, char *data){
 
   uint16_t data_len = strlen(data) + 1; //adding one for \0
@@ -67,6 +82,14 @@ uint8_t uartSendData(UART_HandleTypeDef *uart_h, char *data){
   return RETURN_OK;
 }
 
+
+/**
+ * @brief Fetches data as long as it keeps comming or runs our of space
+ * 
+ * @param uart_h 
+ * @param data 
+ * @return uint8_t 
+ */
 uint8_t uartGetData(UART_HandleTypeDef *uart_h, char *data){
 
   uint16_t max_len = sizeof(data);
@@ -76,17 +99,20 @@ uint8_t uartGetData(UART_HandleTypeDef *uart_h, char *data){
   //clear the buffer before reception
   memset(data, 0, max_len);
 
-  while(curr_byte < max_len){
+  while(curr_byte < (max_len-1)){
     if(HAL_OK != HAL_UART_Receive(uart_h, &tmp, 1, 100)){
         return RETURN_FAIL;
     }
 
-    if(tmp == '\n')break;
+    if(tmp == '\n'){
+      *(data+curr_byte) = '\0';
+      break;
+    }
     else{
         *(data+curr_byte) = tmp; 
     }
-    }
-    return RETURN_OK;
   }
+    return RETURN_OK;
+}
 
   

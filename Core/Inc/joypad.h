@@ -4,7 +4,7 @@
 #include "main.h"
 #include "adc.h"
 
-uint8_t getJoypadVals(uint8_t *joy_vals);
+uint8_t joyGetVals(uint8_t *joy_vals);
 
 
 #endif

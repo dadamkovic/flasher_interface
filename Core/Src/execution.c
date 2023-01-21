@@ -13,16 +13,16 @@
 
 
 
-uint8_t initSetupData(struct setup_data *setup_data_h){
+uint8_t initSetupData(struct SetupData *setup_h){
  
-  setup_data_h->exec_status = Idle;
-  setup_data_h->flash_matrix_dims[0] = 0;
-  setup_data_h->flash_matrix_dims[1] = 0;
-  setup_data_h->flash_matrix_pos[0] = 0;
-  setup_data_h->flash_matrix_pos[1] = 0;
-  setup_data_h->offset_x = 0;
-  setup_data_h->offset_y = 0;
-  strncpy(setup_data_h->fail_msg,"No Fail",ERR_ARRAY_SIZE);
+  setup_h->exec_status = Idle;
+  setup_h->flash_matrix_dims[0] = 0;
+  setup_h->flash_matrix_dims[1] = 0;
+  setup_h->flash_matrix_pos[0] = 0;
+  setup_h->flash_matrix_pos[1] = 0;
+  setup_h->offset_x = 0;
+  setup_h->offset_y = 0;
+  strncpy(setup_h->fail_msg,"No Fail",ERR_ARRAY_SIZE);
   return RETURN_OK;
 }
 
@@ -32,10 +32,10 @@ uint8_t initSetupData(struct setup_data *setup_data_h){
 /**
  * @brief Zeroes the plotter internal coordinates to current position
  * 
- * @param comm_data_h handle containing the uart communication handle and data buffers
+ * @param CommData_h handle containing the uart communication handle and data buffers
  * @return uint8_t RETURN_OK
  */
-static uint8_t setZero(struct comm_data *comm_data_h){
+static uint8_t setZero(struct CommData *CommData_h){
   //char command[TX_BUFF_SIZE];
 
   return RETURN_OK;
@@ -43,7 +43,7 @@ static uint8_t setZero(struct comm_data *comm_data_h){
 
 
 
-uint8_t manualControl(uint8_t *joy_vals, setup_data *setup_data_h, comm_data *comm_h){
+uint8_t manualControl(uint8_t *joy_vals, SetupData *setup_h, CommData *comm_h){
   float move_dist[2] = {0.0};
 
   if(joy_vals[0] > 230)move_dist[0] = 10.0;
@@ -60,10 +60,6 @@ uint8_t manualControl(uint8_t *joy_vals, setup_data *setup_data_h, comm_data *co
 
   //creates the command in the communication tx buffer
   quickMoveCommand(move_dist, comm_h);
-
-  //semds the commmand stored in the plotter tx buffer
-  plotterSendCommand(comm_h);
-
   //wait until the move is completed
   HAL_Delay(_moveDuration(move_dist));
 
@@ -84,7 +80,7 @@ uint8_t manualControl(uint8_t *joy_vals, setup_data *setup_data_h, comm_data *co
  * @param comm_h handle containing the uart communication handle and data buffers
  * @return uint8_t 
  */
-uint8_t plotterMoving(comm_data *comm_h){
+uint8_t plotterMoving(CommData *comm_h){
 
   return 0;
 }
@@ -96,7 +92,7 @@ uint8_t plotterMoving(comm_data *comm_h){
  * @param comm_h handle containing the uart communication handle and data buffers 
  * @return uint8_t RETURN_OK
  */
-uint8_t quickMoveCommand(float *move_dist, comm_data *comm_h){
+uint8_t quickMoveCommand(float *move_dist, CommData *comm_h){
   char x_dist[8], y_dist[8], feed[8] = {0};
 
   floatToChar(move_dist[0],x_dist);
@@ -113,19 +109,28 @@ uint8_t quickMoveCommand(float *move_dist, comm_data *comm_h){
   strcat(comm_h->plotter_tx, y_dist);
   strcat(comm_h->plotter_tx,"\n");
 
+  //semds the commmand stored in the plotter tx buffer
+  plotterSendCommand(comm_h);
+
   return RETURN_OK;
 }
 
 
-uint8_t plotterSendCommand(comm_data *comm_h){
+uint8_t plotterSendCommand(CommData *comm_h){
   return uartSendData(comm_h->plotter_handle, comm_h->plotter_tx);
 };
 
-uint8_t plotterGetCommand(comm_data *comm_h){
+uint8_t plotterGetCommand(CommData *comm_h){
   return uartGetData(comm_h->plotter_handle, comm_h->plotter_rx);
 }
 
 
+/**
+ * @brief Calculates the move duration based on the feedrate & distance  
+ * 
+ * @param move_dist Flaot dist in x & y direction [x,y]
+ * @return uint32_t Milisends until the move is finished
+ */
 uint32_t _moveDuration(float *move_dist){
   if(move_dist[0] == 0.0 && move_dist[1] == 0.0)return 0;
   else if(move_dist[0] == 0.0 && move_dist[1] == 10.0 || 

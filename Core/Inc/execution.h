@@ -19,15 +19,15 @@
 #define FEEDRATE_MS FEEDRATE/60/1000
 
 
-uint8_t initSetupData(setup_data *);
-uint8_t parseInstruction(setup_data *, comm_data *);
-static uint8_t _setZero(comm_data *);
-uint8_t manualControl(uint8_t *, setup_data *, comm_data *);
-uint8_t quickMoveCommand(float *, comm_data *);
+uint8_t initSetupData(SetupData *);
+uint8_t parseInstruction(SetupData *, CommData *);
+static uint8_t _setZero(CommData *);
+uint8_t manualControl(uint8_t *, SetupData *, CommData *);
+uint8_t quickMoveCommand(float *, CommData *);
 
-uint8_t plotterSendCommand(comm_data *);
-uint8_t plotterGetCommand(comm_data *);
-uint8_t plotterMoving(comm_data *);
+uint8_t plotterSendCommand(CommData *);
+uint8_t plotterGetCommand(CommData *);
+uint8_t plotterMoving(CommData *);
 
 uint32_t _moveDuration(float *);
 

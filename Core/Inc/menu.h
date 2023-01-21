@@ -5,57 +5,46 @@
 #include "execution.h"
 #include "st7735.h"
 
+//comment out if you don't want to display initial screen
+#define SHOW_HOME_SCR
 
-enum screens{
-  MENU_START,
-  Home_screen, 
-  Manual_move,
-  Zero_pos,
-  Grid_setup_auto,
-  Grid_setup_manual,
-  USER_MENUS_NUM,
-  Grid_setup_x_num,
-  Grid_setup_y_num,
-  Grid_setup_x_offset,
-  Grid_setup_y_offset,
-  Grid_setup_zero,
-  Grid_setup_move,
-  Execute_flashing,
-  Execute_manual,
-  Success_screen,
-  Fail_screen,
-  Next_batch,
-  TOTAL_MENUS_NUM};
+#define MAX_CHAR_CNT 64
+#define TRUE (uint8_t) 1
+#define FALSE (uint8_t) 0
 
+typedef uint8_t(*t_exec_f)(uint8_t *, SetupData *, CommData *);
 
+typedef struct Menu Menu;
 
-
-
-
-typedef struct menu_status{
-  enum screens curr_screen;
-  uint8_t update_needed;
-  uint8_t alarm_count;
-  uint8_t exec_menu;
-  uint8_t exit_menu;
-}menu_status;
-
-
+typedef struct Menu{
+    char title[MAX_CHAR_CNT];
+    char content[MAX_CHAR_CNT];
+    Menu *left_m;
+    Menu *right_m;
+    Menu *exec_m;
+    uint8_t exec;
+    t_exec_f *exec_f;
+    uint8_t id;
+}Menu;
 
 
 //external function declarations
-uint8_t initMenu(struct menu_status *menu_h);
-uint8_t serveMenuScreen(struct menu_status *, uint8_t *);
-uint8_t serveMenuFunc(struct menu_status *, uint8_t *, struct setup_data *, struct comm_data *);
+Menu * menuInit();
+uint8_t menuResetMenu(Menu **);
 
+uint8_t menuGenerate(Menu *, const char *, const char *);
+uint8_t menuLink(Menu *, Menu *);
+uint8_t menuDisplayClear();
+uint8_t menuDrawScreen(Menu *);
+uint8_t menuLinkExec(Menu *, Menu *);
 
-uint8_t drawMenuScreen(enum screens);
-uint8_t setMenuTexts(char *, const char *);
+uint8_t menuServeMenu(Menu **, uint8_t *);
+uint8_t menuServeFunc(Menu *, uint8_t *, struct SetupData *, struct CommData *);
 
+uint8_t _menuHomeScreen(Menu *);
 
-
-
-
+inline uint8_t menuSetExec(Menu *);
+uint8_t menuAttachExecFunc(Menu *, t_exec_f *);
 
 
 #endif
