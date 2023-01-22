@@ -11,7 +11,6 @@
 #ifndef __EXECUTION_H__
 #define __EXECUTION_H__
 
-#include "main.h"
 #include "utils.h"
 
 //max 99999.9
@@ -21,7 +20,6 @@
 
 uint8_t initSetupData(SetupData *);
 uint8_t parseInstruction(SetupData *, CommData *);
-static uint8_t _setZero(CommData *);
 uint8_t manualControl(uint8_t *, SetupData *, CommData *);
 uint8_t quickMoveCommand(float *, CommData *);
 

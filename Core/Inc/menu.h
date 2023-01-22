@@ -3,13 +3,16 @@
 
 
 
-#include "st7735.h"
 #include <string.h>
+#include "logger.h"
+#include <stdint.h>
+#include "stm32f1xx_hal.h"
 
 //comment out if you don't want to display initial screen
 #define MENU_HANDLE_ERROR -1
 #define MENU_MAX_MENUS 16
 
+#define LOG_SRC_MENU "menu.c"
 
 #define MAX_CHAR_CNT 255
 #define TRUE (uint8_t) 1
@@ -23,36 +26,34 @@ typedef enum{
 typedef enum{
     MENU_NOT_PRESSED,
     MENU_PRESSED
-}MENU_ButtonEnum;
+}MENU_ButtonTypeDef;
 
 typedef enum{
     MENU_OK,
     MENU_FAIL
 } MENU_ReturnTypeDef;
 
-typedef enum Menu_PositionEnum{
+typedef enum{
     MENU_LEFT = 'L',
     MENU_RIGHT = 'R',
     MENU_UP = 'U',
     MENU_DOWN = 'D',
     MENU_CENTER = 'C'
-}MENU_PositionEnum;
+}MENU_PositionTypeDef;
 
 typedef MENU_ReturnTypeDef(MENU_ExecFuncTypeDef)(void *);
-typedef MENU_ButtonEnum (MENU_ButtonFuncTypeDef)(void);
-typedef MENU_PositionEnum (MENU_PositionTypeFunc)(void);
+typedef MENU_ButtonTypeDef (MENU_ButtonFuncTypeDef)(void);
+typedef MENU_PositionTypeDef (MENU_PositionTypeFunc)(void);
 typedef uint8_t MENU_HandleTypeDef;
 typedef MENU_ReturnTypeDef (MENU_DrawScreenTypeFunc)(MENU_HandleTypeDef);
 
 
-typedef enum MENU_ExecEnum{
+typedef enum{
     MENU_NO_EXEC,
     MENU_EXEC
 }MENU_ExecEnum;
 
 typedef MENU_HandleTypeDef (MENU_InitFuncTypeDef)(void);
-
-typedef struct Menu Menu;
 
 typedef struct _MENU_StatusTypeDef{
     char title[MAX_CHAR_CNT];
@@ -92,7 +93,7 @@ MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef);
 MENU_HandleTypeDef menuCreate(char *, char *);
 
 
-__attribute__((weak)) void menuErrorHandler();
+void menuErrorHandler();
 
 
 #endif

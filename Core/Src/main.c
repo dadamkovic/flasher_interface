@@ -30,6 +30,7 @@
 #include "execution.h"
 #include "comm_interface.h"
 #include "utils.h"
+#include "logger.h"
 
 
 /* USER CODE END Includes */
@@ -58,14 +59,14 @@ volatile uint8_t cancel_button = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-MENU_PositionEnum mainGetPos();
+MENU_PositionTypeDef mainGetPos();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 JOY_HandleTypeDef g_joypad_h;
 
-MENU_PositionEnum mainGetPos(){
+MENU_PositionTypeDef mainGetPos(){
   JOY_OutTypeDef menu_pos;
   joyRead(g_joypad_h, &menu_pos, JOY_MEASURE);
   return menu_pos.pos;
@@ -104,17 +105,20 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   MX_SPI2_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
   JOY_HandleTypeDef joypad_h;
   //JOY_ReturnTypeDef joypad_out;
+
+  logInit(LOG_LOW_PRIO, LOG_ENABLED, utilsWriteLog);
+  logOpen();
 
   int16_t joy_thresholds[] = {100,100,-100,-100};
   joypad_h = joyInit(NULL, joy_thresholds);
   g_joypad_h = joypad_h;
   joyOpen(joypad_h, userJoyGetVals);
  
-
   MENU_HandleTypeDef menu_h;
   menu_h = menuInit(utilsMenuInit, utilsMenuGetSelect, utilsMenuGetCancel, mainGetPos, utilsDrawScreen);
 
@@ -126,8 +130,6 @@ int main(void)
   initSetupData(&setup_h);
   initComms(&comm_h);
 
-  uint32_t sys_time = HAL_GetTick();
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -137,8 +139,7 @@ int main(void)
     //performs function selected on the menu
     menu_h = menuNextState(menu_h);
     menuRunState(menu_h);
-    
-
+    logWrite(LOG_SRC_MENU,"TEST", LOG_HIGH_PRIO);
   }
     
     //for now endless cycle

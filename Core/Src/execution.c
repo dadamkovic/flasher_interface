@@ -12,6 +12,8 @@
 #include "execution.h"
 
 
+static uint8_t _setZero(CommData *);
+
 
 uint8_t initSetupData(struct SetupData *setup_h){
  

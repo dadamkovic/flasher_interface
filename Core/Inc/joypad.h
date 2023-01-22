@@ -25,13 +25,13 @@ typedef enum JOY_ReturnTypeDef{
 
 typedef JOY_ReturnTypeDef (JOY_ReadFuncTypeDef)(int16_t *);
 
-typedef enum JOY_PositionEnum{
+typedef enum {
     JOY_LEFT = 'L',
     JOY_RIGHT = 'R',
     JOY_UP = 'U',
     JOY_DOWN = 'D',
     JOY_CENTER = 'C'
-}JOY_PositionEnum;
+}JOY_PositionTypeDef;
 
 typedef enum JOY_FeedbackTypeDef{
     JOY_MEASURE,
@@ -40,10 +40,10 @@ typedef enum JOY_FeedbackTypeDef{
 
 
 
-typedef struct __JOY_StatusTypeDef{
+typedef struct {
     JOY_ReadFuncTypeDef *readFunc;
     int16_t x, y;
-    JOY_PositionEnum pos;
+    JOY_PositionTypeDef pos;
     int16_t threshold[4];
     JOY_HandleTypeDef id;
     JOY_InitFuncTypeDef *initFunc;
@@ -52,10 +52,14 @@ typedef struct __JOY_StatusTypeDef{
 
 typedef struct{
     int16_t x, y;
-    JOY_PositionEnum pos;
+    JOY_PositionTypeDef pos;
 }JOY_OutTypeDef;
 
-
+typedef enum{
+    JOY_THRESHOLD_NULL_ERR,
+    JOY_HANDLES_EXHAUSED_ERR,
+    JOY_READ_FUNC_NULL_ERR,
+}JOY_ErrorTypeDef;
 
 JOY_HandleTypeDef joyInit(JOY_InitFuncTypeDef *, int16_t *);
 JOY_HandleTypeDef joyOpen(JOY_HandleTypeDef , JOY_ReadFuncTypeDef *);
@@ -64,7 +68,7 @@ JOY_HandleTypeDef joyIoctl(JOY_HandleTypeDef, JOY_ReadFuncTypeDef *);
 JOY_ReturnTypeDef joyClose(JOY_HandleTypeDef);
 
 
-void joyErrorHandler();
+void joyErrorHandler(JOY_ErrorTypeDef);
 
 
 

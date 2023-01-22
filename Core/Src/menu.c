@@ -72,12 +72,6 @@ static MENU_HandleTypeDef _menuGetFreeMenu(){
 }
 
 
-
-
-
-
-
-
 MENU_ReturnTypeDef menuLinkExec(MENU_HandleTypeDef menu_id, MENU_HandleTypeDef exec_menu_id, MENU_ExecFuncTypeDef *exec_f){
   if(exec_f == NULL){
     menuErrorHandler();
@@ -96,24 +90,21 @@ MENU_ReturnTypeDef menuLinkExec(MENU_HandleTypeDef menu_id, MENU_HandleTypeDef e
 }
 
 
-
 MENU_ReturnTypeDef menuLink(MENU_HandleTypeDef menu_l_id, MENU_HandleTypeDef menu_r_id){
     _menu_status[menu_l_id].right_m = _menu_status[menu_r_id].id;
     _menu_status[menu_r_id].left_m = _menu_status[menu_l_id].id;
     
-    return RETURN_OK;
+    return MENU_OK;
 }
-
-
 
 
 MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef menu_id){
 
   static MENU_HandleTypeDef old_id = MENU_HANDLE_ERROR;
-  MENU_PositionEnum user_com;
+  MENU_PositionTypeDef user_com;
   
-  MENU_ButtonEnum select_but = _menu_control.getSelect();
-  MENU_ButtonEnum cancel_but = _menu_control.getCancel();
+  MENU_ButtonTypeDef select_but = _menu_control.getSelect();
+  MENU_ButtonTypeDef cancel_but = _menu_control.getCancel();
 
   //ignore the case that both buttons are pressed at the same time
   if(select_but == MENU_PRESSED && cancel_but == MENU_PRESSED){
@@ -146,6 +137,9 @@ MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef menu_id){
   else if(cancel_but == MENU_PRESSED){
     menu_id = _menuGetHomeMenu(menu_id);
   }
+
+  //sprintf(text, "Sys time is %dms!\n", HAL_GetTick());
+  logWrite(LOG_SRC_MENU, "TEST", LOG_HIGH_PRIO);
 
   if(old_id != menu_id){
     _menu_control.drawScreen(menu_id);

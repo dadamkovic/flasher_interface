@@ -11,6 +11,7 @@
 
 #include "utils.h"
 
+
 /**
  * @brief Converts float to string with precison of 2 decimal places. Can only convert
  *        numbers that are up to 12 unit points long
@@ -190,11 +191,11 @@ MENU_HandleTypeDef utilsMenuInit(){
 };
 
 
-MENU_ButtonEnum utilsMenuGetSelect(){
+MENU_ButtonTypeDef utilsMenuGetSelect(){
   return HAL_GPIO_ReadPin(select_GPIO_Port, select_Pin);
 }
 
-MENU_ButtonEnum utilsMenuGetCancel(){
+MENU_ButtonTypeDef utilsMenuGetCancel(){
   return HAL_GPIO_ReadPin(cancel_GPIO_Port, cancel_Pin);
 }
   
@@ -207,3 +208,12 @@ MENU_ReturnTypeDef utilsDrawScreen(MENU_HandleTypeDef menu_h){
 
   return MENU_OK;
 }
+
+
+LOG_StatusTypeDef utilsWriteLog(char *data){
+  if(HAL_OK != HAL_UART_Transmit(&huart2, data, strlen(data), HAL_MAX_DELAY)){
+    return LOG_FAIL;
+  }
+
+  return LOG_OK;
+};

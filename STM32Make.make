@@ -43,6 +43,7 @@ Core/Src/comm_interface.c \
 Core/Src/execution.c \
 Core/Src/gpio.c \
 Core/Src/joypad.c \
+Core/Src/logger.c \
 Core/Src/main.c \
 Core/Src/menu.c \
 Core/Src/spi.c \

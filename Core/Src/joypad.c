@@ -13,7 +13,7 @@
 #include <string.h>
 
 
-static JOY_PositionEnum _joyGetThreshold(JOY_HandleTypeDef);
+static JOY_PositionTypeDef _joyGetThreshold(JOY_HandleTypeDef);
 static JOY_HandleTypeDef _joyGetFreeJoypad();
 
 static __JOY_StatusTypeDef _joy_status[JOY_MAX_CONNECTED];
@@ -28,13 +28,13 @@ static __JOY_StatusTypeDef _joy_status[JOY_MAX_CONNECTED];
  */
 JOY_HandleTypeDef joyInit(JOY_InitFuncTypeDef *init_f, int16_t *thresholds){
   if(thresholds == NULL){
-    joyErrorHandler();
+    joyErrorHandler(JOY_THRESHOLD_NULL_ERR);
     return JOY_HANDLE_ERROR;
   }
 
   JOY_HandleTypeDef joy_id = _joyGetFreeJoypad();
   if(joy_id == JOY_HANDLE_ERROR){
-    joyErrorHandler();
+    joyErrorHandler(JOY_HANDLES_EXHAUSED_ERR);
     return JOY_HANDLE_ERROR;
   }
 
@@ -78,7 +78,7 @@ static JOY_HandleTypeDef _joyGetFreeJoypad(){
  */
 JOY_HandleTypeDef joyOpen(JOY_HandleTypeDef joy_id, JOY_ReadFuncTypeDef *read_f){
   if(read_f == NULL){
-    joyErrorHandler();
+    joyErrorHandler(JOY_READ_FUNC_NULL_ERR);
     return JOY_HANDLE_ERROR;
   }
 
@@ -128,7 +128,8 @@ JOY_OutTypeDef *joyRead(JOY_HandleTypeDef joy_id, JOY_OutTypeDef *output, JOY_Fe
  * @todo Create enum with error flags that will be supplied here
  * 
  */
-__attribute__((weak)) void joyErrorHandler(){
+__attribute__((weak)) void joyErrorHandler(JOY_ErrorTypeDef err_origin){
+  
   while(1){
 
   }
@@ -136,12 +137,12 @@ __attribute__((weak)) void joyErrorHandler(){
 
 
 /**
- * @brief Internal function that outputs JOY_PositionEnum status
+ * @brief Internal function that outputs JOY_PositionTypeDef status
  * 
  * @param joy_id Joypad handle
- * @return JOY_PositionEnum One letter chanracter depending on where the joypad is pointing
+ * @return JOY_PositionTypeDef One letter chanracter depending on where the joypad is pointing
  */
-static JOY_PositionEnum _joyGetThreshold(JOY_HandleTypeDef joy_id){
+static JOY_PositionTypeDef _joyGetThreshold(JOY_HandleTypeDef joy_id){
   int16_t *thresholds = _joy_status[joy_id].threshold; 
   int16_t x = _joy_status[joy_id].x; 
   int16_t y = _joy_status[joy_id].y;

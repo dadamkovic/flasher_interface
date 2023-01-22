@@ -10,7 +10,11 @@
     "joypad.h": "c",
     "adc.h": "c",
     "fonts.h": "c",
-    "utils.h": "c"
+    "utils.h": "c",
+    "*.tcc": "c",
+    "cstdio": "c",
+    "logger.h": "c",
+    "stdint.h": "c"
   },
   "cortex-debug.variableUseNaturalFormat": true
 }
