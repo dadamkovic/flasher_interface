@@ -10,245 +10,194 @@
  */
 #include "menu.h"
 
-/**
- * @brief Initializes the user menus and clears the screen
- * 
- * @return Menu* pointer to startup Menu with allocated memory
- */
-Menu *menuInit(){
-
-  static uint8_t init_finished = FALSE;
-  static Menu HomeScr, ManualMoveScr, ZeroPosScr, SetupAutoScr, SetupManScr, SuccessScr,
-            FailedScr, ExecManScr, RunNextScr, StartScreen;
-
-  if(!init_finished){
-    menuDisplayClear();
-    
-    menuGenerate(&HomeScr,"Plotter ON", "");
-    menuGenerate(&ManualMoveScr, "Init. man move", "Manually move plotter using joypad");
-    menuGenerate(&ZeroPosScr, "Set Zero Pos.", "Set current possition as origin (0,0)");
-    menuGenerate(&SetupAutoScr, "Auto. Setup", "Automatically setup the flash pin positions");
-    menuGenerate(&SetupManScr, "Man. Setup", "Manually setup the flash pin positions");
-    menuGenerate(&SuccessScr, "SUCCESS!", "");
-    menuGenerate(&FailedScr, "FAILED", "");
-    menuGenerate(&ExecManScr, "Manual movement", "Move joypad to move the plotter");
-    menuGenerate(&RunNextScr, "Run Next?", "Press SELECT when next batch loaded.\nPress CANCEL to stop flashing.");
-
-    //set up links between individual menus
-    menuLink(&ManualMoveScr, &ZeroPosScr);
-    menuLink(&ZeroPosScr, &SetupAutoScr);
-    menuLink(&SetupAutoScr, &SetupManScr);
-    menuLink(&SetupManScr, &ManualMoveScr);
-
-    //set up flag to mark menu with execution function
-    menuSetExec(&ExecManScr);
-    menuLinkExec(&ManualMoveScr, &ExecManScr);
-    menuAttachExecFunc(&ExecManScr, manualControl);
-
-    //shows a brief startup screen if enabled
-    #ifdef SHOW_HOME_SCR
-      _menuHomeScreen(&HomeScr);
-      HAL_Delay(1000);
-    #endif
-  }
-
-  //set to signalize the contents of the menu are initialized
-  init_finished = TRUE;
-
-  //can be set to any screen that should be initial
-  StartScreen = ManualMoveScr;
-
-  return &StartScreen;
-}
+static MENU_HandleTypeDef _menuGetFreeMenu();
+static MENU_HandleTypeDef _menuGetHomeMenu(MENU_HandleTypeDef);
 
 
-uint8_t menuAttachExecFunc(Menu *menu_h, t_exec_f *func){
-  if(func == NULL){
-    return RETURN_FAIL;
-  }
+static _MENU_StatusTypeDef _menu_status[MENU_MAX_MENUS];
+static _MENU_ControlTypeDef _menu_control;
 
-  menu_h->exec_f = func;
-  return RETURN_OK;
-}
-
-
-/**
- * @brief 
- * 
- * @param menu_h Handle to the main Menu strct
- * @param exec_menu_h Handle to the execution Menu struct
- * @return uint8_t RETURN_OK on succes, RETURN_FAIL if second menu is not marked as exec
- */
-uint8_t menuLinkExec(Menu *menu_h, Menu *exec_menu_h){
-  if(exec_menu_h->exec == FALSE){
-    return RETURN_FAIL;
-  }
+MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func, 
+                            MENU_ButtonFuncTypeDef *sel_f, 
+                            MENU_ButtonFuncTypeDef *can_f,
+                            MENU_PositionTypeFunc *pos_f,
+                            MENU_DrawScreenTypeFunc *draw_f){
   
-  //link the exect Menu to the main Menu
-  menu_h->exec_m = exec_menu_h;
-  return RETURN_OK;
+  MENU_HandleTypeDef menu_id = MENU_HANDLE_ERROR;
+  if(func != NULL){
+    menu_id = func();
+  }
+  if(sel_f != NULL && can_f != NULL && pos_f != NULL && draw_f != NULL){
+    _menu_control.getCancel = can_f;
+    _menu_control.getPosition = pos_f;
+    _menu_control.getSelect = sel_f;
+    _menu_control.drawScreen = draw_f;
+    return menu_id;
+  }
+
+  menuErrorHandler();
+  return MENU_HANDLE_ERROR;
 }
 
 
-/**
- * @brief Wrapper to set the exec flag to true
- * 
- * @param menu_h Menu handle
- * @return uint8_t RETURN_OK
- */
-inline uint8_t menuSetExec(Menu *menu_h){
-  menu_h->exec = TRUE;
+MENU_HandleTypeDef menuCreate(char *title, char *cont){
+  MENU_HandleTypeDef menu_id = _menuGetFreeMenu();
+  if(menu_id == MENU_HANDLE_ERROR){
+    menuErrorHandler();
+    return MENU_HANDLE_ERROR;
+  }
 
-  return RETURN_OK;
+  if((strlen(title) > MAX_CHAR_CNT) || (strlen(cont) > MAX_CHAR_CNT)){
+    menuErrorHandler();
+    return MENU_HANDLE_ERROR;
+  }
+
+  strncpy(_menu_status[menu_id].title, title, MAX_CHAR_CNT);
+  strncpy(_menu_status[menu_id].content, cont, MAX_CHAR_CNT);
+
+  return menu_id;
 }
 
 
-/**
- * @brief Callback function for startup screen
- * 
- * @param menu_h Menu handle
- * @return uint8_t RETURN_OK
- */
-uint8_t _menuHomeScreen(Menu *menu_h){
-  menuDrawScreen(menu_h);
+static MENU_HandleTypeDef _menuGetFreeMenu(){
+    for(uint8_t id=0; id<MENU_MAX_MENUS; id++){
+    if(_menu_status[id].menu_stat == MENU_FREE){
+      _menu_status[id].menu_stat = MENU_USED;
+      _menu_status[id].id = id;
+      return id;
+    }
+  }
 
-  return RETURN_OK;
+  return MENU_HANDLE_ERROR;
 }
 
 
-/**
- * @brief Fills the Menu with content
- * 
- * @param ptr Menu handle
- * @param title Title of the menu screen
- * @param cont Contents on the menu screen
- * @return uint8_t RETURN_OK
- */
-uint8_t menuGenerate(Menu *ptr, const char *title, const char *cont){
-  static uint8_t id = 0;
-
-  strncpy(ptr->title, title, MAX_CHAR_CNT);
-  strncpy(ptr->content, cont, MAX_CHAR_CNT);
-  ptr->id = id;
-  id++;
-
-  return RETURN_OK;
-};
 
 
-/**
- * @brief Links 2 Menus together (used for menu transitions)
- * 
- * @param ptr_l Menu screen on the left
- * @param ptr_r Menu screen on the right
- * @return uint8_t RETURN_OK
- */
-uint8_t menuLink(Menu *ptr_l, Menu *ptr_r){
-    ptr_l->right_m = ptr_r;
-    ptr_r->left_m = ptr_l;
+
+
+
+
+MENU_ReturnTypeDef menuLinkExec(MENU_HandleTypeDef menu_id, MENU_HandleTypeDef exec_menu_id, MENU_ExecFuncTypeDef *exec_f){
+  if(exec_f == NULL){
+    menuErrorHandler();
+    return MENU_FAIL;
+  }
+
+  _menu_status[menu_id].exec_m = exec_menu_id;
+  _menu_status[exec_menu_id].exec = MENU_EXEC;
+  _menu_status[exec_menu_id].exec_f = exec_f;
+
+  //to the left and right refference we store parent menu so we could return there
+  _menu_status[exec_menu_id].left_m = menu_id;
+  _menu_status[exec_menu_id].right_m = menu_id;
+
+  return MENU_OK;
+}
+
+
+
+MENU_ReturnTypeDef menuLink(MENU_HandleTypeDef menu_l_id, MENU_HandleTypeDef menu_r_id){
+    _menu_status[menu_l_id].right_m = _menu_status[menu_r_id].id;
+    _menu_status[menu_r_id].left_m = _menu_status[menu_l_id].id;
     
     return RETURN_OK;
 }
 
 
 
-/**
- * @brief Processes the menu shown based on the menu & joypad status 
- * 
- * @param menu_h Menu handle
- * @param joy_vals Array with joypad position vals [0,0] -> [255,255]
- * @return uint8_t RETURN_OK
- */
-uint8_t menuServeMenu(Menu **menu_h, uint8_t *joy_vals){
 
-  static uint8_t old_id = -1;
+MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef menu_id){
+
+  static MENU_HandleTypeDef old_id = MENU_HANDLE_ERROR;
+  MENU_PositionEnum user_com;
   
-  //if we are in exec menu_switches don't matter for selecting menu screens
-  if((*menu_h)->exec == FALSE){
-    //joypad to the right so switch to next screen
-    if(joy_vals[1] > 220){
-      HAL_Delay(500);
-      *menu_h = (*menu_h)->right_m;
-    } 
-    //joypad to the left so switch to previous screen
-    else if(joy_vals[1] < 30){
-      HAL_Delay(500);
-      *menu_h = (*menu_h)->left_m;
-    } 
-    else;
+  MENU_ButtonEnum select_but = _menu_control.getSelect();
+  MENU_ButtonEnum cancel_but = _menu_control.getCancel();
+
+  //ignore the case that both buttons are pressed at the same time
+  if(select_but == MENU_PRESSED && cancel_but == MENU_PRESSED){
+    return menu_id;
   }
 
-  if(old_id != (*menu_h)->id){
-    menuDrawScreen(*menu_h);
-    old_id = (*menu_h)->id;
+  //enter the exec menu
+  if(select_but == MENU_PRESSED){
+    menu_id = _menu_status[menu_id].exec_m;
+  }
+
+  //if we are not in exec menu we move through selections
+  if(_menu_status[menu_id].exec == MENU_NO_EXEC){
+    user_com = _menu_control.getPosition();
+    switch (user_com)
+    {
+      case MENU_LEFT :
+        HAL_Delay(500);
+        menu_id = _menu_status[menu_id].left_m;
+        break;
+      case MENU_RIGHT :
+        HAL_Delay(500);
+        menu_id = _menu_status[menu_id].right_m;
+        break;
+      default:
+        break;
+    }
+  }
+  //we cam also be in exec menu and pressing cancel we go to home screen
+  else if(cancel_but == MENU_PRESSED){
+    menu_id = _menuGetHomeMenu(menu_id);
+  }
+
+  if(old_id != menu_id){
+    _menu_control.drawScreen(menu_id);
+    old_id = menu_id;
     HAL_Delay(500);
   }
 
-  return RETURN_OK;
+  return menu_id;
 }
 
 
-/**
- * @brief Calls menuInit to retrieve handle of the first menu
- * 
- * @param menu_h Menu handle
- * @return uint8_t RETURN_OK
- */
-uint8_t menuResetMenu(Menu **menu_h){
-  *menu_h = menuInit();
 
-  return RETURN_OK;
-}
-
-
-/**
- * @brief 
- * 
- * @param menu_h 
- * @param joy_vals 
- * @param setup_h 
- * @param comm_h 
- * @return uint8_t 
- */
-uint8_t menuServeFunc(Menu *menu_h, uint8_t *joy_vals, SetupData *setup_h, CommData *comm_h){
-
-  if(menu_h->exec){
-    (*menu_h->exec_f)(joy_vals, setup_h, comm_h);
+static MENU_HandleTypeDef _menuGetHomeMenu(MENU_HandleTypeDef menu_id){
+  MENU_HandleTypeDef prev_menu_id = _menu_status[menu_id].right_m;
+  if(_menu_status[prev_menu_id].exec == MENU_EXEC){
+    return _menuGetHomeMenu(prev_menu_id);
   }
-  return RETURN_OK;
+  else{
+    return prev_menu_id;
+  }
 }
+
+
+char *menuReadTitle(MENU_HandleTypeDef menu_id){
+  return _menu_status[menu_id].title;
+}
+
+char *menuReadCont(MENU_HandleTypeDef menu_id){
+  return _menu_status[menu_id].content;
+}
+
+
+MENU_ReturnTypeDef menuRunState(MENU_HandleTypeDef menu_id){
+  
+  if(_menu_status[menu_id].exec == MENU_EXEC){
+    return (*(_menu_status[menu_id].exec_f))(NULL);
+  }
+  return MENU_OK;
+}
+
 
 
 /**
- * @brief Clears the screen
+ * @brief To be redefined by the end user if needed
+ * @todo Create enum with error flags that will be supplied here
  * 
- * @return uint8_t RETURN_OK
  */
-uint8_t menuDisplayClear(){
-  ST7735_Init();
-  ST7735_FillScreen(ST7735_GRAY);
+__attribute__((weak)) void menuErrorHandler(){
+  while(1){
 
-  return RETURN_OK;
+  }
 }
-
-
-/**
- * @brief Draws the title and contents of the screen
- * 
- * @param menu_h Menu handle
- * @return uint8_t RETURN_OK
- */
-uint8_t menuDrawScreen(Menu *menu_h){
-  //grey background
-  ST7735_FillScreen(ST7735_GRAY);
-  ST7735_WriteJustifyString(10, menu_h->title, Font_11x18, ST7735_RED,ST7735_GRAY,JUST_CENTER);
-  ST7735_WriteJustifyString(50, menu_h->content, Font_7x10, ST7735_BLUE,ST7735_GRAY,JUST_LEFT);
-
-  return RETURN_OK;
-}
-
-
-
 
 
 

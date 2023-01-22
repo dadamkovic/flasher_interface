@@ -29,6 +29,7 @@
 #include "menu.h"
 #include "execution.h"
 #include "comm_interface.h"
+#include "utils.h"
 
 
 /* USER CODE END Includes */
@@ -57,12 +58,18 @@ volatile uint8_t cancel_button = 0;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+MENU_PositionEnum mainGetPos();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+JOY_HandleTypeDef g_joypad_h;
 
+MENU_PositionEnum mainGetPos(){
+  JOY_OutTypeDef menu_pos;
+  joyRead(g_joypad_h, &menu_pos, JOY_MEASURE);
+  return menu_pos.pos;
+}
 /* USER CODE END 0 */
 
 /**
@@ -99,13 +106,23 @@ int main(void)
   MX_SPI2_Init();
   /* USER CODE BEGIN 2 */
 
-  uint8_t joypad_vals[2] = {0,0};
+  JOY_HandleTypeDef joypad_h;
+  //JOY_ReturnTypeDef joypad_out;
+
+  int16_t joy_thresholds[] = {100,100,-100,-100};
+  joypad_h = joyInit(NULL, joy_thresholds);
+  g_joypad_h = joypad_h;
+  joyOpen(joypad_h, userJoyGetVals);
  
+
+  MENU_HandleTypeDef menu_h;
+  menu_h = menuInit(utilsMenuInit, utilsMenuGetSelect, utilsMenuGetCancel, mainGetPos, utilsDrawScreen);
+
   SetupData setup_h;
   CommData comm_h;
 
   //draws the initial menu screen
-  Menu *menu_h = menuInit();
+  
   initSetupData(&setup_h);
   initComms(&comm_h);
 
@@ -117,30 +134,10 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    
-    //fetches values of the joypad 
-    joyGetVals(joypad_vals);
-    //updates the meny screen
-    menuServeMenu(&menu_h, joypad_vals);
     //performs function selected on the menu
-    menuServeFunc(menu_h, joypad_vals, &setup_h, &comm_h);
+    menu_h = menuNextState(menu_h);
+    menuRunState(menu_h);
     
-    //we switch directly to exec menu
-    //@todo maybe create a wrapper function for the exec switch
-    if(select_button){
-      select_button = 0;
-      if(((HAL_GetTick() - sys_time) >= 1000) && (menu_h->exec_m != NULL)){
-        menu_h = menu_h->exec_m;
-      }
-    }
-
-    //we switch back to main screen
-    if(cancel_button){
-      cancel_button = 0;
-      if((HAL_GetTick() - sys_time) >= 1000){
-        menuResetMenu(&menu_h);
-      }
-    }
 
   }
     

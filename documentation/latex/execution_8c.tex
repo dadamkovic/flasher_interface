@@ -1,0 +1,106 @@
+\hypertarget{execution_8c}{}\doxysection{Core/\+Src/execution.c File Reference}
+\label{execution_8c}\index{Core/Src/execution.c@{Core/Src/execution.c}}
+{\ttfamily \#include \char`\"{}execution.\+h\char`\"{}}\newline
+Include dependency graph for execution.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{execution_8c_acfafd055dac39565fb29051aa90adb2d}\label{execution_8c_acfafd055dac39565fb29051aa90adb2d}} 
+uint8\+\_\+t {\bfseries init\+Setup\+Data} (struct Setup\+Data $\ast$setup\+\_\+h)
+\item 
+\mbox{\Hypertarget{execution_8c_a8f487f5501378a4bb175c3c17104bf54}\label{execution_8c_a8f487f5501378a4bb175c3c17104bf54}} 
+uint8\+\_\+t {\bfseries manual\+Control} (uint8\+\_\+t $\ast$joy\+\_\+vals, Setup\+Data $\ast$setup\+\_\+h, Comm\+Data $\ast$comm\+\_\+h)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{execution_8c_a0721f71e634904a881893a261d3918d8}{plotter\+Moving}} (Comm\+Data $\ast$comm\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Returns 0 if plotter is not moving, 1 otherwise. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{execution_8c_a408a942e59a6bfa04d3dca71ed9369ff}{quick\+Move\+Command}} (float $\ast$move\+\_\+dist, Comm\+Data $\ast$comm\+\_\+h)
+\begin{DoxyCompactList}\small\item\em Initiates plottter relative move based on the recieved distances. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{execution_8c_a917260903326148b479dbce2da8ddc87}\label{execution_8c_a917260903326148b479dbce2da8ddc87}} 
+uint8\+\_\+t {\bfseries plotter\+Send\+Command} (Comm\+Data $\ast$comm\+\_\+h)
+\item 
+\mbox{\Hypertarget{execution_8c_a392880d0e2bf640b98c7e7d01fbb1930}\label{execution_8c_a392880d0e2bf640b98c7e7d01fbb1930}} 
+uint8\+\_\+t {\bfseries plotter\+Get\+Command} (Comm\+Data $\ast$comm\+\_\+h)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{execution_8c_abef38ffbe5c757f2376df9b78549154d}{\+\_\+move\+Duration}} (float $\ast$move\+\_\+dist)
+\begin{DoxyCompactList}\small\item\em Calculates the move duration based on the feedrate \& distance ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/01-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{execution_8c_abef38ffbe5c757f2376df9b78549154d}\label{execution_8c_abef38ffbe5c757f2376df9b78549154d}} 
+\index{execution.c@{execution.c}!\_moveDuration@{\_moveDuration}}
+\index{\_moveDuration@{\_moveDuration}!execution.c@{execution.c}}
+\doxysubsubsection{\texorpdfstring{\_moveDuration()}{\_moveDuration()}}
+{\footnotesize\ttfamily uint32\+\_\+t \+\_\+move\+Duration (\begin{DoxyParamCaption}\item[{float $\ast$}]{move\+\_\+dist }\end{DoxyParamCaption})}
+
+
+
+Calculates the move duration based on the feedrate \& distance ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+\_\+dist} & Flaot dist in x \& y direction \mbox{[}x,y\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t Milisends until the move is finished 
+\end{DoxyReturn}
+\mbox{\Hypertarget{execution_8c_a0721f71e634904a881893a261d3918d8}\label{execution_8c_a0721f71e634904a881893a261d3918d8}} 
+\index{execution.c@{execution.c}!plotterMoving@{plotterMoving}}
+\index{plotterMoving@{plotterMoving}!execution.c@{execution.c}}
+\doxysubsubsection{\texorpdfstring{plotterMoving()}{plotterMoving()}}
+{\footnotesize\ttfamily uint8\+\_\+t plotter\+Moving (\begin{DoxyParamCaption}\item[{Comm\+Data $\ast$}]{comm\+\_\+h }\end{DoxyParamCaption})}
+
+
+
+Returns 0 if plotter is not moving, 1 otherwise. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Implement the check of plotter state\end{DoxyRefDesc}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em comm\+\_\+h} & handle containing the uart communication handle and data buffers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{execution_8c_a408a942e59a6bfa04d3dca71ed9369ff}\label{execution_8c_a408a942e59a6bfa04d3dca71ed9369ff}} 
+\index{execution.c@{execution.c}!quickMoveCommand@{quickMoveCommand}}
+\index{quickMoveCommand@{quickMoveCommand}!execution.c@{execution.c}}
+\doxysubsubsection{\texorpdfstring{quickMoveCommand()}{quickMoveCommand()}}
+{\footnotesize\ttfamily uint8\+\_\+t quick\+Move\+Command (\begin{DoxyParamCaption}\item[{float $\ast$}]{move\+\_\+dist,  }\item[{Comm\+Data $\ast$}]{comm\+\_\+h }\end{DoxyParamCaption})}
+
+
+
+Initiates plottter relative move based on the recieved distances. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+\_\+dist} & Vector of \mbox{[}x,y\mbox{]} float distance for the plotter to move by \\
+\hline
+{\em comm\+\_\+h} & handle containing the uart communication handle and data buffers \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t RETURN\+\_\+\+OK 
+\end{DoxyReturn}

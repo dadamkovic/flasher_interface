@@ -1,0 +1,64 @@
+\hypertarget{menu_8c}{}\doxysection{Core/\+Src/menu.c File Reference}
+\label{menu_8c}\index{Core/Src/menu.c@{Core/Src/menu.c}}
+{\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
+Include dependency graph for menu.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{menu_8c_a4f040381456723680d5db4a68109e46a}\label{menu_8c_a4f040381456723680d5db4a68109e46a}} 
+MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Init} (MENU\+\_\+\+Init\+Func\+Type\+Def $\ast$func, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$sel\+\_\+f, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$can\+\_\+f, MENU\+\_\+\+Position\+Type\+Func $\ast$pos\+\_\+f, MENU\+\_\+\+Draw\+Screen\+Type\+Func $\ast$draw\+\_\+f)
+\item 
+\mbox{\Hypertarget{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}\label{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}} 
+MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Create} (char $\ast$title, char $\ast$cont)
+\item 
+\mbox{\Hypertarget{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}\label{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Link\+Exec} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def exec\+\_\+menu\+\_\+id, MENU\+\_\+\+Exec\+Func\+Type\+Def $\ast$exec\+\_\+f)
+\item 
+\mbox{\Hypertarget{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}\label{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Link} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+l\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+r\+\_\+id)
+\item 
+\mbox{\Hypertarget{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}\label{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}} 
+MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Next\+State} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\item 
+\mbox{\Hypertarget{menu_8c_a186796972a97de00ca0b001a85744c3f}\label{menu_8c_a186796972a97de00ca0b001a85744c3f}} 
+char $\ast$ {\bfseries menu\+Read\+Title} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\item 
+\mbox{\Hypertarget{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}\label{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}} 
+char $\ast$ {\bfseries menu\+Read\+Cont} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\item 
+\mbox{\Hypertarget{menu_8c_ae9a25d7e975e594e0e510518aff49cec}\label{menu_8c_ae9a25d7e975e594e0e510518aff49cec}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Run\+State} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\item 
+\mbox{\hyperlink{menu_8c_af9aace1b44b73111e15aa39f06f43456}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((weak))
+\begin{DoxyCompactList}\small\item\em To be redefined by the end user if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/01-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{menu_8c_af9aace1b44b73111e15aa39f06f43456}\label{menu_8c_af9aace1b44b73111e15aa39f06f43456}} 
+\index{menu.c@{menu.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(weak)}]{ }\end{DoxyParamCaption})}
+
+
+
+To be redefined by the end user if needed. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]Create enum with error flags that will be supplied here\end{DoxyRefDesc}

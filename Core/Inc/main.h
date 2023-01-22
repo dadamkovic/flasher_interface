@@ -31,7 +31,7 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -41,6 +41,8 @@ extern "C" {
 #define TX_BUFF_SIZE 255
 #define ERR_ARRAY_SIZE 255
 #define MAX_TEXT_S 100  //max num of characters on one line of display
+
+
 
 
 typedef struct CommData{

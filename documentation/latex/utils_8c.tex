@@ -1,0 +1,158 @@
+\hypertarget{utils_8c}{}\doxysection{Core/\+Src/utils.c File Reference}
+\label{utils_8c}\index{Core/Src/utils.c@{Core/Src/utils.c}}
+{\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
+Include dependency graph for utils.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}{float\+To\+Char}} (float x, char $\ast$p)
+\begin{DoxyCompactList}\small\item\em Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{utils_8c_acb6396fe7735e825be8143fbe1ac41fb}{copy\+String}} (char $\ast$dest, const char $\ast$cont)
+\begin{DoxyCompactList}\small\item\em Simple wrapper around the strncpy to copy according to the string size. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}{uart\+Send\+Data}} (UART\+\_\+\+Handle\+Type\+Def $\ast$uart\+\_\+h, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Wrapper that checks how much data is in buffer, sends it and clears afterwards. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{utils_8c_adcdb1d00a3d12841e481712df840320c}{uart\+Get\+Data}} (UART\+\_\+\+Handle\+Type\+Def $\ast$uart\+\_\+h, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Fetches data as long as it keeps comming or runs our of space. \end{DoxyCompactList}\item 
+JOY\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{utils_8c_ad054e5f9251357ded049ff44e7c4ff20}{user\+Joy\+Get\+Vals}} (int16\+\_\+t $\ast$output)
+\begin{DoxyCompactList}\small\item\em Runs ADC connected to joypad lines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_8c_ab7777b1222afd416e0c730c30b5d8bb8}\label{utils_8c_ab7777b1222afd416e0c730c30b5d8bb8}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries utils\+Display\+Clear} ()
+\item 
+MENU\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{utils_8c_ad9696b0c5f01a4e963318f04dc259687}{utils\+Menu\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the user menus and clears the screen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{utils_8c_a00848b5503bd6dea2abbd23d9da80b1e}\label{utils_8c_a00848b5503bd6dea2abbd23d9da80b1e}} 
+MENU\+\_\+\+Button\+Enum {\bfseries utils\+Menu\+Get\+Select} ()
+\item 
+\mbox{\Hypertarget{utils_8c_ab6f710d0518b19fcbeda41a21114e9a8}\label{utils_8c_ab6f710d0518b19fcbeda41a21114e9a8}} 
+MENU\+\_\+\+Button\+Enum {\bfseries utils\+Menu\+Get\+Cancel} ()
+\item 
+\mbox{\Hypertarget{utils_8c_a17c33a659c0673447d36b2e200273e60}\label{utils_8c_a17c33a659c0673447d36b2e200273e60}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries utils\+Draw\+Screen} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+h)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Adamkovic 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/01-\/15
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{utils_8c_acb6396fe7735e825be8143fbe1ac41fb}\label{utils_8c_acb6396fe7735e825be8143fbe1ac41fb}} 
+\index{utils.c@{utils.c}!copyString@{copyString}}
+\index{copyString@{copyString}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{copyString()}{copyString()}}
+{\footnotesize\ttfamily uint8\+\_\+t copy\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{dest,  }\item[{const char $\ast$}]{cont }\end{DoxyParamCaption})}
+
+
+
+Simple wrapper around the strncpy to copy according to the string size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Pointer to destiantion \\
+\hline
+{\em cont} & Pointer to content \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t RETURN\+\_\+\+OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}\label{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}} 
+\index{utils.c@{utils.c}!floatToChar@{floatToChar}}
+\index{floatToChar@{floatToChar}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{floatToChar()}{floatToChar()}}
+{\footnotesize\ttfamily char$\ast$ float\+To\+Char (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{char $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & float to be converted \\
+\hline
+{\em p} & pointer to array where the converted float is to be strored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{utils_8c_adcdb1d00a3d12841e481712df840320c}\label{utils_8c_adcdb1d00a3d12841e481712df840320c}} 
+\index{utils.c@{utils.c}!uartGetData@{uartGetData}}
+\index{uartGetData@{uartGetData}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{uartGetData()}{uartGetData()}}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+Get\+Data (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{uart\+\_\+h,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Fetches data as long as it keeps comming or runs our of space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart\+\_\+h} & \\
+\hline
+{\em data} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}\label{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}} 
+\index{utils.c@{utils.c}!uartSendData@{uartSendData}}
+\index{uartSendData@{uartSendData}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{uartSendData()}{uartSendData()}}
+{\footnotesize\ttfamily uint8\+\_\+t uart\+Send\+Data (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{uart\+\_\+h,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Wrapper that checks how much data is in buffer, sends it and clears afterwards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uart\+\_\+h} & UART\+\_\+\+Handle\+Type\+Def handle \\
+\hline
+{\em data} & Pointer to char array with data to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint8\+\_\+t RETURN\+\_\+\+FAIL $\vert$ RETURN\+\_\+\+OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_ad054e5f9251357ded049ff44e7c4ff20}\label{utils_8c_ad054e5f9251357ded049ff44e7c4ff20}} 
+\index{utils.c@{utils.c}!userJoyGetVals@{userJoyGetVals}}
+\index{userJoyGetVals@{userJoyGetVals}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{userJoyGetVals()}{userJoyGetVals()}}
+{\footnotesize\ttfamily JOY\+\_\+\+Return\+Type\+Def user\+Joy\+Get\+Vals (\begin{DoxyParamCaption}\item[{int16\+\_\+t $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+
+Runs ADC connected to joypad lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joy\+\_\+vals} & Array of 2 uint8\+\_\+t values \mbox{[}x,y\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+JOY\+\_\+\+Return\+Type\+Def JOY\+\_\+\+OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_ad9696b0c5f01a4e963318f04dc259687}\label{utils_8c_ad9696b0c5f01a4e963318f04dc259687}} 
+\index{utils.c@{utils.c}!utilsMenuInit@{utilsMenuInit}}
+\index{utilsMenuInit@{utilsMenuInit}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{utilsMenuInit()}{utilsMenuInit()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Handle\+Type\+Def utils\+Menu\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the user menus and clears the screen. 
+
+\begin{DoxyReturn}{Returns}
+Menu$\ast$ pointer to startup Menu with allocated memory 
+\end{DoxyReturn}
