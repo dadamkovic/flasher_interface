@@ -18,6 +18,7 @@
 #define LOG_MAX_SOURCES 16
 #define LOG_PAD_LEN 4
 #define LOG_END_LEN 2
+#define LOG_SOURCE __FILE__
 
 typedef enum {
     LOG_LOW_PRIO,

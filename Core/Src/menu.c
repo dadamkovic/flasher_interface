@@ -1,9 +1,9 @@
 /**
  * @file menu.c
- * @author your name (you@domain.com)
+ * @author Daniel Adamkovic (dadamkovic@protonmail.ch)
  * @brief 
  * @version 0.1
- * @date 2023-01-15
+ * @date 22-01-2023
  * 
  * @copyright Copyright (c) 2023
  * 
@@ -35,7 +35,7 @@ MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func,
     return menu_id;
   }
 
-  menuErrorHandler();
+  menuErrorHandler(MENU_NULL_INIT_FUNC_ERR);
   return MENU_HANDLE_ERROR;
 }
 
@@ -43,12 +43,12 @@ MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func,
 MENU_HandleTypeDef menuCreate(char *title, char *cont){
   MENU_HandleTypeDef menu_id = _menuGetFreeMenu();
   if(menu_id == MENU_HANDLE_ERROR){
-    menuErrorHandler();
+    menuErrorHandler(MENU_HANDLE_ERR);
     return MENU_HANDLE_ERROR;
   }
 
   if((strlen(title) > MAX_CHAR_CNT) || (strlen(cont) > MAX_CHAR_CNT)){
-    menuErrorHandler();
+    menuErrorHandler(MENU_TEXT_LEN_ERR);
     return MENU_HANDLE_ERROR;
   }
 
@@ -74,7 +74,7 @@ static MENU_HandleTypeDef _menuGetFreeMenu(){
 
 MENU_ReturnTypeDef menuLinkExec(MENU_HandleTypeDef menu_id, MENU_HandleTypeDef exec_menu_id, MENU_ExecFuncTypeDef *exec_f){
   if(exec_f == NULL){
-    menuErrorHandler();
+    menuErrorHandler(MENU_NULL_EXEC_FUNC_ERR);
     return MENU_FAIL;
   }
 
@@ -138,9 +138,6 @@ MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef menu_id){
     menu_id = _menuGetHomeMenu(menu_id);
   }
 
-  //sprintf(text, "Sys time is %dms!\n", HAL_GetTick());
-  logWrite(LOG_SRC_MENU, "TEST", LOG_HIGH_PRIO);
-
   if(old_id != menu_id){
     _menu_control.drawScreen(menu_id);
     old_id = menu_id;
@@ -180,16 +177,34 @@ MENU_ReturnTypeDef menuRunState(MENU_HandleTypeDef menu_id){
   return MENU_OK;
 }
 
-
-
 /**
- * @brief To be redefined by the end user if needed
- * @todo Create enum with error flags that will be supplied here
+ * @brief Default way to handle errors from menu.c
  * 
  */
-__attribute__((weak)) void menuErrorHandler(){
-  while(1){
-
+__attribute__((weak)) void menuErrorHandler(MENU_ErrorTypeDef error){
+  switch(error){
+    case MENU_NULL_INIT_FUNC_ERR :
+      #ifdef LOG_DEBUG
+      logWrite(LOG_SOURCE, "NULL function pointer supplied!", LOG_HIGH_PRIO);
+      #endif
+      break;
+    case MENU_HANDLE_ERR :
+      #ifdef LOG_DEBUG
+      logWrite(LOG_SOURCE, "Wrong handle supplied!", LOG_HIGH_PRIO);
+      #endif
+      break;
+    case MENU_TEXT_LEN_ERR :
+      #ifdef LOG_DEBUG
+      logWrite(LOG_SOURCE, "Text too long!", LOG_HIGH_PRIO);
+      #endif
+      break;
+    case MENU_NULL_EXEC_FUNC_ERR :
+      #ifdef LOG_DEBUG
+      logWrite(LOG_SOURCE, "NULL exec function pointer supplied", LOG_HIGH_PRIO);
+      #endif
+      break;
+    default:
+      break;
   }
 }
 

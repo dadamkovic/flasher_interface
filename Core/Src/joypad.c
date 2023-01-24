@@ -1,14 +1,13 @@
 /**
  * @file joypad.c
- * @author your name (you@domain.com)
+ * @author Daniel Adamkovic (dadamkovic@protonmail.ch)
  * @brief 
  * @version 0.1
- * @date 2023-01-21
+ * @date 22-01-2023
  * 
  * @copyright Copyright (c) 2023
  * 
  */
-
 #include "joypad.h"
 #include <string.h>
 

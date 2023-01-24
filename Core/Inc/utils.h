@@ -6,11 +6,17 @@
 #include "joypad.h"
 #include "menu.h"
 #include "st7735.h"
-#include "logger.h"
+
 #include "usart.h"
 #include <string.h>
+#include "plotter.h"
 
-char *floatToChar(float x, char *p);
+#ifdef LOG_DEBUG
+#include "logger.h"
+#endif 
+
+#define UTILS_COMM_TIMEOUT 500 
+
 uint8_t copyString(char *, const char *);
 
 uint8_t uartSendData(UART_HandleTypeDef *, char *);
@@ -19,11 +25,16 @@ uint8_t uartGetData(UART_HandleTypeDef *, char *);
 JOY_ReturnTypeDef userJoyGetVals(int16_t *);
 MENU_HandleTypeDef utilsMenuInit();
 
-MENU_ButtonTypeDef utilsMenuGetSelect();
-MENU_ButtonTypeDef utilsMenuGetCancel();
 MENU_ReturnTypeDef utilsDrawScreen(MENU_HandleTypeDef);
 MENU_ReturnTypeDef utilsDisplayClear();
-LOG_StatusTypeDef utilsWriteLog(char *);
 
+
+PLOT_ReturnTypeDef utilsPlotWrite(char *);
+PLOT_ReturnTypeDef utilsPlotRead(char *);
+PLOT_ReturnTypeDef utilsPlotOpen(PLOT_HandletypeDef);
+
+#ifdef LOG_DEBUG
+LOG_StatusTypeDef utilsWriteLog(char *);
+#endif
 
 #endif

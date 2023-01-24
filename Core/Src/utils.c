@@ -1,50 +1,17 @@
 /**
  * @file utils.c
- * @author Daniel Adamkovic
+ * @author Daniel Adamkovic (dadamkovic@protonmail.ch)
  * @brief 
  * @version 0.1
- * @date 2023-01-15
+ * @date 22-01-2023
  * 
  * @copyright Copyright (c) 2023
  * 
  */
-
 #include "utils.h"
 
 
-/**
- * @brief Converts float to string with precison of 2 decimal places. Can only convert
- *        numbers that are up to 12 unit points long
- * 
- * @param x float to be converted
- * @param p pointer to array where the converted float is to be strored
- */
-char *floatToChar(float x, char *p){
-    char temp_storage[16] = {0}; // go to end of buffer
-    char *s = (char*) (temp_storage + sizeof(temp_storage) - 1);
-    uint16_t decimals;  // variable to store the decimals
-    uint16_t units;  // variable to store the units (part to left of decimal place)
-    if (x < 0) { // take care of negative numbers
-        decimals = (uint32_t)(x * -100) % 100; // make 1000 for 3 decimals etc.
-        units = (uint16_t)(-1 * x);
-    } else { // positive numbers
-        decimals = (uint32_t)(x * 100) % 100;
-        units = (uint16_t)x;
-    }
 
-    *--s = (decimals % 10) + '0';
-    decimals /= 10; // repeat for as many decimal places as you need
-    *--s = (decimals % 10) + '0';
-    *--s = '.';
-
-    do  {
-        *--s = (units % 10) + '0';
-        units /= 10;
-    } while(units > 0);
-    if (x < 0) *--s = '-'; // unary minus sign for negative numbers
-    copyString(p, s);
-    return p;
-}
 
 
 /**
@@ -87,9 +54,9 @@ uint8_t uartSendData(UART_HandleTypeDef *uart_h, char *data){
 /**
  * @brief Fetches data as long as it keeps comming or runs our of space
  * 
- * @param uart_h 
- * @param data 
- * @return uint8_t 
+ * @param uart_h UART handle from HAL
+ * @param data Pointer to a buffer loaded with data
+ * @return uint8_t RETURN_OK || RETURN_FAIL
  */
 uint8_t uartGetData(UART_HandleTypeDef *uart_h, char *data){
 
@@ -154,7 +121,7 @@ MENU_ReturnTypeDef utilsDisplayClear(){
  */
 MENU_HandleTypeDef utilsMenuInit(){
 
-  static MENU_HandleTypeDef home_scr_h, manual_move_scr_h, zero_pos_scr_h, setup_auto_scr_h, setup_man_scr_h, success_scr_h,
+  MENU_HandleTypeDef home_scr_h, manual_move_scr_h, zero_pos_scr_h, setup_auto_scr_h, setup_man_scr_h, success_scr_h,
             dailed_scr_h, exec_man_scr_h, run_next_scr_h, menu_start_screen_h;
 
 
@@ -189,15 +156,6 @@ MENU_HandleTypeDef utilsMenuInit(){
 
   return menu_start_screen_h;
 };
-
-
-MENU_ButtonTypeDef utilsMenuGetSelect(){
-  return HAL_GPIO_ReadPin(select_GPIO_Port, select_Pin);
-}
-
-MENU_ButtonTypeDef utilsMenuGetCancel(){
-  return HAL_GPIO_ReadPin(cancel_GPIO_Port, cancel_Pin);
-}
   
 
 MENU_ReturnTypeDef utilsDrawScreen(MENU_HandleTypeDef menu_h){
@@ -209,11 +167,43 @@ MENU_ReturnTypeDef utilsDrawScreen(MENU_HandleTypeDef menu_h){
   return MENU_OK;
 }
 
+PLOT_ReturnTypeDef utilsPlotWrite(char *data){
+  if(HAL_OK != HAL_UART_Transmit(&huart1, data, strlen(data), UTILS_COMM_TIMEOUT)){
+    return PLOT_FAIL;
+  }
 
+  return PLOT_OK;
+};
+
+PLOT_ReturnTypeDef utilsPlotRead(char *data){
+if(RETURN_OK != uartGetData(&huart1, data)){
+  return PLOT_FAIL;
+}
+
+  return PLOT_OK;
+}
+
+/**
+ * @brief 
+ * 
+ * @param plot_h 
+ * @return PLOT_ReturnTypeDef 
+ * 
+ * @note This needs somehow handle the errors
+ */
+PLOT_ReturnTypeDef utilsPlotOpen(PLOT_HandletypeDef plot_h){
+  plotterSetRelMode(plot_h);
+  plotterRaiseZ(plot_h);
+  return PLOT_OK;
+}
+
+
+#ifdef LOG_DEBUG
 LOG_StatusTypeDef utilsWriteLog(char *data){
-  if(HAL_OK != HAL_UART_Transmit(&huart2, data, strlen(data), HAL_MAX_DELAY)){
+  if(HAL_OK != HAL_UART_Transmit(&huart2, data, strlen(data), UTILS_COMM_TIMEOUT)){
     return LOG_FAIL;
   }
 
   return LOG_OK;
 };
+#endif

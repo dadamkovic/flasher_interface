@@ -4,13 +4,17 @@
 
 
 #include <string.h>
-#include "logger.h"
 #include <stdint.h>
 #include "stm32f1xx_hal.h"
+
+#ifdef LOG_DEBUG
+#include "logger.h"
+#endif
 
 //comment out if you don't want to display initial screen
 #define MENU_HANDLE_ERROR -1
 #define MENU_MAX_MENUS 16
+#define LOG_SOURCE __FILE__
 
 #define LOG_SRC_MENU "menu.c"
 
@@ -75,6 +79,14 @@ typedef struct {
 }_MENU_ControlTypeDef;
 
 
+typedef enum {
+    MENU_NULL_INIT_FUNC_ERR,
+    MENU_HANDLE_ERR,
+    MENU_TEXT_LEN_ERR,
+    MENU_NULL_EXEC_FUNC_ERR,
+
+}MENU_ErrorTypeDef;
+
 
 char *menuReadTitle(MENU_HandleTypeDef);
 char *menuReadCont(MENU_HandleTypeDef);
@@ -93,7 +105,7 @@ MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef);
 MENU_HandleTypeDef menuCreate(char *, char *);
 
 
-void menuErrorHandler();
+void menuErrorHandler(MENU_ErrorTypeDef);
 
 
 #endif

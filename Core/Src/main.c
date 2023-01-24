@@ -27,11 +27,12 @@
 /* USER CODE BEGIN Includes */
 #include "joypad.h"
 #include "menu.h"
-#include "execution.h"
-#include "comm_interface.h"
+#include "plotter.h"
 #include "utils.h"
-#include "logger.h"
 
+#ifdef LOG_DEBUG
+#include "logger.h"
+#endif
 
 /* USER CODE END Includes */
 
@@ -58,18 +59,39 @@ volatile uint8_t cancel_button = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
 /* USER CODE BEGIN PFP */
-MENU_PositionTypeDef mainGetPos();
+
+static MENU_PositionTypeDef mainGetPos();
+static MENU_ButtonTypeDef mainGetCanBut();
+static MENU_ButtonTypeDef mainGetSelBut();
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 JOY_HandleTypeDef g_joypad_h;
 
-MENU_PositionTypeDef mainGetPos(){
+static MENU_PositionTypeDef mainGetPos(){
   JOY_OutTypeDef menu_pos;
   joyRead(g_joypad_h, &menu_pos, JOY_MEASURE);
   return menu_pos.pos;
+}
+
+static MENU_ButtonTypeDef mainGetSelBut(){
+  if(select_button){
+    select_button = false;
+    return MENU_PRESSED;
+  }
+  return MENU_NOT_PRESSED;
+}
+
+static MENU_ButtonTypeDef mainGetCanBut(){
+  if(cancel_button){
+    cancel_button = false;
+    return MENU_PRESSED;
+  }
+  return MENU_NOT_PRESSED;
 }
 /* USER CODE END 0 */
 
@@ -109,26 +131,32 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   JOY_HandleTypeDef joypad_h;
-  //JOY_ReturnTypeDef joypad_out;
+  PLOT_HandletypeDef plotter_h;
 
+  #ifdef LOG_DEBUG
   logInit(LOG_LOW_PRIO, LOG_ENABLED, utilsWriteLog);
   logOpen();
+  #endif
 
+  //create joypad 
   int16_t joy_thresholds[] = {100,100,-100,-100};
   joypad_h = joyInit(NULL, joy_thresholds);
   g_joypad_h = joypad_h;
-  joyOpen(joypad_h, userJoyGetVals);
+  joypad_h = joyOpen(joypad_h, userJoyGetVals);
  
+  //create menu handle
   MENU_HandleTypeDef menu_h;
-  menu_h = menuInit(utilsMenuInit, utilsMenuGetSelect, utilsMenuGetCancel, mainGetPos, utilsDrawScreen);
+  menu_h = menuInit(utilsMenuInit, mainGetSelBut, mainGetCanBut, mainGetPos, utilsDrawScreen);
+
+  //create plotter
+  plotter_h = plotterInit(utilsPlotWrite, utilsPlotRead, PLOT_WAIT_FIN, 10000.0);
+  plotterOpen(plotter_h, utilsPlotOpen);
 
   SetupData setup_h;
   CommData comm_h;
 
   //draws the initial menu screen
-  
-  initSetupData(&setup_h);
-  initComms(&comm_h);
+
 
   /* USER CODE END 2 */
 
@@ -139,7 +167,6 @@ int main(void)
     //performs function selected on the menu
     menu_h = menuNextState(menu_h);
     menuRunState(menu_h);
-    logWrite(LOG_SRC_MENU,"TEST", LOG_HIGH_PRIO);
   }
     
     //for now endless cycle

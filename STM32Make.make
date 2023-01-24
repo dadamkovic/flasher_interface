@@ -39,13 +39,12 @@ C_SOURCES =  \
 Core/Lib/st7735/fonts.c \
 Core/Lib/st7735/st7735.c \
 Core/Src/adc.c \
-Core/Src/comm_interface.c \
-Core/Src/execution.c \
 Core/Src/gpio.c \
 Core/Src/joypad.c \
 Core/Src/logger.c \
 Core/Src/main.c \
 Core/Src/menu.c \
+Core/Src/plotter.c \
 Core/Src/spi.c \
 Core/Src/stm32f1xx_hal_msp.c \
 Core/Src/stm32f1xx_it.c \
@@ -125,6 +124,7 @@ AS_DEFS =
 
 # C defines
 C_DEFS =  \
+-DLOG_DEBUG \
 -DSTM32F103xB \
 -DUSE_HAL_DRIVER
 

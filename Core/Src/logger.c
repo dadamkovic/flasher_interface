@@ -1,20 +1,18 @@
 /**
  * @file logger.c
- * @author your name (you@domain.com)
+ * @author Daniel Adamkovic (dadamkovic@protonmail.ch)
  * @brief 
  * @version 0.1
- * @date 2023-01-22
+ * @date 22-01-2023
  * 
  * @copyright Copyright (c) 2023
  * 
  */
-
 #include "logger.h"
 
 
 static _LOG_ConfigTypeDef _log_config;
 static LOG_StatusTypeDef _logCheckPrio(LOG_PriorityTypeDef);
-
 LOG_StatusTypeDef logInit(LOG_PriorityTypeDef log_min_prio, 
                           LOG_EnableTypeDef log_en, 
                           LOG_WriteFunc *log_write_f)

@@ -23,6 +23,7 @@ ldscript: STM32F103C8Tx_FLASH.ld # linker script
 cDefinitions: 
   - USE_HAL_DRIVER
   - STM32F103xB
+  - LOG_DEBUG
 
 cxxDefinitions: 
   - USE_HAL_DRIVER
@@ -90,13 +91,6 @@ includeDirectories:
 # these should be escaped with a: \ or the name should be in double quotes e.g. "HARDWARE_DRIVER*.c"
 sourceFiles:  
   - startup_stm32f103xb.s
-  - Core/Src/main.c
-  - Core/Src/gpio.c
-  - Core/Src/adc.c
-  - Core/Src/spi.c
-  - Core/Src/usart.c
-  - Core/Src/stm32f1xx_it.c
-  - Core/Src/stm32f1xx_hal_msp.c
   - Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c
   - Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c
   - Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c

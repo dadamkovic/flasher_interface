@@ -3,7 +3,7 @@
 
 #include "usart.h"
 
-#define PLOTTER_UART_HANDLE &huart1
+#define PLOT_UART_HANDLE &huart1
 #define FLASHER_UART_HANDLE &huart3
 
 
