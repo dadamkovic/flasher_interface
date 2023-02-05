@@ -18,12 +18,18 @@
 
 #include "stm32f1xx_hal.h"
 #include <string.h>
-//#include <stdint.h>
-#include <stdio.h>
 
 
-#define PLOT_MAX_PLOTTERS 8
+#define PLOT_DELAY_MS(x) HAL_Delay(x)
+#define PLOT_MAX_RETRIES 3
+#define PLOT_RX_MAX_LEN 128
+#define PLOT_TX_MAX_LEN 255
+
+#define PLOT_MAX_PLOTTERS 1
 #define PLOT_ERROR_HANDLE -1
+
+#define F_PRECISION 100.0
+#define F_DOT 2
 
 
 typedef enum{

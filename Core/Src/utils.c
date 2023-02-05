@@ -58,29 +58,12 @@ uint8_t uartSendData(UART_HandleTypeDef *uart_h, char *data){
  * @param data Pointer to a buffer loaded with data
  * @return uint8_t RETURN_OK || RETURN_FAIL
  */
-uint8_t uartGetData(UART_HandleTypeDef *uart_h, char *data){
-
-  uint16_t max_len = sizeof(data);
-  uint16_t curr_byte = 0;
-  uint8_t tmp = (uint8_t)'\0';
-  
+uint8_t uartGetData(UART_HandleTypeDef *uart_h, char *data){ 
   //clear the buffer before reception
-  memset(data, 0, max_len);
+  //memset(data, 0, UTILS_RX_MAX_LEN);
 
-  while(curr_byte < (max_len-1)){
-    if(HAL_OK != HAL_UART_Receive(uart_h, &tmp, 1, 100)){
-        return RETURN_FAIL;
-    }
-
-    if(tmp == '\n'){
-      *(data+curr_byte) = '\0';
-      break;
-    }
-    else{
-        *(data+curr_byte) = tmp; 
-    }
-  }
-    return RETURN_OK;
+  HAL_UART_Receive(uart_h, data, UTILS_RX_MAX_LEN, 100);
+  return RETURN_OK;
 }
 
 
@@ -145,7 +128,7 @@ MENU_HandleTypeDef utilsMenuInit(){
 
   //set up flag to mark menu with execution function
   //TODO
-  //menuLinkExec(manual_move_scr_h, exec_man_scr_h, );
+  menuLinkExec(manual_move_scr_h, exec_man_scr_h, utilsManMove);
 
 
   utilsDrawScreen(home_scr_h);
@@ -207,3 +190,33 @@ LOG_StatusTypeDef utilsWriteLog(char *data){
   return LOG_OK;
 };
 #endif
+
+
+
+MENU_ReturnTypeDef utilsManMove(){
+  JOY_OutTypeDef joy_dat;
+  joyRead(g_joypad_h, &joy_dat, JOY_MEASURE);
+  
+  plotterRaiseZ(g_plotter_h);
+
+  switch (joy_dat.pos)
+  {
+  case 'U':
+    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/100.0);
+    break;
+  case 'D':
+    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/100.0);
+    break;
+  case 'L':
+    plotterFastMove(g_plotter_h, (float)joy_dat.y/100.0, 0.0);
+    break;
+  case 'R':
+    plotterFastMove(g_plotter_h, (float)joy_dat.y/100.0, 0.0);
+    break;
+  default:
+    break;
+  }
+
+  return MENU_OK;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+

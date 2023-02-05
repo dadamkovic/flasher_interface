@@ -16,6 +16,10 @@
 #endif 
 
 #define UTILS_COMM_TIMEOUT 500 
+#define UTILS_RX_MAX_LEN 127
+
+extern JOY_HandleTypeDef g_joypad_h; 
+extern PLOT_HandletypeDef g_plotter_h;
 
 uint8_t copyString(char *, const char *);
 
@@ -27,7 +31,7 @@ MENU_HandleTypeDef utilsMenuInit();
 
 MENU_ReturnTypeDef utilsDrawScreen(MENU_HandleTypeDef);
 MENU_ReturnTypeDef utilsDisplayClear();
-
+MENU_ReturnTypeDef utilsManMove();
 
 PLOT_ReturnTypeDef utilsPlotWrite(char *);
 PLOT_ReturnTypeDef utilsPlotRead(char *);

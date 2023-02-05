@@ -45,7 +45,7 @@ typedef enum{
     MENU_CENTER = 'C'
 }MENU_PositionTypeDef;
 
-typedef MENU_ReturnTypeDef(MENU_ExecFuncTypeDef)(void *);
+typedef MENU_ReturnTypeDef(MENU_ExecFuncTypeDef)();
 typedef MENU_ButtonTypeDef (MENU_ButtonFuncTypeDef)(void);
 typedef MENU_PositionTypeDef (MENU_PositionTypeFunc)(void);
 typedef uint8_t MENU_HandleTypeDef;
