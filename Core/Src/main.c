@@ -59,7 +59,6 @@ volatile uint8_t cancel_button = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-
 /* USER CODE BEGIN PFP */
 
 static MENU_PositionTypeDef mainGetPos();
@@ -153,9 +152,6 @@ int main(void)
   //create plotter
   g_plotter_h = plotterInit(utilsPlotWrite, utilsPlotRead, PLOT_WAIT_FIN, 10000.0);
   plotterOpen(g_plotter_h, utilsPlotOpen);
-
-  SetupData setup_h;
-  CommData comm_h;
 
   //draws the initial menu screen
 

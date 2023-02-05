@@ -36,15 +36,16 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Lib/joypad/joypad.c \
+Core/Lib/menu/menu.c \
+Core/Lib/plotter/plotter.c \
 Core/Lib/st7735/fonts.c \
 Core/Lib/st7735/st7735.c \
+Core/Lib/state_machine/state_machine.c \
 Core/Src/adc.c \
 Core/Src/gpio.c \
-Core/Src/joypad.c \
 Core/Src/logger.c \
 Core/Src/main.c \
-Core/Src/menu.c \
-Core/Src/plotter.c \
 Core/Src/spi.c \
 Core/Src/stm32f1xx_hal_msp.c \
 Core/Src/stm32f1xx_it.c \
@@ -141,7 +142,11 @@ AS_INCLUDES = \
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
+-ICore/Lib/joypad \
+-ICore/Lib/menu \
+-ICore/Lib/plotter \
 -ICore/Lib/st7735 \
+-ICore/Lib/state_machine \
 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/STM32F1xx_HAL_Driver/Inc \

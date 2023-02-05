@@ -4,7 +4,11 @@
       "name": "STM32",
       "includePath": [
         "Core/Inc",
+        "Core/Lib/joypad",
+        "Core/Lib/menu",
+        "Core/Lib/plotter",
         "Core/Lib/st7735",
+        "Core/Lib/state_machine",
         "Drivers/CMSIS/Device/ST/STM32F1xx/Include",
         "Drivers/CMSIS/Include",
         "Drivers/STM32F1xx_HAL_Driver/Inc",

@@ -96,10 +96,8 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define select_Pin GPIO_PIN_0
 #define select_GPIO_Port GPIOB
-#define select_EXTI_IRQn EXTI0_IRQn
 #define cancel_Pin GPIO_PIN_1
 #define cancel_GPIO_Port GPIOB
-#define cancel_EXTI_IRQn EXTI1_IRQn
 #define buzzer_Pin GPIO_PIN_11
 #define buzzer_GPIO_Port GPIOA
 #define st7735_res_Pin GPIO_PIN_6
