@@ -1,0 +1,444 @@
+\hypertarget{irq__ctrl_8h}{}\doxysection{Drivers/\+CMSIS/\+Core\+\_\+\+A/\+Include/irq\+\_\+ctrl.h File Reference}
+\label{irq__ctrl_8h}\index{Drivers/CMSIS/Core\_A/Include/irq\_ctrl.h@{Drivers/CMSIS/Core\_A/Include/irq\_ctrl.h}}
+
+
+Interrupt Controller API header file.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for irq\+\_\+ctrl.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ad98f7b2e49c628cc86ee5ad15f5b28a6}\label{irq__ctrl_8h_ad98f7b2e49c628cc86ee5ad15f5b28a6}} 
+\#define {\bfseries IRQ\+\_\+\+CTRL\+\_\+\+H\+\_\+}
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_aed032df21f11e8715f5c4deeeb56cc36}\label{irq__ctrl_8h_aed032df21f11e8715f5c4deeeb56cc36}} 
+\#define {\bfseries IRQHANDLER\+\_\+T}
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a258c398eec8109370a1bacac5ce2518b}\label{irq__ctrl_8h_a258c398eec8109370a1bacac5ce2518b}} 
+\#define {\bfseries IRQN\+\_\+\+ID\+\_\+T}
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ace17913944cf0218141e51beaada4053}\label{irq__ctrl_8h_ace17913944cf0218141e51beaada4053}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos}~(0U)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a2fafbaf2f6da5241ad97af6c493fa218}\label{irq__ctrl_8h_a2fafbaf2f6da5241ad97af6c493fa218}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Msk}~(0x07\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_abc31ba71612436a6ccc49342f35fec58}\label{irq__ctrl_8h_abc31ba71612436a6ccc49342f35fec58}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_abc31ba71612436a6ccc49342f35fec58}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+LEVEL}}~(0x00\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: level triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a326df9e34f6447583895a6f809ee160a}\label{irq__ctrl_8h_a326df9e34f6447583895a6f809ee160a}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a326df9e34f6447583895a6f809ee160a}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+LEVEL\+\_\+\+LOW}}~(0x01\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: low level triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_afeb539b2a564ca35abc57f87d71e7206}\label{irq__ctrl_8h_afeb539b2a564ca35abc57f87d71e7206}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_afeb539b2a564ca35abc57f87d71e7206}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+LEVEL\+\_\+\+HIGH}}~(0x02\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: high level triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_aa9a8e0968a4ccd57eb7544a16d05f24d}\label{irq__ctrl_8h_aa9a8e0968a4ccd57eb7544a16d05f24d}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_aa9a8e0968a4ccd57eb7544a16d05f24d}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+EDGE}}~(0x04\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: edge triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a2dbbbb7100be0fee6e048cd3deb50e28}\label{irq__ctrl_8h_a2dbbbb7100be0fee6e048cd3deb50e28}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a2dbbbb7100be0fee6e048cd3deb50e28}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+EDGE\+\_\+\+RISING}}~(0x05\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: rising edge triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a99e0f3f6945991d50e766b19e71e0222}\label{irq__ctrl_8h_a99e0f3f6945991d50e766b19e71e0222}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a99e0f3f6945991d50e766b19e71e0222}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+EDGE\+\_\+\+FALLING}}~(0x06\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: falling edge triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a8b0142ff767a9b1b1287e638eacf707b}\label{irq__ctrl_8h_a8b0142ff767a9b1b1287e638eacf707b}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a8b0142ff767a9b1b1287e638eacf707b}{IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+EDGE\+\_\+\+BOTH}}~(0x07\+UL /$\ast$$<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TRIG\+\_\+\+Pos$\ast$/)
+\begin{DoxyCompactList}\small\item\em Trigger\+: rising and falling edge triggered interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a7560513ef6a445642b5ed76eabf2a1b2}\label{irq__ctrl_8h_a7560513ef6a445642b5ed76eabf2a1b2}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+Pos}~(3U)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a7b0581db3736a143cd582cd2457bf3cc}\label{irq__ctrl_8h_a7b0581db3736a143cd582cd2457bf3cc}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+Msk}~(0x01\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+Pos)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ab0d022bbd15beb1a6578b5535d95f9cf}\label{irq__ctrl_8h_ab0d022bbd15beb1a6578b5535d95f9cf}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_ab0d022bbd15beb1a6578b5535d95f9cf}{IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+IRQ}}~(0x00\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em Type\+: interrupt source triggers CPU IRQ line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_aec01a80010bc42b1482388ce3ae4d2a3}\label{irq__ctrl_8h_aec01a80010bc42b1482388ce3ae4d2a3}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_aec01a80010bc42b1482388ce3ae4d2a3}{IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+FIQ}}~(0x01\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+TYPE\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em Type\+: interrupt source triggers CPU FIQ line. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_af14ca343d349887ab691d51aab1662ce}\label{irq__ctrl_8h_af14ca343d349887ab691d51aab1662ce}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+Pos}~(4U)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_afdc87f9fda2bafac2b0399ebdb39bf3e}\label{irq__ctrl_8h_afdc87f9fda2bafac2b0399ebdb39bf3e}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+Msk}~(0x01\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+Pos)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a7498851a6a7f3e2c5e087041617f5be7}\label{irq__ctrl_8h_a7498851a6a7f3e2c5e087041617f5be7}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a7498851a6a7f3e2c5e087041617f5be7}{IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+NONSECURE}}~(0x00\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em Domain\+: interrupt is targeting non-\/secure domain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a15cdeb10ef2b8081c5cd7a87e22e65e6}\label{irq__ctrl_8h_a15cdeb10ef2b8081c5cd7a87e22e65e6}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a15cdeb10ef2b8081c5cd7a87e22e65e6}{IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+SECURE}}~(0x01\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+DOMAIN\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em Domain\+: interrupt is targeting secure domain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ab7527409c193021e65aaf4d519caea46}\label{irq__ctrl_8h_ab7527409c193021e65aaf4d519caea46}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos}~(5U)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a96f739279c27f3e56ede4f28de4a48d8}\label{irq__ctrl_8h_a96f739279c27f3e56ede4f28de4a48d8}} 
+\#define {\bfseries IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Msk}~(0x\+FFUL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ad3d0505689768247c67495b7359e147f}\label{irq__ctrl_8h_ad3d0505689768247c67495b7359e147f}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_ad3d0505689768247c67495b7359e147f}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+ALL}}~(0x00\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets all CPUs. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_acb276aa0488a9bf1aa56e1072d2a15a5}\label{irq__ctrl_8h_acb276aa0488a9bf1aa56e1072d2a15a5}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_acb276aa0488a9bf1aa56e1072d2a15a5}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+0}}~(0x01\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ab09616a5ccd05d75d81ab80a37387a9a}\label{irq__ctrl_8h_ab09616a5ccd05d75d81ab80a37387a9a}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_ab09616a5ccd05d75d81ab80a37387a9a}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+1}}~(0x02\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 1. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a3c8c5ec0226d772c3200d9efa2d3bf1a}\label{irq__ctrl_8h_a3c8c5ec0226d772c3200d9efa2d3bf1a}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a3c8c5ec0226d772c3200d9efa2d3bf1a}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+2}}~(0x04\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 2. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a7fe46ac2f03063dc5ed2ca793c9cca85}\label{irq__ctrl_8h_a7fe46ac2f03063dc5ed2ca793c9cca85}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a7fe46ac2f03063dc5ed2ca793c9cca85}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+3}}~(0x08\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 3. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a4d428c7ab66cb22eb375a109735e9a3a}\label{irq__ctrl_8h_a4d428c7ab66cb22eb375a109735e9a3a}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a4d428c7ab66cb22eb375a109735e9a3a}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+4}}~(0x10\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 4. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a94faa9eab45bbc6fa6b2a3c9d92bbb37}\label{irq__ctrl_8h_a94faa9eab45bbc6fa6b2a3c9d92bbb37}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a94faa9eab45bbc6fa6b2a3c9d92bbb37}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+5}}~(0x20\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 5. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_adb512fc8a31bc771c3ce0d006b821bb9}\label{irq__ctrl_8h_adb512fc8a31bc771c3ce0d006b821bb9}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_adb512fc8a31bc771c3ce0d006b821bb9}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+6}}~(0x40\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 6. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_aa66525a1ee05c56f367540b2135e81ed}\label{irq__ctrl_8h_aa66525a1ee05c56f367540b2135e81ed}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_aa66525a1ee05c56f367540b2135e81ed}{IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+7}}~(0x80\+UL $<$$<$ IRQ\+\_\+\+MODE\+\_\+\+CPU\+\_\+\+Pos)
+\begin{DoxyCompactList}\small\item\em CPU\+: interrupt targets CPU 7. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_aacb93ae158e548c54698a7230647804a}\label{irq__ctrl_8h_aacb93ae158e548c54698a7230647804a}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_aacb93ae158e548c54698a7230647804a}{IRQ\+\_\+\+MODE\+\_\+\+ERROR}}~(0x80000000\+UL)
+\begin{DoxyCompactList}\small\item\em Bit indicating mode value error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_abaa4e91ab84dbe5f669080af6d0d81fa}\label{irq__ctrl_8h_abaa4e91ab84dbe5f669080af6d0d81fa}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_abaa4e91ab84dbe5f669080af6d0d81fa}{IRQ\+\_\+\+PRIORITY\+\_\+\+Msk}}~(0x0000\+FFFFUL)
+\begin{DoxyCompactList}\small\item\em Interrupt priority value bit-\/mask. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a47b19866dc05c58c6923c313b371f881}\label{irq__ctrl_8h_a47b19866dc05c58c6923c313b371f881}} 
+\#define \mbox{\hyperlink{irq__ctrl_8h_a47b19866dc05c58c6923c313b371f881}{IRQ\+\_\+\+PRIORITY\+\_\+\+ERROR}}~(0x80000000\+UL)
+\begin{DoxyCompactList}\small\item\em Bit indicating priority value error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{irq__ctrl_8h_a27589275c894aa295615df4764404b98}\label{irq__ctrl_8h_a27589275c894aa295615df4764404b98}} 
+typedef void($\ast$ \mbox{\hyperlink{irq__ctrl_8h_a27589275c894aa295615df4764404b98}{IRQHandler\+\_\+t}}) (void)
+\begin{DoxyCompactList}\small\item\em Interrupt handler data type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}\label{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}} 
+typedef int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Interrupt ID number data type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a03ea5d5d67a89acff8a5b02286795a99}{IRQ\+\_\+\+Initialize}} (void)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_ac1fcc16fb8e488d315cfa496f1d71db3}{IRQ\+\_\+\+Set\+Handler}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn, \mbox{\hyperlink{irq__ctrl_8h_a27589275c894aa295615df4764404b98}{IRQHandler\+\_\+t}} handler)
+\item 
+\mbox{\hyperlink{irq__ctrl_8h_a27589275c894aa295615df4764404b98}{IRQHandler\+\_\+t}} \mbox{\hyperlink{irq__ctrl_8h_aa2a2df8fbc7bad465ada49bd690f65d5}{IRQ\+\_\+\+Get\+Handler}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a4ad780a3dc23a1b6222de8adcd7c20a7}{IRQ\+\_\+\+Enable}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a544cf4ae0159cc17e259d55898528248}{IRQ\+\_\+\+Disable}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a8913613a9075a35410af0eb7b275d9e2}{IRQ\+\_\+\+Get\+Enable\+State}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_ab35da69354d2e515931580a1308a3a85}{IRQ\+\_\+\+Set\+Mode}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn, uint32\+\_\+t mode)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_adba142ee49ae8f52f76b603c926ad711}{IRQ\+\_\+\+Get\+Mode}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} \mbox{\hyperlink{irq__ctrl_8h_a1664e9fc682c3ace4b721906d6ce2b3d}{IRQ\+\_\+\+Get\+Active\+IRQ}} (void)
+\item 
+\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} \mbox{\hyperlink{irq__ctrl_8h_a1376a5cf6ff38344a9bbbae080af5a0f}{IRQ\+\_\+\+Get\+Active\+FIQ}} (void)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a55638c35efdc7a197b51165929ef0c10}{IRQ\+\_\+\+End\+Of\+Interrupt}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a88aedf1dee1061783e6c05c535e7b6c4}{IRQ\+\_\+\+Set\+Pending}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_aa399f9169f136b3930f0d50247aa22fc}{IRQ\+\_\+\+Get\+Pending}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_aad6b03f73b3d3ea2ccbb122484e8bd36}{IRQ\+\_\+\+Clear\+Pending}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_aa90aed20ac94420fff4bbbf55c12d4c2}{IRQ\+\_\+\+Set\+Priority}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn, uint32\+\_\+t priority)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a0a6a18c8fa2bc3183598439b56c507c3}{IRQ\+\_\+\+Get\+Priority}} (\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} irqn)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a3a79888f72bd1db45f0b9a59dbaa2337}{IRQ\+\_\+\+Set\+Priority\+Mask}} (uint32\+\_\+t priority)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a77632ae73f1ba46c4a9a0c12e6bc4869}{IRQ\+\_\+\+Get\+Priority\+Mask}} (void)
+\item 
+int32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_abaa4074988ea9e30523f7ed5a86953c2}{IRQ\+\_\+\+Set\+Priority\+Group\+Bits}} (uint32\+\_\+t bits)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{irq__ctrl_8h_a061da812739bdba1e32765ed6501b83c}{IRQ\+\_\+\+Get\+Priority\+Group\+Bits}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupt Controller API header file. 
+
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+23. June 2017 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{irq__ctrl_8h_aad6b03f73b3d3ea2ccbb122484e8bd36}\label{irq__ctrl_8h_aad6b03f73b3d3ea2ccbb122484e8bd36}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_ClearPending@{IRQ\_ClearPending}}
+\index{IRQ\_ClearPending@{IRQ\_ClearPending}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_ClearPending()}{IRQ\_ClearPending()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Clear\+Pending (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Clear interrupt pending flag. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a544cf4ae0159cc17e259d55898528248}\label{irq__ctrl_8h_a544cf4ae0159cc17e259d55898528248}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_Disable@{IRQ\_Disable}}
+\index{IRQ\_Disable@{IRQ\_Disable}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_Disable()}{IRQ\_Disable()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Disable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Disable interrupt. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a4ad780a3dc23a1b6222de8adcd7c20a7}\label{irq__ctrl_8h_a4ad780a3dc23a1b6222de8adcd7c20a7}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_Enable@{IRQ\_Enable}}
+\index{IRQ\_Enable@{IRQ\_Enable}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_Enable()}{IRQ\_Enable()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Enable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Enable interrupt. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a55638c35efdc7a197b51165929ef0c10}\label{irq__ctrl_8h_a55638c35efdc7a197b51165929ef0c10}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_EndOfInterrupt@{IRQ\_EndOfInterrupt}}
+\index{IRQ\_EndOfInterrupt@{IRQ\_EndOfInterrupt}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_EndOfInterrupt()}{IRQ\_EndOfInterrupt()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+End\+Of\+Interrupt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Signal end of interrupt processing. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a1376a5cf6ff38344a9bbbae080af5a0f}\label{irq__ctrl_8h_a1376a5cf6ff38344a9bbbae080af5a0f}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetActiveFIQ@{IRQ\_GetActiveFIQ}}
+\index{IRQ\_GetActiveFIQ@{IRQ\_GetActiveFIQ}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetActiveFIQ()}{IRQ\_GetActiveFIQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} IRQ\+\_\+\+Get\+Active\+FIQ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get ID number of current fast interrupt request (FIQ). \begin{DoxyReturn}{Returns}
+interrupt ID number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a1664e9fc682c3ace4b721906d6ce2b3d}\label{irq__ctrl_8h_a1664e9fc682c3ace4b721906d6ce2b3d}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetActiveIRQ@{IRQ\_GetActiveIRQ}}
+\index{IRQ\_GetActiveIRQ@{IRQ\_GetActiveIRQ}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetActiveIRQ()}{IRQ\_GetActiveIRQ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}} IRQ\+\_\+\+Get\+Active\+IRQ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get ID number of current interrupt request (IRQ). \begin{DoxyReturn}{Returns}
+interrupt ID number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a8913613a9075a35410af0eb7b275d9e2}\label{irq__ctrl_8h_a8913613a9075a35410af0eb7b275d9e2}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetEnableState@{IRQ\_GetEnableState}}
+\index{IRQ\_GetEnableState@{IRQ\_GetEnableState}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetEnableState()}{IRQ\_GetEnableState()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Enable\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Get interrupt enable state. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ interrupt is disabled, 1 -\/ interrupt is enabled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_aa2a2df8fbc7bad465ada49bd690f65d5}\label{irq__ctrl_8h_aa2a2df8fbc7bad465ada49bd690f65d5}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetHandler@{IRQ\_GetHandler}}
+\index{IRQ\_GetHandler@{IRQ\_GetHandler}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetHandler()}{IRQ\_GetHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{irq__ctrl_8h_a27589275c894aa295615df4764404b98}{IRQHandler\+\_\+t}} IRQ\+\_\+\+Get\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Get the registered interrupt handler. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+registered interrupt handler function address. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_adba142ee49ae8f52f76b603c926ad711}\label{irq__ctrl_8h_adba142ee49ae8f52f76b603c926ad711}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetMode@{IRQ\_GetMode}}
+\index{IRQ\_GetMode@{IRQ\_GetMode}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetMode()}{IRQ\_GetMode()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Get interrupt mode configuration. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current interrupt mode configuration with optional IRQ\+\_\+\+MODE\+\_\+\+ERROR bit set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_aa399f9169f136b3930f0d50247aa22fc}\label{irq__ctrl_8h_aa399f9169f136b3930f0d50247aa22fc}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetPending@{IRQ\_GetPending}}
+\index{IRQ\_GetPending@{IRQ\_GetPending}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetPending()}{IRQ\_GetPending()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Pending (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Get interrupt pending flag. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ interrupt is not pending, 1 -\/ interrupt is pending. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a0a6a18c8fa2bc3183598439b56c507c3}\label{irq__ctrl_8h_a0a6a18c8fa2bc3183598439b56c507c3}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetPriority@{IRQ\_GetPriority}}
+\index{IRQ\_GetPriority@{IRQ\_GetPriority}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetPriority()}{IRQ\_GetPriority()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Get interrupt priority. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+current interrupt priority value with optional IRQ\+\_\+\+PRIORITY\+\_\+\+ERROR bit set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a061da812739bdba1e32765ed6501b83c}\label{irq__ctrl_8h_a061da812739bdba1e32765ed6501b83c}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetPriorityGroupBits@{IRQ\_GetPriorityGroupBits}}
+\index{IRQ\_GetPriorityGroupBits@{IRQ\_GetPriorityGroupBits}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetPriorityGroupBits()}{IRQ\_GetPriorityGroupBits()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Priority\+Group\+Bits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get priority grouping field split point \begin{DoxyReturn}{Returns}
+current number of MSB bits included in the group priority field comparison with optional IRQ\+\_\+\+PRIORITY\+\_\+\+ERROR bit set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a77632ae73f1ba46c4a9a0c12e6bc4869}\label{irq__ctrl_8h_a77632ae73f1ba46c4a9a0c12e6bc4869}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_GetPriorityMask@{IRQ\_GetPriorityMask}}
+\index{IRQ\_GetPriorityMask@{IRQ\_GetPriorityMask}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_GetPriorityMask()}{IRQ\_GetPriorityMask()}}
+{\footnotesize\ttfamily uint32\+\_\+t IRQ\+\_\+\+Get\+Priority\+Mask (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Get priority masking threshold \begin{DoxyReturn}{Returns}
+current priority masking threshold value with optional IRQ\+\_\+\+PRIORITY\+\_\+\+ERROR bit set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a03ea5d5d67a89acff8a5b02286795a99}\label{irq__ctrl_8h_a03ea5d5d67a89acff8a5b02286795a99}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_Initialize@{IRQ\_Initialize}}
+\index{IRQ\_Initialize@{IRQ\_Initialize}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_Initialize()}{IRQ\_Initialize()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialize interrupt controller. \begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_ac1fcc16fb8e488d315cfa496f1d71db3}\label{irq__ctrl_8h_ac1fcc16fb8e488d315cfa496f1d71db3}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetHandler@{IRQ\_SetHandler}}
+\index{IRQ\_SetHandler@{IRQ\_SetHandler}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetHandler()}{IRQ\_SetHandler()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn,  }\item[{\mbox{\hyperlink{irq__ctrl_8h_a27589275c894aa295615df4764404b98}{IRQHandler\+\_\+t}}}]{handler }\end{DoxyParamCaption})}
+
+Register interrupt handler. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\mbox{\texttt{ in}}  & {\em handler} & interrupt handler function address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_ab35da69354d2e515931580a1308a3a85}\label{irq__ctrl_8h_ab35da69354d2e515931580a1308a3a85}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetMode@{IRQ\_SetMode}}
+\index{IRQ\_SetMode@{IRQ\_SetMode}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetMode()}{IRQ\_SetMode()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn,  }\item[{uint32\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+Configure interrupt request mode. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\mbox{\texttt{ in}}  & {\em mode} & mode configuration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a88aedf1dee1061783e6c05c535e7b6c4}\label{irq__ctrl_8h_a88aedf1dee1061783e6c05c535e7b6c4}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetPending@{IRQ\_SetPending}}
+\index{IRQ\_SetPending@{IRQ\_SetPending}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetPending()}{IRQ\_SetPending()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Pending (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn }\end{DoxyParamCaption})}
+
+Set interrupt pending flag. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_aa90aed20ac94420fff4bbbf55c12d4c2}\label{irq__ctrl_8h_aa90aed20ac94420fff4bbbf55c12d4c2}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetPriority@{IRQ\_SetPriority}}
+\index{IRQ\_SetPriority@{IRQ\_SetPriority}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetPriority()}{IRQ\_SetPriority()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Priority (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{irq__ctrl_8h_ac62964c04a7fed2c84aeea9e34f415e2}{IRQn\+\_\+\+ID\+\_\+t}}}]{irqn,  }\item[{uint32\+\_\+t}]{priority }\end{DoxyParamCaption})}
+
+Set interrupt priority value. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqn} & interrupt ID number \\
+\hline
+\mbox{\texttt{ in}}  & {\em priority} & interrupt priority value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_abaa4074988ea9e30523f7ed5a86953c2}\label{irq__ctrl_8h_abaa4074988ea9e30523f7ed5a86953c2}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetPriorityGroupBits@{IRQ\_SetPriorityGroupBits}}
+\index{IRQ\_SetPriorityGroupBits@{IRQ\_SetPriorityGroupBits}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetPriorityGroupBits()}{IRQ\_SetPriorityGroupBits()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Priority\+Group\+Bits (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{bits }\end{DoxyParamCaption})}
+
+Set priority grouping field split point 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em bits} & number of MSB bits included in the group priority field comparison \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{irq__ctrl_8h_a3a79888f72bd1db45f0b9a59dbaa2337}\label{irq__ctrl_8h_a3a79888f72bd1db45f0b9a59dbaa2337}} 
+\index{irq\_ctrl.h@{irq\_ctrl.h}!IRQ\_SetPriorityMask@{IRQ\_SetPriorityMask}}
+\index{IRQ\_SetPriorityMask@{IRQ\_SetPriorityMask}!irq\_ctrl.h@{irq\_ctrl.h}}
+\doxysubsubsection{\texorpdfstring{IRQ\_SetPriorityMask()}{IRQ\_SetPriorityMask()}}
+{\footnotesize\ttfamily int32\+\_\+t IRQ\+\_\+\+Set\+Priority\+Mask (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{priority }\end{DoxyParamCaption})}
+
+Set priority masking threshold. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em priority} & priority masking threshold value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error. 
+\end{DoxyReturn}

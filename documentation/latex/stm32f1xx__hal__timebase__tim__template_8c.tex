@@ -1,0 +1,47 @@
+\hypertarget{stm32f1xx__hal__timebase__tim__template_8c}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Src/stm32f1xx\+\_\+hal\+\_\+timebase\+\_\+tim\+\_\+template.c File Reference}
+\label{stm32f1xx__hal__timebase__tim__template_8c}\index{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_hal\_timebase\_tim\_template.c@{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_hal\_timebase\_tim\_template.c}}
+
+
+HAL time base based on the hardware TIM Template.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+hal\+\_\+timebase\+\_\+tim\+\_\+template.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___h_a_l___time_base___t_i_m_ga38ad4725462bdc5e86c4ead4f04b9fc2}{TIM2\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles TIM interrupt request. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___h_a_l___time_base___t_i_m_ga879cdb21ef051eb81ec51c18147397d5}{HAL\+\_\+\+Init\+Tick}} (uint32\+\_\+t Tick\+Priority)
+\begin{DoxyCompactList}\small\item\em This function configures the TIM2 as a time base source. The time source is configured to have 1ms time base with a dedicated Tick interrupt priority. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___h_a_l___time_base___t_i_m_gaaf651af2afe688a991c657f64f8fa5f9}{HAL\+\_\+\+Suspend\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em Suspend Tick increment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___h_a_l___time_base___t_i_m_ga24e0ee9dae1ec0f9d19200f5575ff790}{HAL\+\_\+\+Resume\+Tick}} (void)
+\begin{DoxyCompactList}\small\item\em Resume Tick increment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___h_a_l___time_base___t_i_m_ga8a3b0ad512a6e6c6157440b68d395eac}{HAL\+\_\+\+TIM\+\_\+\+Period\+Elapsed\+Callback}} (\mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}} $\ast$htim)
+\begin{DoxyCompactList}\small\item\em Period elapsed callback in non blocking mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}} {\bfseries Tim\+Handle}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+HAL time base based on the hardware TIM Template. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team \begin{DoxyVerb}     This file overrides the native HAL time base functions (defined as weak)
+     the TIM time base:
+      + Intializes the TIM peripheral generate a Period elapsed Event each 1ms
+      + HAL_IncTick is called inside HAL_TIM_PeriodElapsedCallback ie each 1ms
+\end{DoxyVerb}
+
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2017 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

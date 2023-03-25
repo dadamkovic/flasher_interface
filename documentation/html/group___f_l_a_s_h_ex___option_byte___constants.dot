@@ -1,0 +1,25 @@
+digraph "Option Byte Constants"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node6 [label="Option Byte Read Protection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___read___protection.html",tooltip=" "];
+  Node4 [label="Option Byte WRP State",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___w_r_p___state.html",tooltip=" "];
+  Node2 [label="FLASHEx Exported Constants",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___exported___constants.html",tooltip=" "];
+  Node1 [label="Option Byte Constants",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node7 [label="Option Byte IWatchdog",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___i_watchdog.html",tooltip=" "];
+  Node5 [label="Option Bytes Write\l Protection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___write___protection.html",tooltip=" "];
+  Node10 [label="Option Byte Data Address",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___data___address.html",tooltip=" "];
+  Node8 [label="Option Byte nRST STOP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p.html",tooltip=" "];
+  Node3 [label="Option Bytes Type",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b___type.html",tooltip=" "];
+  Node9 [label="Option Byte nRST STDBY",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+}

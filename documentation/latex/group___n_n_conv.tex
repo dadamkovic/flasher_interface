@@ -1,0 +1,672 @@
+\hypertarget{group___n_n_conv}{}\doxysection{Neural Network Convolution Functions}
+\label{group___n_n_conv}\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+Collaboration diagram for Neural Network Convolution Functions\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga110adcfdaab356c750c6270aa5e05f29}{arm\+\_\+convolve\+\_\+1x1\+\_\+\+HWC\+\_\+q7\+\_\+fast\+\_\+nonsquare}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+y, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel\+\_\+x, const uint16\+\_\+t dim\+\_\+kernel\+\_\+y, const uint16\+\_\+t padding\+\_\+x, const uint16\+\_\+t padding\+\_\+y, const uint16\+\_\+t stride\+\_\+x, const uint16\+\_\+t stride\+\_\+y, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+y, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Fast Q7 version of 1x1 convolution (non-\/sqaure shape) \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga55701f213b198084b52eab53097f1f58}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+basic}} (const q15\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q15\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q15\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q15\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Basic Q15 convolution function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga4efb1ccbbaa7dd936961989dcb443f50}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+fast}} (const q15\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q15\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q15\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q15\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Fast Q15 convolution function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga614ec3b71eb96e29952ec3f09e7b9c3c}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+fast\+\_\+nonsquare}} (const q15\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+y, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q15\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel\+\_\+x, const uint16\+\_\+t dim\+\_\+kernel\+\_\+y, const uint16\+\_\+t padding\+\_\+x, const uint16\+\_\+t padding\+\_\+y, const uint16\+\_\+t stride\+\_\+x, const uint16\+\_\+t stride\+\_\+y, const q15\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q15\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+y, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Fast Q15 convolution function (non-\/sqaure shape) \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga210ae8d8fc1d12ee15b41f1fa6947681}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+basic}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Basic Q7 convolution function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga4501fa22c0836002aa47ccc313dce252}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+basic\+\_\+nonsquare}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+y, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel\+\_\+x, const uint16\+\_\+t dim\+\_\+kernel\+\_\+y, const uint16\+\_\+t padding\+\_\+x, const uint16\+\_\+t padding\+\_\+y, const uint16\+\_\+t stride\+\_\+x, const uint16\+\_\+t stride\+\_\+y, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+y, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Basic Q7 convolution function (non-\/sqaure shape) \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_gae00d3c1285907d59657369fc98bcc83f}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+fast}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Fast Q7 convolution function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_gabc6d6b991024e9e5c5cdbd7489de88ef}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+fast\+\_\+nonsquare}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+y, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel\+\_\+x, const uint16\+\_\+t dim\+\_\+kernel\+\_\+y, const uint16\+\_\+t padding\+\_\+x, const uint16\+\_\+t padding\+\_\+y, const uint16\+\_\+t stride\+\_\+x, const uint16\+\_\+t stride\+\_\+y, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+y, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Fast Q7 convolution function (non-\/sqaure shape) \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga98f2ead67d7cbdf558b0cd8a3b8fc148}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+\+RGB}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Q7 convolution function for RGB image. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_gad3d21b3bc6dbd6f3b97d01104349cb0a}{arm\+\_\+depthwise\+\_\+separable\+\_\+conv\+\_\+\+HWC\+\_\+q7}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Q7 depthwise separable convolution function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___n_n_conv_ga32ac508c5467813a84f74f96655dc697}{arm\+\_\+depthwise\+\_\+separable\+\_\+conv\+\_\+\+HWC\+\_\+q7\+\_\+nonsquare}} (const q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+in\+\_\+y, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const q7\+\_\+t $\ast$wt, const uint16\+\_\+t ch\+\_\+im\+\_\+out, const uint16\+\_\+t dim\+\_\+kernel\+\_\+x, const uint16\+\_\+t dim\+\_\+kernel\+\_\+y, const uint16\+\_\+t padding\+\_\+x, const uint16\+\_\+t padding\+\_\+y, const uint16\+\_\+t stride\+\_\+x, const uint16\+\_\+t stride\+\_\+y, const q7\+\_\+t $\ast$bias, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, q7\+\_\+t $\ast$Im\+\_\+out, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+x, const uint16\+\_\+t dim\+\_\+im\+\_\+out\+\_\+y, q15\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$bufferB)
+\begin{DoxyCompactList}\small\item\em Q7 depthwise separable convolution function (non-\/square shape) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform convolution layer
+
+The convolution is implemented in 2 steps\+: im2col and GEMM
+
+im2col is a process of converting each patch of image data into a column. After im2col, the convolution is computed as matrix-\/matrix multiplication.
+
+To reduce the memory footprint, the im2col is performed partially. Each iteration, only a few column (i.\+e., patches) are generated and computed with GEMM kernels similar to CMSIS-\/\+DSP arm\+\_\+mat\+\_\+mult functions. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___n_n_conv_ga110adcfdaab356c750c6270aa5e05f29}\label{group___n_n_conv_ga110adcfdaab356c750c6270aa5e05f29}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare@{arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare}}
+\index{arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare@{arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare()}{arm\_convolve\_1x1\_HWC\_q7\_fast\_nonsquare()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+1x1\+\_\+\+HWC\+\_\+q7\+\_\+fast\+\_\+nonsquare (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+y,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+y,  }\item[{const uint16\+\_\+t}]{padding\+\_\+x,  }\item[{const uint16\+\_\+t}]{padding\+\_\+y,  }\item[{const uint16\+\_\+t}]{stride\+\_\+x,  }\item[{const uint16\+\_\+t}]{stride\+\_\+y,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+y,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Fast Q7 version of 1x1 convolution (non-\/sqaure shape) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+x} & input tensor dimention x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+y} & input tensor dimention y \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+x} & filter kernel size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+y} & filter kernel size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+x} & padding size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+y} & padding size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+x} & convolution stride x \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+y} & convolution stride y \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+x} & output tensor dimension x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+y} & output tensor dimension y \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+This function is optimized for convolution with 1x1 kernel size (i.\+e., dim\+\_\+kernel\+\_\+x=1 and dim\+\_\+kernel\+\_\+y=1). It can be used for the second half of Mobile\+Nets \mbox{[}1\mbox{]} after depthwise separable convolution.
+
+This function is the version with full list of optimization tricks, but with some contraints\+: ch\+\_\+im\+\_\+in is multiple of 4 ch\+\_\+im\+\_\+out is multiple of 2
+
+\mbox{[}1\mbox{]} Mobile\+Nets\+: Efficient Convolutional Neural Networks for Mobile Vision Applications \href{https://arxiv.org/abs/1704.04861}{\texttt{ https\+://arxiv.\+org/abs/1704.\+04861}} \mbox{\Hypertarget{group___n_n_conv_ga55701f213b198084b52eab53097f1f58}\label{group___n_n_conv_ga55701f213b198084b52eab53097f1f58}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q15\_basic@{arm\_convolve\_HWC\_q15\_basic}}
+\index{arm\_convolve\_HWC\_q15\_basic@{arm\_convolve\_HWC\_q15\_basic}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q15\_basic()}{arm\_convolve\_HWC\_q15\_basic()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+basic (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q15\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q15\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q15\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Basic Q15 convolution function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+This basic version is designed to work for any input tensor and weight dimension. \mbox{\Hypertarget{group___n_n_conv_ga4efb1ccbbaa7dd936961989dcb443f50}\label{group___n_n_conv_ga4efb1ccbbaa7dd936961989dcb443f50}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q15\_fast@{arm\_convolve\_HWC\_q15\_fast}}
+\index{arm\_convolve\_HWC\_q15\_fast@{arm\_convolve\_HWC\_q15\_fast}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q15\_fast()}{arm\_convolve\_HWC\_q15\_fast()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+fast (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q15\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q15\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q15\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Fast Q15 convolution function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+{\bfseries{Input dimension constraints\+:}}
+
+ch\+\_\+im\+\_\+in is multiple of 2
+
+ch\+\_\+im\+\_\+out is multipe of 2 \mbox{\Hypertarget{group___n_n_conv_ga614ec3b71eb96e29952ec3f09e7b9c3c}\label{group___n_n_conv_ga614ec3b71eb96e29952ec3f09e7b9c3c}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q15\_fast\_nonsquare@{arm\_convolve\_HWC\_q15\_fast\_nonsquare}}
+\index{arm\_convolve\_HWC\_q15\_fast\_nonsquare@{arm\_convolve\_HWC\_q15\_fast\_nonsquare}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q15\_fast\_nonsquare()}{arm\_convolve\_HWC\_q15\_fast\_nonsquare()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q15\+\_\+fast\+\_\+nonsquare (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+y,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q15\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+y,  }\item[{const uint16\+\_\+t}]{padding\+\_\+x,  }\item[{const uint16\+\_\+t}]{padding\+\_\+y,  }\item[{const uint16\+\_\+t}]{stride\+\_\+x,  }\item[{const uint16\+\_\+t}]{stride\+\_\+y,  }\item[{const q15\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q15\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+y,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Fast Q15 convolution function (non-\/sqaure shape) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+x} & input tensor dimention x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+y} & input tensor dimention y \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+x} & filter kernel size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+y} & filter kernel size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+x} & padding size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+y} & padding size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+x} & convolution stride x \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+y} & convolution stride y \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+x} & output tensor dimension x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+y} & output tensor dimension y \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+{\bfseries{Input dimension constraints\+:}}
+
+ch\+\_\+im\+\_\+in is multiple of 2
+
+ch\+\_\+im\+\_\+out is multipe of 2 \mbox{\Hypertarget{group___n_n_conv_ga210ae8d8fc1d12ee15b41f1fa6947681}\label{group___n_n_conv_ga210ae8d8fc1d12ee15b41f1fa6947681}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q7\_basic@{arm\_convolve\_HWC\_q7\_basic}}
+\index{arm\_convolve\_HWC\_q7\_basic@{arm\_convolve\_HWC\_q7\_basic}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q7\_basic()}{arm\_convolve\_HWC\_q7\_basic()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+basic (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Basic Q7 convolution function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+This basic version is designed to work for any input tensor and weight dimension. \mbox{\Hypertarget{group___n_n_conv_ga4501fa22c0836002aa47ccc313dce252}\label{group___n_n_conv_ga4501fa22c0836002aa47ccc313dce252}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q7\_basic\_nonsquare@{arm\_convolve\_HWC\_q7\_basic\_nonsquare}}
+\index{arm\_convolve\_HWC\_q7\_basic\_nonsquare@{arm\_convolve\_HWC\_q7\_basic\_nonsquare}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q7\_basic\_nonsquare()}{arm\_convolve\_HWC\_q7\_basic\_nonsquare()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+basic\+\_\+nonsquare (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+y,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+y,  }\item[{const uint16\+\_\+t}]{padding\+\_\+x,  }\item[{const uint16\+\_\+t}]{padding\+\_\+y,  }\item[{const uint16\+\_\+t}]{stride\+\_\+x,  }\item[{const uint16\+\_\+t}]{stride\+\_\+y,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+y,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Basic Q7 convolution function (non-\/sqaure shape) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+x} & input tensor dimention x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+y} & input tensor dimention y \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+x} & filter kernel size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+y} & filter kernel size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+x} & padding size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+y} & padding size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+x} & convolution stride x \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+y} & convolution stride y \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+x} & output tensor dimension x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+y} & output tensor dimension y \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___n_n_conv_gae00d3c1285907d59657369fc98bcc83f}\label{group___n_n_conv_gae00d3c1285907d59657369fc98bcc83f}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q7\_fast@{arm\_convolve\_HWC\_q7\_fast}}
+\index{arm\_convolve\_HWC\_q7\_fast@{arm\_convolve\_HWC\_q7\_fast}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q7\_fast()}{arm\_convolve\_HWC\_q7\_fast()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+fast (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Fast Q7 convolution function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+{\bfseries{Input dimension constraints\+:}}
+
+ch\+\_\+im\+\_\+in is multiple of 4 ( because of the SIMD32 read and swap )
+
+ch\+\_\+im\+\_\+out is multipe of 2 ( bacause 2x2 mat\+\_\+mult kernel )
+
+The im2col converts the Q7 tensor input into Q15 column, which is stored in bufferA. There is reordering happenning during this im2col process with arm\+\_\+q7\+\_\+to\+\_\+q15\+\_\+reordered\+\_\+no\+\_\+shift. For every four elements, the second and third elements are swapped.
+
+The computation kernel arm\+\_\+nn\+\_\+mat\+\_\+mult\+\_\+kernel\+\_\+q7\+\_\+q15\+\_\+reordered does the GEMM computation with the reordered columns.
+
+To speed-\/up the determination of the padding condition, we split the computation into 3x3 parts, i.\+e., \{top, mid, bottom\} X \{left, mid, right\}. This reduces the total number of boundary condition checks and improves the data copying performance. \mbox{\Hypertarget{group___n_n_conv_gabc6d6b991024e9e5c5cdbd7489de88ef}\label{group___n_n_conv_gabc6d6b991024e9e5c5cdbd7489de88ef}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q7\_fast\_nonsquare@{arm\_convolve\_HWC\_q7\_fast\_nonsquare}}
+\index{arm\_convolve\_HWC\_q7\_fast\_nonsquare@{arm\_convolve\_HWC\_q7\_fast\_nonsquare}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q7\_fast\_nonsquare()}{arm\_convolve\_HWC\_q7\_fast\_nonsquare()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+fast\+\_\+nonsquare (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+y,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+y,  }\item[{const uint16\+\_\+t}]{padding\+\_\+x,  }\item[{const uint16\+\_\+t}]{padding\+\_\+y,  }\item[{const uint16\+\_\+t}]{stride\+\_\+x,  }\item[{const uint16\+\_\+t}]{stride\+\_\+y,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+y,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Fast Q7 convolution function (non-\/sqaure shape) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+x} & input tensor dimention x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+y} & input tensor dimention y \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+x} & filter kernel size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+y} & filter kernel size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+x} & padding size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+y} & padding size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+x} & convolution stride x \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+y} & convolution stride y \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+x} & output tensor dimension x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+y} & output tensor dimension y \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+This function is the version with full list of optimization tricks, but with some contraints\+: ch\+\_\+im\+\_\+in is multiple of 4 ch\+\_\+im\+\_\+out is multiple of 2 \mbox{\Hypertarget{group___n_n_conv_ga98f2ead67d7cbdf558b0cd8a3b8fc148}\label{group___n_n_conv_ga98f2ead67d7cbdf558b0cd8a3b8fc148}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_convolve\_HWC\_q7\_RGB@{arm\_convolve\_HWC\_q7\_RGB}}
+\index{arm\_convolve\_HWC\_q7\_RGB@{arm\_convolve\_HWC\_q7\_RGB}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_convolve\_HWC\_q7\_RGB()}{arm\_convolve\_HWC\_q7\_RGB()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+\+RGB (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Q7 convolution function for RGB image. 
+
+Q7 version of convolution for RGB image.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+{\bfseries{Input dimension constraints\+:}}
+
+ch\+\_\+im\+\_\+in equals 3
+
+This kernel is written exclusively for convolution with ch\+\_\+im\+\_\+in equals 3. This applies on the first layer of CNNs which has input image with RGB format. \mbox{\Hypertarget{group___n_n_conv_gad3d21b3bc6dbd6f3b97d01104349cb0a}\label{group___n_n_conv_gad3d21b3bc6dbd6f3b97d01104349cb0a}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_depthwise\_separable\_conv\_HWC\_q7@{arm\_depthwise\_separable\_conv\_HWC\_q7}}
+\index{arm\_depthwise\_separable\_conv\_HWC\_q7@{arm\_depthwise\_separable\_conv\_HWC\_q7}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_depthwise\_separable\_conv\_HWC\_q7()}{arm\_depthwise\_separable\_conv\_HWC\_q7()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+depthwise\+\_\+separable\+\_\+conv\+\_\+\+HWC\+\_\+q7 (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Q7 depthwise separable convolution function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$ch\+\_\+im\+\_\+in$\ast$dim\+\_\+kernel$\ast$dim\+\_\+kernel
+
+bufferB size\+: 0
+
+{\bfseries{Input dimension constraints\+:}}
+
+ch\+\_\+im\+\_\+in equals ch\+\_\+im\+\_\+out
+
+Implementation\+: There are 3 nested loop here\+: Inner loop\+: calculate each output value with MAC instruction over an accumulator Mid loop\+: loop over different output channel Outer loop\+: loop over different output (x, y) \mbox{\Hypertarget{group___n_n_conv_ga32ac508c5467813a84f74f96655dc697}\label{group___n_n_conv_ga32ac508c5467813a84f74f96655dc697}} 
+\index{Neural Network Convolution Functions@{Neural Network Convolution Functions}!arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare@{arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare}}
+\index{arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare@{arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare}!Neural Network Convolution Functions@{Neural Network Convolution Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare()}{arm\_depthwise\_separable\_conv\_HWC\_q7\_nonsquare()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+depthwise\+\_\+separable\+\_\+conv\+\_\+\+HWC\+\_\+q7\+\_\+nonsquare (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in\+\_\+y,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const q7\+\_\+t $\ast$}]{wt,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel\+\_\+y,  }\item[{const uint16\+\_\+t}]{padding\+\_\+x,  }\item[{const uint16\+\_\+t}]{padding\+\_\+y,  }\item[{const uint16\+\_\+t}]{stride\+\_\+x,  }\item[{const uint16\+\_\+t}]{stride\+\_\+y,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+x,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out\+\_\+y,  }\item[{q15\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{bufferB }\end{DoxyParamCaption})}
+
+
+
+Q7 depthwise separable convolution function (non-\/square shape) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+x} & input tensor dimention x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in\+\_\+y} & input tensor dimention y \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em wt} & pointer to kernel weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+out} & number of filters, i.\+e., output tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+x} & filter kernel size x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel\+\_\+y} & filter kernel size y \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+x} & padding sizes x \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding\+\_\+y} & padding sizes y \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+x} & convolution stride x \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride\+\_\+y} & convolution stride y \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+x} & output tensor dimension x \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out\+\_\+y} & output tensor dimension y \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferB} & pointer to buffer space for output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking.
+\end{DoxyReturn}
+This function is the version with full list of optimization tricks, but with some contraints\+: ch\+\_\+im\+\_\+in is multiple of 2 ch\+\_\+im\+\_\+out is multiple of 2 

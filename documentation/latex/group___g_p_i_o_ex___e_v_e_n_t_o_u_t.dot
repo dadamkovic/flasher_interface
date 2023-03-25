@@ -1,0 +1,13 @@
+digraph "EVENTOUT Cortex Configuration"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="EVENTOUT Cortex Configuration",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This section propose definition to use the Cortex EVENTOUT signal."];
+  Node4 [label="EVENTOUT Port",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex___e_v_e_n_t_o_u_t___p_o_r_t.html",tooltip=" "];
+  Node3 [label="EVENTOUT Pin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex___e_v_e_n_t_o_u_t___p_i_n.html",tooltip=" "];
+  Node2 [label="GPIOEx Exported Constants",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex___exported___constants.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

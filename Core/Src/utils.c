@@ -202,16 +202,16 @@ MENU_ReturnTypeDef utilsManMove(){
   switch (joy_dat.pos)
   {
   case 'U':
-    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/100.0);
+    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/UTILS_MOVE_RATE);
     break;
   case 'D':
-    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/100.0);
+    plotterFastMove(g_plotter_h, 0.0, (float)joy_dat.y/UTILS_MOVE_RATE);
     break;
   case 'L':
-    plotterFastMove(g_plotter_h, (float)joy_dat.y/100.0, 0.0);
+    plotterFastMove(g_plotter_h, (float)joy_dat.y/UTILS_MOVE_RATE, 0.0);
     break;
   case 'R':
-    plotterFastMove(g_plotter_h, (float)joy_dat.y/100.0, 0.0);
+    plotterFastMove(g_plotter_h, (float)joy_dat.y/UTILS_MOVE_RATE, 0.0);
     break;
   default:
     break;

@@ -1,0 +1,113 @@
+\hypertarget{group__q7__to__x}{}\doxysection{Convert 8-\/bit Integer value}
+\label{group__q7__to__x}\index{Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}}
+Collaboration diagram for Convert 8-\/bit Integer value\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__q7__to__x_ga656620f957b65512ed83db03fd455ec5}{arm\+\_\+q7\+\_\+to\+\_\+float}} (q7\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Converts the elements of the Q7 vector to floating-\/point vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__q7__to__x_gabc02597fc3f01033daf43ec0547a2f78}{arm\+\_\+q7\+\_\+to\+\_\+q15}} (q7\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Converts the elements of the Q7 vector to Q15 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__q7__to__x_gad8958cd3cb7f521466168b46a25b7908}{arm\+\_\+q7\+\_\+to\+\_\+q31}} (q7\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Converts the elements of the Q7 vector to Q31 vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__q7__to__x_ga656620f957b65512ed83db03fd455ec5}\label{group__q7__to__x_ga656620f957b65512ed83db03fd455ec5}} 
+\index{Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}!arm\_q7\_to\_float@{arm\_q7\_to\_float}}
+\index{arm\_q7\_to\_float@{arm\_q7\_to\_float}!Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}}
+\doxysubsubsection{\texorpdfstring{arm\_q7\_to\_float()}{arm\_q7\_to\_float()}}
+{\footnotesize\ttfamily void arm\+\_\+q7\+\_\+to\+\_\+float (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Converts the elements of the Q7 vector to floating-\/point vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the Q7 input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the floating-\/point output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+The equation used for the conversion process is\+:
+
+
+\begin{DoxyPre}
+    pDst[n] = (float32\_t) pSrc[n] / 128;   0 <= n < blockSize.
+\end{DoxyPre}
+ \mbox{\Hypertarget{group__q7__to__x_gabc02597fc3f01033daf43ec0547a2f78}\label{group__q7__to__x_gabc02597fc3f01033daf43ec0547a2f78}} 
+\index{Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}!arm\_q7\_to\_q15@{arm\_q7\_to\_q15}}
+\index{arm\_q7\_to\_q15@{arm\_q7\_to\_q15}!Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}}
+\doxysubsubsection{\texorpdfstring{arm\_q7\_to\_q15()}{arm\_q7\_to\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+q7\+\_\+to\+\_\+q15 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Converts the elements of the Q7 vector to Q15 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the Q7 input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the Q15 output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+The equation used for the conversion process is\+:
+
+
+\begin{DoxyPre}
+    pDst[n] = (q15\_t) pSrc[n] << 8;   0 <= n < blockSize.
+\end{DoxyPre}
+ \mbox{\Hypertarget{group__q7__to__x_gad8958cd3cb7f521466168b46a25b7908}\label{group__q7__to__x_gad8958cd3cb7f521466168b46a25b7908}} 
+\index{Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}!arm\_q7\_to\_q31@{arm\_q7\_to\_q31}}
+\index{arm\_q7\_to\_q31@{arm\_q7\_to\_q31}!Convert 8-\/bit Integer value@{Convert 8-\/bit Integer value}}
+\doxysubsubsection{\texorpdfstring{arm\_q7\_to\_q31()}{arm\_q7\_to\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+q7\+\_\+to\+\_\+q31 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Converts the elements of the Q7 vector to Q31 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the Q7 input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the Q31 output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+The equation used for the conversion process is\+:
+
+
+\begin{DoxyPre}
+    pDst[n] = (q31\_t) pSrc[n] << 24;   0 <= n < blockSize.
+\end{DoxyPre}
+ 

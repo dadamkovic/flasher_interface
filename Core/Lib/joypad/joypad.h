@@ -11,7 +11,7 @@
 
 typedef void (JOY_InitFuncTypeDef)(void);
 
-typedef uint8_t JOY_HandleTypeDef;
+typedef int8_t JOY_HandleTypeDef;
 
 typedef enum JOY_InitTypeDef{
     JOY_FREE,

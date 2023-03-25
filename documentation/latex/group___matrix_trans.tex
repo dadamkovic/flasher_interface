@@ -1,0 +1,79 @@
+\hypertarget{group___matrix_trans}{}\doxysection{Matrix Transpose}
+\label{group___matrix_trans}\index{Matrix Transpose@{Matrix Transpose}}
+Collaboration diagram for Matrix Transpose\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \mbox{\hyperlink{group___matrix_trans_gad7dd9f108429da13d3864696ceeec789}{arm\+\_\+mat\+\_\+trans\+\_\+f32}} (const \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$p\+Src, \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix transpose. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___matrix_trans_ga4f4f821cc695fd0ef9061d702e08050a}{arm\+\_\+mat\+\_\+trans\+\_\+q15}} (const \mbox{\hyperlink{structarm__matrix__instance__q15}{arm\+\_\+matrix\+\_\+instance\+\_\+q15}} $\ast$p\+Src, \mbox{\hyperlink{structarm__matrix__instance__q15}{arm\+\_\+matrix\+\_\+instance\+\_\+q15}} $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Q15 matrix transpose. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___matrix_trans_ga30a4d49489ac67ff98a46b9f58f73bf1}{arm\+\_\+mat\+\_\+trans\+\_\+q31}} (const \mbox{\hyperlink{structarm__matrix__instance__q31}{arm\+\_\+matrix\+\_\+instance\+\_\+q31}} $\ast$p\+Src, \mbox{\hyperlink{structarm__matrix__instance__q31}{arm\+\_\+matrix\+\_\+instance\+\_\+q31}} $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Q31 matrix transpose. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tranposes a matrix. Transposing an {\ttfamily M x N} matrix flips it around the center diagonal and results in an {\ttfamily N x M} matrix.  
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___matrix_trans_gad7dd9f108429da13d3864696ceeec789}\label{group___matrix_trans_gad7dd9f108429da13d3864696ceeec789}} 
+\index{Matrix Transpose@{Matrix Transpose}!arm\_mat\_trans\_f32@{arm\_mat\_trans\_f32}}
+\index{arm\_mat\_trans\_f32@{arm\_mat\_trans\_f32}!Matrix Transpose@{Matrix Transpose}}
+\doxysubsubsection{\texorpdfstring{arm\_mat\_trans\_f32()}{arm\_mat\_trans\_f32()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+mat\+\_\+trans\+\_\+f32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$}]{p\+Src,  }\item[{\mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point matrix transpose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___matrix_trans_ga4f4f821cc695fd0ef9061d702e08050a}\label{group___matrix_trans_ga4f4f821cc695fd0ef9061d702e08050a}} 
+\index{Matrix Transpose@{Matrix Transpose}!arm\_mat\_trans\_q15@{arm\_mat\_trans\_q15}}
+\index{arm\_mat\_trans\_q15@{arm\_mat\_trans\_q15}!Matrix Transpose@{Matrix Transpose}}
+\doxysubsubsection{\texorpdfstring{arm\_mat\_trans\_q15()}{arm\_mat\_trans\_q15()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+mat\+\_\+trans\+\_\+q15 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarm__matrix__instance__q15}{arm\+\_\+matrix\+\_\+instance\+\_\+q15}} $\ast$}]{p\+Src,  }\item[{\mbox{\hyperlink{structarm__matrix__instance__q15}{arm\+\_\+matrix\+\_\+instance\+\_\+q15}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})}
+
+
+
+Q15 matrix transpose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+Src} & points to the input matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Dst} & points to the output matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___matrix_trans_ga30a4d49489ac67ff98a46b9f58f73bf1}\label{group___matrix_trans_ga30a4d49489ac67ff98a46b9f58f73bf1}} 
+\index{Matrix Transpose@{Matrix Transpose}!arm\_mat\_trans\_q31@{arm\_mat\_trans\_q31}}
+\index{arm\_mat\_trans\_q31@{arm\_mat\_trans\_q31}!Matrix Transpose@{Matrix Transpose}}
+\doxysubsubsection{\texorpdfstring{arm\_mat\_trans\_q31()}{arm\_mat\_trans\_q31()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+mat\+\_\+trans\+\_\+q31 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarm__matrix__instance__q31}{arm\+\_\+matrix\+\_\+instance\+\_\+q31}} $\ast$}]{p\+Src,  }\item[{\mbox{\hyperlink{structarm__matrix__instance__q31}{arm\+\_\+matrix\+\_\+instance\+\_\+q31}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})}
+
+
+
+Q31 matrix transpose. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+Src} & points to the input matrix \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+Dst} & points to the output matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns either {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} or {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS} based on the outcome of size checking. 
+\end{DoxyReturn}

@@ -1,0 +1,38 @@
+\hypertarget{logger_8c}{}\doxysection{Core/\+Src/logger.c File Reference}
+\label{logger_8c}\index{Core/Src/logger.c@{Core/Src/logger.c}}
+{\ttfamily \#include \char`\"{}logger.\+h\char`\"{}}\newline
+Include dependency graph for logger.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8c_a3a7770f437ae0c3fd68c52b5fc6c3491}\label{logger_8c_a3a7770f437ae0c3fd68c52b5fc6c3491}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Init} (LOG\+\_\+\+Priority\+Type\+Def log\+\_\+min\+\_\+prio, LOG\+\_\+\+Enable\+Type\+Def log\+\_\+en, LOG\+\_\+\+Write\+Func $\ast$log\+\_\+write\+\_\+f)
+\item 
+\mbox{\Hypertarget{logger_8c_ad8319939eb4a400c99fcdd3c65f09bb4}\label{logger_8c_ad8319939eb4a400c99fcdd3c65f09bb4}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Open} ()
+\item 
+\mbox{\Hypertarget{logger_8c_a7a90309b6aea8357cbcc9f3017011e9f}\label{logger_8c_a7a90309b6aea8357cbcc9f3017011e9f}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Write} (char $\ast$source, char $\ast$cont, LOG\+\_\+\+Priority\+Type\+Def log\+\_\+prio)
+\item 
+\mbox{\Hypertarget{logger_8c_a3b848d4e0ec38247af9d7c70aa2bffb7}\label{logger_8c_a3b848d4e0ec38247af9d7c70aa2bffb7}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Close} ()
+\item 
+\mbox{\Hypertarget{logger_8c_a8bbc9d35dbd0a5aa93f59bad70d55c0d}\label{logger_8c_a8bbc9d35dbd0a5aa93f59bad70d55c0d}} 
+void {\bfseries log\+Error\+Handler} (LOG\+\_\+\+Error\+Type\+Def log\+\_\+error)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+22-\/01-\/2023
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}

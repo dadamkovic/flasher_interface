@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['main_29',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
-  ['main_2ec_30',['main.c',['../main_8c.html',1,'']]],
-  ['memmanage_5fhandler_31',['MemManage_Handler',['../stm32f1xx__it_8c.html#a3150f74512510287a942624aa9b44cc5',1,'stm32f1xx_it.c']]],
-  ['menu_2ec_32',['menu.c',['../menu_8c.html',1,'']]],
-  ['mx_5fadc1_5finit_33',['MX_ADC1_Init',['../adc_8c.html#acccd58aa70215a6b184ad242312ffd0c',1,'adc.c']]],
-  ['mx_5fgpio_5finit_34',['MX_GPIO_Init',['../gpio_8c.html#ac724e431d2af879252de35615be2bdea',1,'gpio.c']]]
+  ['logger_2ec_37',['logger.c',['../logger_8c.html',1,'']]],
+  ['logger_2eh_38',['logger.h',['../logger_8h.html',1,'']]],
+  ['lse_5fstartup_5ftimeout_39',['LSE_STARTUP_TIMEOUT',['../stm32f1xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32f1xx_hal_conf.h']]],
+  ['lse_5fvalue_40',['LSE_VALUE',['../stm32f1xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32f1xx_hal_conf.h']]],
+  ['lsi_5fvalue_41',['LSI_VALUE',['../stm32f1xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32f1xx_hal_conf.h']]]
 ];

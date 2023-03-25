@@ -5,5 +5,9 @@ digraph "Core/Src/adc.c"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node1 [label="Core/Src/adc.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file provides code for the configuration of the ADC instances."];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node2 [label="adc.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node2 [label="adc.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$adc_8h.html",tooltip="This file contains all the function prototypes for the adc.c file."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="main.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8h.html",tooltip=": Header for main.c file. This file contains the common defines of the application."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="stm32f1xx_hal.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
 }

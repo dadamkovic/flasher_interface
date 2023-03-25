@@ -1,0 +1,234 @@
+\hypertarget{stm32f1xx__hal__rtc_8h}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f1xx\+\_\+hal\+\_\+rtc.h File Reference}
+\label{stm32f1xx__hal__rtc_8h}\index{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_rtc.h@{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_rtc.h}}
+
+
+Header file of RTC HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+rtc\+\_\+ex.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+hal\+\_\+rtc.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Time structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Alarm structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___init_type_def}{RTC\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Configuration Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em RTC Date structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Time Handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+ASYNCH\+\_\+\+PREDIV}(PREDIV)~(((PREDIV) $<$= 0x\+FFFFFU) $\vert$$\vert$ ((PREDIV) == RTC\+\_\+\+AUTO\+\_\+1\+\_\+\+SECOND))
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+HOUR24}(HOUR)~((HOUR) $<$= 23U)
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+MINUTES}(MINUTES)~((MINUTES) $<$= 59U)
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+SECONDS}(SECONDS)~((SECONDS) $<$= 59U)
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+FORMAT}(FORMAT)~(((FORMAT) == RTC\+\_\+\+FORMAT\+\_\+\+BIN) $\vert$$\vert$ ((FORMAT) == RTC\+\_\+\+FORMAT\+\_\+\+BCD))
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+YEAR}(YEAR)~((YEAR) $<$= 99U)
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+MONTH}(MONTH)~(((MONTH) $>$= 1U) \&\& ((MONTH) $<$= 12U))
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+DATE}(DATE)~(((DATE) $>$= 1U) \&\& ((DATE) $<$= 31U))
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+ALARM}(ALARM)~((ALARM) == \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga916bcb75517157e284344f96ac275639}{RTC\+\_\+\+ALARM\+\_\+A}})
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+CALIB\+\_\+\+OUTPUT}(\+\_\+\+\_\+\+OUTPUT\+\_\+\+\_\+)
+\item 
+\#define {\bfseries RTC\+\_\+\+TIMEOUT\+\_\+\+VALUE}~1000U
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4489fa85d1552b8f40faed93483a5d35}{EXTI\+\_\+\+IMR\+\_\+\+MR17}})
+\item 
+\#define {\bfseries RTC\+\_\+\+AUTO\+\_\+1\+\_\+\+SECOND}~0x\+FFFFFFFFU
+\item 
+\#define {\bfseries RTC\+\_\+\+FORMAT\+\_\+\+BIN}~0x000000000U
+\item 
+\#define {\bfseries RTC\+\_\+\+FORMAT\+\_\+\+BCD}~0x000000001U
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+JANUARY}~((uint8\+\_\+t)0x01)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+FEBRUARY}~((uint8\+\_\+t)0x02)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+MARCH}~((uint8\+\_\+t)0x03)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+APRIL}~((uint8\+\_\+t)0x04)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+MAY}~((uint8\+\_\+t)0x05)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+JUNE}~((uint8\+\_\+t)0x06)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+JULY}~((uint8\+\_\+t)0x07)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+AUGUST}~((uint8\+\_\+t)0x08)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+SEPTEMBER}~((uint8\+\_\+t)0x09)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+OCTOBER}~((uint8\+\_\+t)0x10)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+NOVEMBER}~((uint8\+\_\+t)0x11)
+\item 
+\#define {\bfseries RTC\+\_\+\+MONTH\+\_\+\+DECEMBER}~((uint8\+\_\+t)0x12)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+MONDAY}~((uint8\+\_\+t)0x01)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+TUESDAY}~((uint8\+\_\+t)0x02)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+WEDNESDAY}~((uint8\+\_\+t)0x03)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+THURSDAY}~((uint8\+\_\+t)0x04)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+FRIDAY}~((uint8\+\_\+t)0x05)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+SATURDAY}~((uint8\+\_\+t)0x06)
+\item 
+\#define {\bfseries RTC\+\_\+\+WEEKDAY\+\_\+\+SUNDAY}~((uint8\+\_\+t)0x00)
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___alarms___definitions_ga916bcb75517157e284344f96ac275639}{RTC\+\_\+\+ALARM\+\_\+A}}~0U
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_gaff24aee600dcf0d40a1edccac70ed439}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+NONE}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga279ebe3d60ed61eb4a45c2ae7c215173}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+CALIBCLOCK}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga639d569ffd9211519b910c1e6304f7b3}{BKP\+\_\+\+RTCCR\+\_\+\+CCO}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8522b6ede69552843b6204b7225d396e}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+ALARM}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_gae67ac2e3259a7f10f13bb61ebd0efbd6}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+SECOND}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d017e8f3c09696cd74e170a95966be4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOS}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}})
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gabcfefb2f22cb8ca65113c2c13d0e0640}{RTC\+\_\+\+IT\+\_\+\+OW}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga04e23d339e15dbf883dbedb054cd1706}{RTC\+\_\+\+CRH\+\_\+\+OWIE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_ga0ba352559e4eb6a5430e1254851a0dfb}{RTC\+\_\+\+IT\+\_\+\+ALRA}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga990a6b449f70249a1a4baf19f64617d9}{RTC\+\_\+\+CRH\+\_\+\+ALRIE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_ga960bccbc10da872549cf52c03dd342f1}{RTC\+\_\+\+IT\+\_\+\+SEC}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8dd52d261f99a969d9841a4426152b85}{RTC\+\_\+\+CRH\+\_\+\+SECIE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___interrupts___definitions_gaae1bc95e46b6951e45c4d857a6701a8a}{RTC\+\_\+\+IT\+\_\+\+TAMP1}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga38baaf48576f4b3ab209369e04d468ad}{BKP\+\_\+\+CSR\+\_\+\+TPIE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga203dcbb991497e4d0e6722815f6db942}{RTC\+\_\+\+FLAG\+\_\+\+RTOFF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6bc57b1110a53b82e4445c4770203fe8}{RTC\+\_\+\+CRL\+\_\+\+RTOFF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga78c4245996bef8d5f39226b6e37ed9c0}{RTC\+\_\+\+FLAG\+\_\+\+RSF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gae6fefe3020ad4d61b54a516e8a65f30d}{RTC\+\_\+\+CRL\+\_\+\+RSF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga4e321e359b914d7ed10eed985f8b4811}{RTC\+\_\+\+FLAG\+\_\+\+OW}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gad801db5fbfc407b1959647765076b299}{RTC\+\_\+\+CRL\+\_\+\+OWF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_gaf9e1a4b5eedd674d7b35ae334877ba12}{RTC\+\_\+\+FLAG\+\_\+\+ALRAF}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaca9bce7cb58e637876d1154710305563}{RTC\+\_\+\+CRL\+\_\+\+ALRF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga8babb2c823c2097bf4a4ef0c20ef7367}{RTC\+\_\+\+FLAG\+\_\+\+SEC}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2c039206fc5c1506aba666387c5d34c8}{RTC\+\_\+\+CRL\+\_\+\+SECF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___flags___definitions_ga3abf1af75c6ae88ddabe4b8a26634f99}{RTC\+\_\+\+FLAG\+\_\+\+TAMP1F}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71a05fe4e45b0dc0b1f970e51085678d}{BKP\+\_\+\+CSR\+\_\+\+TEF}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gaf20c09cfca416d79777562ccf7c994a2}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset RTC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gae150645fb78c1d175b9e0f88fc3f4ad4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3829687c89579c020665c19b8937a820}{RTC\+\_\+\+CRL\+\_\+\+CNF}})
+\begin{DoxyCompactList}\small\item\em Disable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga9eaed4a4db3b3232c1ca5d8ffa6ff4d8}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+WRITEPROTECTION\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3829687c89579c020665c19b8937a820}{RTC\+\_\+\+CRL\+\_\+\+CNF}})
+\begin{DoxyCompactList}\small\item\em Enable the write protection for RTC registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gab40f07ff2cdf6fc98ccfdd856ba934e4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gadc2d6dc4a75136bdd2b67c1b35d04b10}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Alarm interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga8068a537190e4c142b6d5bf41252ed01}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH)\& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)))) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Alarm interrupt has been enabled or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga9f908cb1fd0f270c66f5deed82e019de}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Alarm\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gaf748b95b91cca959f79f441a90678c60}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Alarm interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga93d88df67428f617157346d7cbdb4069}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \&= $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the RTC Alarm\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga47fd0b2d9a8679d49ae554d482231780}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+IT}}()~SET\+\_\+\+BIT(EXTI-\/$>$IMR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Enable interrupt on ALARM Exti Line 17. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gaa6cd8249ed39c941d83f77ce507b8e0a}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+IT}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$IMR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Disable interrupt on ALARM Exti Line 17. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gad80750a7f77e40f636c61d85c01df489}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+EVENT}}()~SET\+\_\+\+BIT(EXTI-\/$>$EMR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Enable event on ALARM Exti Line 17. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga7dea6f849766dd02e03f0ef05191c4d3}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+EVENT}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$EMR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Disable event on ALARM Exti Line 17. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gafb2f49d2954f9ea1dae2ec92156d7b87}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+FALLING\+\_\+\+EDGE}}()~SET\+\_\+\+BIT(EXTI-\/$>$FTSR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em ALARM EXTI line configuration\+: set falling edge trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gae772f6119533837dc7a0cc54ed5fb88b}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+FALLING\+\_\+\+EDGE}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$FTSR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Disable the ALARM Extended Interrupt Falling Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga9d6c820076d2e583f6354f4e37217d1b}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+EDGE}}()~SET\+\_\+\+BIT(EXTI-\/$>$RTSR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em ALARM EXTI line configuration\+: set rising edge trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gafdbfefbdc7ae8ce2a12aa698ee1b8142}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+EDGE}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$RTSR, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Disable the ALARM Extended Interrupt Rising Trigger. This parameter can be\+: \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_gac697938513fe51b0bcc6279025d2e057}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE}}()
+\begin{DoxyCompactList}\small\item\em ALARM EXTI line configuration\+: set rising \& falling edge trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga2a1848b21c468b2fbc2435afe2de44ab}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE}}()
+\begin{DoxyCompactList}\small\item\em Disable the ALARM Extended Interrupt Rising \& Falling Trigger. This parameter can be\+: \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga05c79b3e9c7563c449d6dcb1c4a426bc}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+FLAG}}()~(EXTI-\/$>$PR \& (\mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}}))
+\begin{DoxyCompactList}\small\item\em Check whether the specified ALARM EXTI interrupt flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga7da963373beb744413c1e3302eb91bae}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+FLAG}}()~(EXTI-\/$>$PR = (\mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}}))
+\begin{DoxyCompactList}\small\item\em Clear the ALARM EXTI flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c___exported__macros_ga0ea6a0ad763bcc1913468b57f3972cb2}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+ALARM\+\_\+\+EXTI\+\_\+\+GENERATE\+\_\+\+SWIT}}()~SET\+\_\+\+BIT(EXTI-\/$>$SWIER, \mbox{\hyperlink{group___r_t_c___e_x_t_i___line___event_gaeffe9b89372b06df1c0eff2f4346682b}{RTC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+ALARM\+\_\+\+EVENT}})
+\begin{DoxyCompactList}\small\item\em Generate a Software interrupt on selected EXTI line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___r_t_c___exported___types_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba69cd05758f5129525749b65bee6f939f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00U
+, \mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba466484cd22333d8c8758ae12890b862f}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+READY}} = 0x01U
+, \mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba5e0a8c8e4731ac8f80e9a219413d6f9b}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02U
+, \mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba062e7947b5f5f0c2acb7be96207e3d58}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03U
+, \newline
+\mbox{\hyperlink{group___r_t_c___exported___types_gga1e2460a2d13c4efc7a2a1ab2a1ebd32ba21f381f99f437c340f79407e3d71bb31}{HAL\+\_\+\+RTC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04U
+ \}
+\begin{DoxyCompactList}\small\item\em HAL State structures definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Init} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+De\+Init} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+void {\bfseries HAL\+\_\+\+RTC\+\_\+\+Msp\+Init} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+void {\bfseries HAL\+\_\+\+RTC\+\_\+\+Msp\+De\+Init} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Set\+Time} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} $\ast$s\+Time, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Get\+Time} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___time_type_def}{RTC\+\_\+\+Time\+Type\+Def}} $\ast$s\+Time, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Set\+Date} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} $\ast$s\+Date, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Get\+Date} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___date_type_def}{RTC\+\_\+\+Date\+Type\+Def}} $\ast$s\+Date, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} $\ast$s\+Alarm, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Set\+Alarm\+\_\+\+IT} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} $\ast$s\+Alarm, uint32\+\_\+t Format)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Deactivate\+Alarm} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, uint32\+\_\+t Alarm)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Get\+Alarm} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, \mbox{\hyperlink{struct_r_t_c___alarm_type_def}{RTC\+\_\+\+Alarm\+Type\+Def}} $\ast$s\+Alarm, uint32\+\_\+t Alarm, uint32\+\_\+t Format)
+\item 
+void {\bfseries HAL\+\_\+\+RTC\+\_\+\+Alarm\+IRQHandler} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Poll\+For\+Alarm\+AEvent} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc, uint32\+\_\+t Timeout)
+\item 
+void \mbox{\hyperlink{group___r_t_c___exported___functions___group3_ga11aeff83fd498cddbed3bcddcf017e0a}{HAL\+\_\+\+RTC\+\_\+\+Alarm\+AEvent\+Callback}} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\begin{DoxyCompactList}\small\item\em ALARM A Event Callback in non blocking mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___r_t_c___exported___types_ga1e2460a2d13c4efc7a2a1ab2a1ebd32b}{HAL\+\_\+\+RTCState\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Get\+State} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+RTC\+\_\+\+Wait\+For\+Synchro} (\mbox{\hyperlink{struct_r_t_c___handle_type_def}{RTC\+\_\+\+Handle\+Type\+Def}} $\ast$hrtc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of RTC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

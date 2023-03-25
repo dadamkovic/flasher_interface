@@ -1,0 +1,94 @@
+\hypertarget{logger_8h}{}\doxysection{Core/\+Inc/logger.h File Reference}
+\label{logger_8h}\index{Core/Inc/logger.h@{Core/Inc/logger.h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for logger.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___l_o_g___config_type_def}{\+\_\+\+LOG\+\_\+\+Config\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a37cd05cbfd7fb52ad21d3a822cff2ee6}\label{logger_8h_a37cd05cbfd7fb52ad21d3a822cff2ee6}} 
+\#define {\bfseries LOG\+\_\+\+MAX\+\_\+\+LEN}~255
+\item 
+\mbox{\Hypertarget{logger_8h_ae0f94924932235b16f0ec1fe19983abd}\label{logger_8h_ae0f94924932235b16f0ec1fe19983abd}} 
+\#define {\bfseries LOG\+\_\+\+MAX\+\_\+\+SOURCES}~16
+\item 
+\mbox{\Hypertarget{logger_8h_ac9e6121ba38f105f58fc1374d40930de}\label{logger_8h_ac9e6121ba38f105f58fc1374d40930de}} 
+\#define {\bfseries LOG\+\_\+\+PAD\+\_\+\+LEN}~4
+\item 
+\mbox{\Hypertarget{logger_8h_a43a2056818c2abb10d5948379294bc56}\label{logger_8h_a43a2056818c2abb10d5948379294bc56}} 
+\#define {\bfseries LOG\+\_\+\+END\+\_\+\+LEN}~2
+\item 
+\mbox{\Hypertarget{logger_8h_a1735f5d615cad7eccda02cb1747553ff}\label{logger_8h_a1735f5d615cad7eccda02cb1747553ff}} 
+\#define {\bfseries LOG\+\_\+\+SOURCE}~\+\_\+\+\_\+\+FILE\+\_\+\+\_\+
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a7c59a3b76c07253665d992caaf51c43a}\label{logger_8h_a7c59a3b76c07253665d992caaf51c43a}} 
+typedef LOG\+\_\+\+Status\+Type\+Def() {\bfseries LOG\+\_\+\+Write\+Func}(char $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a010b438114c785f24330a3f3b4713b93}\label{logger_8h_a010b438114c785f24330a3f3b4713b93}} 
+enum {\bfseries LOG\+\_\+\+Priority\+Type\+Def} \{ {\bfseries LOG\+\_\+\+LOW\+\_\+\+PRIO}
+, {\bfseries LOG\+\_\+\+MEDIUM\+\_\+\+PRIO}
+, {\bfseries LOG\+\_\+\+HIGH\+\_\+\+PRIO}
+ \}
+\item 
+\mbox{\Hypertarget{logger_8h_a7efa65bb0b9fc1d596f5cb091438ad36}\label{logger_8h_a7efa65bb0b9fc1d596f5cb091438ad36}} 
+enum {\bfseries LOG\+\_\+\+Enable\+Type\+Def} \{ {\bfseries LOG\+\_\+\+ENABLED}
+, {\bfseries LOG\+\_\+\+DISABLED}
+ \}
+\item 
+\mbox{\Hypertarget{logger_8h_ac7184385fbbd6b5504d3f22cbb2ea420}\label{logger_8h_ac7184385fbbd6b5504d3f22cbb2ea420}} 
+enum {\bfseries LOG\+\_\+\+Status\+Type\+Def} \{ {\bfseries LOG\+\_\+\+OK}
+, {\bfseries LOG\+\_\+\+FAIL}
+ \}
+\item 
+\mbox{\Hypertarget{logger_8h_a9cb8840d5cb520f13809c02b420171ae}\label{logger_8h_a9cb8840d5cb520f13809c02b420171ae}} 
+enum {\bfseries LOG\+\_\+\+Error\+Type\+Def} \{ {\bfseries LOG\+\_\+\+PRIO\+\_\+\+ERRO}
+, {\bfseries LOG\+\_\+\+INPUT\+\_\+\+SIZE\+\_\+\+ERR}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{logger_8h_a7a8cefdbfaf7cc75e048da317e518ea2}\label{logger_8h_a7a8cefdbfaf7cc75e048da317e518ea2}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Init} (LOG\+\_\+\+Priority\+Type\+Def, LOG\+\_\+\+Enable\+Type\+Def, LOG\+\_\+\+Write\+Func $\ast$)
+\item 
+\mbox{\Hypertarget{logger_8h_a03503b6147f5abf6a6c2322013e0daf9}\label{logger_8h_a03503b6147f5abf6a6c2322013e0daf9}} 
+void {\bfseries log\+Error\+Handler} (LOG\+\_\+\+Error\+Type\+Def)
+\item 
+\mbox{\Hypertarget{logger_8h_a3b848d4e0ec38247af9d7c70aa2bffb7}\label{logger_8h_a3b848d4e0ec38247af9d7c70aa2bffb7}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Close} ()
+\item 
+\mbox{\Hypertarget{logger_8h_a4395c23c0b49d509e35d450ccbf1b647}\label{logger_8h_a4395c23c0b49d509e35d450ccbf1b647}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Write} (char $\ast$, char $\ast$, LOG\+\_\+\+Priority\+Type\+Def)
+\item 
+\mbox{\Hypertarget{logger_8h_ad8319939eb4a400c99fcdd3c65f09bb4}\label{logger_8h_ad8319939eb4a400c99fcdd3c65f09bb4}} 
+LOG\+\_\+\+Status\+Type\+Def {\bfseries log\+Open} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/01-\/22
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}

@@ -104,14 +104,14 @@ PLOT_ReturnTypeDef plotterRead(PLOT_HandletypeDef, char *);
 
 PLOT_ReturnTypeDef _plotterWriteRaw(PLOT_HandletypeDef, char *);
 
-PLOT_ReturnTypeDef plotterSetAbsMode(PLOT_HandletypeDef);
-PLOT_ReturnTypeDef plotterSetRelMode(PLOT_HandletypeDef);
+PLOT_ReturnTypeDef plotterSetAbsMode(PLOT_HandletypeDef plot_id);
+PLOT_ReturnTypeDef plotterSetRelMode(PLOT_HandletypeDef plot_id);
 
-PLOT_ReturnTypeDef plotterFastMove(PLOT_HandletypeDef, float, float);
-PLOT_ReturnTypeDef plotterLinMove(PLOT_HandletypeDef, float, float, float);
-PLOT_ReturnTypeDef plotterRaiseZ(PLOT_HandletypeDef);
-PLOT_ReturnTypeDef plotterDropZ(PLOT_HandletypeDef);
-PLOT_ReturnTypeDef plotterToggleZ(PLOT_HandletypeDef);
+PLOT_ReturnTypeDef plotterFastMove(PLOT_HandletypeDef plot_id, float x, float y);
+PLOT_ReturnTypeDef plotterLinMove(PLOT_HandletypeDef plot_id, float x, float y, float feed);
+PLOT_ReturnTypeDef plotterRaiseZ(PLOT_HandletypeDef plot_id);
+PLOT_ReturnTypeDef plotterDropZ(PLOT_HandletypeDef plot_id);
+PLOT_ReturnTypeDef plotterToggleZ(PLOT_HandletypeDef plot_id);
 
 PLOT_ReturnTypeDef plotterUpdatePosition(PLOT_HandletypeDef);
 

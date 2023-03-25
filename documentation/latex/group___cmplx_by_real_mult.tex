@@ -1,0 +1,110 @@
+\hypertarget{group___cmplx_by_real_mult}{}\doxysection{Complex-\/by-\/\+Real Multiplication}
+\label{group___cmplx_by_real_mult}\index{Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}}
+Collaboration diagram for Complex-\/by-\/\+Real Multiplication\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___cmplx_by_real_mult_ga9c18616f56cb4d3c0889ce0b339221ca}{arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src\+Cmplx, float32\+\_\+t $\ast$p\+Src\+Real, float32\+\_\+t $\ast$p\+Cmplx\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Floating-\/point complex-\/by-\/real multiplication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cmplx_by_real_mult_ga3bd8889dcb45980e1d3e53344df54e85}{arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src\+Cmplx, q15\+\_\+t $\ast$p\+Src\+Real, q15\+\_\+t $\ast$p\+Cmplx\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q15 complex-\/by-\/real multiplication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cmplx_by_real_mult_ga715e4bb8e945b8ca51ec5237611697ce}{arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src\+Cmplx, q31\+\_\+t $\ast$p\+Src\+Real, q31\+\_\+t $\ast$p\+Cmplx\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q31 complex-\/by-\/real multiplication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multiplies a complex vector by a real vector and generates a complex result. The data in the complex arrays is stored in an interleaved fashion (real, imag, real, imag, ...). The parameter {\ttfamily num\+Samples} represents the number of complex samples processed. The complex arrays have a total of {\ttfamily 2$\ast$num\+Samples} real values while the real array has a total of {\ttfamily num\+Samples} real values.
+
+The underlying algorithm is used\+:
+
+
+\begin{DoxyPre}
+for(n=0; n<numSamples; n++) \{
+    pCmplxDst[(2*n)+0] = pSrcCmplx[(2*n)+0] * pSrcReal[n];
+    pCmplxDst[(2*n)+1] = pSrcCmplx[(2*n)+1] * pSrcReal[n];
+\}
+\end{DoxyPre}
+
+
+There are separate functions for floating-\/point, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___cmplx_by_real_mult_ga9c18616f56cb4d3c0889ce0b339221ca}\label{group___cmplx_by_real_mult_ga9c18616f56cb4d3c0889ce0b339221ca}} 
+\index{Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}!arm\_cmplx\_mult\_real\_f32@{arm\_cmplx\_mult\_real\_f32}}
+\index{arm\_cmplx\_mult\_real\_f32@{arm\_cmplx\_mult\_real\_f32}!Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mult\_real\_f32()}{arm\_cmplx\_mult\_real\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src\+Cmplx,  }\item[{float32\+\_\+t $\ast$}]{p\+Src\+Real,  }\item[{float32\+\_\+t $\ast$}]{p\+Cmplx\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point complex-\/by-\/real multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Cmplx} & points to the complex input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Real} & points to the real input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Cmplx\+Dst} & points to the complex output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Samples} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___cmplx_by_real_mult_ga3bd8889dcb45980e1d3e53344df54e85}\label{group___cmplx_by_real_mult_ga3bd8889dcb45980e1d3e53344df54e85}} 
+\index{Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}!arm\_cmplx\_mult\_real\_q15@{arm\_cmplx\_mult\_real\_q15}}
+\index{arm\_cmplx\_mult\_real\_q15@{arm\_cmplx\_mult\_real\_q15}!Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mult\_real\_q15()}{arm\_cmplx\_mult\_real\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src\+Cmplx,  }\item[{q15\+\_\+t $\ast$}]{p\+Src\+Real,  }\item[{q15\+\_\+t $\ast$}]{p\+Cmplx\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q15 complex-\/by-\/real multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Cmplx} & points to the complex input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Real} & points to the real input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Cmplx\+Dst} & points to the complex output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Samples} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q15 range \mbox{[}0x8000 0x7\+FFF\mbox{]} will be saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group___cmplx_by_real_mult_ga715e4bb8e945b8ca51ec5237611697ce}\label{group___cmplx_by_real_mult_ga715e4bb8e945b8ca51ec5237611697ce}} 
+\index{Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}!arm\_cmplx\_mult\_real\_q31@{arm\_cmplx\_mult\_real\_q31}}
+\index{arm\_cmplx\_mult\_real\_q31@{arm\_cmplx\_mult\_real\_q31}!Complex-\/by-\/Real Multiplication@{Complex-\/by-\/Real Multiplication}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mult\_real\_q31()}{arm\_cmplx\_mult\_real\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mult\+\_\+real\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src\+Cmplx,  }\item[{q31\+\_\+t $\ast$}]{p\+Src\+Real,  }\item[{q31\+\_\+t $\ast$}]{p\+Cmplx\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q31 complex-\/by-\/real multiplication. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Cmplx} & points to the complex input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src\+Real} & points to the real input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Cmplx\+Dst} & points to the complex output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Samples} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q31 range\mbox{[}0x80000000 0x7\+FFFFFFF\mbox{]} will be saturated. 
+\end{DoxyParagraph}

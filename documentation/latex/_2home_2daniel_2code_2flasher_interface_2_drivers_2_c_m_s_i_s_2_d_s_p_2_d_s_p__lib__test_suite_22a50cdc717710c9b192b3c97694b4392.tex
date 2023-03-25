@@ -1,0 +1,78 @@
+\hypertarget{_2home_2daniel_2code_2flasher_interface_2_drivers_2_c_m_s_i_s_2_d_s_p_2_d_s_p__lib__test_suite_22a50cdc717710c9b192b3c97694b4392}{}\doxysection{/home/daniel/code/flasher\+\_\+interface/\+Drivers/\+CMSIS/\+DSP/\+DSP\+\_\+\+Lib\+\_\+\+Test\+Suite/\+Common/inc/templates/template.\+h}
+Template for calling a function.
+
+\begin{DoxyNote}{Note}
+Surround function arguments with the \#\+PAREN() macro.
+\end{DoxyNote}
+void my\+\_\+func(int arg1, int arg2);
+
+TEMPLATE\+\_\+\+CALL\+\_\+\+FN(my\+\_\+func, PAREN(3, 7));
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef \_TEMPLATE\_H\_}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_TEMPLATE\_H\_}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{comment}{/* Looping and Iteration */}}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_LOOP(setup, loop\_def, body)    \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        setup;                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        loop\_def \{                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            body;                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \}                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_DO\_ARR\_LIKE(iter\_idx, type,                            \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             arr, arr\_length,                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             iter\_elem\_setup,                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             body)                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        TEMPLATE\_LOOP(                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            int iter\_idx,                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            for(iter\_idx = 0; iter\_idx < (arr\_length); ++iter\_idx),     \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            iter\_elem\_setup;                                            \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            body);                                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_DO\_ARR(iter\_idx, type, iter\_elem, arr, arr\_length, body) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        TEMPLATE\_DO\_ARR\_LIKE(                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            iter\_idx, type, arr, arr\_length,                            \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            type iter\_elem = (arr)[iter\_idx],                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            body);                                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_DO\_ARR\_DESC(iter\_idx, type, iter\_elem, arr\_desc, body) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        TEMPLATE\_DO\_ARR\_LIKE(                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            iter\_idx, type, arr\_desc, (arr\_desc).element\_count,         \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            type iter\_elem = ARR\_DESC\_ELT(type, iter\_idx, \&(arr\_desc)), \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            body);                                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{comment}{/* Test Definition */}}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_TEST(setup, body, teardown)    \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        do                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \{                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            setup;                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            body;                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            teardown;                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define TEMPLATE\_CALL\_FN(fn, fn\_args)           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        fn fn\_args}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_TEMPLATE\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCodeInclude}
+ 

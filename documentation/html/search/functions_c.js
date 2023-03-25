@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['svc_5fhandler_106',['SVC_Handler',['../stm32f1xx__it_8c.html#a3e5ddb3df0d62f2dc357e64a3f04a6ce',1,'stm32f1xx_it.c']]],
-  ['systemclock_5fconfig_107',['SystemClock_Config',['../main_8c.html#a70af21c671abfcc773614a9a4f63d920',1,'main.c']]],
-  ['systemcoreclockupdate_108',['SystemCoreClockUpdate',['../group___s_t_m32_f1xx___system___private___functions.html#gae0c36a9591fe6e9c45ecb21a794f0f0f',1,'system_stm32f1xx.c']]],
-  ['systeminit_109',['SystemInit',['../group___s_t_m32_f1xx___system___private___functions.html#ga93f514700ccf00d08dbdcff7f1224eb2',1,'system_stm32f1xx.c']]],
-  ['systick_5fhandler_110',['SysTick_Handler',['../stm32f1xx__it_8c.html#ab5e09814056d617c521549e542639b7e',1,'stm32f1xx_it.c']]]
+  ['os_5ftick_5facknowledgeirq_15267',['OS_Tick_AcknowledgeIRQ',['../os__tick__gtim_8c.html#a14c430d2b363ebd9f904b0822a9314e7',1,'OS_Tick_AcknowledgeIRQ(void):&#160;os_tick_gtim.c'],['../os__tick_8h.html#a14c430d2b363ebd9f904b0822a9314e7',1,'OS_Tick_AcknowledgeIRQ(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fdisable_15268',['OS_Tick_Disable',['../os__tick_8h.html#a50fc040b66fabd1945d2bd1d0d05661d',1,'OS_Tick_Disable(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a50fc040b66fabd1945d2bd1d0d05661d',1,'OS_Tick_Disable(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fenable_15269',['OS_Tick_Enable',['../os__tick_8h.html#aaa0d6ddef6816e8e5650fde3daf191e7',1,'OS_Tick_Enable(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#aaa0d6ddef6816e8e5650fde3daf191e7',1,'OS_Tick_Enable(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetclock_15270',['OS_Tick_GetClock',['../os__tick_8h.html#a936217ea28236fb57648973e0d8f627a',1,'OS_Tick_GetClock(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a936217ea28236fb57648973e0d8f627a',1,'OS_Tick_GetClock(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetcount_15271',['OS_Tick_GetCount',['../os__tick__gtim_8c.html#aa64a145a554f1e5077848938d7f39c92',1,'OS_Tick_GetCount(void):&#160;os_tick_gtim.c'],['../os__tick_8h.html#aa64a145a554f1e5077848938d7f39c92',1,'OS_Tick_GetCount(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetinterval_15272',['OS_Tick_GetInterval',['../os__tick_8h.html#a123151dc19d5a94a68f12cdbf61a9bb5',1,'OS_Tick_GetInterval(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a123151dc19d5a94a68f12cdbf61a9bb5',1,'OS_Tick_GetInterval(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetirqn_15273',['OS_Tick_GetIRQn',['../os__tick_8h.html#aa8b4eca23e3ffe2df403291958cdc905',1,'OS_Tick_GetIRQn(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#aa8b4eca23e3ffe2df403291958cdc905',1,'OS_Tick_GetIRQn(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fgetoverflow_15274',['OS_Tick_GetOverflow',['../os__tick_8h.html#a8a30df14420fb3372dbce9f91de46a88',1,'OS_Tick_GetOverflow(void):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a8a30df14420fb3372dbce9f91de46a88',1,'OS_Tick_GetOverflow(void):&#160;os_tick_gtim.c']]],
+  ['os_5ftick_5fsetup_15275',['OS_Tick_Setup',['../os__tick_8h.html#a5eeffb4d9dc6c6802fee8898096d9a59',1,'OS_Tick_Setup(uint32_t freq, IRQHandler_t handler):&#160;os_tick_gtim.c'],['../os__tick__gtim_8c.html#a5eeffb4d9dc6c6802fee8898096d9a59',1,'OS_Tick_Setup(uint32_t freq, IRQHandler_t handler):&#160;os_tick_gtim.c']]]
 ];

@@ -1,0 +1,429 @@
+\hypertarget{group___r_t_c_ex___exported___macros}{}\doxysection{RTCEx Exported Macros}
+\label{group___r_t_c_ex___exported___macros}\index{RTCEx Exported Macros@{RTCEx Exported Macros}}
+Collaboration diagram for RTCEx Exported Macros\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga5897843380c7fcf865131c6bdb0fc3a1}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~SET\+\_\+\+BIT(BKP-\/$>$CSR, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Tamper interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga669a86ef4feb560e2059bf8cfe4fa253}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT(BKP-\/$>$CSR, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Tamper interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gae1de3775214da8d45c4625d4ad2b6f28}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((BKP-\/$>$CSR) \& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Tamper interrupt has been enabled or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gafc2d73770375bd10cf6e4faa11adc7b1}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((BKP-\/$>$CSR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Tamper\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga20424c15833e5665016e87d1c8a0fdf4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((BKP-\/$>$CSR) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71a05fe4e45b0dc0b1f970e51085678d}{BKP\+\_\+\+CSR\+\_\+\+TEF}})) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Tamper\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gade364b4cf1214d66463c9fa4ce667095}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~SET\+\_\+\+BIT(BKP-\/$>$CSR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad8cec91d3c30db07961227bcea5c5452}{BKP\+\_\+\+CSR\+\_\+\+CTE}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad7dc97ae504ef58fb2137c1fdd02fc4e}{BKP\+\_\+\+CSR\+\_\+\+CTI}})
+\begin{DoxyCompactList}\small\item\em Clear the RTC Tamper\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga478ad09ced41635a716517d6d7a9d308}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Second interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gaeabebd43f00fc7797cb006907177ebe4}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Second interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gad94c3172ce081129ff09dcad950614cf}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH)\& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)))) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Second interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga0d1a2771061c539ec918f9a11fb8544f}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Second\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga8d5d9d29349a429a46f513179baf92d7}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \&= $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the RTC Second\textquotesingle{}s pending flags. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga8eab0c6e7be20e701febd3961efee1f0}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Enable the RTC Overflow interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga45e743a3e8473dfc989d04689c589283}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Disable the RTC Overflow interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gab19045764ae19c76a12735ea10fd4d5f}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH)\& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))) ) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Check whether the specified RTC Overflow interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_ga654d04039f4a49d6a3bc5d5f0aa3b51b}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)
+\begin{DoxyCompactList}\small\item\em Get the selected RTC Overflow\textquotesingle{}s flag status. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_t_c_ex___exported___macros_gaed847b2540290557adf783d52d97fb52}{\+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) = $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the RTC Overflow\textquotesingle{}s pending flags. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gaed847b2540290557adf783d52d97fb52}\label{group___r_t_c_ex___exported___macros_gaed847b2540290557adf783d52d97fb52}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG@{\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG@{\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG}{\_\_HAL\_RTC\_OVERFLOW\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) = $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)}
+
+
+
+Clear the RTC Overflow\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Overflow Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+OW \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga45e743a3e8473dfc989d04689c589283}\label{group___r_t_c_ex___exported___macros_ga45e743a3e8473dfc989d04689c589283}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT@{\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT}}
+\index{\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT@{\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT}{\_\_HAL\_RTC\_OVERFLOW\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the RTC Overflow interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Overflow interrupt sources to be disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+OW\+: Overflow A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga8eab0c6e7be20e701febd3961efee1f0}\label{group___r_t_c_ex___exported___macros_ga8eab0c6e7be20e701febd3961efee1f0}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT@{\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT}}
+\index{\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT@{\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT}{\_\_HAL\_RTC\_OVERFLOW\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the RTC Overflow interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Overflow interrupt sources to be enabled This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+OW\+: Overflow A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga654d04039f4a49d6a3bc5d5f0aa3b51b}\label{group___r_t_c_ex___exported___macros_ga654d04039f4a49d6a3bc5d5f0aa3b51b}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG@{\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG}}
+\index{\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG@{\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG}{\_\_HAL\_RTC\_OVERFLOW\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)}
+
+
+
+Get the selected RTC Overflow\textquotesingle{}s flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Overflow Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+OW \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gab19045764ae19c76a12735ea10fd4d5f}\label{group___r_t_c_ex___exported___macros_gab19045764ae19c76a12735ea10fd4d5f}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE}{\_\_HAL\_RTC\_OVERFLOW\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+OVERFLOW\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH)\& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))) ) != RESET)? SET \+: RESET)}
+
+
+
+Check whether the specified RTC Overflow interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Overflow interrupt sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+OW\+: Overflow A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga8d5d9d29349a429a46f513179baf92d7}\label{group___r_t_c_ex___exported___macros_ga8d5d9d29349a429a46f513179baf92d7}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG@{\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG@{\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG}{\_\_HAL\_RTC\_SECOND\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \&= $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)}
+
+
+
+Clear the RTC Second\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Second Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+SEC \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gaeabebd43f00fc7797cb006907177ebe4}\label{group___r_t_c_ex___exported___macros_gaeabebd43f00fc7797cb006907177ebe4}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_SECOND\_DISABLE\_IT@{\_\_HAL\_RTC\_SECOND\_DISABLE\_IT}}
+\index{\_\_HAL\_RTC\_SECOND\_DISABLE\_IT@{\_\_HAL\_RTC\_SECOND\_DISABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_SECOND\_DISABLE\_IT}{\_\_HAL\_RTC\_SECOND\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the RTC Second interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Second interrupt sources to be disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+SEC\+: Second A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga478ad09ced41635a716517d6d7a9d308}\label{group___r_t_c_ex___exported___macros_ga478ad09ced41635a716517d6d7a9d308}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_SECOND\_ENABLE\_IT@{\_\_HAL\_RTC\_SECOND\_ENABLE\_IT}}
+\index{\_\_HAL\_RTC\_SECOND\_ENABLE\_IT@{\_\_HAL\_RTC\_SECOND\_ENABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_SECOND\_ENABLE\_IT}{\_\_HAL\_RTC\_SECOND\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the RTC Second interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Second interrupt sources to be enabled This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+SEC\+: Second A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga0d1a2771061c539ec918f9a11fb8544f}\label{group___r_t_c_ex___exported___macros_ga0d1a2771061c539ec918f9a11fb8544f}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_SECOND\_GET\_FLAG@{\_\_HAL\_RTC\_SECOND\_GET\_FLAG}}
+\index{\_\_HAL\_RTC\_SECOND\_GET\_FLAG@{\_\_HAL\_RTC\_SECOND\_GET\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_SECOND\_GET\_FLAG}{\_\_HAL\_RTC\_SECOND\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~(((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRL) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)}
+
+
+
+Get the selected RTC Second\textquotesingle{}s flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Second Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+SEC \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gad94c3172ce081129ff09dcad950614cf}\label{group___r_t_c_ex___exported___macros_gad94c3172ce081129ff09dcad950614cf}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE}{\_\_HAL\_RTC\_SECOND\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+SECOND\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CRH)\& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)))) != RESET)? SET \+: RESET)}
+
+
+
+Check whether the specified RTC Second interrupt has occurred or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Second interrupt sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+SEC\+: Second A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gade364b4cf1214d66463c9fa4ce667095}\label{group___r_t_c_ex___exported___macros_gade364b4cf1214d66463c9fa4ce667095}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG@{\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG@{\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG}{\_\_HAL\_RTC\_TAMPER\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(BKP-\/$>$CSR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad8cec91d3c30db07961227bcea5c5452}{BKP\+\_\+\+CSR\+\_\+\+CTE}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad7dc97ae504ef58fb2137c1fdd02fc4e}{BKP\+\_\+\+CSR\+\_\+\+CTI}})}
+
+
+
+Clear the RTC Tamper\textquotesingle{}s pending flags. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Tamper Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+TAMP1F \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga669a86ef4feb560e2059bf8cfe4fa253}\label{group___r_t_c_ex___exported___macros_ga669a86ef4feb560e2059bf8cfe4fa253}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT@{\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT}}
+\index{\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT@{\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT}{\_\_HAL\_RTC\_TAMPER\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(BKP-\/$>$CSR, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Disable the RTC Tamper interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Tamper interrupt sources to be disabled. This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+TAMP1\+: Tamper A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga5897843380c7fcf865131c6bdb0fc3a1}\label{group___r_t_c_ex___exported___macros_ga5897843380c7fcf865131c6bdb0fc3a1}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT@{\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT}}
+\index{\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT@{\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT}{\_\_HAL\_RTC\_TAMPER\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(BKP-\/$>$CSR, (\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))}
+
+
+
+Enable the RTC Tamper interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Tamper interrupt sources to be enabled This parameter can be any combination of the following values\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+TAMP1\+: Tamper A interrupt \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gafc2d73770375bd10cf6e4faa11adc7b1}\label{group___r_t_c_ex___exported___macros_gafc2d73770375bd10cf6e4faa11adc7b1}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_GET\_FLAG@{\_\_HAL\_RTC\_TAMPER\_GET\_FLAG}}
+\index{\_\_HAL\_RTC\_TAMPER\_GET\_FLAG@{\_\_HAL\_RTC\_TAMPER\_GET\_FLAG}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_GET\_FLAG}{\_\_HAL\_RTC\_TAMPER\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((BKP-\/$>$CSR) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) != RESET)? SET \+: RESET)}
+
+
+
+Get the selected RTC Tamper\textquotesingle{}s flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the RTC Tamper Flag sources to be enabled or disabled. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+FLAG\+\_\+\+TAMP1F \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_ga20424c15833e5665016e87d1c8a0fdf4}\label{group___r_t_c_ex___exported___macros_ga20424c15833e5665016e87d1c8a0fdf4}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_GET\_IT@{\_\_HAL\_RTC\_TAMPER\_GET\_IT}}
+\index{\_\_HAL\_RTC\_TAMPER\_GET\_IT@{\_\_HAL\_RTC\_TAMPER\_GET\_IT}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_GET\_IT}{\_\_HAL\_RTC\_TAMPER\_GET\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+IT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((BKP-\/$>$CSR) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71a05fe4e45b0dc0b1f970e51085678d}{BKP\+\_\+\+CSR\+\_\+\+TEF}})) != RESET)? SET \+: RESET)}
+
+
+
+Get the selected RTC Tamper\textquotesingle{}s flag status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Tamper interrupt sources to be checked. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+TAMP1 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group___r_t_c_ex___exported___macros_gae1de3775214da8d45c4625d4ad2b6f28}\label{group___r_t_c_ex___exported___macros_gae1de3775214da8d45c4625d4ad2b6f28}} 
+\index{RTCEx Exported Macros@{RTCEx Exported Macros}!\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE}}
+\index{\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE@{\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE}!RTCEx Exported Macros@{RTCEx Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE}{\_\_HAL\_RTC\_TAMPER\_GET\_IT\_SOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((BKP-\/$>$CSR) \& ((\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+))) != RESET)? SET \+: RESET)}
+
+
+
+Check whether the specified RTC Tamper interrupt has been enabled or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the RTC handle. \\
+\hline
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & specifies the RTC Tamper interrupt sources to be checked. This parameter can be\+: \begin{DoxyItemize}
+\item RTC\+\_\+\+IT\+\_\+\+TAMP1 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

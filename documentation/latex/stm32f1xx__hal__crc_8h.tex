@@ -1,0 +1,71 @@
+\hypertarget{stm32f1xx__hal__crc_8h}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f1xx\+\_\+hal\+\_\+crc.h File Reference}
+\label{stm32f1xx__hal__crc_8h}\index{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_crc.h@{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_crc.h}}
+
+
+Header file of CRC HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+hal\+\_\+crc.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em CRC Handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___c_r_c___exported___macros_gab6ec5d74fdff177143f4b22652a18114}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$State = \mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset CRC handle state. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_r_c___exported___macros_ga0007a05fb01806007181e12eedc14d28}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+DR\+\_\+\+RESET}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR $\vert$= \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7d57481fb891a0964b40f721354c56d7}{CRC\+\_\+\+CR\+\_\+\+RESET}})
+\begin{DoxyCompactList}\small\item\em Reset CRC Data Register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_r_c___exported___macros_ga1d890aa6f337f97fb9a3e8537f1bbc72}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+SET\+\_\+\+IDR}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~(WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IDR, (\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)))
+\begin{DoxyCompactList}\small\item\em Store data in the Independent Data (ID) register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___c_r_c___exported___macros_ga028e074ed7a9505ea0ac48a16489c5d0}{\+\_\+\+\_\+\+HAL\+\_\+\+CRC\+\_\+\+GET\+\_\+\+IDR}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$IDR) \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae9a0feb3cf1d8c5871e663ca4a174cc0}{CRC\+\_\+\+IDR\+\_\+\+IDR}})
+\begin{DoxyCompactList}\small\item\em Return the data stored in the Independent Data (ID) register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___c_r_c___exported___types_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbea313bbe8353f8a8b48fbd129261266a97}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+RESET}} = 0x00U
+, \mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbeaa47f50129543b87fac3a83df1a634474}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+READY}} = 0x01U
+, \mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbea9d03b0c1d233e87e35b9c5c8353a4b70}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+BUSY}} = 0x02U
+, \mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbea5d803dcd1d578edb76b57e3d34adc5a8}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x03U
+, \newline
+\mbox{\hyperlink{group___c_r_c___exported___types_gga1021d6f27a072d45f6f3b233eefd8bbeadb51c35f7716430bb0c893069466a1b2}{HAL\+\_\+\+CRC\+\_\+\+STATE\+\_\+\+ERROR}} = 0x04U
+ \}
+\begin{DoxyCompactList}\small\item\em CRC HAL State Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+CRC\+\_\+\+Init} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+CRC\+\_\+\+De\+Init} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc)
+\item 
+void {\bfseries HAL\+\_\+\+CRC\+\_\+\+Msp\+Init} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc)
+\item 
+void {\bfseries HAL\+\_\+\+CRC\+\_\+\+Msp\+De\+Init} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc)
+\item 
+uint32\+\_\+t {\bfseries HAL\+\_\+\+CRC\+\_\+\+Accumulate} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc, uint32\+\_\+t p\+Buffer\mbox{[}$\,$\mbox{]}, uint32\+\_\+t Buffer\+Length)
+\item 
+uint32\+\_\+t {\bfseries HAL\+\_\+\+CRC\+\_\+\+Calculate} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc, uint32\+\_\+t p\+Buffer\mbox{[}$\,$\mbox{]}, uint32\+\_\+t Buffer\+Length)
+\item 
+\mbox{\hyperlink{group___c_r_c___exported___types_ga1021d6f27a072d45f6f3b233eefd8bbe}{HAL\+\_\+\+CRC\+\_\+\+State\+Type\+Def}} {\bfseries HAL\+\_\+\+CRC\+\_\+\+Get\+State} (\mbox{\hyperlink{struct_c_r_c___handle_type_def}{CRC\+\_\+\+Handle\+Type\+Def}} $\ast$hcrc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of CRC HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

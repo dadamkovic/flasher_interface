@@ -1,0 +1,92 @@
+\hypertarget{main_8h}{}\doxysection{Core/\+Inc/main.h File Reference}
+\label{main_8h}\index{Core/Inc/main.h@{Core/Inc/main.h}}
+
+
+\+: Header for \mbox{\hyperlink{main_8c}{main.\+c}} file. This file contains the common defines of the application.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for main.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8h_ab747ac432edef91062f2946bb521e49f}\label{main_8h_ab747ac432edef91062f2946bb521e49f}} 
+\#define {\bfseries RETURN\+\_\+\+OK}~0
+\item 
+\mbox{\Hypertarget{main_8h_a837fc3a8b3b8209d20399ad2a02c1ae7}\label{main_8h_a837fc3a8b3b8209d20399ad2a02c1ae7}} 
+\#define {\bfseries RETURN\+\_\+\+FAIL}~1
+\item 
+\mbox{\Hypertarget{main_8h_af95eca1eca50234f874bacc33acabd88}\label{main_8h_af95eca1eca50234f874bacc33acabd88}} 
+\#define {\bfseries select\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+0
+\item 
+\mbox{\Hypertarget{main_8h_a1ab12984ffb66fe80eb9f7913b6221b0}\label{main_8h_a1ab12984ffb66fe80eb9f7913b6221b0}} 
+\#define {\bfseries select\+\_\+\+GPIO\+\_\+\+Port}~GPIOB
+\item 
+\mbox{\Hypertarget{main_8h_a461501d102c47a53106974aa915ba8e3}\label{main_8h_a461501d102c47a53106974aa915ba8e3}} 
+\#define {\bfseries cancel\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+1
+\item 
+\mbox{\Hypertarget{main_8h_adcd26bfeb837bc6d74f045ca829f9b08}\label{main_8h_adcd26bfeb837bc6d74f045ca829f9b08}} 
+\#define {\bfseries cancel\+\_\+\+GPIO\+\_\+\+Port}~GPIOB
+\item 
+\mbox{\Hypertarget{main_8h_ad26af3d72636418a0421cd0dc094b877}\label{main_8h_ad26af3d72636418a0421cd0dc094b877}} 
+\#define {\bfseries buzzer\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+11
+\item 
+\mbox{\Hypertarget{main_8h_a6e3acd54ab77db488cc801816cc20220}\label{main_8h_a6e3acd54ab77db488cc801816cc20220}} 
+\#define {\bfseries buzzer\+\_\+\+GPIO\+\_\+\+Port}~GPIOA
+\item 
+\mbox{\Hypertarget{main_8h_ac70636a2db76927ea5f8a9d1e8b205bd}\label{main_8h_ac70636a2db76927ea5f8a9d1e8b205bd}} 
+\#define {\bfseries st7735\+\_\+res\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+6
+\item 
+\mbox{\Hypertarget{main_8h_a3bcb2e47d0f4aaa53fe675e186c61124}\label{main_8h_a3bcb2e47d0f4aaa53fe675e186c61124}} 
+\#define {\bfseries st7735\+\_\+res\+\_\+\+GPIO\+\_\+\+Port}~GPIOB
+\item 
+\mbox{\Hypertarget{main_8h_adbdaf4d4a94c9fffe558260e2d1d0795}\label{main_8h_adbdaf4d4a94c9fffe558260e2d1d0795}} 
+\#define {\bfseries st7735\+\_\+dc\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+7
+\item 
+\mbox{\Hypertarget{main_8h_af2fa5ca214c3a1afa455744dacb72841}\label{main_8h_af2fa5ca214c3a1afa455744dacb72841}} 
+\#define {\bfseries st7735\+\_\+dc\+\_\+\+GPIO\+\_\+\+Port}~GPIOB
+\item 
+\mbox{\Hypertarget{main_8h_a1ff1dbeefd1506da6651cef47bac5f2d}\label{main_8h_a1ff1dbeefd1506da6651cef47bac5f2d}} 
+\#define {\bfseries st7735\+\_\+cs\+\_\+\+Pin}~GPIO\+\_\+\+PIN\+\_\+8
+\item 
+\mbox{\Hypertarget{main_8h_ad8756965adbf56b07258668679ce2070}\label{main_8h_ad8756965adbf56b07258668679ce2070}} 
+\#define {\bfseries st7735\+\_\+cs\+\_\+\+GPIO\+\_\+\+Port}~GPIOB
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Header for \mbox{\hyperlink{main_8c}{main.\+c}} file. This file contains the common defines of the application. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2022 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8h_a1730ffe1e560465665eb47d9264826f9}\label{main_8h_a1730ffe1e560465665eb47d9264826f9}} 
+\index{main.h@{main.h}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!main.h@{main.h}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Here is the caller graph for this function\+:
+% FIG 2

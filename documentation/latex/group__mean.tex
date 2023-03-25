@@ -1,0 +1,126 @@
+\hypertarget{group__mean}{}\doxysection{Mean}
+\label{group__mean}\index{Mean@{Mean}}
+Collaboration diagram for Mean\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__mean_ga74ce08c49ab61e57bd50c3a0ca1fdb2b}{arm\+\_\+mean\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, float32\+\_\+t $\ast$p\+Result)
+\begin{DoxyCompactList}\small\item\em Mean value of a floating-\/point vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__mean_gac882495d5f098819fd3939c1ef7795b3}{arm\+\_\+mean\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q15\+\_\+t $\ast$p\+Result)
+\begin{DoxyCompactList}\small\item\em Mean value of a Q15 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__mean_gacf2526d8c2d75e486e8f0b0e31877ad0}{arm\+\_\+mean\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q31\+\_\+t $\ast$p\+Result)
+\begin{DoxyCompactList}\small\item\em Mean value of a Q31 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__mean_gaebc707ee539020357c25da4c75b52eb7}{arm\+\_\+mean\+\_\+q7}} (q7\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q7\+\_\+t $\ast$p\+Result)
+\begin{DoxyCompactList}\small\item\em Mean value of a Q7 vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Calculates the mean of the input vector. Mean is defined as the average of the elements in the vector. The underlying algorithm is used\+:
+
+
+\begin{DoxyPre}
+    Result = (pSrc[0] + pSrc[1] + pSrc[2] + ... + pSrc[blockSize-\/1]) / blockSize;
+\end{DoxyPre}
+
+
+There are separate functions for floating-\/point, Q31, Q15, and Q7 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__mean_ga74ce08c49ab61e57bd50c3a0ca1fdb2b}\label{group__mean_ga74ce08c49ab61e57bd50c3a0ca1fdb2b}} 
+\index{Mean@{Mean}!arm\_mean\_f32@{arm\_mean\_f32}}
+\index{arm\_mean\_f32@{arm\_mean\_f32}!Mean@{Mean}}
+\doxysubsubsection{\texorpdfstring{arm\_mean\_f32()}{arm\_mean\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+mean\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{float32\+\_\+t $\ast$}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Mean value of a floating-\/point vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & mean value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__mean_gac882495d5f098819fd3939c1ef7795b3}\label{group__mean_gac882495d5f098819fd3939c1ef7795b3}} 
+\index{Mean@{Mean}!arm\_mean\_q15@{arm\_mean\_q15}}
+\index{arm\_mean\_q15@{arm\_mean\_q15}!Mean@{Mean}}
+\doxysubsubsection{\texorpdfstring{arm\_mean\_q15()}{arm\_mean\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+mean\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q15\+\_\+t $\ast$}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Mean value of a Q15 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & mean value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function is implemented using a 32-\/bit internal accumulator. The input is represented in 1.\+15 format and is accumulated in a 32-\/bit accumulator in 17.\+15 format. There is no risk of internal overflow with this approach, and the full precision of intermediate result is preserved. Finally, the accumulator is saturated and truncated to yield a result of 1.\+15 format. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__mean_gacf2526d8c2d75e486e8f0b0e31877ad0}\label{group__mean_gacf2526d8c2d75e486e8f0b0e31877ad0}} 
+\index{Mean@{Mean}!arm\_mean\_q31@{arm\_mean\_q31}}
+\index{arm\_mean\_q31@{arm\_mean\_q31}!Mean@{Mean}}
+\doxysubsubsection{\texorpdfstring{arm\_mean\_q31()}{arm\_mean\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+mean\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q31\+\_\+t $\ast$}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Mean value of a Q31 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & mean value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function is implemented using a 64-\/bit internal accumulator. The input is represented in 1.\+31 format and is accumulated in a 64-\/bit accumulator in 33.\+31 format. There is no risk of internal overflow with this approach, and the full precision of intermediate result is preserved. Finally, the accumulator is truncated to yield a result of 1.\+31 format. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__mean_gaebc707ee539020357c25da4c75b52eb7}\label{group__mean_gaebc707ee539020357c25da4c75b52eb7}} 
+\index{Mean@{Mean}!arm\_mean\_q7@{arm\_mean\_q7}}
+\index{arm\_mean\_q7@{arm\_mean\_q7}!Mean@{Mean}}
+\doxysubsubsection{\texorpdfstring{arm\_mean\_q7()}{arm\_mean\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+mean\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q7\+\_\+t $\ast$}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Mean value of a Q7 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & mean value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function is implemented using a 32-\/bit internal accumulator. The input is represented in 1.\+7 format and is accumulated in a 32-\/bit accumulator in 25.\+7 format. There is no risk of internal overflow with this approach, and the full precision of intermediate result is preserved. Finally, the accumulator is truncated to yield a result of 1.\+7 format. 
+\end{DoxyParagraph}

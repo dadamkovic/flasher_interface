@@ -12,7 +12,7 @@
 #endif
 
 //comment out if you don't want to display initial screen
-#define MENU_HANDLE_ERROR -1
+#define MENU_WRONG_HANDLE -1
 #define MENU_MAX_MENUS 16
 #define LOG_SOURCE __FILE__
 
@@ -48,7 +48,7 @@ typedef enum{
 typedef MENU_ReturnTypeDef(MENU_ExecFuncTypeDef)();
 typedef MENU_ButtonTypeDef (MENU_ButtonFuncTypeDef)(void);
 typedef MENU_PositionTypeDef (MENU_PositionTypeFunc)(void);
-typedef uint8_t MENU_HandleTypeDef;
+typedef int8_t MENU_HandleTypeDef;
 typedef MENU_ReturnTypeDef (MENU_DrawScreenTypeFunc)(MENU_HandleTypeDef);
 
 

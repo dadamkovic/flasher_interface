@@ -1,0 +1,59 @@
+\hypertarget{group___g_r_u_example}{}\doxysection{Gated Recurrent Unit Example}
+\label{group___g_r_u_example}\index{Gated Recurrent Unit Example@{Gated Recurrent Unit Example}}
+Collaboration diagram for Gated Recurrent Unit Example\+:
+% FIG 0
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Demonstrates a gated recurrent unit (GRU) example with the use of fully-\/connected, Tanh/\+Sigmoid activation functions.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Model definition\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+GRU is a type of recurrent neural network (RNN). It contains two sigmoid gates and one hidden state. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The computation can be summarized as\+: 
+\begin{DoxyPre}z[t] = sigmoid( W\_z {$\cdot$} \{h[t-\/1],x[t]\} )
+r[t] = sigmoid( W\_r {$\cdot$} \{h[t-\/1],x[t]\} ) 
+n[t] = tanh( W\_n {$\cdot$} [r[t] {$\times$} \{h[t-\/1], x[t]\} ) 
+h[t] = (1 -\/ z[t]) {$\times$} h[t-\/1] + z[t] {$\times$} n[t] \end{DoxyPre}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Variables Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\begin{DoxyItemize}
+\item {\ttfamily update\+\_\+gate\+\_\+weights}, {\ttfamily reset\+\_\+gate\+\_\+weights}, {\ttfamily hidden\+\_\+state\+\_\+weights} are weights corresponding to update gate (W\+\_\+z), reset gate (W\+\_\+r), and hidden state (W\+\_\+n). \item {\ttfamily update\+\_\+gate\+\_\+bias}, {\ttfamily reset\+\_\+gate\+\_\+bias}, {\ttfamily hidden\+\_\+state\+\_\+bias} are layer bias arrays \item {\ttfamily test\+\_\+input1}, {\ttfamily test\+\_\+input2}, {\ttfamily test\+\_\+history} are the inputs and initial history\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The buffer is allocated as\+: 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+$\vert$ reset $\vert$ input $\vert$ history $\vert$ update $\vert$ hidden\+\_\+state $\vert$ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+In this way, the concatination is automatically done since (reset, input) and (input, history) are physically concatinated in memory. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The ordering of the weight matrix should be adjusted accordingly.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{CMSIS DSP Software Library Functions Used\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group___f_c_gae3857bb6375692e81dde8cbd70adec08}{arm\+\_\+fully\+\_\+connected\+\_\+mat\+\_\+q7\+\_\+vec\+\_\+q15\+\_\+opt()}}
+\item \mbox{\hyperlink{group___acti_ga8932b57c8d0ee757511af2d40dcc11e7}{arm\+\_\+nn\+\_\+activations\+\_\+direct\+\_\+q15()}}
+\item \mbox{\hyperlink{group___basic_mult_gafb0778d27ed98a2a6f2ecb7d48cc8c75}{arm\+\_\+mult\+\_\+q15()}}
+\item \mbox{\hyperlink{group__offset_gab4c1d2391b599549e5a06fdfbc2747bf}{arm\+\_\+offset\+\_\+q15()}}
+\item \mbox{\hyperlink{group___basic_sub_ga997a8ee93088d15bda23c325d455b588}{arm\+\_\+sub\+\_\+q15()}}
+\item \mbox{\hyperlink{group__copy_ga872ca4cfc18c680b8991ccd569a5fda0}{arm\+\_\+copy\+\_\+q15()}}
+\end{DoxyItemize}
+\end{DoxyParagraph}
+{\bfseries{ Refer }} \mbox{\hyperlink{}{arm\+\_\+nnexamples\+\_\+gru.\+cpp}} 

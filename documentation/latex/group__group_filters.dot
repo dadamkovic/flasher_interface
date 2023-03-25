@@ -1,0 +1,35 @@
+digraph "Filtering Functions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node5 [label="Convolution",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___conv.html",tooltip=" "];
+  Node4 [label="Biquad Cascade IIR\l Filters Using a Direct\l Form II Transposed Structure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___biquad_cascade_d_f2_t.html",tooltip=" "];
+  Node8 [label="Finite Impulse Response\l (FIR) Decimator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r__decimate.html",tooltip=" "];
+  Node7 [label="Correlation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___corr.html",tooltip=" "];
+  Node2 [label="High Precision Q31\l Biquad Cascade Filter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___biquad_cascade_d_f1__32x64.html",tooltip=" "];
+  Node15 [label="Finite Impulse Response\l (FIR) Interpolator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r___interpolate.html",tooltip=" "];
+  Node11 [label="Finite Impulse Response\l (FIR) Sparse Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r___sparse.html",tooltip=" "];
+  Node14 [label="Normalized LMS Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___l_m_s___n_o_r_m.html",tooltip=" "];
+  Node3 [label="Biquad Cascade IIR\l Filters Using Direct\l Form I Structure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___biquad_cascade_d_f1.html",tooltip=" "];
+  Node6 [label="Partial Convolution",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___partial_conv.html",tooltip=" "];
+  Node1 [label="Filtering Functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node13 [label="Least Mean Square \l(LMS) Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___l_m_s.html",tooltip=" "];
+  Node12 [label="Infinite Impulse Response\l (IIR) Lattice Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i_i_r___lattice.html",tooltip=" "];
+  Node10 [label="Finite Impulse Response\l (FIR) Lattice Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r___lattice.html",tooltip=" "];
+  Node9 [label="Finite Impulse Response\l (FIR) Filters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node13 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node14 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node15 [shape=plaintext, dir="back", style="solid"];
+}

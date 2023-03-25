@@ -1,0 +1,103 @@
+\hypertarget{group__cmplx__mag}{}\doxysection{Complex Magnitude}
+\label{group__cmplx__mag}\index{Complex Magnitude@{Complex Magnitude}}
+Collaboration diagram for Complex Magnitude\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__cmplx__mag_gae45024c497392cde2ae358a76d435213}{arm\+\_\+cmplx\+\_\+mag\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Floating-\/point complex magnitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__cmplx__mag_ga0a4a8f77a6a51d9b3f3b9d729f85b7a4}{arm\+\_\+cmplx\+\_\+mag\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q15 complex magnitude. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__cmplx__mag_ga14f82f9230e9d96d5b9774e2fefcb7be}{arm\+\_\+cmplx\+\_\+mag\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q31 complex magnitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the magnitude of the elements of a complex data vector.
+
+The {\ttfamily p\+Src} points to the source data and {\ttfamily p\+Dst} points to the where the result should be written. {\ttfamily num\+Samples} specifies the number of complex samples in the input array and the data is stored in an interleaved fashion (real, imag, real, imag, ...). The input array has a total of {\ttfamily 2$\ast$num\+Samples} values; the output array has a total of {\ttfamily num\+Samples} values. The underlying algorithm is used\+:
+
+
+\begin{DoxyPre}
+for(n=0; n<numSamples; n++) \{
+    pDst[n] = sqrt(pSrc[(2*n)+0]^2 + pSrc[(2*n)+1]^2);
+\}
+\end{DoxyPre}
+
+
+There are separate functions for floating-\/point, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__cmplx__mag_gae45024c497392cde2ae358a76d435213}\label{group__cmplx__mag_gae45024c497392cde2ae358a76d435213}} 
+\index{Complex Magnitude@{Complex Magnitude}!arm\_cmplx\_mag\_f32@{arm\_cmplx\_mag\_f32}}
+\index{arm\_cmplx\_mag\_f32@{arm\_cmplx\_mag\_f32}!Complex Magnitude@{Complex Magnitude}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_f32()}{arm\_cmplx\_mag\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point complex magnitude. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to complex input buffer \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to real output buffer \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__cmplx__mag_ga0a4a8f77a6a51d9b3f3b9d729f85b7a4}\label{group__cmplx__mag_ga0a4a8f77a6a51d9b3f3b9d729f85b7a4}} 
+\index{Complex Magnitude@{Complex Magnitude}!arm\_cmplx\_mag\_q15@{arm\_cmplx\_mag\_q15}}
+\index{arm\_cmplx\_mag\_q15@{arm\_cmplx\_mag\_q15}!Complex Magnitude@{Complex Magnitude}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_q15()}{arm\_cmplx\_mag\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q15 complex magnitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Src} & points to the complex input vector \\
+\hline
+{\em $\ast$p\+Dst} & points to the real output vector \\
+\hline
+{\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function implements 1.\+15 by 1.\+15 multiplications and finally output is converted into 2.\+14 format. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__cmplx__mag_ga14f82f9230e9d96d5b9774e2fefcb7be}\label{group__cmplx__mag_ga14f82f9230e9d96d5b9774e2fefcb7be}} 
+\index{Complex Magnitude@{Complex Magnitude}!arm\_cmplx\_mag\_q31@{arm\_cmplx\_mag\_q31}}
+\index{arm\_cmplx\_mag\_q31@{arm\_cmplx\_mag\_q31}!Complex Magnitude@{Complex Magnitude}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_q31()}{arm\_cmplx\_mag\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q31 complex magnitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Src} & points to the complex input vector \\
+\hline
+{\em $\ast$p\+Dst} & points to the real output vector \\
+\hline
+{\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function implements 1.\+31 by 1.\+31 multiplications and finally output is converted into 2.\+30 format. Input down scaling is not required. 
+\end{DoxyParagraph}

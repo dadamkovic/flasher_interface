@@ -17,6 +17,7 @@
 
 #define UTILS_COMM_TIMEOUT 500 
 #define UTILS_RX_MAX_LEN 127
+#define UTILS_MOVE_RATE 100.0
 
 extern JOY_HandleTypeDef g_joypad_h; 
 extern PLOT_HandletypeDef g_plotter_h;

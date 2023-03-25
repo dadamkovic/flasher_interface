@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FlasherInterface: Core/Src/main.c File Reference</title>
+<title>Flasher Interface: Core/Src/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">FlasherInterface
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Flasher Interface
+   &#160;<span id="projectnumber">0.2</span>
    </div>
-   <div id="projectbrief">Interface between user, flashing instrument and G-Code processing machine</div>
   </td>
  </tr>
  </tbody>
@@ -77,15 +76,14 @@ $(function() {
 
 <p>: Main program body  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
-<code>#include &quot;adc.h&quot;</code><br />
-<code>#include &quot;spi.h&quot;</code><br />
-<code>#include &quot;usart.h&quot;</code><br />
-<code>#include &quot;gpio.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="adc_8h_source.html">adc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usart_8h_source.html">usart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio_8h_source.html">gpio.h</a>&quot;</code><br />
 <code>#include &quot;joypad.h&quot;</code><br />
 <code>#include &quot;menu.h&quot;</code><br />
-<code>#include &quot;execution.h&quot;</code><br />
-<code>#include &quot;comm_interface.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="plotter_8h_source.html">plotter.h</a>&quot;</code><br />
 <code>#include &quot;utils.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.c:</div>
@@ -98,9 +96,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
 <tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <a href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">More...</a><br /></td></tr>
 <tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3dfac5731ffefa76c047f7c6002c3b5c"><td class="memItemLeft" align="right" valign="top"><a id="a3dfac5731ffefa76c047f7c6002c3b5c"></a>
-MENU_PositionTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>mainGetPos</b> ()</td></tr>
-<tr class="separator:a3dfac5731ffefa76c047f7c6002c3b5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
 <tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">More...</a><br /></td></tr>
 <tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +117,9 @@ volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>cancel_bu
 <tr class="memitem:ac494d83d1e6df2bc27060ee58fb2227b"><td class="memItemLeft" align="right" valign="top"><a id="ac494d83d1e6df2bc27060ee58fb2227b"></a>
 JOY_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>g_joypad_h</b></td></tr>
 <tr class="separator:ac494d83d1e6df2bc27060ee58fb2227b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98e2666840c35cef71297b000dfb263c"><td class="memItemLeft" align="right" valign="top"><a id="a98e2666840c35cef71297b000dfb263c"></a>
+PLOT_HandletypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>g_plotter_h</b></td></tr>
+<tr class="separator:a98e2666840c35cef71297b000dfb263c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>: Main program body </p>
@@ -152,6 +150,11 @@ JOY_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>g_joypad
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a1730ffe1e560465665eb47d9264826f9_icgraph.png" border="0" usemap="#amain_8c_a1730ffe1e560465665eb47d9264826f9_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -178,6 +181,11 @@ JOY_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>g_joypad
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#amain_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -206,6 +214,16 @@ JOY_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>g_joypad
 </dl>
 <p>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</p>
 <p>Initializes the CPU, AHB and APB buses clocks</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a70af21c671abfcc773614a9a4f63d920_cgraph.png" border="0" usemap="#amain_8c_a70af21c671abfcc773614a9a4f63d920_cgraph" alt=""/></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8c_a70af21c671abfcc773614a9a4f63d920_icgraph.png" border="0" usemap="#amain_8c_a70af21c671abfcc773614a9a4f63d920_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>

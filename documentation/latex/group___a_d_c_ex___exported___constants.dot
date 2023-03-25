@@ -1,0 +1,17 @@
+digraph "ADCEx Exported Constants"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node6 [label="ADCEx External trigger\l selection for injected group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___a_d_c_ex___external__trigger__source___injected.html",tooltip=" "];
+  Node2 [label="ADCEx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___a_d_c_ex.html",tooltip="ADC Extension HAL module driver."];
+  Node3 [label="ADCEx rank into injected\l group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___a_d_c_ex__injected__rank.html",tooltip=" "];
+  Node5 [label="ADC External trigger\l selection for regular group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___a_d_c___external__trigger__source___regular.html",tooltip=" "];
+  Node1 [label="ADCEx Exported Constants",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node4 [label="ADCEx external trigger\l enable for injected group",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___a_d_c_ex___external__trigger__edge___injected.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+}

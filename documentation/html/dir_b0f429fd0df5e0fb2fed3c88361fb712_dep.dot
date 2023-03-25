@@ -1,0 +1,11 @@
+digraph "Core/Lib/joypad" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_76661cdef7ea13abcd4b310fe69c6298 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Lib" fontname="Helvetica", fontsize="10", URL="dir_76661cdef7ea13abcd4b310fe69c6298.html"]
+  dir_b0f429fd0df5e0fb2fed3c88361fb712 [shape=box, label="joypad", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_b0f429fd0df5e0fb2fed3c88361fb712.html"];
+  }
+  dir_e2489e887f17afa3cbc07a4ec152cdd2 [shape=box label="Inc" URL="dir_e2489e887f17afa3cbc07a4ec152cdd2.html"];
+  dir_b0f429fd0df5e0fb2fed3c88361fb712->dir_e2489e887f17afa3cbc07a4ec152cdd2 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000001.html"];
+}

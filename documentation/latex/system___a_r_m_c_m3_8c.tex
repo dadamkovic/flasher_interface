@@ -1,0 +1,42 @@
+\hypertarget{system___a_r_m_c_m3_8c}{}\doxysection{CMSIS/\+DSP/\+DSP\+\_\+\+Lib\+\_\+\+Test\+Suite/\+Common/platform/system\+\_\+\+ARMCM3.c File Reference}
+\label{system___a_r_m_c_m3_8c}\index{CMSIS/DSP/DSP\_Lib\_TestSuite/Common/platform/system\_ARMCM3.c@{CMSIS/DSP/DSP\_Lib\_TestSuite/Common/platform/system\_ARMCM3.c}}
+
+
+CMSIS Device System Source File for ARMCM3 Device Series.  
+
+
+{\ttfamily \#include \char`\"{}ARMCM3.\+h\char`\"{}}\newline
+Include dependency graph for system\+\_\+\+ARMCM3.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}\label{system___a_r_m_c_m3_8c_a3cad0f9b3c40159bd2fbd7f5e60f2fff}} 
+\#define {\bfseries XTAL}~( 5000000\+UL)      /$\ast$ Oscillator frequency $\ast$/
+\item 
+\mbox{\Hypertarget{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}\label{system___a_r_m_c_m3_8c_a95982eccb57c2ae35f8ba3d8f0b05653}} 
+\#define {\bfseries SYSTEM\+\_\+\+CLOCK}~(5U $\ast$ XTAL)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___s_t_m32_f10x___system___exported___functions_gae0c36a9591fe6e9c45ecb21a794f0f0f}{System\+Core\+Clock\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Update System\+Core\+Clock variable according to Clock Register Values. The System\+Core\+Clock variable contains the core clock (HCLK), it can be used by the user application to setup the Sys\+Tick timer or configure other parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___s_t_m32_f10x___system___exported___functions_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the System\+Core\+Clock variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___s_t_m32_f10x___system___exported__types_gaa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = SYSTEM\+\_\+\+CLOCK
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS Device System Source File for ARMCM3 Device Series. 
+
+\begin{DoxyVersion}{Version}
+V5.\+00 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+07. September 2016 
+\end{DoxyDate}

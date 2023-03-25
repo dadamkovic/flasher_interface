@@ -1,0 +1,134 @@
+\hypertarget{group__offset}{}\doxysection{Vector Offset}
+\label{group__offset}\index{Vector Offset@{Vector Offset}}
+Collaboration diagram for Vector Offset\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__offset_ga989dfae15235799d82f62ef9d356abb4}{arm\+\_\+offset\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, float32\+\_\+t offset, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Adds a constant offset to a floating-\/point vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__offset_gab4c1d2391b599549e5a06fdfbc2747bf}{arm\+\_\+offset\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, q15\+\_\+t offset, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Adds a constant offset to a Q15 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__offset_gac84ec42cbbebc5c197a87d0221819acf}{arm\+\_\+offset\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, q31\+\_\+t offset, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Adds a constant offset to a Q31 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__offset_ga00bd9cc17c5bf905e76c91ad50886393}{arm\+\_\+offset\+\_\+q7}} (q7\+\_\+t $\ast$p\+Src, q7\+\_\+t offset, q7\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Adds a constant offset to a Q7 vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adds a constant offset to each element of a vector.
+
+
+\begin{DoxyPre}
+    pDst[n] = pSrc[n] + offset,   0 <= n < blockSize.
+\end{DoxyPre}
+
+
+The functions support in-\/place computation allowing the source and destination pointers to reference the same memory buffer. There are separate functions for floating-\/point, Q7, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__offset_ga989dfae15235799d82f62ef9d356abb4}\label{group__offset_ga989dfae15235799d82f62ef9d356abb4}} 
+\index{Vector Offset@{Vector Offset}!arm\_offset\_f32@{arm\_offset\_f32}}
+\index{arm\_offset\_f32@{arm\_offset\_f32}!Vector Offset@{Vector Offset}}
+\doxysubsubsection{\texorpdfstring{arm\_offset\_f32()}{arm\_offset\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+offset\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{float32\+\_\+t}]{offset,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Adds a constant offset to a floating-\/point vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & is the offset to be added \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__offset_gab4c1d2391b599549e5a06fdfbc2747bf}\label{group__offset_gab4c1d2391b599549e5a06fdfbc2747bf}} 
+\index{Vector Offset@{Vector Offset}!arm\_offset\_q15@{arm\_offset\_q15}}
+\index{arm\_offset\_q15@{arm\_offset\_q15}!Vector Offset@{Vector Offset}}
+\doxysubsubsection{\texorpdfstring{arm\_offset\_q15()}{arm\_offset\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+offset\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{q15\+\_\+t}]{offset,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Adds a constant offset to a Q15 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & is the offset to be added \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q15 range \mbox{[}0x8000 0x7\+FFF\mbox{]} are saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__offset_gac84ec42cbbebc5c197a87d0221819acf}\label{group__offset_gac84ec42cbbebc5c197a87d0221819acf}} 
+\index{Vector Offset@{Vector Offset}!arm\_offset\_q31@{arm\_offset\_q31}}
+\index{arm\_offset\_q31@{arm\_offset\_q31}!Vector Offset@{Vector Offset}}
+\doxysubsubsection{\texorpdfstring{arm\_offset\_q31()}{arm\_offset\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+offset\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{q31\+\_\+t}]{offset,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Adds a constant offset to a Q31 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & is the offset to be added \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q31 range \mbox{[}0x80000000 0x7\+FFFFFFF\mbox{]} are saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__offset_ga00bd9cc17c5bf905e76c91ad50886393}\label{group__offset_ga00bd9cc17c5bf905e76c91ad50886393}} 
+\index{Vector Offset@{Vector Offset}!arm\_offset\_q7@{arm\_offset\_q7}}
+\index{arm\_offset\_q7@{arm\_offset\_q7}!Vector Offset@{Vector Offset}}
+\doxysubsubsection{\texorpdfstring{arm\_offset\_q7()}{arm\_offset\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+offset\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{q7\+\_\+t}]{offset,  }\item[{q7\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Adds a constant offset to a Q7 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em offset} & is the offset to be added \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q7 range \mbox{[}0x80 0x7F\mbox{]} are saturated. 
+\end{DoxyParagraph}

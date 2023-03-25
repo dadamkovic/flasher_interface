@@ -1,0 +1,50 @@
+\hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin}{}\doxysection{Output source to output on the Tamper pin}
+\label{group___r_t_c__output__source__to__output__on__the___tamper__pin}\index{Output source to output on the Tamper pin@{Output source to output on the Tamper pin}}
+Collaboration diagram for Output source to output on the Tamper pin\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_gaff24aee600dcf0d40a1edccac70ed439}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+NONE}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga279ebe3d60ed61eb4a45c2ae7c215173}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+CALIBCLOCK}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga639d569ffd9211519b910c1e6304f7b3}{BKP\+\_\+\+RTCCR\+\_\+\+CCO}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8522b6ede69552843b6204b7225d396e}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+ALARM}}~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}}
+\item 
+\#define \mbox{\hyperlink{group___r_t_c__output__source__to__output__on__the___tamper__pin_gae67ac2e3259a7f10f13bb61ebd0efbd6}{RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+SECOND}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d017e8f3c09696cd74e170a95966be4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOS}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8522b6ede69552843b6204b7225d396e}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga8522b6ede69552843b6204b7225d396e}} 
+\index{Output source to output on the Tamper pin@{Output source to output on the Tamper pin}!RTC\_OUTPUTSOURCE\_ALARM@{RTC\_OUTPUTSOURCE\_ALARM}}
+\index{RTC\_OUTPUTSOURCE\_ALARM@{RTC\_OUTPUTSOURCE\_ALARM}!Output source to output on the Tamper pin@{Output source to output on the Tamper pin}}
+\doxysubsubsection{\texorpdfstring{RTC\_OUTPUTSOURCE\_ALARM}{RTC\_OUTPUTSOURCE\_ALARM}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+ALARM~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}}}
+
+Alarm pulse signal on the TAMPER pin ~\newline
+ \mbox{\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga279ebe3d60ed61eb4a45c2ae7c215173}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_ga279ebe3d60ed61eb4a45c2ae7c215173}} 
+\index{Output source to output on the Tamper pin@{Output source to output on the Tamper pin}!RTC\_OUTPUTSOURCE\_CALIBCLOCK@{RTC\_OUTPUTSOURCE\_CALIBCLOCK}}
+\index{RTC\_OUTPUTSOURCE\_CALIBCLOCK@{RTC\_OUTPUTSOURCE\_CALIBCLOCK}!Output source to output on the Tamper pin@{Output source to output on the Tamper pin}}
+\doxysubsubsection{\texorpdfstring{RTC\_OUTPUTSOURCE\_CALIBCLOCK}{RTC\_OUTPUTSOURCE\_CALIBCLOCK}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+CALIBCLOCK~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga639d569ffd9211519b910c1e6304f7b3}{BKP\+\_\+\+RTCCR\+\_\+\+CCO}}}
+
+RTC clock with a frequency divided by 64 on the TAMPER pin ~\newline
+ \mbox{\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_gaff24aee600dcf0d40a1edccac70ed439}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_gaff24aee600dcf0d40a1edccac70ed439}} 
+\index{Output source to output on the Tamper pin@{Output source to output on the Tamper pin}!RTC\_OUTPUTSOURCE\_NONE@{RTC\_OUTPUTSOURCE\_NONE}}
+\index{RTC\_OUTPUTSOURCE\_NONE@{RTC\_OUTPUTSOURCE\_NONE}!Output source to output on the Tamper pin@{Output source to output on the Tamper pin}}
+\doxysubsubsection{\texorpdfstring{RTC\_OUTPUTSOURCE\_NONE}{RTC\_OUTPUTSOURCE\_NONE}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+NONE~0x00000000U}
+
+No output on the TAMPER pin ~\newline
+ \mbox{\Hypertarget{group___r_t_c__output__source__to__output__on__the___tamper__pin_gae67ac2e3259a7f10f13bb61ebd0efbd6}\label{group___r_t_c__output__source__to__output__on__the___tamper__pin_gae67ac2e3259a7f10f13bb61ebd0efbd6}} 
+\index{Output source to output on the Tamper pin@{Output source to output on the Tamper pin}!RTC\_OUTPUTSOURCE\_SECOND@{RTC\_OUTPUTSOURCE\_SECOND}}
+\index{RTC\_OUTPUTSOURCE\_SECOND@{RTC\_OUTPUTSOURCE\_SECOND}!Output source to output on the Tamper pin@{Output source to output on the Tamper pin}}
+\doxysubsubsection{\texorpdfstring{RTC\_OUTPUTSOURCE\_SECOND}{RTC\_OUTPUTSOURCE\_SECOND}}
+{\footnotesize\ttfamily \#define RTC\+\_\+\+OUTPUTSOURCE\+\_\+\+SECOND~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d017e8f3c09696cd74e170a95966be4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOS}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga924692225ba4db945660687fe47f50b4}{BKP\+\_\+\+RTCCR\+\_\+\+ASOE}})}
+
+Second pulse signal on the TAMPER pin ~\newline
+ 

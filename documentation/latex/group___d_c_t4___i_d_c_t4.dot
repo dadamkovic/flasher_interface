@@ -1,0 +1,11 @@
+digraph "DCT Type IV Functions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="DCT Type IV Tables",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___d_c_t4___i_d_c_t4___table.html",tooltip=" "];
+  Node1 [label="DCT Type IV Functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="Transform Functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__group_transforms.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+}

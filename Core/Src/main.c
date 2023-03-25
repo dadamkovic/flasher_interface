@@ -232,14 +232,6 @@ void SystemClock_Config(void)
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
   switch (GPIO_Pin)
   {
-  case select_Pin:
-    //HAL_GPIO_TogglePin(buzzer_GPIO_Port, buzzer_Pin);
-    select_button = true;
-    break;
-  case cancel_Pin:
-    cancel_button = true;
-    break;
-  
   default:
     break;
   }

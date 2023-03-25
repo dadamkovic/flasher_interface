@@ -1,0 +1,70 @@
+\hypertarget{group___softmax}{}\doxysection{Softmax Functions}
+\label{group___softmax}\index{Softmax Functions@{Softmax Functions}}
+Collaboration diagram for Softmax Functions\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___softmax_ga1cacd8b84b8363079311987d0016ebe5}{arm\+\_\+softmax\+\_\+q15}} (const q15\+\_\+t $\ast$vec\+\_\+in, const uint16\+\_\+t dim\+\_\+vec, q15\+\_\+t $\ast$p\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Q15 softmax function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___softmax_ga89aff212a97a3cf32d9d7ddf11a8f43e}{arm\+\_\+softmax\+\_\+q7}} (const q7\+\_\+t $\ast$vec\+\_\+in, const uint16\+\_\+t dim\+\_\+vec, q7\+\_\+t $\ast$p\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Q7 softmax function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+EXP(2) based softmax function 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___softmax_ga1cacd8b84b8363079311987d0016ebe5}\label{group___softmax_ga1cacd8b84b8363079311987d0016ebe5}} 
+\index{Softmax Functions@{Softmax Functions}!arm\_softmax\_q15@{arm\_softmax\_q15}}
+\index{arm\_softmax\_q15@{arm\_softmax\_q15}!Softmax Functions@{Softmax Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_softmax\_q15()}{arm\_softmax\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+softmax\+\_\+q15 (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{vec\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{q15\+\_\+t $\ast$}]{p\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Q15 softmax function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vec\+\_\+in} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & input vector dimention \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+\_\+out} & pointer to output vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+Here, instead of typical e based softmax, we use 2-\/based softmax, i.\+e.,\+:
+
+y\+\_\+i = 2$^\wedge$(x\+\_\+i) / sum(2$^\wedge$x\+\_\+j)
+
+The relative output will be different here. But mathematically, the gradient will be the same with a log(2) scaling factor. \mbox{\Hypertarget{group___softmax_ga89aff212a97a3cf32d9d7ddf11a8f43e}\label{group___softmax_ga89aff212a97a3cf32d9d7ddf11a8f43e}} 
+\index{Softmax Functions@{Softmax Functions}!arm\_softmax\_q7@{arm\_softmax\_q7}}
+\index{arm\_softmax\_q7@{arm\_softmax\_q7}!Softmax Functions@{Softmax Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_softmax\_q7()}{arm\_softmax\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+softmax\+\_\+q7 (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{vec\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{q7\+\_\+t $\ast$}]{p\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Q7 softmax function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em vec\+\_\+in} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & input vector dimention \\
+\hline
+\mbox{\texttt{ out}}  & {\em p\+\_\+out} & pointer to output vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+Here, instead of typical natural logarithm e based softmax, we use 2-\/based softmax here, i.\+e.,\+:
+
+y\+\_\+i = 2$^\wedge$(x\+\_\+i) / sum(2$^\wedge$x\+\_\+j)
+
+The relative output will be different here. But mathematically, the gradient will be the same with a log(2) scaling factor. 

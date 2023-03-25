@@ -1,0 +1,9 @@
+digraph "DMA Low density and Medium density product devices"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="DMA Low density and\l Medium density product\l devices",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="DMA Extended Exported\l Macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___d_m_a_ex___exported___macros.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

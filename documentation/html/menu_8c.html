@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FlasherInterface: Core/Src/menu.c File Reference</title>
+<title>Flasher Interface: Core/Lib/menu/menu.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">FlasherInterface
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Flasher Interface
+   &#160;<span id="projectnumber">0.2</span>
    </div>
-   <div id="projectbrief">Interface between user, flashing instrument and G-Code processing machine</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_b596f468b52957496e4f78b80e029268.html">Src</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_76661cdef7ea13abcd4b310fe69c6298.html">Lib</a></li><li class="navelem"><a class="el" href="dir_e89e830ce4ca7bd5d01ee1e9fe9b5d4f.html">menu</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -77,63 +76,333 @@ $(function() {
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for menu.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="menu_8c__incl.png" border="0" usemap="#a_core_2_src_2menu_8c" alt=""/></div>
+<div class="center"><img src="menu_8c__incl.png" border="0" usemap="#a_core_2_lib_2menu_2menu_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4f040381456723680d5db4a68109e46a"><td class="memItemLeft" align="right" valign="top"><a id="a4f040381456723680d5db4a68109e46a"></a>
-MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuInit</b> (MENU_InitFuncTypeDef *func, MENU_ButtonFuncTypeDef *sel_f, MENU_ButtonFuncTypeDef *can_f, MENU_PositionTypeFunc *pos_f, MENU_DrawScreenTypeFunc *draw_f)</td></tr>
+<tr class="memitem:a4f040381456723680d5db4a68109e46a"><td class="memItemLeft" align="right" valign="top">MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a4f040381456723680d5db4a68109e46a">menuInit</a> (MENU_InitFuncTypeDef *func, MENU_ButtonFuncTypeDef *sel_f, MENU_ButtonFuncTypeDef *can_f, MENU_PositionTypeFunc *pos_f, MENU_DrawScreenTypeFunc *draw_f)</td></tr>
+<tr class="memdesc:a4f040381456723680d5db4a68109e46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user menu.  <a href="menu_8c.html#a4f040381456723680d5db4a68109e46a">More...</a><br /></td></tr>
 <tr class="separator:a4f040381456723680d5db4a68109e46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05976ac1ccc8bee1497ef03f195b7c14"><td class="memItemLeft" align="right" valign="top"><a id="a05976ac1ccc8bee1497ef03f195b7c14"></a>
-MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuCreate</b> (char *title, char *cont)</td></tr>
+<tr class="memitem:a05976ac1ccc8bee1497ef03f195b7c14"><td class="memItemLeft" align="right" valign="top">MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a05976ac1ccc8bee1497ef03f195b7c14">menuCreate</a> (char *title, char *cont)</td></tr>
+<tr class="memdesc:a05976ac1ccc8bee1497ef03f195b7c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new menu and returns its handle.  <a href="menu_8c.html#a05976ac1ccc8bee1497ef03f195b7c14">More...</a><br /></td></tr>
 <tr class="separator:a05976ac1ccc8bee1497ef03f195b7c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d12f5f1c3f367699fcb0499749d2e09"><td class="memItemLeft" align="right" valign="top"><a id="a8d12f5f1c3f367699fcb0499749d2e09"></a>
-MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuLinkExec</b> (MENU_HandleTypeDef menu_id, MENU_HandleTypeDef exec_menu_id, MENU_ExecFuncTypeDef *exec_f)</td></tr>
+<tr class="memitem:a8d12f5f1c3f367699fcb0499749d2e09"><td class="memItemLeft" align="right" valign="top">MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a8d12f5f1c3f367699fcb0499749d2e09">menuLinkExec</a> (MENU_HandleTypeDef menu_id, MENU_HandleTypeDef exec_menu_id, MENU_ExecFuncTypeDef *exec_f)</td></tr>
+<tr class="memdesc:a8d12f5f1c3f367699fcb0499749d2e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Links exec menu to the specified menu screen.  <a href="menu_8c.html#a8d12f5f1c3f367699fcb0499749d2e09">More...</a><br /></td></tr>
 <tr class="separator:a8d12f5f1c3f367699fcb0499749d2e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08584cf1a86b37bb048c7423958ad9f0"><td class="memItemLeft" align="right" valign="top"><a id="a08584cf1a86b37bb048c7423958ad9f0"></a>
-MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuLink</b> (MENU_HandleTypeDef menu_l_id, MENU_HandleTypeDef menu_r_id)</td></tr>
+<tr class="memitem:a08584cf1a86b37bb048c7423958ad9f0"><td class="memItemLeft" align="right" valign="top">MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a08584cf1a86b37bb048c7423958ad9f0">menuLink</a> (MENU_HandleTypeDef menu_l_id, MENU_HandleTypeDef menu_r_id)</td></tr>
+<tr class="memdesc:a08584cf1a86b37bb048c7423958ad9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Links two menus together.  <a href="menu_8c.html#a08584cf1a86b37bb048c7423958ad9f0">More...</a><br /></td></tr>
 <tr class="separator:a08584cf1a86b37bb048c7423958ad9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e927456dcaeb059ca187e336c4f9dfa"><td class="memItemLeft" align="right" valign="top"><a id="a5e927456dcaeb059ca187e336c4f9dfa"></a>
-MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuNextState</b> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memitem:a5e927456dcaeb059ca187e336c4f9dfa"><td class="memItemLeft" align="right" valign="top">MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a5e927456dcaeb059ca187e336c4f9dfa">menuNextState</a> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memdesc:a5e927456dcaeb059ca187e336c4f9dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the next state of the menu screen.  <a href="menu_8c.html#a5e927456dcaeb059ca187e336c4f9dfa">More...</a><br /></td></tr>
 <tr class="separator:a5e927456dcaeb059ca187e336c4f9dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a186796972a97de00ca0b001a85744c3f"><td class="memItemLeft" align="right" valign="top"><a id="a186796972a97de00ca0b001a85744c3f"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>menuReadTitle</b> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memitem:a186796972a97de00ca0b001a85744c3f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#a186796972a97de00ca0b001a85744c3f">menuReadTitle</a> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memdesc:a186796972a97de00ca0b001a85744c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns menu titile.  <a href="menu_8c.html#a186796972a97de00ca0b001a85744c3f">More...</a><br /></td></tr>
 <tr class="separator:a186796972a97de00ca0b001a85744c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae960c9c758f9f88fe7dbe0f5aced0aa"><td class="memItemLeft" align="right" valign="top"><a id="aae960c9c758f9f88fe7dbe0f5aced0aa"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>menuReadCont</b> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memitem:aae960c9c758f9f88fe7dbe0f5aced0aa"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#aae960c9c758f9f88fe7dbe0f5aced0aa">menuReadCont</a> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memdesc:aae960c9c758f9f88fe7dbe0f5aced0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns menu contents.  <a href="menu_8c.html#aae960c9c758f9f88fe7dbe0f5aced0aa">More...</a><br /></td></tr>
 <tr class="separator:aae960c9c758f9f88fe7dbe0f5aced0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9a25d7e975e594e0e510518aff49cec"><td class="memItemLeft" align="right" valign="top"><a id="ae9a25d7e975e594e0e510518aff49cec"></a>
-MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>menuRunState</b> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memitem:ae9a25d7e975e594e0e510518aff49cec"><td class="memItemLeft" align="right" valign="top">MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#ae9a25d7e975e594e0e510518aff49cec">menuRunState</a> (MENU_HandleTypeDef menu_id)</td></tr>
+<tr class="memdesc:ae9a25d7e975e594e0e510518aff49cec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Either run exec funciton or return if not available.  <a href="menu_8c.html#ae9a25d7e975e594e0e510518aff49cec">More...</a><br /></td></tr>
 <tr class="separator:ae9a25d7e975e594e0e510518aff49cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9aace1b44b73111e15aa39f06f43456"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#af9aace1b44b73111e15aa39f06f43456">__attribute__</a> ((weak))</td></tr>
-<tr class="memdesc:af9aace1b44b73111e15aa39f06f43456"><td class="mdescLeft">&#160;</td><td class="mdescRight">To be redefined by the end user if needed.  <a href="menu_8c.html#af9aace1b44b73111e15aa39f06f43456">More...</a><br /></td></tr>
+<tr class="memitem:af9aace1b44b73111e15aa39f06f43456"><td class="memItemLeft" align="right" valign="top"><a id="af9aace1b44b73111e15aa39f06f43456"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8c.html#af9aace1b44b73111e15aa39f06f43456">__attribute__</a> ((weak))</td></tr>
+<tr class="memdesc:af9aace1b44b73111e15aa39f06f43456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default way to handle errors from <a class="el" href="menu_8c.html">menu.c</a>. <br /></td></tr>
 <tr class="separator:af9aace1b44b73111e15aa39f06f43456"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>your name (<a href="#" onclick="location.href='mai'+'lto:'+'you'+'@d'+'oma'+'in'+'.co'+'m'; return false;">you@d<span style="display: none;">.nosp@m.</span>omai<span style="display: none;">.nosp@m.</span>n.com</a>) </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Daniel Adamkovic (<a href="#" onclick="location.href='mai'+'lto:'+'dad'+'am'+'kov'+'ic'+'@pr'+'ot'+'onm'+'ai'+'l.c'+'h'; return false;">dadam<span style="display: none;">.nosp@m.</span>kovi<span style="display: none;">.nosp@m.</span>c@pro<span style="display: none;">.nosp@m.</span>tonm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>h</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2023-01-15</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>22-01-2023</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="af9aace1b44b73111e15aa39f06f43456"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9aace1b44b73111e15aa39f06f43456">&#9670;&nbsp;</a></span>__attribute__()</h2>
+<a id="a05976ac1ccc8bee1497ef03f195b7c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05976ac1ccc8bee1497ef03f195b7c14">&#9670;&nbsp;</a></span>menuCreate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__attribute__ </td>
+          <td class="memname">MENU_HandleTypeDef menuCreate </td>
           <td>(</td>
-          <td class="paramtype">(weak)&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>cont</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a new menu and returns its handle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Title of the menu screen </td></tr>
+    <tr><td class="paramname">cont</td><td>Description </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_HandleTypeDef MENU_WRONG_HANDLE or menu handle </dd></dl>
+
+</div>
+</div>
+<a id="a4f040381456723680d5db4a68109e46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f040381456723680d5db4a68109e46a">&#9670;&nbsp;</a></span>menuInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MENU_HandleTypeDef menuInit </td>
+          <td>(</td>
+          <td class="paramtype">MENU_InitFuncTypeDef *&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_ButtonFuncTypeDef *&#160;</td>
+          <td class="paramname"><em>sel_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_ButtonFuncTypeDef *&#160;</td>
+          <td class="paramname"><em>can_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_PositionTypeFunc *&#160;</td>
+          <td class="paramname"><em>pos_f</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_DrawScreenTypeFunc *&#160;</td>
+          <td class="paramname"><em>draw_f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the user menu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>Pointer to user function where menus and their linkage is defined </td></tr>
+    <tr><td class="paramname">sel_f</td><td>Pointer to function returning the state of the select button </td></tr>
+    <tr><td class="paramname">can_f</td><td>Pointer to function returning the state of the cancel button </td></tr>
+    <tr><td class="paramname">pos_f</td><td>Pointer to function returning the state of the joypad </td></tr>
+    <tr><td class="paramname">draw_f</td><td>Pointer to function that draws the menu screen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_HandleTypeDef Menu handle or MENU_WRONG_HANDLE </dd></dl>
+
+</div>
+</div>
+<a id="a08584cf1a86b37bb048c7423958ad9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08584cf1a86b37bb048c7423958ad9f0">&#9670;&nbsp;</a></span>menuLink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MENU_ReturnTypeDef menuLink </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_l_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_r_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Links two menus together. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_l_id</td><td>Menu on the left side of the menu scren </td></tr>
+    <tr><td class="paramname">menu_r_id</td><td>Menu on the right side of the menu screen </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_ReturnTypeDef MENU_OK </dd></dl>
+
+</div>
+</div>
+<a id="a8d12f5f1c3f367699fcb0499749d2e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d12f5f1c3f367699fcb0499749d2e09">&#9670;&nbsp;</a></span>menuLinkExec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MENU_ReturnTypeDef menuLinkExec </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>exec_menu_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MENU_ExecFuncTypeDef *&#160;</td>
+          <td class="paramname"><em>exec_f</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Links exec menu to the specified menu screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_id</td><td>Menu handle to menu where exec menu should be linked </td></tr>
+    <tr><td class="paramname">exec_menu_id</td><td>Menu handle of the exec menu </td></tr>
+    <tr><td class="paramname">exec_f</td><td>Function pointer to be executed by the exec menu </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_ReturnTypeDef MENU_OK or MENU_FAIL if NULL exec function pointer </dd></dl>
+
+</div>
+</div>
+<a id="a5e927456dcaeb059ca187e336c4f9dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e927456dcaeb059ca187e336c4f9dfa">&#9670;&nbsp;</a></span>menuNextState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MENU_HandleTypeDef menuNextState </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>To be redefined by the end user if needed. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">Todo:</a></b></dt><dd>Create enum with error flags that will be supplied here</dd></dl>
+<p>Evaluates the next state of the menu screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_id</td><td>Current menu handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_HandleTypeDef Next menu handle </dd></dl>
+
+</div>
+</div>
+<a id="aae960c9c758f9f88fe7dbe0f5aced0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae960c9c758f9f88fe7dbe0f5aced0aa">&#9670;&nbsp;</a></span>menuReadCont()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* menuReadCont </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns menu contents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_id</td><td>Menu handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Pointer to the menu contents </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Possibly rewrite this to not return the real address </dd></dl>
+
+</div>
+</div>
+<a id="a186796972a97de00ca0b001a85744c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186796972a97de00ca0b001a85744c3f">&#9670;&nbsp;</a></span>menuReadTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* menuReadTitle </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns menu titile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_id</td><td>Menu handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>char* Pointer to the menu title </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Possibly rewrite this to not return the real address </dd></dl>
+
+</div>
+</div>
+<a id="ae9a25d7e975e594e0e510518aff49cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a25d7e975e594e0e510518aff49cec">&#9670;&nbsp;</a></span>menuRunState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MENU_ReturnTypeDef menuRunState </td>
+          <td>(</td>
+          <td class="paramtype">MENU_HandleTypeDef&#160;</td>
+          <td class="paramname"><em>menu_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Either run exec funciton or return if not available. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">menu_id</td><td>Menu handle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>MENU_ReturnTypeDef MENU_OK </dd></dl>
 
 </div>
 </div>

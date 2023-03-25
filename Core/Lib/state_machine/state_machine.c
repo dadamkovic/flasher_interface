@@ -118,7 +118,7 @@ SM_HandleTypeDef smNextState(SM_HandleTypeDef sm_id)
 
     // check if transition condition has been fulfilled first time
     //if not evaluating all state we immediately return
-    if ((!ret) && (ret_handle == SM_ERROR_HANDLE))
+    if ((ret == SM_TRUE) && (ret_handle == SM_ERROR_HANDLE))
     {
       ret_handle = _state_machines[sm_id].trans_sts[tail_idx];
       #ifndef SM_EVAL_ALL_TRANS
@@ -128,7 +128,7 @@ SM_HandleTypeDef smNextState(SM_HandleTypeDef sm_id)
     
     // if another transition condition is true we raise error
     #ifdef SM_EVAL_ALL_TRANS
-    else if ((!ret) && (ret_handle != SM_ERROR_HANDLE))
+    else if ((ret == SM_TRUE) && (ret_handle != SM_ERROR_HANDLE))
     {
       smErrorHandler(SM_MULITPLE_TRANSITIONS_ERR);
       return SM_ERROR_HANDLE;

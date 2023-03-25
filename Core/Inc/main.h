@@ -37,41 +37,6 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
-#define RX_BUFF_SIZE 255
-#define TX_BUFF_SIZE 255
-#define ERR_ARRAY_SIZE 255
-#define MAX_TEXT_S 100  //max num of characters on one line of display
-
-
-
-
-typedef struct CommData{
-  UART_HandleTypeDef *plotter_handle;
-  UART_HandleTypeDef *flasher_handle;
-  char plotter_rx[RX_BUFF_SIZE];
-  char plotter_tx[TX_BUFF_SIZE];
-  char flasher_rx[RX_BUFF_SIZE];
-  char flasher_tx[TX_BUFF_SIZE];
-}CommData;
-
-enum execution_status{
-  Movement,
-  Flash_pending,
-  Flash_finished, 
-  Sequence_finished,
-  Idle,
-  Fail};
-
-typedef struct SetupData{
-  enum execution_status exec_status;
-  uint16_t offset_x;
-  uint16_t offset_y;
-  uint8_t flash_matrix_dims[2];
-  uint8_t flash_matrix_pos[2];
-  char fail_msg[ERR_ARRAY_SIZE];
-}SetupData;
-
-
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

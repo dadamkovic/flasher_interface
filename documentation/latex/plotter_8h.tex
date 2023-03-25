@@ -1,0 +1,344 @@
+\hypertarget{plotter_8h}{}\doxysection{Core/\+Lib/plotter/plotter.h File Reference}
+\label{plotter_8h}\index{Core/Lib/plotter/plotter.h@{Core/Lib/plotter/plotter.h}}
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for plotter.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_l_o_t___position_type_def}{PLOT\+\_\+\+Position\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct___p_l_o_t___status_type_def}{\+\_\+\+PLOT\+\_\+\+Status\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{plotter_8h_a848fcfa0efc2d650a21f45a9e78ccb58}\label{plotter_8h_a848fcfa0efc2d650a21f45a9e78ccb58}} 
+\#define {\bfseries PLOT\+\_\+\+DELAY\+\_\+\+MS}(x)~HAL\+\_\+\+Delay(x)
+\item 
+\mbox{\Hypertarget{plotter_8h_afb2c042f67e609dbba1eb96d59bcf3f7}\label{plotter_8h_afb2c042f67e609dbba1eb96d59bcf3f7}} 
+\#define {\bfseries PLOT\+\_\+\+MAX\+\_\+\+RETRIES}~3
+\item 
+\mbox{\Hypertarget{plotter_8h_aa0451b3056771b2ac02b65b050080283}\label{plotter_8h_aa0451b3056771b2ac02b65b050080283}} 
+\#define {\bfseries PLOT\+\_\+\+RX\+\_\+\+MAX\+\_\+\+LEN}~128
+\item 
+\mbox{\Hypertarget{plotter_8h_a1229d35f7df54990607904d30ee9e607}\label{plotter_8h_a1229d35f7df54990607904d30ee9e607}} 
+\#define {\bfseries PLOT\+\_\+\+TX\+\_\+\+MAX\+\_\+\+LEN}~255
+\item 
+\mbox{\Hypertarget{plotter_8h_af640bed34ce48b1d2bdb9a620f500478}\label{plotter_8h_af640bed34ce48b1d2bdb9a620f500478}} 
+\#define {\bfseries PLOT\+\_\+\+MAX\+\_\+\+PLOTTERS}~1
+\item 
+\mbox{\Hypertarget{plotter_8h_a02e45cc6941e96b4a5adede71fc7909f}\label{plotter_8h_a02e45cc6941e96b4a5adede71fc7909f}} 
+\#define {\bfseries PLOT\+\_\+\+ERROR\+\_\+\+HANDLE}~-\/1
+\item 
+\mbox{\Hypertarget{plotter_8h_a4cdea12fccae0296cf079de53be5d33a}\label{plotter_8h_a4cdea12fccae0296cf079de53be5d33a}} 
+\#define {\bfseries F\+\_\+\+PRECISION}~100.\+0
+\item 
+\mbox{\Hypertarget{plotter_8h_a1123b4fc33f4f30498e3fb5f386ad974}\label{plotter_8h_a1123b4fc33f4f30498e3fb5f386ad974}} 
+\#define {\bfseries F\+\_\+\+DOT}~2
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{plotter_8h_a4cda7ceb5380c4a9174b0cc8e9c13c28}\label{plotter_8h_a4cda7ceb5380c4a9174b0cc8e9c13c28}} 
+typedef int8\+\_\+t {\bfseries PLOT\+\_\+\+Handletype\+Def}
+\item 
+\mbox{\Hypertarget{plotter_8h_ab7d2b935b5ce97b2e7ef0b3c43c59a86}\label{plotter_8h_ab7d2b935b5ce97b2e7ef0b3c43c59a86}} 
+typedef PLOT\+\_\+\+Return\+Type\+Def() {\bfseries PLOT\+\_\+\+IOFunc\+Type\+Def}(char $\ast$)
+\item 
+\mbox{\Hypertarget{plotter_8h_a76e16cc8e8b8c4eba200d9352ef75933}\label{plotter_8h_a76e16cc8e8b8c4eba200d9352ef75933}} 
+typedef PLOT\+\_\+\+Return\+Type\+Def() {\bfseries PLOT\+\_\+\+User\+Open\+Func\+Type\+Def}(PLOT\+\_\+\+Handletype\+Def)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{plotter_8h_a5be7d58df6066ebc7a6182343952ef72}\label{plotter_8h_a5be7d58df6066ebc7a6182343952ef72}} 
+enum {\bfseries PLOT\+\_\+\+Return\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+OK}
+, {\bfseries PLOT\+\_\+\+FAIL}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_a7a16a197dd060a33abbda8d647003639}\label{plotter_8h_a7a16a197dd060a33abbda8d647003639}} 
+enum {\bfseries PLOT\+\_\+\+Init\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+H\+\_\+\+FREE}
+, {\bfseries PLOT\+\_\+\+H\+\_\+\+USED}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_a556cd11aa8ef476ff83b40f780f3e9b4}\label{plotter_8h_a556cd11aa8ef476ff83b40f780f3e9b4}} 
+enum {\bfseries PLOT\+\_\+\+Command\+Type\+Def} \{ \newline
+{\bfseries PLOT\+\_\+\+FASTMOVE\+\_\+\+COM}
+, {\bfseries PLOT\+\_\+\+LIN\+\_\+\+MOVE\+\_\+\+COM}
+, {\bfseries PLOT\+\_\+\+TOGGLE\+\_\+Z}
+, {\bfseries PLOT\+\_\+\+RAISE\+\_\+Z}
+, \newline
+{\bfseries PLOT\+\_\+\+DROP\+\_\+Z}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_a67012462c0f3f30c88e10229cddfcc97}\label{plotter_8h_a67012462c0f3f30c88e10229cddfcc97}} 
+enum {\bfseries PLOT\+\_\+\+Wait\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+NO\+\_\+\+WAIT\+\_\+\+FIN}
+, {\bfseries PLOT\+\_\+\+WAIT\+\_\+\+FIN}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_ab9971c348f941e51a769c5e5286eaa51}\label{plotter_8h_ab9971c348f941e51a769c5e5286eaa51}} 
+enum {\bfseries PLOT\+\_\+\+ZStatus\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+Z\+\_\+\+UNDEF}
+, {\bfseries PLOT\+\_\+\+Z\+\_\+\+UP}
+, {\bfseries PLOT\+\_\+\+Z\+\_\+\+DOWN}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_ac6d526848ca6969f36a08ada79858609}\label{plotter_8h_ac6d526848ca6969f36a08ada79858609}} 
+enum {\bfseries PLOT\+\_\+\+Move\+Mode\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+ABS\+\_\+\+MODE}
+, {\bfseries PLOT\+\_\+\+REL\+\_\+\+MODE}
+ \}
+\item 
+\mbox{\Hypertarget{plotter_8h_ad17ed98ab739a6f69f0aaba491719b26}\label{plotter_8h_ad17ed98ab739a6f69f0aaba491719b26}} 
+enum {\bfseries PLOT\+\_\+\+Error\+Type\+Def} \{ {\bfseries PLOT\+\_\+\+NO\+\_\+\+FREE\+\_\+\+HANDLE\+\_\+\+ERR}
+, {\bfseries PLOT\+\_\+\+NULL\+\_\+\+FUNC\+\_\+\+ERR}
+, {\bfseries PLOT\+\_\+\+DATA\+\_\+\+SIZE\+\_\+\+ERR}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+PLOT\+\_\+\+Handletype\+Def \mbox{\hyperlink{plotter_8h_a7b73d7d1ad122624bcd4a49999462772}{plotter\+Init}} (PLOT\+\_\+\+IOFunc\+Type\+Def $\ast$, PLOT\+\_\+\+IOFunc\+Type\+Def $\ast$, PLOT\+\_\+\+Wait\+Type\+Def, float)
+\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_ab00dab68c19b714fdaab1bdeb7616551}{plotter\+Open}} (PLOT\+\_\+\+Handletype\+Def, PLOT\+\_\+\+User\+Open\+Func\+Type\+Def $\ast$)
+\begin{DoxyCompactList}\small\item\em Runs the initialization function of the plotter. \end{DoxyCompactList}\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_a1d2497c0e6dfe086f3e1fc3e822d5a75}{plotter\+Write}} (PLOT\+\_\+\+Handletype\+Def, PLOT\+\_\+\+Command\+Type\+Def, void $\ast$)
+\begin{DoxyCompactList}\small\item\em A function for common interface to the plotter commands. \end{DoxyCompactList}\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_aacff1cee0340f48f065f12cc6238f068}{plotter\+Read}} (PLOT\+\_\+\+Handletype\+Def, char $\ast$)
+\begin{DoxyCompactList}\small\item\em Reads the serial data from the plotter. \end{DoxyCompactList}\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_a51f045c979d8854eadddde8174a8e2d8}{\+\_\+plotter\+Write\+Raw}} (PLOT\+\_\+\+Handletype\+Def, char $\ast$)
+\begin{DoxyCompactList}\small\item\em Writes raw data into the plotter UART interface. \end{DoxyCompactList}\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_a73bf1dc9a0beab0a76e620ea16d1bde1}{plotter\+Set\+Abs\+Mode}} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Sets the plotter in absolute movement coordinate system. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{plotter_8h_adc7747f1f7f0180f1d172e8347214f7e}\label{plotter_8h_adc7747f1f7f0180f1d172e8347214f7e}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries plotter\+Set\+Rel\+Mode} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id)
+\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_a6682f5bfb9ca345d8279d4542541e439}{plotter\+Fast\+Move}} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id, float x, float y)
+\begin{DoxyCompactList}\small\item\em Move to positon as fast as max feedrate allows. \end{DoxyCompactList}\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_a7083e51bd8b7d2883314ef5d20a746f1}{plotter\+Lin\+Move}} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id, float x, float y, float feed)
+\begin{DoxyCompactList}\small\item\em Moves the plotter with the specified feed rate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{plotter_8h_a94f989331960faeb5714e43ddca8dba8}\label{plotter_8h_a94f989331960faeb5714e43ddca8dba8}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries plotter\+RaiseZ} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id)
+\item 
+\mbox{\Hypertarget{plotter_8h_a9f029f2d3432cf52dea25c623d500f75}\label{plotter_8h_a9f029f2d3432cf52dea25c623d500f75}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries plotter\+DropZ} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id)
+\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{plotter_8h_af92746bd4296bc63f1b7eae2e8639a33}{plotter\+ToggleZ}} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Toggle the Z-\/axis servo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{plotter_8h_a7e3582db636bf2d5fd51899cfd336cf7}\label{plotter_8h_a7e3582db636bf2d5fd51899cfd336cf7}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries plotter\+Update\+Position} (PLOT\+\_\+\+Handletype\+Def)
+\item 
+\mbox{\Hypertarget{plotter_8h_a412746bb501e4f14d802067de1a11f55}\label{plotter_8h_a412746bb501e4f14d802067de1a11f55}} 
+void {\bfseries plotter\+Error\+Handler} (PLOT\+\_\+\+Error\+Type\+Def)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24-\/01-\/2023
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plotter_8h_a51f045c979d8854eadddde8174a8e2d8}\label{plotter_8h_a51f045c979d8854eadddde8174a8e2d8}} 
+\index{plotter.h@{plotter.h}!\_plotterWriteRaw@{\_plotterWriteRaw}}
+\index{\_plotterWriteRaw@{\_plotterWriteRaw}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{\_plotterWriteRaw()}{\_plotterWriteRaw()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def \+\_\+plotter\+Write\+Raw (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Writes raw data into the plotter UART interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em data} & Buffer with data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_a6682f5bfb9ca345d8279d4542541e439}\label{plotter_8h_a6682f5bfb9ca345d8279d4542541e439}} 
+\index{plotter.h@{plotter.h}!plotterFastMove@{plotterFastMove}}
+\index{plotterFastMove@{plotterFastMove}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterFastMove()}{plotterFastMove()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Fast\+Move (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+Move to positon as fast as max feedrate allows. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em x} & Target X-\/pos (or relative x move) \\
+\hline
+{\em y} & Target Y-\/pos (or relative y move) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{plotter_8h_a7b73d7d1ad122624bcd4a49999462772}\label{plotter_8h_a7b73d7d1ad122624bcd4a49999462772}} 
+\index{plotter.h@{plotter.h}!plotterInit@{plotterInit}}
+\index{plotterInit@{plotterInit}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterInit()}{plotterInit()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Handletype\+Def plotter\+Init (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+IOFunc\+Type\+Def $\ast$}]{w\+\_\+func,  }\item[{PLOT\+\_\+\+IOFunc\+Type\+Def $\ast$}]{r\+\_\+func,  }\item[{PLOT\+\_\+\+Wait\+Type\+Def}]{wait\+\_\+m,  }\item[{float}]{max\+\_\+f }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em w\+\_\+func} & Pointer to function used for write access to plotter \\
+\hline
+{\em r\+\_\+func} & Pointer to function used for read access to plotter \\
+\hline
+{\em wait\+\_\+m} & Waiting mode -\/ either waits for move to finish or yields immediately \\
+\hline
+{\em max\+\_\+f} & Maximum feedrate allowed for the plotter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Handletype\+Def Plotter handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_a7083e51bd8b7d2883314ef5d20a746f1}\label{plotter_8h_a7083e51bd8b7d2883314ef5d20a746f1}} 
+\index{plotter.h@{plotter.h}!plotterLinMove@{plotterLinMove}}
+\index{plotterLinMove@{plotterLinMove}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterLinMove()}{plotterLinMove()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Lin\+Move (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{feed }\end{DoxyParamCaption})}
+
+
+
+Moves the plotter with the specified feed rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em x} & Absolute or relative move dist -\/ x coordinate \\
+\hline
+{\em y} & Absolute or relative move dist -\/ y coordinate \\
+\hline
+{\em feed} & Feedrate for the move \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{plotter_8h_ab00dab68c19b714fdaab1bdeb7616551}\label{plotter_8h_ab00dab68c19b714fdaab1bdeb7616551}} 
+\index{plotter.h@{plotter.h}!plotterOpen@{plotterOpen}}
+\index{plotterOpen@{plotterOpen}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterOpen()}{plotterOpen()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Open (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{PLOT\+\_\+\+User\+Open\+Func\+Type\+Def $\ast$}]{func }\end{DoxyParamCaption})}
+
+
+
+Runs the initialization function of the plotter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em func} & Function to be run \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_aacff1cee0340f48f065f12cc6238f068}\label{plotter_8h_aacff1cee0340f48f065f12cc6238f068}} 
+\index{plotter.h@{plotter.h}!plotterRead@{plotterRead}}
+\index{plotterRead@{plotterRead}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterRead()}{plotterRead()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Read (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Reads the serial data from the plotter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em data} & Buffer for storing data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_a73bf1dc9a0beab0a76e620ea16d1bde1}\label{plotter_8h_a73bf1dc9a0beab0a76e620ea16d1bde1}} 
+\index{plotter.h@{plotter.h}!plotterSetAbsMode@{plotterSetAbsMode}}
+\index{plotterSetAbsMode@{plotterSetAbsMode}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterSetAbsMode()}{plotterSetAbsMode()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Set\+Abs\+Mode (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Sets the plotter in absolute movement coordinate system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_af92746bd4296bc63f1b7eae2e8639a33}\label{plotter_8h_af92746bd4296bc63f1b7eae2e8639a33}} 
+\index{plotter.h@{plotter.h}!plotterToggleZ@{plotterToggleZ}}
+\index{plotterToggleZ@{plotterToggleZ}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterToggleZ()}{plotterToggleZ()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+ToggleZ (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Toggle the Z-\/axis servo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{plotter_8h_a1d2497c0e6dfe086f3e1fc3e822d5a75}\label{plotter_8h_a1d2497c0e6dfe086f3e1fc3e822d5a75}} 
+\index{plotter.h@{plotter.h}!plotterWrite@{plotterWrite}}
+\index{plotterWrite@{plotterWrite}!plotter.h@{plotter.h}}
+\doxysubsubsection{\texorpdfstring{plotterWrite()}{plotterWrite()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def plotter\+Write (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+id,  }\item[{PLOT\+\_\+\+Command\+Type\+Def}]{cmnd,  }\item[{void $\ast$}]{inp }\end{DoxyParamCaption})}
+
+
+
+A function for common interface to the plotter commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+id} & Plotter handle \\
+\hline
+{\em cmnd} & Command (enum) to be executed \\
+\hline
+{\em inp} & Pointer to float array or NULL -\/ depending on command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Maybe a candidate for static func? 
+\end{DoxyNote}

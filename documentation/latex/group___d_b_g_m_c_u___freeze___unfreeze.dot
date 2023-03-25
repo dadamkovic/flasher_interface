@@ -1,0 +1,9 @@
+digraph "Freeze Unfreeze Peripherals in Debug mode"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node1 [label="Freeze Unfreeze Peripherals\l in Debug mode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Freeze/Unfreeze Peripherals in Debug mode Note: On devices STM32F10xx8 and STM32F10xxB,..."];
+  Node2 [label="HAL Exported Macros",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___h_a_l___exported___macros.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+}

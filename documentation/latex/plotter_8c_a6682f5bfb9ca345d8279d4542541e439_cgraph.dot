@@ -1,0 +1,10 @@
+digraph "plotterFastMove"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="plotterFastMove",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Move to positon as fast as max feedrate allows."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="plotterLinMove",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$plotter_8c.html#a7083e51bd8b7d2883314ef5d20a746f1",tooltip="Moves the plotter with the specified feed rate."];
+}

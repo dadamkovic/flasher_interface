@@ -1,0 +1,13 @@
+digraph "GPIOEx Exported Constants"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node3 [label="EVENTOUT Cortex Configuration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex___e_v_e_n_t_o_u_t.html",tooltip="This section propose definition to use the Cortex EVENTOUT signal."];
+  Node4 [label="Alternate Function\l Remapping",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex___a_f_i_o___a_f___r_e_m_a_p_p_i_n_g.html",tooltip="This section propose definition to remap the alternate function to some other port/pins."];
+  Node1 [label="GPIOEx Exported Constants",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="GPIOEx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_p_i_o_ex.html",tooltip="GPIO HAL module driver."];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+}

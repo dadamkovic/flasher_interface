@@ -1,0 +1,23 @@
+digraph "Support Functions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node5 [label="Convert 16-bit Integer\l value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__q15__to__x.html",tooltip=" "];
+  Node8 [label="Basic Math Functions\l for Neural Network Computation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___n_n_basic_math.html",tooltip=" "];
+  Node4 [label="Convert 32-bit floating\l point value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__float__to__x.html",tooltip=" "];
+  Node1 [label="Support Functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node6 [label="Convert 32-bit Integer\l value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__q31__to__x.html",tooltip=" "];
+  Node3 [label="Vector Fill",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___fill.html",tooltip=" "];
+  Node7 [label="Convert 8-bit Integer\l value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__q7__to__x.html",tooltip=" "];
+  Node9 [label="Neural Network Data\l Conversion Functions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__nndata__convert.html",tooltip=" "];
+  Node2 [label="Vector Copy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__copy.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+}

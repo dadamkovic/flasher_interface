@@ -1,0 +1,77 @@
+\hypertarget{group___n_n_basic_math}{}\doxysection{Basic Math Functions for Neural Network Computation}
+\label{group___n_n_basic_math}\index{Basic Math Functions for Neural Network Computation@{Basic Math Functions for Neural Network Computation}}
+Collaboration diagram for Basic Math Functions for Neural Network Computation\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___n_n_basic_math_ga08f8340aa6533271b3aa6d211614fe22}{arm\+\_\+nn\+\_\+mult\+\_\+q15}} (q15\+\_\+t $\ast$p\+SrcA, q15\+\_\+t $\ast$p\+SrcB, q15\+\_\+t $\ast$p\+Dst, const uint16\+\_\+t out\+\_\+shift, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Q7 vector multiplication with variable output shifts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___n_n_basic_math_gad46c9ab012cceda8ce6681c687a58c70}{arm\+\_\+nn\+\_\+mult\+\_\+q7}} (q7\+\_\+t $\ast$p\+SrcA, q7\+\_\+t $\ast$p\+SrcB, q7\+\_\+t $\ast$p\+Dst, const uint16\+\_\+t out\+\_\+shift, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Q7 vector multiplication with variable output shifts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic Math Functions for Neural Network Computation
+
+$<$$>$ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___n_n_basic_math_ga08f8340aa6533271b3aa6d211614fe22}\label{group___n_n_basic_math_ga08f8340aa6533271b3aa6d211614fe22}} 
+\index{Basic Math Functions for Neural Network Computation@{Basic Math Functions for Neural Network Computation}!arm\_nn\_mult\_q15@{arm\_nn\_mult\_q15}}
+\index{arm\_nn\_mult\_q15@{arm\_nn\_mult\_q15}!Basic Math Functions for Neural Network Computation@{Basic Math Functions for Neural Network Computation}}
+\doxysubsubsection{\texorpdfstring{arm\_nn\_mult\_q15()}{arm\_nn\_mult\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+nn\+\_\+mult\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+SrcA,  }\item[{q15\+\_\+t $\ast$}]{p\+SrcB,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Q7 vector multiplication with variable output shifts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & pointer to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & pointer to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & pointer to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q15 range \mbox{[}0x8000 0x7\+FFF\mbox{]} will be saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group___n_n_basic_math_gad46c9ab012cceda8ce6681c687a58c70}\label{group___n_n_basic_math_gad46c9ab012cceda8ce6681c687a58c70}} 
+\index{Basic Math Functions for Neural Network Computation@{Basic Math Functions for Neural Network Computation}!arm\_nn\_mult\_q7@{arm\_nn\_mult\_q7}}
+\index{arm\_nn\_mult\_q7@{arm\_nn\_mult\_q7}!Basic Math Functions for Neural Network Computation@{Basic Math Functions for Neural Network Computation}}
+\doxysubsubsection{\texorpdfstring{arm\_nn\_mult\_q7()}{arm\_nn\_mult\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+nn\+\_\+mult\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+SrcA,  }\item[{q7\+\_\+t $\ast$}]{p\+SrcB,  }\item[{q7\+\_\+t $\ast$}]{p\+Dst,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Q7 vector multiplication with variable output shifts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & pointer to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & pointer to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & pointer to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q7 range \mbox{[}0x80 0x7F\mbox{]} will be saturated. 
+\end{DoxyParagraph}

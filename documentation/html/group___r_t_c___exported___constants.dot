@@ -1,0 +1,25 @@
+digraph "RTC Exported Constants"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node8 [label="Output source to output\l on the Tamper pin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c__output__source__to__output__on__the___tamper__pin.html",tooltip=" "];
+  Node5 [label="Month Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___month___date___definitions.html",tooltip=" "];
+  Node4 [label="Input Parameter Format",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___input__parameter__format__definitions.html",tooltip=" "];
+  Node2 [label="RTC",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c.html",tooltip="RTC HAL module driver."];
+  Node3 [label="Automatic calculation\l of prediv for 1sec timebase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___automatic___prediv__1___second.html",tooltip=" "];
+  Node9 [label="Interrupts Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___interrupts___definitions.html",tooltip=" "];
+  Node7 [label="Alarms Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___alarms___definitions.html",tooltip=" "];
+  Node10 [label="Flags Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___flags___definitions.html",tooltip=" "];
+  Node6 [label="WeekDay Definitions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_t_c___week_day___definitions.html",tooltip=" "];
+  Node1 [label="RTC Exported Constants",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+}

@@ -1,0 +1,111 @@
+\hypertarget{stm32f1xx__hal__cec_8c}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Src/stm32f1xx\+\_\+hal\+\_\+cec.c File Reference}
+\label{stm32f1xx__hal__cec_8c}\index{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_hal\_cec.c@{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_hal\_cec.c}}
+
+
+CEC HAL module driver. This file provides firmware functions to manage the following functionalities of the High Definition Multimedia Interface Consumer Electronics Control Peripheral (CEC).  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+hal\+\_\+cec.\+c\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+CEC HAL module driver. This file provides firmware functions to manage the following functionalities of the High Definition Multimedia Interface Consumer Electronics Control Peripheral (CEC). 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\begin{DoxyItemize}
+\item Initialization and de-\/initialization function
+\item IO operation function
+\item Peripheral Control function
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyVerb}===============================================================================
+                       ##### How to use this driver #####
+===============================================================================
+   [..]
+   The CEC HAL driver can be used as follow:
+   
+   (#) Declare a CEC_HandleTypeDef handle structure.
+   (#) Initialize the CEC low level resources by implementing the HAL_CEC_MspInit ()API:
+       (##) Enable the CEC interface clock.
+       (##) CEC pins configuration:
+           (+++) Enable the clock for the CEC GPIOs.
+           (+++) Configure these CEC pins as alternate function pull-up.
+       (##) NVIC configuration if you need to use interrupt process (HAL_CEC_Transmit_IT()
+            and HAL_CEC_Receive_IT() APIs):
+           (+++) Configure the CEC interrupt priority.
+           (+++) Enable the NVIC CEC IRQ handle.
+           (+++) The specific CEC interrupts (Transmission complete interrupt, 
+                 RXNE interrupt and Error Interrupts) will be managed using the macros
+                 __HAL_CEC_ENABLE_IT() and __HAL_CEC_DISABLE_IT() inside the transmit 
+                 and receive process.
+
+   (#) Program the Bit Timing Error Mode and the Bit Period Error Mode in the hcec Init structure.
+
+   (#) Initialize the CEC registers by calling the HAL_CEC_Init() API.
+
+ [..]        
+   (@) This API (HAL_CEC_Init()) configures also the low level Hardware (GPIO, CLOCK, CORTEX...etc)
+       by calling the customed HAL_CEC_MspInit() API.
+ *** Callback registration ***
+ =============================================
+ The compilation define  USE_HAL_CEC_REGISTER_CALLBACKS when set to 1
+ allows the user to configure dynamically the driver callbacks.
+ Use Functions @ref HAL_CEC_RegisterCallback() or HAL_CEC_RegisterXXXCallback()
+ to register an interrupt callback.
+
+ Function @ref HAL_CEC_RegisterCallback() allows to register following callbacks:
+   (+) TxCpltCallback     : Tx Transfer completed callback.
+   (+) ErrorCallback      : callback for error detection.
+   (+) MspInitCallback    : CEC MspInit.
+   (+) MspDeInitCallback  : CEC MspDeInit.
+ This function takes as parameters the HAL peripheral handle, the Callback ID
+ and a pointer to the user callback function.
+
+ For specific callback HAL_CEC_RxCpltCallback use dedicated register callbacks 
+ @ref HAL_CEC_RegisterRxCpltCallback().
+
+ Use function @ref HAL_CEC_UnRegisterCallback() to reset a callback to the default
+ weak function.
+ @ref HAL_CEC_UnRegisterCallback() takes as parameters the HAL peripheral handle,
+ and the Callback ID.
+ This function allows to reset following callbacks:
+   (+) TxCpltCallback     : Tx Transfer completed callback.
+   (+) ErrorCallback      : callback for error detection.
+   (+) MspInitCallback    : CEC MspInit.
+   (+) MspDeInitCallback  : CEC MspDeInit.
+
+ For callback HAL_CEC_RxCpltCallback use dedicated unregister callback : 
+ @ref HAL_CEC_UnRegisterRxCpltCallback().
+
+ By default, after the @ref HAL_CEC_Init() and when the state is HAL_CEC_STATE_RESET
+ all callbacks are set to the corresponding weak functions :
+ examples @ref HAL_CEC_TxCpltCallback() , @ref HAL_CEC_RxCpltCallback().
+ Exception done for MspInit and MspDeInit functions that are
+ reset to the legacy weak function in the @ref HAL_CEC_Init()/ @ref HAL_CEC_DeInit() only when
+ these callbacks are null (not registered beforehand).
+ if not, MspInit or MspDeInit are not null, the @ref HAL_CEC_Init() / @ref HAL_CEC_DeInit()
+ keep and use the user MspInit/MspDeInit functions (registered beforehand)
+
+ Callbacks can be registered/unregistered in HAL_CEC_STATE_READY state only.
+ Exception done MspInit/MspDeInit callbacks that can be registered/unregistered
+ in HAL_CEC_STATE_READY or HAL_CEC_STATE_RESET state,
+ thus registered (user) MspInit/DeInit callbacks can be used during the Init/DeInit.
+ In that case first register the MspInit/MspDeInit user callbacks
+ using @ref HAL_CEC_RegisterCallback() before calling @ref HAL_CEC_DeInit()
+ or @ref HAL_CEC_Init() function.
+
+ When the compilation define USE_HAL_CEC_REGISTER_CALLBACKS is set to 0 or
+ not defined, the callback registration feature is not available and all callbacks
+ are set to the corresponding weak functions.\end{DoxyVerb}
+~\newline
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

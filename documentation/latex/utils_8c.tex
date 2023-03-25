@@ -6,8 +6,6 @@ Include dependency graph for utils.\+c\+:
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \mbox{\hyperlink{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}{float\+To\+Char}} (float x, char $\ast$p)
-\begin{DoxyCompactList}\small\item\em Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{utils_8c_acb6396fe7735e825be8143fbe1ac41fb}{copy\+String}} (char $\ast$dest, const char $\ast$cont)
 \begin{DoxyCompactList}\small\item\em Simple wrapper around the strncpy to copy according to the string size. \end{DoxyCompactList}\item 
 uint8\+\_\+t \mbox{\hyperlink{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}{uart\+Send\+Data}} (UART\+\_\+\+Handle\+Type\+Def $\ast$uart\+\_\+h, char $\ast$data)
@@ -21,26 +19,31 @@ MENU\+\_\+\+Return\+Type\+Def {\bfseries utils\+Display\+Clear} ()
 \item 
 MENU\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{utils_8c_ad9696b0c5f01a4e963318f04dc259687}{utils\+Menu\+Init}} ()
 \begin{DoxyCompactList}\small\item\em Initializes the user menus and clears the screen. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{utils_8c_a00848b5503bd6dea2abbd23d9da80b1e}\label{utils_8c_a00848b5503bd6dea2abbd23d9da80b1e}} 
-MENU\+\_\+\+Button\+Enum {\bfseries utils\+Menu\+Get\+Select} ()
-\item 
-\mbox{\Hypertarget{utils_8c_ab6f710d0518b19fcbeda41a21114e9a8}\label{utils_8c_ab6f710d0518b19fcbeda41a21114e9a8}} 
-MENU\+\_\+\+Button\+Enum {\bfseries utils\+Menu\+Get\+Cancel} ()
-\item 
 \mbox{\Hypertarget{utils_8c_a17c33a659c0673447d36b2e200273e60}\label{utils_8c_a17c33a659c0673447d36b2e200273e60}} 
 MENU\+\_\+\+Return\+Type\+Def {\bfseries utils\+Draw\+Screen} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+h)
+\item 
+\mbox{\Hypertarget{utils_8c_ac85672bd407abeb12b6b59c7a47305cb}\label{utils_8c_ac85672bd407abeb12b6b59c7a47305cb}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries utils\+Plot\+Write} (char $\ast$data)
+\item 
+\mbox{\Hypertarget{utils_8c_a433d29c8eccb188bc8b4bf7f8127cdb7}\label{utils_8c_a433d29c8eccb188bc8b4bf7f8127cdb7}} 
+PLOT\+\_\+\+Return\+Type\+Def {\bfseries utils\+Plot\+Read} (char $\ast$data)
+\item 
+PLOT\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{utils_8c_ac3d395b6e1b8602fce0d5e62a7edff79}{utils\+Plot\+Open}} (PLOT\+\_\+\+Handletype\+Def plot\+\_\+h)
+\item 
+\mbox{\Hypertarget{utils_8c_a9ded8551ce491f312e6f1e2dc9c02a31}\label{utils_8c_a9ded8551ce491f312e6f1e2dc9c02a31}} 
+MENU\+\_\+\+Return\+Type\+Def {\bfseries utils\+Man\+Move} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \begin{DoxyAuthor}{Author}
-Daniel Adamkovic 
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2023-\/01-\/15
+22-\/01-\/2023
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2023 
@@ -68,23 +71,6 @@ Simple wrapper around the strncpy to copy according to the string size.
 \begin{DoxyReturn}{Returns}
 uint8\+\_\+t RETURN\+\_\+\+OK 
 \end{DoxyReturn}
-\mbox{\Hypertarget{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}\label{utils_8c_a4081e420af6b5a346e3d4fdbd4ba6f1c}} 
-\index{utils.c@{utils.c}!floatToChar@{floatToChar}}
-\index{floatToChar@{floatToChar}!utils.c@{utils.c}}
-\doxysubsubsection{\texorpdfstring{floatToChar()}{floatToChar()}}
-{\footnotesize\ttfamily char$\ast$ float\+To\+Char (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{char $\ast$}]{p }\end{DoxyParamCaption})}
-
-
-
-Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & float to be converted \\
-\hline
-{\em p} & pointer to array where the converted float is to be strored \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{utils_8c_adcdb1d00a3d12841e481712df840320c}\label{utils_8c_adcdb1d00a3d12841e481712df840320c}} 
 \index{utils.c@{utils.c}!uartGetData@{uartGetData}}
 \index{uartGetData@{uartGetData}!utils.c@{utils.c}}
@@ -97,13 +83,13 @@ Fetches data as long as it keeps comming or runs our of space.
 
 
 \begin{DoxyParams}{Parameters}
-{\em uart\+\_\+h} & \\
+{\em uart\+\_\+h} & UART handle from HAL \\
 \hline
-{\em data} & \\
+{\em data} & Pointer to a buffer loaded with data \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-uint8\+\_\+t 
+uint8\+\_\+t RETURN\+\_\+\+OK $\vert$$\vert$ RETURN\+\_\+\+FAIL 
 \end{DoxyReturn}
 \mbox{\Hypertarget{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}\label{utils_8c_a3b74c670e0cd7855ceaae5a72d7ed0cc}} 
 \index{utils.c@{utils.c}!uartSendData@{uartSendData}}
@@ -156,3 +142,20 @@ Initializes the user menus and clears the screen.
 \begin{DoxyReturn}{Returns}
 Menu$\ast$ pointer to startup Menu with allocated memory 
 \end{DoxyReturn}
+\mbox{\Hypertarget{utils_8c_ac3d395b6e1b8602fce0d5e62a7edff79}\label{utils_8c_ac3d395b6e1b8602fce0d5e62a7edff79}} 
+\index{utils.c@{utils.c}!utilsPlotOpen@{utilsPlotOpen}}
+\index{utilsPlotOpen@{utilsPlotOpen}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{utilsPlotOpen()}{utilsPlotOpen()}}
+{\footnotesize\ttfamily PLOT\+\_\+\+Return\+Type\+Def utils\+Plot\+Open (\begin{DoxyParamCaption}\item[{PLOT\+\_\+\+Handletype\+Def}]{plot\+\_\+h }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em plot\+\_\+h} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+PLOT\+\_\+\+Return\+Type\+Def
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This needs somehow handle the errors 
+\end{DoxyNote}

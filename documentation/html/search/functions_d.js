@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['uartgetdata_111',['uartGetData',['../utils_8c.html#adcdb1d00a3d12841e481712df840320c',1,'utils.c']]],
-  ['uartsenddata_112',['uartSendData',['../utils_8c.html#a3b74c670e0cd7855ceaae5a72d7ed0cc',1,'utils.c']]],
-  ['usagefault_5fhandler_113',['UsageFault_Handler',['../stm32f1xx__it_8c.html#a1d98923de2ed6b7309b66f9ba2971647',1,'stm32f1xx_it.c']]],
-  ['userjoygetvals_114',['userJoyGetVals',['../utils_8c.html#ad054e5f9251357ded049ff44e7c4ff20',1,'utils.c']]],
-  ['utilsmenuinit_115',['utilsMenuInit',['../utils_8c.html#ad9696b0c5f01a4e963318f04dc259687',1,'utils.c']]]
+  ['pendsv_5fhandler_15276',['PendSV_Handler',['../stm32f1xx__it_8c.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;stm32f1xx_it.c'],['../stm32f1xx__it_8h.html#a6303e1f258cbdc1f970ce579cc015623',1,'PendSV_Handler(void):&#160;stm32f1xx_it.c']]],
+  ['plotterfastmove_15277',['plotterFastMove',['../plotter_8c.html#a6682f5bfb9ca345d8279d4542541e439',1,'plotterFastMove(PLOT_HandletypeDef plot_id, float x, float y):&#160;plotter.c'],['../plotter_8h.html#a6682f5bfb9ca345d8279d4542541e439',1,'plotterFastMove(PLOT_HandletypeDef plot_id, float x, float y):&#160;plotter.c']]],
+  ['plotterinit_15278',['plotterInit',['../plotter_8c.html#acb479d0f2a48e936796da62013227d82',1,'plotterInit(PLOT_IOFuncTypeDef *w_func, PLOT_IOFuncTypeDef *r_func, PLOT_WaitTypeDef wait_m, float max_f):&#160;plotter.c'],['../plotter_8h.html#a7b73d7d1ad122624bcd4a49999462772',1,'plotterInit(PLOT_IOFuncTypeDef *, PLOT_IOFuncTypeDef *, PLOT_WaitTypeDef, float):&#160;plotter.c']]],
+  ['plotterlinmove_15279',['plotterLinMove',['../plotter_8c.html#a7083e51bd8b7d2883314ef5d20a746f1',1,'plotterLinMove(PLOT_HandletypeDef plot_id, float x, float y, float feed):&#160;plotter.c'],['../plotter_8h.html#a7083e51bd8b7d2883314ef5d20a746f1',1,'plotterLinMove(PLOT_HandletypeDef plot_id, float x, float y, float feed):&#160;plotter.c']]],
+  ['plotteropen_15280',['plotterOpen',['../plotter_8h.html#ab00dab68c19b714fdaab1bdeb7616551',1,'plotterOpen(PLOT_HandletypeDef, PLOT_UserOpenFuncTypeDef *):&#160;plotter.c'],['../plotter_8c.html#a7488a59af5e5def7d46cfc59078fae50',1,'plotterOpen(PLOT_HandletypeDef plot_id, PLOT_UserOpenFuncTypeDef *func):&#160;plotter.c']]],
+  ['plotterread_15281',['plotterRead',['../plotter_8c.html#ae12c2ba21407cc57854440f1c3a46801',1,'plotterRead(PLOT_HandletypeDef plot_id, char *data):&#160;plotter.c'],['../plotter_8h.html#aacff1cee0340f48f065f12cc6238f068',1,'plotterRead(PLOT_HandletypeDef, char *):&#160;plotter.c']]],
+  ['plottersetabsmode_15282',['plotterSetAbsMode',['../plotter_8c.html#a73bf1dc9a0beab0a76e620ea16d1bde1',1,'plotterSetAbsMode(PLOT_HandletypeDef plot_id):&#160;plotter.c'],['../plotter_8h.html#a73bf1dc9a0beab0a76e620ea16d1bde1',1,'plotterSetAbsMode(PLOT_HandletypeDef plot_id):&#160;plotter.c']]],
+  ['plottertogglez_15283',['plotterToggleZ',['../plotter_8c.html#af92746bd4296bc63f1b7eae2e8639a33',1,'plotterToggleZ(PLOT_HandletypeDef plot_id):&#160;plotter.c'],['../plotter_8h.html#af92746bd4296bc63f1b7eae2e8639a33',1,'plotterToggleZ(PLOT_HandletypeDef plot_id):&#160;plotter.c']]],
+  ['plotterwrite_15284',['plotterWrite',['../plotter_8c.html#a4484df5c257fa8c7044dd4aa6a23f0ba',1,'plotterWrite(PLOT_HandletypeDef plot_id, PLOT_CommandTypeDef cmnd, void *inp):&#160;plotter.c'],['../plotter_8h.html#a1d2497c0e6dfe086f3e1fc3e822d5a75',1,'plotterWrite(PLOT_HandletypeDef, PLOT_CommandTypeDef, void *):&#160;plotter.c']]]
 ];

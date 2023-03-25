@@ -1,0 +1,114 @@
+\hypertarget{group___acti}{}\doxysection{Neural Network Activation Functions}
+\label{group___acti}\index{Neural Network Activation Functions@{Neural Network Activation Functions}}
+Collaboration diagram for Neural Network Activation Functions\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___acti_ga8932b57c8d0ee757511af2d40dcc11e7}{arm\+\_\+nn\+\_\+activations\+\_\+direct\+\_\+q15}} (q15\+\_\+t $\ast$data, uint16\+\_\+t size, uint16\+\_\+t int\+\_\+width, arm\+\_\+nn\+\_\+activation\+\_\+type type)
+\begin{DoxyCompactList}\small\item\em Q15 neural network activation function using direct table look-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___acti_ga79f11131ae6767d60e03b1f6506b1af8}{arm\+\_\+nn\+\_\+activations\+\_\+direct\+\_\+q7}} (q7\+\_\+t $\ast$data, uint16\+\_\+t size, uint16\+\_\+t int\+\_\+width, arm\+\_\+nn\+\_\+activation\+\_\+type type)
+\begin{DoxyCompactList}\small\item\em Q7 neural network activation function using direct table look-\/up. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___acti_ga53bcc00e54b802919bb3c89c143ee5ba}{arm\+\_\+relu\+\_\+q15}} (q15\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Q15 RELU function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___acti_ga638e803b4fe00426f401783a6255ca30}{arm\+\_\+relu\+\_\+q7}} (q7\+\_\+t $\ast$data, uint16\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Q7 RELU function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform activation layers, including Re\+LU (Rectified Linear Unit), sigmoid and tanh 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___acti_ga8932b57c8d0ee757511af2d40dcc11e7}\label{group___acti_ga8932b57c8d0ee757511af2d40dcc11e7}} 
+\index{Neural Network Activation Functions@{Neural Network Activation Functions}!arm\_nn\_activations\_direct\_q15@{arm\_nn\_activations\_direct\_q15}}
+\index{arm\_nn\_activations\_direct\_q15@{arm\_nn\_activations\_direct\_q15}!Neural Network Activation Functions@{Neural Network Activation Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_nn\_activations\_direct\_q15()}{arm\_nn\_activations\_direct\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+nn\+\_\+activations\+\_\+direct\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{size,  }\item[{uint16\+\_\+t}]{int\+\_\+width,  }\item[{arm\+\_\+nn\+\_\+activation\+\_\+type}]{type }\end{DoxyParamCaption})}
+
+
+
+Q15 neural network activation function using direct table look-\/up. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & pointer to input \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & number of elements \\
+\hline
+\mbox{\texttt{ in}}  & {\em int\+\_\+width} & bit-\/width of the integer part, assume to be smaller than 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & type of activation functions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+This is the direct table look-\/up approach.
+
+Assume here the integer part of the fixed-\/point is $<$= 3. More than 3 just not making much sense, makes no difference with saturation followed by any of these activation functions. \mbox{\Hypertarget{group___acti_ga79f11131ae6767d60e03b1f6506b1af8}\label{group___acti_ga79f11131ae6767d60e03b1f6506b1af8}} 
+\index{Neural Network Activation Functions@{Neural Network Activation Functions}!arm\_nn\_activations\_direct\_q7@{arm\_nn\_activations\_direct\_q7}}
+\index{arm\_nn\_activations\_direct\_q7@{arm\_nn\_activations\_direct\_q7}!Neural Network Activation Functions@{Neural Network Activation Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_nn\_activations\_direct\_q7()}{arm\_nn\_activations\_direct\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+nn\+\_\+activations\+\_\+direct\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{size,  }\item[{uint16\+\_\+t}]{int\+\_\+width,  }\item[{arm\+\_\+nn\+\_\+activation\+\_\+type}]{type }\end{DoxyParamCaption})}
+
+
+
+Q7 neural network activation function using direct table look-\/up. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & pointer to input \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & number of elements \\
+\hline
+\mbox{\texttt{ in}}  & {\em int\+\_\+width} & bit-\/width of the integer part, assume to be smaller than 3 \\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & type of activation functions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+This is the direct table look-\/up approach.
+
+Assume here the integer part of the fixed-\/point is $<$= 3. More than 3 just not making much sense, makes no difference with saturation followed by any of these activation functions. \mbox{\Hypertarget{group___acti_ga53bcc00e54b802919bb3c89c143ee5ba}\label{group___acti_ga53bcc00e54b802919bb3c89c143ee5ba}} 
+\index{Neural Network Activation Functions@{Neural Network Activation Functions}!arm\_relu\_q15@{arm\_relu\_q15}}
+\index{arm\_relu\_q15@{arm\_relu\_q15}!Neural Network Activation Functions@{Neural Network Activation Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_relu\_q15()}{arm\_relu\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+relu\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Q15 RELU function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & pointer to input \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+Optimized relu with QSUB instructions. \mbox{\Hypertarget{group___acti_ga638e803b4fe00426f401783a6255ca30}\label{group___acti_ga638e803b4fe00426f401783a6255ca30}} 
+\index{Neural Network Activation Functions@{Neural Network Activation Functions}!arm\_relu\_q7@{arm\_relu\_q7}}
+\index{arm\_relu\_q7@{arm\_relu\_q7}!Neural Network Activation Functions@{Neural Network Activation Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_relu\_q7()}{arm\_relu\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+relu\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{data,  }\item[{uint16\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Q7 RELU function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em data} & pointer to input \\
+\hline
+\mbox{\texttt{ in}}  & {\em size} & number of elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+Optimized relu with QSUB instructions. 

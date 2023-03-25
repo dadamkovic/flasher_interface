@@ -1,0 +1,36 @@
+\hypertarget{group___linear_interp_example}{}\doxysection{Linear Interpolate Example}
+\label{group___linear_interp_example}\index{Linear Interpolate Example@{Linear Interpolate Example}}
+Collaboration diagram for Linear Interpolate Example\+:
+% FIG 0
+{\bfseries{ CMSIS DSP Software Library -- Linear Interpolate Example }}
+
+{\bfseries{ Description }} This example demonstrates usage of linear interpolate modules and fast math modules. Method 1 uses fast math sine function to calculate sine values using cubic interpolation and method 2 uses linear interpolation function and results are compared to reference output. Example shows linear interpolation function can be used to get higher precision compared to fast math sin calculation.
+
+\begin{DoxyParagraph}{Block Diagram\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+ 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Variables Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\begin{DoxyItemize}
+\item {\ttfamily test\+Input\+Sin\+\_\+f32} points to the input values for sine calculation \item {\ttfamily test\+Ref\+Sin\+Output32\+\_\+f32} points to the reference values caculated from sin() matlab function \item {\ttfamily test\+Output} points to output buffer calculation from cubic interpolation \item {\ttfamily test\+Lin\+Int\+Output} points to output buffer calculation from linear interpolation \item {\ttfamily snr1} Signal to noise ratio for reference and cubic interpolation output \item {\ttfamily snr2} Signal to noise ratio for reference and linear interpolation output\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{CMSIS DSP Software Library Functions Used\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__sin_gae164899c4a3fc0e946dc5d55555fe541}{arm\+\_\+sin\+\_\+f32()}}
+\item \mbox{\hyperlink{group___linear_interpolate_ga790bbc697724ee432f840cfebbbae1f4}{arm\+\_\+linear\+\_\+interp\+\_\+f32()}}
+\end{DoxyItemize}
+\end{DoxyParagraph}
+{\bfseries{ Refer }} \mbox{\hyperlink{arm_linear_interp_example_f32_8c-example}{arm\+\_\+linear\+\_\+interp\+\_\+example\+\_\+f32.\+c}} 

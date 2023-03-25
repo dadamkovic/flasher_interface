@@ -27,8 +27,8 @@
 
 typedef enum
 {
-  SM_TRUE = 0,
-  SM_FALSE = 1
+  SM_TRUE = 1,
+  SM_FALSE = 0
 } SM_BoolTypeDef;
 
 typedef enum

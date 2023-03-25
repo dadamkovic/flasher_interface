@@ -1,0 +1,232 @@
+\hypertarget{stm32f1xx__hal__irda_8h}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f1xx\+\_\+hal\+\_\+irda.h File Reference}
+\label{stm32f1xx__hal__irda_8h}\index{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_irda.h@{STM32F1xx\_HAL\_Driver/Inc/stm32f1xx\_hal\_irda.h}}
+
+
+Header file of IRDA HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+hal\+\_\+irda.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_r_d_a___init_type_def}{IRDA\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IRDA Init Structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IRDA handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_ga5e2f0a4853b89feb89395d6447c7278c}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+NONE}}~0x00000000U
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_ga6d09c3b0aa03defa115a9b35b4b11d15}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+PE}}~0x00000001U
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_ga96fa3b5489256dc0a05d6d7008b7bc36}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+NE}}~0x00000002U
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_gac4cc028071c9f67eadfb1ea272f61b07}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+FE}}~0x00000004U
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_ga452db15804671ee712e2943fb7eebbc8}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+ORE}}~0x00000008U
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___error___code_ga3283f5c73025352c4933d3c42f9ef77d}{HAL\+\_\+\+IRDA\+\_\+\+ERROR\+\_\+\+DMA}}~0x00000010U
+\item 
+\#define {\bfseries IRDA\+\_\+\+WORDLENGTH\+\_\+8B}~0x00000000U
+\item 
+\#define {\bfseries IRDA\+\_\+\+WORDLENGTH\+\_\+9B}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga95f0288b9c6aaeca7cb6550a2e6833e2}{USART\+\_\+\+CR1\+\_\+M}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+PARITY\+\_\+\+NONE}~0x00000000U
+\item 
+\#define {\bfseries IRDA\+\_\+\+PARITY\+\_\+\+EVEN}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+PARITY\+\_\+\+ODD}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga60f8fcf084f9a8514efafb617c70b074}{USART\+\_\+\+CR1\+\_\+\+PCE}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2e159d36ab2c93a2c1942df60e9eebbe}{USART\+\_\+\+CR1\+\_\+\+PS}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+MODE\+\_\+\+RX}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+MODE\+\_\+\+TX}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+MODE\+\_\+\+TX\+\_\+\+RX}~((uint32\+\_\+t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gade7f090b04fd78b755b43357ecaa9622}{USART\+\_\+\+CR1\+\_\+\+TE}} $\vert$\mbox{\hyperlink{group___peripheral___registers___bits___definition_gada0d5d407a22264de847bc1b40a17aeb}{USART\+\_\+\+CR1\+\_\+\+RE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+POWERMODE\+\_\+\+LOWPOWER}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga22af8d399f1adda62e31186f0309af80}{USART\+\_\+\+CR3\+\_\+\+IRLP}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+POWERMODE\+\_\+\+NORMAL}~0x00000000U
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+TXE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga65e9cddf0890113d405342f1d8b5b980}{USART\+\_\+\+SR\+\_\+\+TXE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+TC}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga76229b05ac37a5a688e6ba45851a29f1}{USART\+\_\+\+SR\+\_\+\+TC}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+RXNE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa0c99e2bb265b3d58a91aca7a93f7836}{USART\+\_\+\+SR\+\_\+\+RXNE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+IDLE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga336fa8c9965ce18c10972ac80ded611f}{USART\+\_\+\+SR\+\_\+\+IDLE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+ORE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4560fc7a60df4bdf402fc7219ae7b558}{USART\+\_\+\+SR\+\_\+\+ORE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+NE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8938468c5666a8305ade6d80d467c572}{USART\+\_\+\+SR\+\_\+\+NE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+FE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9eb6fd3f820bd12e0b5a981de1894804}{USART\+\_\+\+SR\+\_\+\+FE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+FLAG\+\_\+\+PE}~((uint32\+\_\+t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_gac88be3484245af8c1b271ae5c1b97a14}{USART\+\_\+\+SR\+\_\+\+PE}})
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+PE}~((uint32\+\_\+t)(IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga27405d413b6d355ccdb076d52fef6875}{USART\+\_\+\+CR1\+\_\+\+PEIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+TXE}~((uint32\+\_\+t)(IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga70422871d15f974b464365e7fe1877e9}{USART\+\_\+\+CR1\+\_\+\+TXEIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+TC}~((uint32\+\_\+t)(IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa17130690a1ca95b972429eb64d4254e}{USART\+\_\+\+CR1\+\_\+\+TCIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+RXNE}~((uint32\+\_\+t)(IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga91118f867adfdb2e805beea86666de04}{USART\+\_\+\+CR1\+\_\+\+RXNEIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+IDLE}~((uint32\+\_\+t)(IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5221d09eebd12445a20f221bf98066f8}{USART\+\_\+\+CR1\+\_\+\+IDLEIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+LBD}~((uint32\+\_\+t)(IRDA\+\_\+\+CR2\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa02ef5d22553f028ea48e5d9f08192b4}{USART\+\_\+\+CR2\+\_\+\+LBDIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+CTS}~((uint32\+\_\+t)(IRDA\+\_\+\+CR3\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga636d5ec2e9556949fc68d13ad45a1e90}{USART\+\_\+\+CR3\+\_\+\+CTSIE}}))
+\item 
+\#define {\bfseries IRDA\+\_\+\+IT\+\_\+\+ERR}~((uint32\+\_\+t)(IRDA\+\_\+\+CR3\+\_\+\+REG\+\_\+\+INDEX $<$$<$ 28U $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaed1a39c551b1641128f81893ff558d0}{USART\+\_\+\+CR3\+\_\+\+EIE}}))
+\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga3cdb66f911dce4c8544139adbb314faa}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+RESET\+\_\+\+HANDLE\+\_\+\+STATE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Reset IRDA handle gstate \& Rx\+State. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga0c097de13209ede853a30d511cf5a00e}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+FLUSH\+\_\+\+DRREGISTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$DR)
+\begin{DoxyCompactList}\small\item\em Flush the IRDA DR register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga032a53fbbc65bfd0fff2b4a26c52e790}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)) == (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Check whether the specified IRDA flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga4ebf474ecfd858f9320bef9bc67c0bce}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+FLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SR = $\sim$(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))
+\begin{DoxyCompactList}\small\item\em Clear the specified IRDA pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_gae69bd04d655a956dba913c52638de303}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+PEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the IRDA PE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_gaac85c179f4f6761f34acd00a4f8fdccb}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+FEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___i_r_d_a___exported___macros_gae69bd04d655a956dba913c52638de303}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+PEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the IRDA FE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_gab93a0324a6fd84860dda19165e0dc9fd}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+NEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___i_r_d_a___exported___macros_gae69bd04d655a956dba913c52638de303}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+PEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the IRDA NE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga43c79a3caa8de46f51b8f0b597e89377}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+OREFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___i_r_d_a___exported___macros_gae69bd04d655a956dba913c52638de303}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+PEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the IRDA ORE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga8fe7de0106f994c56fdff184215dbcbf}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+IDLEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~\mbox{\hyperlink{group___i_r_d_a___exported___macros_gae69bd04d655a956dba913c52638de303}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+CLEAR\+\_\+\+PEFLAG}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Clear the IRDA IDLE pending flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_gae9ccdc86c1bcb8ed3857474d8c3823fa}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+ENABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable the specified IRDA interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga8c3dd373ded6fa0790e65f54ac1f548d}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+DISABLE\+\_\+\+IT}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Disable the specified IRDA interrupt. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga1c50dd0407d6e4159f90c9bc74545925}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+GET\+\_\+\+IT\+\_\+\+SOURCE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+\_\+\+IT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check whether the specified IRDA interrupt has occurred or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_ga94d14e3105494108f4ba6f69aa1728a7}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(SET\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}}))
+\begin{DoxyCompactList}\small\item\em Enable UART/\+USART associated to IRDA Handle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___exported___macros_gaf049a81f535415532182a2bb10cbee1d}{\+\_\+\+\_\+\+HAL\+\_\+\+IRDA\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~(CLEAR\+\_\+\+BIT((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CR1, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2bb650676aaae4a5203f372d497d5947}{USART\+\_\+\+CR1\+\_\+\+UE}}))
+\begin{DoxyCompactList}\small\item\em Disable UART/\+USART associated to IRDA Handle. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___i_r_d_a___private___constants_ga38eeb904e4117f70c18bf3767c7ba4a6}{IRDA\+\_\+\+IT\+\_\+\+MASK}}
+\begin{DoxyCompactList}\small\item\em IRDA interruptions flag mask. \end{DoxyCompactList}\item 
+\#define {\bfseries IRDA\+\_\+\+CR1\+\_\+\+REG\+\_\+\+INDEX}~1U
+\item 
+\#define {\bfseries IRDA\+\_\+\+CR2\+\_\+\+REG\+\_\+\+INDEX}~2U
+\item 
+\#define {\bfseries IRDA\+\_\+\+CR3\+\_\+\+REG\+\_\+\+INDEX}~3U
+\item 
+\#define {\bfseries IS\+\_\+\+IRDA\+\_\+\+WORD\+\_\+\+LENGTH}(LENGTH)
+\item 
+\#define {\bfseries IS\+\_\+\+IRDA\+\_\+\+PARITY}(PARITY)
+\item 
+\#define {\bfseries IS\+\_\+\+IRDA\+\_\+\+MODE}(MODE)~((((MODE) \& 0x0000\+FFF3U) == 0x00U) \&\& ((MODE) != 0x00000000U))
+\item 
+\#define {\bfseries IS\+\_\+\+IRDA\+\_\+\+POWERMODE}(MODE)
+\item 
+\#define {\bfseries IS\+\_\+\+IRDA\+\_\+\+BAUDRATE}(BAUDRATE)~((BAUDRATE) $<$ 115201U)
+\item 
+\#define {\bfseries IRDA\+\_\+\+DIV}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(((\+\_\+\+PCLK\+\_\+)$\ast$25U)/(4U$\ast$(\+\_\+\+BAUD\+\_\+)))
+\item 
+\#define {\bfseries IRDA\+\_\+\+DIVMANT}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~(IRDA\+\_\+\+DIV((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+))/100U)
+\item 
+\#define {\bfseries IRDA\+\_\+\+DIVFRAQ}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)~((((IRDA\+\_\+\+DIV((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) -\/ (IRDA\+\_\+\+DIVMANT((\+\_\+\+PCLK\+\_\+), (\+\_\+\+BAUD\+\_\+)) $\ast$ 100U)) $\ast$ 16U) + 50U) / 100U)
+\item 
+\#define {\bfseries IRDA\+\_\+\+BRR}(\+\_\+\+PCLK\+\_\+,  \+\_\+\+BAUD\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___i_r_d_a___exported___types_gab3e65b75c9d4ae39bc50a31222509e1e}{HAL\+\_\+\+IRDA\+\_\+\+State\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1eaa004e82e1ca1d36b3dc84cf9441954dd}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+RESET}} = 0x00U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1ea9bf218291b1a5ffe624b5a8f891f6244}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+READY}} = 0x20U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1ea637e8c6b87e1a3a02616c02a68d781f1}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY}} = 0x24U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1ea3d8ec588510a501071df3e3d332f9536}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX}} = 0x21U
+, \newline
+\mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1ea1df28c166fea4a3a0cab0f1b9fc4dfbc}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+RX}} = 0x22U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1eaad510b2da75a1fa39f5ed1d33472a634}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+BUSY\+\_\+\+TX\+\_\+\+RX}} = 0x23U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1ea91524b40055b5b8d642867e4034cfa2f}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+TIMEOUT}} = 0x\+A0U
+, \mbox{\hyperlink{group___i_r_d_a___exported___types_ggab3e65b75c9d4ae39bc50a31222509e1eae2e4e8686446bed256ead393fdb34d67}{HAL\+\_\+\+IRDA\+\_\+\+STATE\+\_\+\+ERROR}} = 0x\+E0U
+ \}
+\begin{DoxyCompactList}\small\item\em HAL IRDA State structures definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Init} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+De\+Init} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Msp\+Init} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Msp\+De\+Init} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Transmit} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Receive} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size, uint32\+\_\+t Timeout)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Transmit\+\_\+\+IT} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Receive\+\_\+\+IT} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Transmit\+\_\+\+DMA} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Receive\+\_\+\+DMA} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda, uint8\+\_\+t $\ast$p\+Data, uint16\+\_\+t Size)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+DMAPause} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+DMAResume} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+DMAStop} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Transmit} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Receive} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+\_\+\+IT} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Transmit\+\_\+\+IT} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{stm32f1xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Receive\+\_\+\+IT} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+IRQHandler} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Tx\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Rx\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Tx\+Half\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Rx\+Half\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Error\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Transmit\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+void {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Abort\+Receive\+Cplt\+Callback} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+\mbox{\hyperlink{group___i_r_d_a___exported___types_gab3e65b75c9d4ae39bc50a31222509e1e}{HAL\+\_\+\+IRDA\+\_\+\+State\+Type\+Def}} {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Get\+State} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\item 
+uint32\+\_\+t {\bfseries HAL\+\_\+\+IRDA\+\_\+\+Get\+Error} (\mbox{\hyperlink{struct_i_r_d_a___handle_type_def}{IRDA\+\_\+\+Handle\+Type\+Def}} $\ast$hirda)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of IRDA HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

@@ -1,0 +1,46 @@
+\hypertarget{group___c_n_n_example}{}\doxysection{Convolutional Neural Network Example}
+\label{group___c_n_n_example}\index{Convolutional Neural Network Example@{Convolutional Neural Network Example}}
+Collaboration diagram for Convolutional Neural Network Example\+:
+% FIG 0
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Demonstrates a convolutional neural network (CNN) example with the use of convolution, Re\+LU activation, pooling and fully-\/connected functions.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Model definition\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The CNN used in this example is based on CIFAR-\/10 example from Caffe \mbox{[}1\mbox{]}. The neural network consists of 3 convolution layers interspersed by Re\+LU activation and max pooling layers, followed by a fully-\/connected layer at the end. The input to the network is a 32x32 pixel color image, which will be classified into one of the 10 output classes. This example model implementation needs 32.\+3 KB to store weights, 40 KB for activations and 3.\+1 KB for storing the {\ttfamily im2col} data.
+\end{DoxyParagraph}
+
+
+\begin{DoxyParagraph}{Variables Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\begin{DoxyItemize}
+\item {\ttfamily conv1\+\_\+wt}, {\ttfamily conv2\+\_\+wt}, {\ttfamily conv3\+\_\+wt} are convolution layer weight matrices \item {\ttfamily conv1\+\_\+bias}, {\ttfamily conv2\+\_\+bias}, {\ttfamily conv3\+\_\+bias} are convolution layer bias arrays \item {\ttfamily ip1\+\_\+wt}, ip1\+\_\+bias point to fully-\/connected layer weights and biases \item {\ttfamily input\+\_\+data} points to the input image data \item {\ttfamily output\+\_\+data} points to the classification output \item {\ttfamily col\+\_\+buffer} is a buffer to store the {\ttfamily im2col} output \item {\ttfamily scratch\+\_\+buffer} is used to store the activation data (intermediate layer outputs)\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{CMSIS DSP Software Library Functions Used\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group___n_n_conv_ga98f2ead67d7cbdf558b0cd8a3b8fc148}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+\+RGB()}}
+\item \mbox{\hyperlink{group___n_n_conv_gae00d3c1285907d59657369fc98bcc83f}{arm\+\_\+convolve\+\_\+\+HWC\+\_\+q7\+\_\+fast()}}
+\item \mbox{\hyperlink{group___acti_ga638e803b4fe00426f401783a6255ca30}{arm\+\_\+relu\+\_\+q7()}}
+\item \mbox{\hyperlink{group___pooling_ga99afcdcc61eaf429ab3ee823702e44ce}{arm\+\_\+maxpool\+\_\+q7\+\_\+\+HWC()}}
+\item \mbox{\hyperlink{group___pooling_gae4a7b07f97ec4313524c9fb9fbcb1f6a}{arm\+\_\+avepool\+\_\+q7\+\_\+\+HWC()}}
+\item \mbox{\hyperlink{group___f_c_gaf82b71ef472a38f8fc9ac414d9d07e67}{arm\+\_\+fully\+\_\+connected\+\_\+q7\+\_\+opt()}}
+\item \mbox{\hyperlink{group___f_c_ga8b7e0c2e989e8c75f0dc789f3115323d}{arm\+\_\+fully\+\_\+connected\+\_\+q7()}}
+\end{DoxyItemize}
+\end{DoxyParagraph}
+{\bfseries{ Refer }} \mbox{\hyperlink{}{arm\+\_\+nnexamples\+\_\+cifar10.\+cpp}}
+
+\begin{DoxyParagraph}{\mbox{[}1\mbox{]} https\+://github.com/\+BVLC/caffe}
+
+\end{DoxyParagraph}

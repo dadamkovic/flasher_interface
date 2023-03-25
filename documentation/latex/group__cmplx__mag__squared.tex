@@ -1,0 +1,105 @@
+\hypertarget{group__cmplx__mag__squared}{}\doxysection{Complex Magnitude Squared}
+\label{group__cmplx__mag__squared}\index{Complex Magnitude Squared@{Complex Magnitude Squared}}
+Collaboration diagram for Complex Magnitude Squared\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__cmplx__mag__squared_gaa7faccc0d96b061d8b7d0d7d82045074}{arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Floating-\/point complex magnitude squared. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__cmplx__mag__squared_ga45537f576102d960d467eb722b8431f2}{arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q15 complex magnitude squared. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__cmplx__mag__squared_ga384b0538101e8c03fa4fa14271e63b04}{arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t num\+Samples)
+\begin{DoxyCompactList}\small\item\em Q31 complex magnitude squared. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the magnitude squared of the elements of a complex data vector.
+
+The {\ttfamily p\+Src} points to the source data and {\ttfamily p\+Dst} points to the where the result should be written. {\ttfamily num\+Samples} specifies the number of complex samples in the input array and the data is stored in an interleaved fashion (real, imag, real, imag, ...). The input array has a total of {\ttfamily 2$\ast$num\+Samples} values; the output array has a total of {\ttfamily num\+Samples} values.
+
+The underlying algorithm is used\+:
+
+
+\begin{DoxyPre}
+for(n=0; n<numSamples; n++) \{
+    pDst[n] = pSrc[(2*n)+0]^2 + pSrc[(2*n)+1]^2;
+\}
+\end{DoxyPre}
+
+
+There are separate functions for floating-\/point, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__cmplx__mag__squared_gaa7faccc0d96b061d8b7d0d7d82045074}\label{group__cmplx__mag__squared_gaa7faccc0d96b061d8b7d0d7d82045074}} 
+\index{Complex Magnitude Squared@{Complex Magnitude Squared}!arm\_cmplx\_mag\_squared\_f32@{arm\_cmplx\_mag\_squared\_f32}}
+\index{arm\_cmplx\_mag\_squared\_f32@{arm\_cmplx\_mag\_squared\_f32}!Complex Magnitude Squared@{Complex Magnitude Squared}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_squared\_f32()}{arm\_cmplx\_mag\_squared\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point complex magnitude squared. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the complex input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the real output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__cmplx__mag__squared_ga45537f576102d960d467eb722b8431f2}\label{group__cmplx__mag__squared_ga45537f576102d960d467eb722b8431f2}} 
+\index{Complex Magnitude Squared@{Complex Magnitude Squared}!arm\_cmplx\_mag\_squared\_q15@{arm\_cmplx\_mag\_squared\_q15}}
+\index{arm\_cmplx\_mag\_squared\_q15@{arm\_cmplx\_mag\_squared\_q15}!Complex Magnitude Squared@{Complex Magnitude Squared}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_squared\_q15()}{arm\_cmplx\_mag\_squared\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q15 complex magnitude squared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Src} & points to the complex input vector \\
+\hline
+{\em $\ast$p\+Dst} & points to the real output vector \\
+\hline
+{\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function implements 1.\+15 by 1.\+15 multiplications and finally output is converted into 3.\+13 format. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__cmplx__mag__squared_ga384b0538101e8c03fa4fa14271e63b04}\label{group__cmplx__mag__squared_ga384b0538101e8c03fa4fa14271e63b04}} 
+\index{Complex Magnitude Squared@{Complex Magnitude Squared}!arm\_cmplx\_mag\_squared\_q31@{arm\_cmplx\_mag\_squared\_q31}}
+\index{arm\_cmplx\_mag\_squared\_q31@{arm\_cmplx\_mag\_squared\_q31}!Complex Magnitude Squared@{Complex Magnitude Squared}}
+\doxysubsubsection{\texorpdfstring{arm\_cmplx\_mag\_squared\_q31()}{arm\_cmplx\_mag\_squared\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+cmplx\+\_\+mag\+\_\+squared\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{num\+Samples }\end{DoxyParamCaption})}
+
+
+
+Q31 complex magnitude squared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$p\+Src} & points to the complex input vector \\
+\hline
+{\em $\ast$p\+Dst} & points to the real output vector \\
+\hline
+{\em num\+Samples} & number of complex samples in the input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function implements 1.\+31 by 1.\+31 multiplications and finally output is converted into 3.\+29 format. Input down scaling is not required. 
+\end{DoxyParagraph}

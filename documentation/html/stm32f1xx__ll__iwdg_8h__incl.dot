@@ -1,0 +1,9 @@
+digraph "STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_iwdg.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="STM32F1xx_HAL_Driver\l/Inc/stm32f1xx_ll_iwdg.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file of IWDG LL module."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="stm32f1xx.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stm32f1xx_8h.html",tooltip="CMSIS STM32F1xx Device Peripheral Access Layer Header File."];
+}

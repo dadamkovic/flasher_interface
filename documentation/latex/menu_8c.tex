@@ -1,48 +1,41 @@
-\hypertarget{menu_8c}{}\doxysection{Core/\+Src/menu.c File Reference}
-\label{menu_8c}\index{Core/Src/menu.c@{Core/Src/menu.c}}
+\hypertarget{menu_8c}{}\doxysection{Core/\+Lib/menu/menu.c File Reference}
+\label{menu_8c}\index{Core/Lib/menu/menu.c@{Core/Lib/menu/menu.c}}
 {\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
 Include dependency graph for menu.\+c\+:
 % FIG 0
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{menu_8c_a4f040381456723680d5db4a68109e46a}\label{menu_8c_a4f040381456723680d5db4a68109e46a}} 
-MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Init} (MENU\+\_\+\+Init\+Func\+Type\+Def $\ast$func, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$sel\+\_\+f, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$can\+\_\+f, MENU\+\_\+\+Position\+Type\+Func $\ast$pos\+\_\+f, MENU\+\_\+\+Draw\+Screen\+Type\+Func $\ast$draw\+\_\+f)
-\item 
-\mbox{\Hypertarget{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}\label{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}} 
-MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Create} (char $\ast$title, char $\ast$cont)
-\item 
-\mbox{\Hypertarget{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}\label{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}} 
-MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Link\+Exec} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def exec\+\_\+menu\+\_\+id, MENU\+\_\+\+Exec\+Func\+Type\+Def $\ast$exec\+\_\+f)
-\item 
-\mbox{\Hypertarget{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}\label{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}} 
-MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Link} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+l\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+r\+\_\+id)
-\item 
-\mbox{\Hypertarget{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}\label{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}} 
-MENU\+\_\+\+Handle\+Type\+Def {\bfseries menu\+Next\+State} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
-\item 
-\mbox{\Hypertarget{menu_8c_a186796972a97de00ca0b001a85744c3f}\label{menu_8c_a186796972a97de00ca0b001a85744c3f}} 
-char $\ast$ {\bfseries menu\+Read\+Title} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
-\item 
-\mbox{\Hypertarget{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}\label{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}} 
-char $\ast$ {\bfseries menu\+Read\+Cont} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
-\item 
-\mbox{\Hypertarget{menu_8c_ae9a25d7e975e594e0e510518aff49cec}\label{menu_8c_ae9a25d7e975e594e0e510518aff49cec}} 
-MENU\+\_\+\+Return\+Type\+Def {\bfseries menu\+Run\+State} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
-\item 
+MENU\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{menu_8c_a4f040381456723680d5db4a68109e46a}{menu\+Init}} (MENU\+\_\+\+Init\+Func\+Type\+Def $\ast$func, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$sel\+\_\+f, MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$can\+\_\+f, MENU\+\_\+\+Position\+Type\+Func $\ast$pos\+\_\+f, MENU\+\_\+\+Draw\+Screen\+Type\+Func $\ast$draw\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Initializes the user menu. \end{DoxyCompactList}\item 
+MENU\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}{menu\+Create}} (char $\ast$title, char $\ast$cont)
+\begin{DoxyCompactList}\small\item\em Creates a new menu and returns its handle. \end{DoxyCompactList}\item 
+MENU\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}{menu\+Link\+Exec}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def exec\+\_\+menu\+\_\+id, MENU\+\_\+\+Exec\+Func\+Type\+Def $\ast$exec\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Links exec menu to the specified menu screen. \end{DoxyCompactList}\item 
+MENU\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}{menu\+Link}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+l\+\_\+id, MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+r\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Links two menus together. \end{DoxyCompactList}\item 
+MENU\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}{menu\+Next\+State}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Evaluates the next state of the menu screen. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{menu_8c_a186796972a97de00ca0b001a85744c3f}{menu\+Read\+Title}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns menu titile. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}{menu\+Read\+Cont}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Returns menu contents. \end{DoxyCompactList}\item 
+MENU\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{menu_8c_ae9a25d7e975e594e0e510518aff49cec}{menu\+Run\+State}} (MENU\+\_\+\+Handle\+Type\+Def menu\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Either run exec funciton or return if not available. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{menu_8c_af9aace1b44b73111e15aa39f06f43456}\label{menu_8c_af9aace1b44b73111e15aa39f06f43456}} 
 \mbox{\hyperlink{menu_8c_af9aace1b44b73111e15aa39f06f43456}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((weak))
-\begin{DoxyCompactList}\small\item\em To be redefined by the end user if needed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default way to handle errors from \mbox{\hyperlink{menu_8c}{menu.\+c}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2023-\/01-\/15
+22-\/01-\/2023
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2023 
@@ -50,15 +43,169 @@ Copyright (c) 2023
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{menu_8c_af9aace1b44b73111e15aa39f06f43456}\label{menu_8c_af9aace1b44b73111e15aa39f06f43456}} 
-\index{menu.c@{menu.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
-\index{\_\_attribute\_\_@{\_\_attribute\_\_}!menu.c@{menu.c}}
-\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(weak)}]{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}\label{menu_8c_a05976ac1ccc8bee1497ef03f195b7c14}} 
+\index{menu.c@{menu.c}!menuCreate@{menuCreate}}
+\index{menuCreate@{menuCreate}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuCreate()}{menuCreate()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Handle\+Type\+Def menu\+Create (\begin{DoxyParamCaption}\item[{char $\ast$}]{title,  }\item[{char $\ast$}]{cont }\end{DoxyParamCaption})}
 
 
 
-To be redefined by the end user if needed. 
+Creates a new menu and returns its handle. 
 
-\begin{DoxyRefDesc}{Todo}
-\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]Create enum with error flags that will be supplied here\end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em title} & Title of the menu screen \\
+\hline
+{\em cont} & Description \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Handle\+Type\+Def MENU\+\_\+\+WRONG\+\_\+\+HANDLE or menu handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8c_a4f040381456723680d5db4a68109e46a}\label{menu_8c_a4f040381456723680d5db4a68109e46a}} 
+\index{menu.c@{menu.c}!menuInit@{menuInit}}
+\index{menuInit@{menuInit}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuInit()}{menuInit()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Handle\+Type\+Def menu\+Init (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Init\+Func\+Type\+Def $\ast$}]{func,  }\item[{MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$}]{sel\+\_\+f,  }\item[{MENU\+\_\+\+Button\+Func\+Type\+Def $\ast$}]{can\+\_\+f,  }\item[{MENU\+\_\+\+Position\+Type\+Func $\ast$}]{pos\+\_\+f,  }\item[{MENU\+\_\+\+Draw\+Screen\+Type\+Func $\ast$}]{draw\+\_\+f }\end{DoxyParamCaption})}
+
+
+
+Initializes the user menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em func} & Pointer to user function where menus and their linkage is defined \\
+\hline
+{\em sel\+\_\+f} & Pointer to function returning the state of the select button \\
+\hline
+{\em can\+\_\+f} & Pointer to function returning the state of the cancel button \\
+\hline
+{\em pos\+\_\+f} & Pointer to function returning the state of the joypad \\
+\hline
+{\em draw\+\_\+f} & Pointer to function that draws the menu screen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Handle\+Type\+Def Menu handle or MENU\+\_\+\+WRONG\+\_\+\+HANDLE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}\label{menu_8c_a08584cf1a86b37bb048c7423958ad9f0}} 
+\index{menu.c@{menu.c}!menuLink@{menuLink}}
+\index{menuLink@{menuLink}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuLink()}{menuLink()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Return\+Type\+Def menu\+Link (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+l\+\_\+id,  }\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+r\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Links two menus together. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+l\+\_\+id} & Menu on the left side of the menu scren \\
+\hline
+{\em menu\+\_\+r\+\_\+id} & Menu on the right side of the menu screen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Return\+Type\+Def MENU\+\_\+\+OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}\label{menu_8c_a8d12f5f1c3f367699fcb0499749d2e09}} 
+\index{menu.c@{menu.c}!menuLinkExec@{menuLinkExec}}
+\index{menuLinkExec@{menuLinkExec}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuLinkExec()}{menuLinkExec()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Return\+Type\+Def menu\+Link\+Exec (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+id,  }\item[{MENU\+\_\+\+Handle\+Type\+Def}]{exec\+\_\+menu\+\_\+id,  }\item[{MENU\+\_\+\+Exec\+Func\+Type\+Def $\ast$}]{exec\+\_\+f }\end{DoxyParamCaption})}
+
+
+
+Links exec menu to the specified menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+id} & Menu handle to menu where exec menu should be linked \\
+\hline
+{\em exec\+\_\+menu\+\_\+id} & Menu handle of the exec menu \\
+\hline
+{\em exec\+\_\+f} & Function pointer to be executed by the exec menu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Return\+Type\+Def MENU\+\_\+\+OK or MENU\+\_\+\+FAIL if NULL exec function pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}\label{menu_8c_a5e927456dcaeb059ca187e336c4f9dfa}} 
+\index{menu.c@{menu.c}!menuNextState@{menuNextState}}
+\index{menuNextState@{menuNextState}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuNextState()}{menuNextState()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Handle\+Type\+Def menu\+Next\+State (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Evaluates the next state of the menu screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+id} & Current menu handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Handle\+Type\+Def Next menu handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}\label{menu_8c_aae960c9c758f9f88fe7dbe0f5aced0aa}} 
+\index{menu.c@{menu.c}!menuReadCont@{menuReadCont}}
+\index{menuReadCont@{menuReadCont}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuReadCont()}{menuReadCont()}}
+{\footnotesize\ttfamily char$\ast$ menu\+Read\+Cont (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Returns menu contents. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+id} & Menu handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ Pointer to the menu contents 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Possibly rewrite this to not return the real address 
+\end{DoxyNote}
+\mbox{\Hypertarget{menu_8c_a186796972a97de00ca0b001a85744c3f}\label{menu_8c_a186796972a97de00ca0b001a85744c3f}} 
+\index{menu.c@{menu.c}!menuReadTitle@{menuReadTitle}}
+\index{menuReadTitle@{menuReadTitle}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuReadTitle()}{menuReadTitle()}}
+{\footnotesize\ttfamily char$\ast$ menu\+Read\+Title (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Returns menu titile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+id} & Menu handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+char$\ast$ Pointer to the menu title 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Possibly rewrite this to not return the real address 
+\end{DoxyNote}
+\mbox{\Hypertarget{menu_8c_ae9a25d7e975e594e0e510518aff49cec}\label{menu_8c_ae9a25d7e975e594e0e510518aff49cec}} 
+\index{menu.c@{menu.c}!menuRunState@{menuRunState}}
+\index{menuRunState@{menuRunState}!menu.c@{menu.c}}
+\doxysubsubsection{\texorpdfstring{menuRunState()}{menuRunState()}}
+{\footnotesize\ttfamily MENU\+\_\+\+Return\+Type\+Def menu\+Run\+State (\begin{DoxyParamCaption}\item[{MENU\+\_\+\+Handle\+Type\+Def}]{menu\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Either run exec funciton or return if not available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+id} & Menu handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+MENU\+\_\+\+Return\+Type\+Def MENU\+\_\+\+OK 
+\end{DoxyReturn}

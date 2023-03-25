@@ -1,0 +1,108 @@
+\hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros}{}\doxysection{SMARTCARD Private Macros}
+\label{group___s_m_a_r_t_c_a_r_d___private___macros}\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+Collaboration diagram for SMARTCARD Private Macros\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga963c514e557b58c5c11bb60ab2660259}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga963c514e557b58c5c11bb60ab2660259}} 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+WORD\+\_\+\+LENGTH}(LENGTH)~((LENGTH) == SMARTCARD\+\_\+\+WORDLENGTH\+\_\+9B)
+\item 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+STOPBITS}(STOPBITS)
+\item 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+PARITY}(PARITY)
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga2dc06686d0651b6a8504ccffd028d2c4}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga2dc06686d0651b6a8504ccffd028d2c4}} 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+MODE}(MODE)~((((MODE) \& 0x0000\+FFF3U) == 0x00U) \&\& ((MODE) != 0x000000U))
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_gab728caa9af7ecfe085a67603df18e567}\label{group___s_m_a_r_t_c_a_r_d___private___macros_gab728caa9af7ecfe085a67603df18e567}} 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+POLARITY}(CPOL)~(((CPOL) == SMARTCARD\+\_\+\+POLARITY\+\_\+\+LOW) $\vert$$\vert$ ((CPOL) == SMARTCARD\+\_\+\+POLARITY\+\_\+\+HIGH))
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_gad4f2566348232722026dc4861ed76125}\label{group___s_m_a_r_t_c_a_r_d___private___macros_gad4f2566348232722026dc4861ed76125}} 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+PHASE}(CPHA)~(((CPHA) == SMARTCARD\+\_\+\+PHASE\+\_\+1\+EDGE) $\vert$$\vert$ ((CPHA) == SMARTCARD\+\_\+\+PHASE\+\_\+2\+EDGE))
+\item 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+LASTBIT}(LASTBIT)
+\item 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+NACK\+\_\+\+STATE}(NACK)
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga8af8fc5fa79cca4a3bf1bce5d051e371}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga8af8fc5fa79cca4a3bf1bce5d051e371}} 
+\#define {\bfseries IS\+\_\+\+SMARTCARD\+\_\+\+BAUDRATE}(BAUDRATE)~((BAUDRATE) $<$ 4500001U)
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_gadea425deccba9d8819982c266d338bc0}\label{group___s_m_a_r_t_c_a_r_d___private___macros_gadea425deccba9d8819982c266d338bc0}} 
+\#define {\bfseries SMARTCARD\+\_\+\+DIV}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+)$\ast$25U)/(4U$\ast$(\+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)))
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_gad3627e9e446fadeb1a8f458ba59cc72c}\label{group___s_m_a_r_t_c_a_r_d___private___macros_gad3627e9e446fadeb1a8f458ba59cc72c}} 
+\#define {\bfseries SMARTCARD\+\_\+\+DIVMANT}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)~(SMARTCARD\+\_\+\+DIV((\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+), (\+\_\+\+\_\+\+BAUD\+\_\+\+\_\+))/100U)
+\item 
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga1580a16ad16bae69a78538d0337378fc}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga1580a16ad16bae69a78538d0337378fc}} 
+\#define {\bfseries SMARTCARD\+\_\+\+DIVFRAQ}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)~((((SMARTCARD\+\_\+\+DIV((\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+), (\+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)) -\/ (SMARTCARD\+\_\+\+DIVMANT((\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+), (\+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)) $\ast$ 100U)) $\ast$ 16U) + 50U) / 100U)
+\item 
+\#define {\bfseries SMARTCARD\+\_\+\+BRR}(\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  \+\_\+\+\_\+\+BAUD\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga77540ed09a99dfb4b1283b4d4560733f}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga77540ed09a99dfb4b1283b4d4560733f}} 
+\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}!IS\_SMARTCARD\_LASTBIT@{IS\_SMARTCARD\_LASTBIT}}
+\index{IS\_SMARTCARD\_LASTBIT@{IS\_SMARTCARD\_LASTBIT}!SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_SMARTCARD\_LASTBIT}{IS\_SMARTCARD\_LASTBIT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SMARTCARD\+\_\+\+LASTBIT(\begin{DoxyParamCaption}\item[{}]{LASTBIT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                             (((LASTBIT) == SMARTCARD\_LASTBIT\_DISABLE) || \(\backslash\)}
+\DoxyCodeLine{                                             ((LASTBIT) == SMARTCARD\_LASTBIT\_ENABLE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga2ee3e5dd705563b63d6551497b514fe1}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga2ee3e5dd705563b63d6551497b514fe1}} 
+\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}!IS\_SMARTCARD\_NACK\_STATE@{IS\_SMARTCARD\_NACK\_STATE}}
+\index{IS\_SMARTCARD\_NACK\_STATE@{IS\_SMARTCARD\_NACK\_STATE}!SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_SMARTCARD\_NACK\_STATE}{IS\_SMARTCARD\_NACK\_STATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SMARTCARD\+\_\+\+NACK\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{NACK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                             (((NACK) == SMARTCARD\_NACK\_ENABLE) || \(\backslash\)}
+\DoxyCodeLine{                                             ((NACK) == SMARTCARD\_NACK\_DISABLE))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga958995a8f043b3057cee33a8098ca095}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga958995a8f043b3057cee33a8098ca095}} 
+\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}!IS\_SMARTCARD\_PARITY@{IS\_SMARTCARD\_PARITY}}
+\index{IS\_SMARTCARD\_PARITY@{IS\_SMARTCARD\_PARITY}!SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_SMARTCARD\_PARITY}{IS\_SMARTCARD\_PARITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SMARTCARD\+\_\+\+PARITY(\begin{DoxyParamCaption}\item[{}]{PARITY }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                             (((PARITY) == SMARTCARD\_PARITY\_EVEN) || \(\backslash\)}
+\DoxyCodeLine{                                             ((PARITY) == SMARTCARD\_PARITY\_ODD))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga55a0c0a41cc21f1c11d34457bf45b97b}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga55a0c0a41cc21f1c11d34457bf45b97b}} 
+\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}!IS\_SMARTCARD\_STOPBITS@{IS\_SMARTCARD\_STOPBITS}}
+\index{IS\_SMARTCARD\_STOPBITS@{IS\_SMARTCARD\_STOPBITS}!SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_SMARTCARD\_STOPBITS}{IS\_SMARTCARD\_STOPBITS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SMARTCARD\+\_\+\+STOPBITS(\begin{DoxyParamCaption}\item[{}]{STOPBITS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                             (((STOPBITS) == SMARTCARD\_STOPBITS\_0\_5) || \(\backslash\)}
+\DoxyCodeLine{                                             ((STOPBITS) == SMARTCARD\_STOPBITS\_1\_5))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group___s_m_a_r_t_c_a_r_d___private___macros_ga71112b34a63af4e1a8a55f18a203a468}\label{group___s_m_a_r_t_c_a_r_d___private___macros_ga71112b34a63af4e1a8a55f18a203a468}} 
+\index{SMARTCARD Private Macros@{SMARTCARD Private Macros}!SMARTCARD\_BRR@{SMARTCARD\_BRR}}
+\index{SMARTCARD\_BRR@{SMARTCARD\_BRR}!SMARTCARD Private Macros@{SMARTCARD Private Macros}}
+\doxysubsubsection{\texorpdfstring{SMARTCARD\_BRR}{SMARTCARD\_BRR}}
+{\footnotesize\ttfamily \#define SMARTCARD\+\_\+\+BRR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+PCLK\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+BAUD\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                 (((SMARTCARD\_DIVMANT((\_\_PCLK\_\_), (\_\_BAUD\_\_)) << 4U) + \(\backslash\)}
+\DoxyCodeLine{                                                 (SMARTCARD\_DIVFRAQ((\_\_PCLK\_\_), (\_\_BAUD\_\_)) \& 0xF0U)) + \(\backslash\)}
+\DoxyCodeLine{                                                 (SMARTCARD\_DIVFRAQ((\_\_PCLK\_\_), (\_\_BAUD\_\_)) \& 0x0FU))}
+
+\end{DoxyCode}

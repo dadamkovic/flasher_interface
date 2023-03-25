@@ -1,0 +1,66 @@
+\hypertarget{group___matrix_inv}{}\doxysection{Matrix Inverse}
+\label{group___matrix_inv}\index{Matrix Inverse@{Matrix Inverse}}
+Collaboration diagram for Matrix Inverse\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \mbox{\hyperlink{group___matrix_inv_ga542be7aabbf7a2297a4b62cf212910e3}{arm\+\_\+mat\+\_\+inverse\+\_\+f32}} (const \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$p\+Src, \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix inverse. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___matrix_inv_gaede2367c02df083cc915ddd5d8fae838}{arm\+\_\+mat\+\_\+inverse\+\_\+f64}} (const \mbox{\hyperlink{structarm__matrix__instance__f64}{arm\+\_\+matrix\+\_\+instance\+\_\+f64}} $\ast$p\+Src, \mbox{\hyperlink{structarm__matrix__instance__f64}{arm\+\_\+matrix\+\_\+instance\+\_\+f64}} $\ast$p\+Dst)
+\begin{DoxyCompactList}\small\item\em Floating-\/point matrix inverse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the inverse of a matrix.
+
+The inverse is defined only if the input matrix is square and non-\/singular (the determinant is non-\/zero). The function checks that the input and output matrices are square and of the same size.
+
+Matrix inversion is numerically sensitive and the CMSIS DSP library only supports matrix inversion of floating-\/point matrices.
+
+\begin{DoxyParagraph}{Algorithm}
+The Gauss-\/\+Jordan method is used to find the inverse. The algorithm performs a sequence of elementary row-\/operations until it reduces the input matrix to an identity matrix. Applying the same sequence of elementary row-\/operations to an identity matrix yields the inverse matrix. If the input matrix is singular, then the algorithm terminates and returns error status {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SINGULAR}.  
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___matrix_inv_ga542be7aabbf7a2297a4b62cf212910e3}\label{group___matrix_inv_ga542be7aabbf7a2297a4b62cf212910e3}} 
+\index{Matrix Inverse@{Matrix Inverse}!arm\_mat\_inverse\_f32@{arm\_mat\_inverse\_f32}}
+\index{arm\_mat\_inverse\_f32@{arm\_mat\_inverse\_f32}!Matrix Inverse@{Matrix Inverse}}
+\doxysubsubsection{\texorpdfstring{arm\_mat\_inverse\_f32()}{arm\_mat\_inverse\_f32()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+mat\+\_\+inverse\+\_\+f32 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$}]{p\+Src,  }\item[{\mbox{\hyperlink{structarm__matrix__instance__f32}{arm\+\_\+matrix\+\_\+instance\+\_\+f32}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point matrix inverse. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to input matrix structure \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to output matrix structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} if the input matrix is not square or if the size of the output matrix does not match the size of the input matrix. If the input matrix is found to be singular (non-\/invertible), then the function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SINGULAR}. Otherwise, the function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___matrix_inv_gaede2367c02df083cc915ddd5d8fae838}\label{group___matrix_inv_gaede2367c02df083cc915ddd5d8fae838}} 
+\index{Matrix Inverse@{Matrix Inverse}!arm\_mat\_inverse\_f64@{arm\_mat\_inverse\_f64}}
+\index{arm\_mat\_inverse\_f64@{arm\_mat\_inverse\_f64}!Matrix Inverse@{Matrix Inverse}}
+\doxysubsubsection{\texorpdfstring{arm\_mat\_inverse\_f64()}{arm\_mat\_inverse\_f64()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+mat\+\_\+inverse\+\_\+f64 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structarm__matrix__instance__f64}{arm\+\_\+matrix\+\_\+instance\+\_\+f64}} $\ast$}]{p\+Src,  }\item[{\mbox{\hyperlink{structarm__matrix__instance__f64}{arm\+\_\+matrix\+\_\+instance\+\_\+f64}} $\ast$}]{p\+Dst }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point matrix inverse. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to input matrix structure \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to output matrix structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SIZE\+\_\+\+MISMATCH} if the input matrix is not square or if the size of the output matrix does not match the size of the input matrix. If the input matrix is found to be singular (non-\/invertible), then the function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SINGULAR}. Otherwise, the function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}. 
+\end{DoxyReturn}

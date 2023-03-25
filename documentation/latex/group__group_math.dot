@@ -1,0 +1,25 @@
+digraph "Basic Math Functions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node2 [label="Vector Absolute Value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___basic_abs.html",tooltip=" "];
+  Node3 [label="Vector Addition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___basic_add.html",tooltip=" "];
+  Node5 [label="Vector Multiplication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___basic_mult.html",tooltip=" "];
+  Node6 [label="Vector Negate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__negate.html",tooltip=" "];
+  Node1 [label="Basic Math Functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node8 [label="Vector Scale",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__scale.html",tooltip=" "];
+  Node7 [label="Vector Offset",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__offset.html",tooltip=" "];
+  Node4 [label="Vector Dot Product",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__dot__prod.html",tooltip=" "];
+  Node10 [label="Vector Subtraction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___basic_sub.html",tooltip=" "];
+  Node9 [label="Vector Shift",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__shift.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+}

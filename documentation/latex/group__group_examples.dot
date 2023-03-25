@@ -1,0 +1,33 @@
+digraph "Examples"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node5 [label="Frequency Bin Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___frequency_bin.html",tooltip=" "];
+  Node12 [label="Variance Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___variance_example.html",tooltip=" "];
+  Node2 [label="Class Marks Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___class_marks.html",tooltip=" "];
+  Node11 [label="SineCosine Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___sin_cos_example.html",tooltip=" "];
+  Node10 [label="Signal Convergence\l Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___signal_convergence.html",tooltip=" "];
+  Node3 [label="Convolution Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___convolution_example.html",tooltip=" "];
+  Node1 [label="Examples",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node6 [label="FIR Lowpass Filter\l Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___f_i_r_l_p_f.html",tooltip=" "];
+  Node4 [label="Dot Product Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___dotproduct_example.html",tooltip=" "];
+  Node8 [label="Linear Interpolate\l Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___linear_interp_example.html",tooltip=" "];
+  Node7 [label="Graphic Audio Equalizer\l Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_e_q5_band.html",tooltip=" "];
+  Node14 [label="Gated Recurrent Unit\l Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___g_r_u_example.html",tooltip=" "];
+  Node9 [label="Matrix Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___matrix_example.html",tooltip=" "];
+  Node13 [label="Convolutional Neural\l Network Example",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___c_n_n_example.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node13 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node14 [shape=plaintext, dir="back", style="solid"];
+}

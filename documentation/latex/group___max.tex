@@ -1,0 +1,117 @@
+\hypertarget{group___max}{}\doxysection{Maximum}
+\label{group___max}\index{Maximum@{Maximum}}
+Collaboration diagram for Maximum\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___max_ga5b89d1b04575aeec494f678695fb87d8}{arm\+\_\+max\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, float32\+\_\+t $\ast$p\+Result, uint32\+\_\+t $\ast$p\+Index)
+\begin{DoxyCompactList}\small\item\em Maximum value of a floating-\/point vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___max_gac132856c68f4bf2a056eaad5921c7880}{arm\+\_\+max\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q15\+\_\+t $\ast$p\+Result, uint32\+\_\+t $\ast$p\+Index)
+\begin{DoxyCompactList}\small\item\em Maximum value of a Q15 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___max_gaff7cbd4e955382def06724cc4cc85795}{arm\+\_\+max\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q31\+\_\+t $\ast$p\+Result, uint32\+\_\+t $\ast$p\+Index)
+\begin{DoxyCompactList}\small\item\em Maximum value of a Q31 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___max_ga6afd64d381b5c232de59163ebfe71e35}{arm\+\_\+max\+\_\+q7}} (q7\+\_\+t $\ast$p\+Src, uint32\+\_\+t block\+Size, q7\+\_\+t $\ast$p\+Result, uint32\+\_\+t $\ast$p\+Index)
+\begin{DoxyCompactList}\small\item\em Maximum value of a Q7 vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Computes the maximum value of an array of data. The function returns both the maximum value and its position within the array. There are separate functions for floating-\/point, Q31, Q15, and Q7 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___max_ga5b89d1b04575aeec494f678695fb87d8}\label{group___max_ga5b89d1b04575aeec494f678695fb87d8}} 
+\index{Maximum@{Maximum}!arm\_max\_f32@{arm\_max\_f32}}
+\index{arm\_max\_f32@{arm\_max\_f32}!Maximum@{Maximum}}
+\doxysubsubsection{\texorpdfstring{arm\_max\_f32()}{arm\_max\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+max\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{float32\+\_\+t $\ast$}]{p\+Result,  }\item[{uint32\+\_\+t $\ast$}]{p\+Index }\end{DoxyParamCaption})}
+
+
+
+Maximum value of a floating-\/point vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & maximum value returned here \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Index} & index of maximum value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___max_gac132856c68f4bf2a056eaad5921c7880}\label{group___max_gac132856c68f4bf2a056eaad5921c7880}} 
+\index{Maximum@{Maximum}!arm\_max\_q15@{arm\_max\_q15}}
+\index{arm\_max\_q15@{arm\_max\_q15}!Maximum@{Maximum}}
+\doxysubsubsection{\texorpdfstring{arm\_max\_q15()}{arm\_max\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+max\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q15\+\_\+t $\ast$}]{p\+Result,  }\item[{uint32\+\_\+t $\ast$}]{p\+Index }\end{DoxyParamCaption})}
+
+
+
+Maximum value of a Q15 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & maximum value returned here \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Index} & index of maximum value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___max_gaff7cbd4e955382def06724cc4cc85795}\label{group___max_gaff7cbd4e955382def06724cc4cc85795}} 
+\index{Maximum@{Maximum}!arm\_max\_q31@{arm\_max\_q31}}
+\index{arm\_max\_q31@{arm\_max\_q31}!Maximum@{Maximum}}
+\doxysubsubsection{\texorpdfstring{arm\_max\_q31()}{arm\_max\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+max\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q31\+\_\+t $\ast$}]{p\+Result,  }\item[{uint32\+\_\+t $\ast$}]{p\+Index }\end{DoxyParamCaption})}
+
+
+
+Maximum value of a Q31 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & maximum value returned here \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Index} & index of maximum value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___max_ga6afd64d381b5c232de59163ebfe71e35}\label{group___max_ga6afd64d381b5c232de59163ebfe71e35}} 
+\index{Maximum@{Maximum}!arm\_max\_q7@{arm\_max\_q7}}
+\index{arm\_max\_q7@{arm\_max\_q7}!Maximum@{Maximum}}
+\doxysubsubsection{\texorpdfstring{arm\_max\_q7()}{arm\_max\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+max\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{uint32\+\_\+t}]{block\+Size,  }\item[{q7\+\_\+t $\ast$}]{p\+Result,  }\item[{uint32\+\_\+t $\ast$}]{p\+Index }\end{DoxyParamCaption})}
+
+
+
+Maximum value of a Q7 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & length of the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Result} & maximum value returned here \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Index} & index of maximum value returned here \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}

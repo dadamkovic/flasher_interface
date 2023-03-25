@@ -1,0 +1,386 @@
+\hypertarget{group___f_c}{}\doxysection{Fully-\/connected Layer Functions}
+\label{group___f_c}\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+Collaboration diagram for Fully-\/connected Layer Functions\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_ga4a1521e7532a1e62d71f3b12762016e2}{arm\+\_\+fully\+\_\+connected\+\_\+mat\+\_\+q7\+\_\+vec\+\_\+q15}} (const q15\+\_\+t $\ast$pV, const q7\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q7\+\_\+t $\ast$bias, q15\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Mixed Q15-\/\+Q7 fully-\/connected layer function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_gae3857bb6375692e81dde8cbd70adec08}{arm\+\_\+fully\+\_\+connected\+\_\+mat\+\_\+q7\+\_\+vec\+\_\+q15\+\_\+opt}} (const q15\+\_\+t $\ast$pV, const q7\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q7\+\_\+t $\ast$bias, q15\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Mixed Q15-\/\+Q7 opt fully-\/connected layer function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_gaac666c212b209e636c2369dd5c75d0dc}{arm\+\_\+fully\+\_\+connected\+\_\+q15}} (const q15\+\_\+t $\ast$pV, const q15\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q15\+\_\+t $\ast$bias, q15\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Q15 opt fully-\/connected layer function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_ga062912078da113f5dd2004fd919a0ff2}{arm\+\_\+fully\+\_\+connected\+\_\+q15\+\_\+opt}} (const q15\+\_\+t $\ast$pV, const q15\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q15\+\_\+t $\ast$bias, q15\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Q15 opt fully-\/connected layer function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_ga8b7e0c2e989e8c75f0dc789f3115323d}{arm\+\_\+fully\+\_\+connected\+\_\+q7}} (const q7\+\_\+t $\ast$pV, const q7\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q7\+\_\+t $\ast$bias, q7\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Q7 basic fully-\/connected layer function. \end{DoxyCompactList}\item 
+arm\+\_\+status \mbox{\hyperlink{group___f_c_gaf82b71ef472a38f8fc9ac414d9d07e67}{arm\+\_\+fully\+\_\+connected\+\_\+q7\+\_\+opt}} (const q7\+\_\+t $\ast$pV, const q7\+\_\+t $\ast$pM, const uint16\+\_\+t dim\+\_\+vec, const uint16\+\_\+t num\+\_\+of\+\_\+rows, const uint16\+\_\+t bias\+\_\+shift, const uint16\+\_\+t out\+\_\+shift, const q7\+\_\+t $\ast$bias, q7\+\_\+t $\ast$p\+Out, q15\+\_\+t $\ast$vec\+\_\+buffer)
+\begin{DoxyCompactList}\small\item\em Q7 opt fully-\/connected layer function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform fully-\/connected layer
+
+Fully-\/connected layer is basically a matrix-\/vector multiplication with bias. The matrix is the weights and the input/output vectors are the activation values. Supported \{weight, activation\} precisions include \{8-\/bit, 8-\/bit\}, \{16-\/bit, 16-\/bit\}, and \{8-\/bit, 16-\/bit\}.
+
+Here we have two types of kernel functions. The basic function implements the function using regular GEMV approach. The opt functions operates with weights in interleaved formats. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___f_c_ga4a1521e7532a1e62d71f3b12762016e2}\label{group___f_c_ga4a1521e7532a1e62d71f3b12762016e2}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_mat\_q7\_vec\_q15@{arm\_fully\_connected\_mat\_q7\_vec\_q15}}
+\index{arm\_fully\_connected\_mat\_q7\_vec\_q15@{arm\_fully\_connected\_mat\_q7\_vec\_q15}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_mat\_q7\_vec\_q15()}{arm\_fully\_connected\_mat\_q7\_vec\_q15()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+mat\+\_\+q7\+\_\+vec\+\_\+q15 (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{pV,  }\item[{const q7\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{q15\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Mixed Q15-\/\+Q7 fully-\/connected layer function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: 0
+
+Q7\+\_\+\+Q15 version of the fully connected layer
+
+Weights are in q7\+\_\+t and Activations are in q15\+\_\+t \mbox{\Hypertarget{group___f_c_gae3857bb6375692e81dde8cbd70adec08}\label{group___f_c_gae3857bb6375692e81dde8cbd70adec08}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt@{arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt}}
+\index{arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt@{arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt()}{arm\_fully\_connected\_mat\_q7\_vec\_q15\_opt()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+mat\+\_\+q7\+\_\+vec\+\_\+q15\+\_\+opt (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{pV,  }\item[{const q7\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{q15\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Mixed Q15-\/\+Q7 opt fully-\/connected layer function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: 0
+
+Q7\+\_\+\+Q15 version of the fully connected layer
+
+Weights are in q7\+\_\+t and Activations are in q15\+\_\+t
+
+Limitation\+: x4 version requires weight reordering to work
+
+Here we use only one pointer to read 4 rows in the weight matrix. So if the original q7\+\_\+t matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a12 $\vert$ a13 $\vert$ a14 $\vert$ a15 $\vert$ a16 $\vert$ a17 $\vert$
+
+$\vert$ a21 $\vert$ a22 $\vert$ a23 $\vert$ a24 $\vert$ a25 $\vert$ a26 $\vert$ a27 $\vert$
+
+$\vert$ a31 $\vert$ a32 $\vert$ a33 $\vert$ a34 $\vert$ a35 $\vert$ a36 $\vert$ a37 $\vert$
+
+$\vert$ a41 $\vert$ a42 $\vert$ a43 $\vert$ a44 $\vert$ a45 $\vert$ a46 $\vert$ a47 $\vert$
+
+$\vert$ a51 $\vert$ a52 $\vert$ a53 $\vert$ a54 $\vert$ a55 $\vert$ a56 $\vert$ a57 $\vert$
+
+$\vert$ a61 $\vert$ a62 $\vert$ a63 $\vert$ a64 $\vert$ a65 $\vert$ a66 $\vert$ a67 $\vert$
+
+We operates on multiple-\/of-\/4 rows, so the first four rows becomes
+
+$\vert$ a11 $\vert$ a21 $\vert$ a12 $\vert$ a22 $\vert$ a31 $\vert$ a41 $\vert$ a32 $\vert$ a42 $\vert$
+
+$\vert$ a13 $\vert$ a23 $\vert$ a14 $\vert$ a24 $\vert$ a33 $\vert$ a43 $\vert$ a34 $\vert$ a44 $\vert$
+
+$\vert$ a15 $\vert$ a25 $\vert$ a16 $\vert$ a26 $\vert$ a35 $\vert$ a45 $\vert$ a36 $\vert$ a46 $\vert$
+
+The column left over will be in-\/order. which is\+: $\vert$ a17 $\vert$ a27 $\vert$ a37 $\vert$ a47 $\vert$
+
+For the left-\/over rows, we do 1x1 computation, so the data remains as its original order.
+
+So the stored weight matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a21 $\vert$ a12 $\vert$ a22 $\vert$ a31 $\vert$ a41 $\vert$
+
+$\vert$ a32 $\vert$ a42 $\vert$ a13 $\vert$ a23 $\vert$ a14 $\vert$ a24 $\vert$
+
+$\vert$ a33 $\vert$ a43 $\vert$ a34 $\vert$ a44 $\vert$ a15 $\vert$ a25 $\vert$
+
+$\vert$ a16 $\vert$ a26 $\vert$ a35 $\vert$ a45 $\vert$ a36 $\vert$ a46 $\vert$
+
+$\vert$ a17 $\vert$ a27 $\vert$ a37 $\vert$ a47 $\vert$ a51 $\vert$ a52 $\vert$
+
+$\vert$ a53 $\vert$ a54 $\vert$ a55 $\vert$ a56 $\vert$ a57 $\vert$ a61 $\vert$
+
+$\vert$ a62 $\vert$ a63 $\vert$ a64 $\vert$ a65 $\vert$ a66 $\vert$ a67 $\vert$ \mbox{\Hypertarget{group___f_c_gaac666c212b209e636c2369dd5c75d0dc}\label{group___f_c_gaac666c212b209e636c2369dd5c75d0dc}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_q15@{arm\_fully\_connected\_q15}}
+\index{arm\_fully\_connected\_q15@{arm\_fully\_connected\_q15}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_q15()}{arm\_fully\_connected\_q15()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+q15 (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{pV,  }\item[{const q15\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q15\+\_\+t $\ast$}]{bias,  }\item[{q15\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Q15 opt fully-\/connected layer function. 
+
+Q15 basic fully-\/connected layer function.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: 0 \mbox{\Hypertarget{group___f_c_ga062912078da113f5dd2004fd919a0ff2}\label{group___f_c_ga062912078da113f5dd2004fd919a0ff2}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_q15\_opt@{arm\_fully\_connected\_q15\_opt}}
+\index{arm\_fully\_connected\_q15\_opt@{arm\_fully\_connected\_q15\_opt}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_q15\_opt()}{arm\_fully\_connected\_q15\_opt()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+q15\+\_\+opt (\begin{DoxyParamCaption}\item[{const q15\+\_\+t $\ast$}]{pV,  }\item[{const q15\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q15\+\_\+t $\ast$}]{bias,  }\item[{q15\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Q15 opt fully-\/connected layer function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: 0
+
+Here we use only one pointer to read 4 rows in the weight matrix. So if the original matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a12 $\vert$ a13 $\vert$
+
+$\vert$ a21 $\vert$ a22 $\vert$ a23 $\vert$
+
+$\vert$ a31 $\vert$ a32 $\vert$ a33 $\vert$
+
+$\vert$ a41 $\vert$ a42 $\vert$ a43 $\vert$
+
+$\vert$ a51 $\vert$ a52 $\vert$ a53 $\vert$
+
+$\vert$ a61 $\vert$ a62 $\vert$ a63 $\vert$
+
+We operates on multiple-\/of-\/4 rows, so the first four rows becomes
+
+$\vert$ a11 $\vert$ a12 $\vert$ a21 $\vert$ a22 $\vert$ a31 $\vert$ a32 $\vert$ a41 $\vert$ a42 $\vert$
+
+$\vert$ a13 $\vert$ a23 $\vert$ a33 $\vert$ a43 $\vert$
+
+Remaining rows are kept the same original order.
+
+So the stored weight matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a12 $\vert$ a21 $\vert$ a22 $\vert$ a31 $\vert$ a32 $\vert$ a41 $\vert$ a42 $\vert$
+
+$\vert$ a13 $\vert$ a23 $\vert$ a33 $\vert$ a43 $\vert$ a51 $\vert$ a52 $\vert$ a53 $\vert$ a61 $\vert$
+
+$\vert$ a62 $\vert$ a63 $\vert$ \mbox{\Hypertarget{group___f_c_ga8b7e0c2e989e8c75f0dc789f3115323d}\label{group___f_c_ga8b7e0c2e989e8c75f0dc789f3115323d}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_q7@{arm\_fully\_connected\_q7}}
+\index{arm\_fully\_connected\_q7@{arm\_fully\_connected\_q7}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_q7()}{arm\_fully\_connected\_q7()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+q7 (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{pV,  }\item[{const q7\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{q7\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Q7 basic fully-\/connected layer function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: dim\+\_\+vec
+
+This basic function is designed to work with regular weight matrix without interleaving. \mbox{\Hypertarget{group___f_c_gaf82b71ef472a38f8fc9ac414d9d07e67}\label{group___f_c_gaf82b71ef472a38f8fc9ac414d9d07e67}} 
+\index{Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}!arm\_fully\_connected\_q7\_opt@{arm\_fully\_connected\_q7\_opt}}
+\index{arm\_fully\_connected\_q7\_opt@{arm\_fully\_connected\_q7\_opt}!Fully-\/connected Layer Functions@{Fully-\/connected Layer Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_fully\_connected\_q7\_opt()}{arm\_fully\_connected\_q7\_opt()}}
+{\footnotesize\ttfamily arm\+\_\+status arm\+\_\+fully\+\_\+connected\+\_\+q7\+\_\+opt (\begin{DoxyParamCaption}\item[{const q7\+\_\+t $\ast$}]{pV,  }\item[{const q7\+\_\+t $\ast$}]{pM,  }\item[{const uint16\+\_\+t}]{dim\+\_\+vec,  }\item[{const uint16\+\_\+t}]{num\+\_\+of\+\_\+rows,  }\item[{const uint16\+\_\+t}]{bias\+\_\+shift,  }\item[{const uint16\+\_\+t}]{out\+\_\+shift,  }\item[{const q7\+\_\+t $\ast$}]{bias,  }\item[{q7\+\_\+t $\ast$}]{p\+Out,  }\item[{q15\+\_\+t $\ast$}]{vec\+\_\+buffer }\end{DoxyParamCaption})}
+
+
+
+Q7 opt fully-\/connected layer function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pV} & pointer to input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em pM} & pointer to matrix weights \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+vec} & length of the vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em num\+\_\+of\+\_\+rows} & number of rows in weight matrix \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias\+\_\+shift} & amount of left-\/shift for bias \\
+\hline
+\mbox{\texttt{ in}}  & {\em out\+\_\+shift} & amount of right-\/shift for output \\
+\hline
+\mbox{\texttt{ in}}  & {\em bias} & pointer to bias \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em p\+Out} & pointer to output vector \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em vec\+\_\+buffer} & pointer to buffer space for input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The function returns {\ttfamily ARM\+\_\+\+MATH\+\_\+\+SUCCESS}
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+vec\+\_\+buffer size\+: dim\+\_\+vec
+
+This opt function is designed to work with interleaved weight matrix. The vector input is assumed in q7\+\_\+t format, we call arm\+\_\+q7\+\_\+to\+\_\+q15\+\_\+no\+\_\+shift\+\_\+shuffle function to expand into q15\+\_\+t format with certain weight re-\/ordering, refer to the function comments for more details. Here we use only one pointer to read 4 rows in the weight matrix. So if the original q7\+\_\+t matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a12 $\vert$ a13 $\vert$ a14 $\vert$ a15 $\vert$ a16 $\vert$ a17 $\vert$
+
+$\vert$ a21 $\vert$ a22 $\vert$ a23 $\vert$ a24 $\vert$ a25 $\vert$ a26 $\vert$ a27 $\vert$
+
+$\vert$ a31 $\vert$ a32 $\vert$ a33 $\vert$ a34 $\vert$ a35 $\vert$ a36 $\vert$ a37 $\vert$
+
+$\vert$ a41 $\vert$ a42 $\vert$ a43 $\vert$ a44 $\vert$ a45 $\vert$ a46 $\vert$ a47 $\vert$
+
+$\vert$ a51 $\vert$ a52 $\vert$ a53 $\vert$ a54 $\vert$ a55 $\vert$ a56 $\vert$ a57 $\vert$
+
+$\vert$ a61 $\vert$ a62 $\vert$ a63 $\vert$ a64 $\vert$ a65 $\vert$ a66 $\vert$ a67 $\vert$
+
+We operates on multiple-\/of-\/4 rows, so the first four rows becomes
+
+$\vert$ a11 $\vert$ a21 $\vert$ a13 $\vert$ a23 $\vert$ a31 $\vert$ a41 $\vert$ a33 $\vert$ a43 $\vert$
+
+$\vert$ a12 $\vert$ a22 $\vert$ a14 $\vert$ a24 $\vert$ a32 $\vert$ a42 $\vert$ a34 $\vert$ a44 $\vert$
+
+$\vert$ a15 $\vert$ a25 $\vert$ a35 $\vert$ a45 $\vert$ a16 $\vert$ a26 $\vert$ a36 $\vert$ a46 $\vert$
+
+So within the kernel, we first read the re-\/ordered vector in as\+:
+
+$\vert$ b1 $\vert$ b3 $\vert$ and $\vert$ b2 $\vert$ b4 $\vert$
+
+the four q31\+\_\+t weights will look like
+
+$\vert$ a11 $\vert$ a13 $\vert$, $\vert$ a21 $\vert$ a23 $\vert$, $\vert$ a31 $\vert$ a33 $\vert$, $\vert$ a41 $\vert$ a43 $\vert$
+
+$\vert$ a12 $\vert$ a14 $\vert$, $\vert$ a22 $\vert$ a24 $\vert$, $\vert$ a32 $\vert$ a34 $\vert$, $\vert$ a42 $\vert$ a44 $\vert$
+
+The column left over will be in-\/order. which is\+:
+
+$\vert$ a17 $\vert$ a27 $\vert$ a37 $\vert$ a47 $\vert$
+
+For the left-\/over rows, we do 1x1 computation, so the data remains as its original order.
+
+So the stored weight matrix looks like this\+:
+
+$\vert$ a11 $\vert$ a21 $\vert$ a13 $\vert$ a23 $\vert$ a31 $\vert$ a41 $\vert$
+
+$\vert$ a33 $\vert$ a43 $\vert$ a12 $\vert$ a22 $\vert$ a14 $\vert$ a24 $\vert$
+
+$\vert$ a32 $\vert$ a42 $\vert$ a34 $\vert$ a44 $\vert$ a15 $\vert$ a25 $\vert$
+
+$\vert$ a35 $\vert$ a45 $\vert$ a16 $\vert$ a26 $\vert$ a36 $\vert$ a46 $\vert$
+
+$\vert$ a17 $\vert$ a27 $\vert$ a37 $\vert$ a47 $\vert$ a51 $\vert$ a52 $\vert$
+
+$\vert$ a53 $\vert$ a54 $\vert$ a55 $\vert$ a56 $\vert$ a57 $\vert$ a61 $\vert$
+
+$\vert$ a62 $\vert$ a63 $\vert$ a64 $\vert$ a65 $\vert$ a66 $\vert$ a67 $\vert$ 

@@ -1,0 +1,51 @@
+\hypertarget{group___signal_convergence}{}\doxysection{Signal Convergence Example}
+\label{group___signal_convergence}\index{Signal Convergence Example@{Signal Convergence Example}}
+Collaboration diagram for Signal Convergence Example\+:
+% FIG 0
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Demonstrates the ability of an adaptive filter to \char`\"{}learn\char`\"{} the transfer function of a FIR lowpass filter using the Normalized LMS Filter, Finite Impulse Response (FIR) Filter, and Basic Math Functions.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The figure below illustrates the signal flow in this example. Uniformly distributed white noise is passed through an FIR lowpass filter. The output of the FIR filter serves as the reference input of the adaptive filter (normalized LMS filter). The white noise is input to the adaptive filter. The adaptive filter learns the transfer function of the FIR filter. The filter outputs two signals\+: (1) the output of the internal adaptive FIR filter, and (2) the error signal which is the difference between the adaptive filter and the reference output of the FIR filter. Over time as the adaptive filter learns the transfer function of the FIR filter, the first output approaches the reference output of the FIR filter, and the error signal approaches zero. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The adaptive filter converges properly even if the input signal has a large dynamic range (i.\+e., varies from small to large values). The coefficients of the adaptive filter are initially zero, and then converge over 1536 samples. The internal function test\+\_\+signal\+\_\+converge() implements the stopping condition. The function checks if all of the values of the error signal have a magnitude below a threshold DELTA.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Block Diagram\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Variables Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\begin{DoxyItemize}
+\item {\ttfamily test\+Input\+\_\+f32} points to the input data \item {\ttfamily fir\+State\+F32} points to FIR state buffer \item {\ttfamily lms\+State\+F32} points to Normalised Least mean square FIR filter state buffer \item {\ttfamily FIRCoeff\+\_\+f32} points to coefficient buffer \item {\ttfamily lms\+Norm\+Coeff\+\_\+f32} points to Normalised Least mean square FIR filter coefficient buffer \item {\ttfamily wire1}, wir2, wire3 temporary buffers \item {\ttfamily err\+Output}, err\+\_\+signal temporary error buffers\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{CMSIS DSP Software Library Functions Used\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group___l_m_s___n_o_r_m_gac7ccbaea863882056eee815456464670}{arm\+\_\+lms\+\_\+norm\+\_\+init\+\_\+f32()}}
+\item \mbox{\hyperlink{group___f_i_r_ga98d13def6427e29522829f945d0967db}{arm\+\_\+fir\+\_\+init\+\_\+f32()}}
+\item \mbox{\hyperlink{group___f_i_r_gae8fb334ea67eb6ecbd31824ddc14cd6a}{arm\+\_\+fir\+\_\+f32()}}
+\item \mbox{\hyperlink{group___l_m_s___n_o_r_m_ga2418c929087c6eba719758eaae3f3300}{arm\+\_\+lms\+\_\+norm\+\_\+f32()}}
+\item \mbox{\hyperlink{group__scale_ga3487af88b112f682ee90589cd419e123}{arm\+\_\+scale\+\_\+f32()}}
+\item \mbox{\hyperlink{group___basic_abs_ga421b6275f9d35f50286c0ff3beceff02}{arm\+\_\+abs\+\_\+f32()}}
+\item \mbox{\hyperlink{group___basic_sub_ga7f975a472de286331134227c08aad826}{arm\+\_\+sub\+\_\+f32()}}
+\item \mbox{\hyperlink{group___min_gaf62b1673740fc516ea64daf777b7d74a}{arm\+\_\+min\+\_\+f32()}}
+\item \mbox{\hyperlink{group__copy_gadd1f737e677e0e6ca31767c7001417b3}{arm\+\_\+copy\+\_\+f32()}}
+\end{DoxyItemize}
+\end{DoxyParagraph}
+{\bfseries{ Refer }} \mbox{\hyperlink{arm_signal_converge_example_f32_8c-example}{arm\+\_\+signal\+\_\+converge\+\_\+example\+\_\+f32.\+c}} 

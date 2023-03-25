@@ -1,0 +1,129 @@
+\hypertarget{group__negate}{}\doxysection{Vector Negate}
+\label{group__negate}\index{Vector Negate@{Vector Negate}}
+Collaboration diagram for Vector Negate\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__negate_ga2e169c4de6cc6e3ba4be9473531e6657}{arm\+\_\+negate\+\_\+f32}} (float32\+\_\+t $\ast$p\+Src, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Negates the elements of a floating-\/point vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__negate_ga0239a833d72cf00290b9723c394e5042}{arm\+\_\+negate\+\_\+q15}} (q15\+\_\+t $\ast$p\+Src, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Negates the elements of a Q15 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__negate_ga2784c6887686a73dc7c364e2e41c776c}{arm\+\_\+negate\+\_\+q31}} (q31\+\_\+t $\ast$p\+Src, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Negates the elements of a Q31 vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__negate_gaae78fc079a43bdaa3055f9b32e2a1f4c}{arm\+\_\+negate\+\_\+q7}} (q7\+\_\+t $\ast$p\+Src, q7\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Negates the elements of a Q7 vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Negates the elements of a vector.
+
+
+\begin{DoxyPre}
+    pDst[n] = -\/pSrc[n],   0 <= n < blockSize.
+\end{DoxyPre}
+
+
+The functions support in-\/place computation allowing the source and destination pointers to reference the same memory buffer. There are separate functions for floating-\/point, Q7, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__negate_ga2e169c4de6cc6e3ba4be9473531e6657}\label{group__negate_ga2e169c4de6cc6e3ba4be9473531e6657}} 
+\index{Vector Negate@{Vector Negate}!arm\_negate\_f32@{arm\_negate\_f32}}
+\index{arm\_negate\_f32@{arm\_negate\_f32}!Vector Negate@{Vector Negate}}
+\doxysubsubsection{\texorpdfstring{arm\_negate\_f32()}{arm\_negate\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+negate\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+Src,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Negates the elements of a floating-\/point vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group__negate_ga0239a833d72cf00290b9723c394e5042}\label{group__negate_ga0239a833d72cf00290b9723c394e5042}} 
+\index{Vector Negate@{Vector Negate}!arm\_negate\_q15@{arm\_negate\_q15}}
+\index{arm\_negate\_q15@{arm\_negate\_q15}!Vector Negate@{Vector Negate}}
+\doxysubsubsection{\texorpdfstring{arm\_negate\_q15()}{arm\_negate\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+negate\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+Src,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Negates the elements of a Q15 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+\begin{DoxyParagraph}{Conditions for optimum performance}
+Input and output buffers should be aligned by 32-\/bit
+\end{DoxyParagraph}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. The Q15 value -\/1 (0x8000) will be saturated to the maximum allowable positive value 0x7\+FFF. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__negate_ga2784c6887686a73dc7c364e2e41c776c}\label{group__negate_ga2784c6887686a73dc7c364e2e41c776c}} 
+\index{Vector Negate@{Vector Negate}!arm\_negate\_q31@{arm\_negate\_q31}}
+\index{arm\_negate\_q31@{arm\_negate\_q31}!Vector Negate@{Vector Negate}}
+\doxysubsubsection{\texorpdfstring{arm\_negate\_q31()}{arm\_negate\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+negate\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+Src,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Negates the elements of a Q31 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. The Q31 value -\/1 (0x80000000) will be saturated to the maximum allowable positive value 0x7\+FFFFFFF. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group__negate_gaae78fc079a43bdaa3055f9b32e2a1f4c}\label{group__negate_gaae78fc079a43bdaa3055f9b32e2a1f4c}} 
+\index{Vector Negate@{Vector Negate}!arm\_negate\_q7@{arm\_negate\_q7}}
+\index{arm\_negate\_q7@{arm\_negate\_q7}!Vector Negate@{Vector Negate}}
+\doxysubsubsection{\texorpdfstring{arm\_negate\_q7()}{arm\_negate\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+negate\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+Src,  }\item[{q7\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Negates the elements of a Q7 vector. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+Src} & points to the input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in the vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. The Q7 value -\/1 (0x80) will be saturated to the maximum allowable positive value 0x7F. 
+\end{DoxyParagraph}

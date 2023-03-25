@@ -1,5 +1,5 @@
-\hypertarget{joypad_8c}{}\doxysection{Core/\+Src/joypad.c File Reference}
-\label{joypad_8c}\index{Core/Src/joypad.c@{Core/Src/joypad.c}}
+\hypertarget{joypad_8c}{}\doxysection{Core/\+Lib/joypad/joypad.c File Reference}
+\label{joypad_8c}\index{Core/Lib/joypad/joypad.c@{Core/Lib/joypad/joypad.c}}
 {\ttfamily \#include \char`\"{}joypad.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 Include dependency graph for joypad.\+c\+:
@@ -11,7 +11,7 @@ JOY\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{joypad_8c_a63c1d2cdee3d05614139cee
 \begin{DoxyCompactList}\small\item\em Runs user defined init function and returns joypad handle. \end{DoxyCompactList}\item 
 JOY\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{joypad_8c_a8e02f6005ca3a054e6c9e70e4f9302b3}{joy\+Open}} (JOY\+\_\+\+Handle\+Type\+Def joy\+\_\+id, JOY\+\_\+\+Read\+Func\+Type\+Def $\ast$read\+\_\+f)
 \begin{DoxyCompactList}\small\item\em Opens joypad for use with supplied read function. \end{DoxyCompactList}\item 
-JOY\+\_\+\+Out\+Type\+Def $\ast$ \mbox{\hyperlink{joypad_8c_a131cb68126365459bac4af1c43e20064}{joy\+Read}} (JOY\+\_\+\+Handle\+Type\+Def joy\+\_\+id, JOY\+\_\+\+Out\+Type\+Def $\ast$output, JOY\+\_\+\+Feedback\+Type\+Def out\+\_\+t)
+\mbox{\hyperlink{struct_j_o_y___out_type_def}{JOY\+\_\+\+Out\+Type\+Def}} $\ast$ \mbox{\hyperlink{joypad_8c_a131cb68126365459bac4af1c43e20064}{joy\+Read}} (JOY\+\_\+\+Handle\+Type\+Def joy\+\_\+id, \mbox{\hyperlink{struct_j_o_y___out_type_def}{JOY\+\_\+\+Out\+Type\+Def}} $\ast$output, JOY\+\_\+\+Feedback\+Type\+Def out\+\_\+t)
 \begin{DoxyCompactList}\small\item\em Reads the joypad values into user supplied buffer or provides data from previous measurement. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{joypad_8c_af9aace1b44b73111e15aa39f06f43456}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((weak))
 \begin{DoxyCompactList}\small\item\em To be redefined by the end user if needed. \end{DoxyCompactList}\item 
@@ -23,13 +23,13 @@ JOY\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{joypad_8c_ad5519496242ca903f6ccd74
 
 \doxysubsection{Detailed Description}
 \begin{DoxyAuthor}{Author}
-your name (\href{mailto:you@domain.com}{\texttt{ you@domain.\+com}}) 
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 0.\+1 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2023-\/01-\/21
+22-\/01-\/2023
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2023 
@@ -48,7 +48,7 @@ Copyright (c) 2023
 To be redefined by the end user if needed. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Create enum with error flags that will be supplied here\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Create enum with error flags that will be supplied here\end{DoxyRefDesc}
 \mbox{\Hypertarget{joypad_8c_ad5519496242ca903f6ccd74efd877f20}\label{joypad_8c_ad5519496242ca903f6ccd74efd877f20}} 
 \index{joypad.c@{joypad.c}!joyClose@{joyClose}}
 \index{joyClose@{joyClose}!joypad.c@{joypad.c}}
@@ -106,7 +106,7 @@ Function used for modifying the read function of the joypad.
 JOY\+\_\+\+Handle\+Type\+Def Joypad handle
 \end{DoxyReturn}
 \begin{DoxyRefDesc}{Todo}
-\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]Consider if more atttributes shouldn\textquotesingle{}t be added here \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Consider if more atttributes shouldn\textquotesingle{}t be added here \end{DoxyRefDesc}
 \mbox{\Hypertarget{joypad_8c_a8e02f6005ca3a054e6c9e70e4f9302b3}\label{joypad_8c_a8e02f6005ca3a054e6c9e70e4f9302b3}} 
 \index{joypad.c@{joypad.c}!joyOpen@{joyOpen}}
 \index{joyOpen@{joyOpen}!joypad.c@{joypad.c}}
@@ -131,7 +131,7 @@ JOY\+\_\+\+Handle\+Type\+Def Handle of the joypad in use or JOY\+\_\+\+HANDLE\+\
 \index{joypad.c@{joypad.c}!joyRead@{joyRead}}
 \index{joyRead@{joyRead}!joypad.c@{joypad.c}}
 \doxysubsubsection{\texorpdfstring{joyRead()}{joyRead()}}
-{\footnotesize\ttfamily JOY\+\_\+\+Out\+Type\+Def$\ast$ joy\+Read (\begin{DoxyParamCaption}\item[{JOY\+\_\+\+Handle\+Type\+Def}]{joy\+\_\+id,  }\item[{JOY\+\_\+\+Out\+Type\+Def $\ast$}]{output,  }\item[{JOY\+\_\+\+Feedback\+Type\+Def}]{out\+\_\+t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_j_o_y___out_type_def}{JOY\+\_\+\+Out\+Type\+Def}}$\ast$ joy\+Read (\begin{DoxyParamCaption}\item[{JOY\+\_\+\+Handle\+Type\+Def}]{joy\+\_\+id,  }\item[{\mbox{\hyperlink{struct_j_o_y___out_type_def}{JOY\+\_\+\+Out\+Type\+Def}} $\ast$}]{output,  }\item[{JOY\+\_\+\+Feedback\+Type\+Def}]{out\+\_\+t }\end{DoxyParamCaption})}
 
 
 
@@ -141,7 +141,7 @@ Reads the joypad values into user supplied buffer or provides data from previous
 \begin{DoxyParams}{Parameters}
 {\em joy\+\_\+id} & Joypad handle \\
 \hline
-{\em output} & Buffer of type JOY\+\_\+\+Out\+Type\+Def \\
+{\em output} & Buffer of type \mbox{\hyperlink{struct_j_o_y___out_type_def}{JOY\+\_\+\+Out\+Type\+Def}} \\
 \hline
 {\em out\+\_\+t} & Flag of type JOY\+\_\+\+Feedback\+Type\+Def to select between reading fresh and just supplying old data \\
 \hline

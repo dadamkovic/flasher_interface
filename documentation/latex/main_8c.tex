@@ -12,8 +12,7 @@
 {\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}joypad.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}menu.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}execution.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}comm\+\_\+interface.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}plotter.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}utils.\+h\char`\"{}}\newline
 Include dependency graph for main.\+c\+:
 % FIG 0
@@ -22,9 +21,6 @@ Include dependency graph for main.\+c\+:
 \item 
 void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
 \begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{main_8c_a3dfac5731ffefa76c047f7c6002c3b5c}\label{main_8c_a3dfac5731ffefa76c047f7c6002c3b5c}} 
-MENU\+\_\+\+Position\+Enum {\bfseries main\+Get\+Pos} ()
-\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{main_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}} 
@@ -43,6 +39,9 @@ volatile uint8\+\_\+t {\bfseries cancel\+\_\+button} = 0
 \item 
 \mbox{\Hypertarget{main_8c_ac494d83d1e6df2bc27060ee58fb2227b}\label{main_8c_ac494d83d1e6df2bc27060ee58fb2227b}} 
 JOY\+\_\+\+Handle\+Type\+Def {\bfseries g\+\_\+joypad\+\_\+h}
+\item 
+\mbox{\Hypertarget{main_8c_a98e2666840c35cef71297b000dfb263c}\label{main_8c_a98e2666840c35cef71297b000dfb263c}} 
+PLOT\+\_\+\+Handletype\+Def {\bfseries g\+\_\+plotter\+\_\+h}
 \end{DoxyCompactItemize}
 
 
@@ -72,6 +71,8 @@ This function is executed in case of error occurrence.
 {\em None} & \\
 \hline
 \end{DoxyRetVals}
+Here is the caller graph for this function\+:
+% FIG 1
 \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
 \index{main.c@{main.c}!main@{main}}
 \index{main@{main}!main.c@{main.c}}
@@ -87,6 +88,8 @@ The application entry point.
 {\em int} & \\
 \hline
 \end{DoxyRetVals}
+Here is the call graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{main_8c_a70af21c671abfcc773614a9a4f63d920}\label{main_8c_a70af21c671abfcc773614a9a4f63d920}} 
 \index{main.c@{main.c}!SystemClock\_Config@{SystemClock\_Config}}
 \index{SystemClock\_Config@{SystemClock\_Config}!main.c@{main.c}}
@@ -104,4 +107,7 @@ System Clock Configuration.
 \end{DoxyRetVals}
 Initializes the RCC Oscillators according to the specified parameters in the RCC\+\_\+\+Osc\+Init\+Type\+Def structure.
 
-Initializes the CPU, AHB and APB buses clocks
+Initializes the CPU, AHB and APB buses clocksHere is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FlasherInterface: Core/Src/utils.c File Reference</title>
+<title>Flasher Interface: Core/Src/utils.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">FlasherInterface
-   &#160;<span id="projectnumber">0.1</span>
+   <div id="projectname">Flasher Interface
+   &#160;<span id="projectnumber">0.2</span>
    </div>
-   <div id="projectbrief">Interface between user, flashing instrument and G-Code processing machine</div>
   </td>
  </tr>
  </tbody>
@@ -82,9 +81,6 @@ Include dependency graph for utils.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4081e420af6b5a346e3d4fdbd4ba6f1c"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#a4081e420af6b5a346e3d4fdbd4ba6f1c">floatToChar</a> (float x, char *p)</td></tr>
-<tr class="memdesc:a4081e420af6b5a346e3d4fdbd4ba6f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long.  <a href="utils_8c.html#a4081e420af6b5a346e3d4fdbd4ba6f1c">More...</a><br /></td></tr>
-<tr class="separator:a4081e420af6b5a346e3d4fdbd4ba6f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb6396fe7735e825be8143fbe1ac41fb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#acb6396fe7735e825be8143fbe1ac41fb">copyString</a> (char *dest, const char *cont)</td></tr>
 <tr class="memdesc:acb6396fe7735e825be8143fbe1ac41fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple wrapper around the strncpy to copy according to the string size.  <a href="utils_8c.html#acb6396fe7735e825be8143fbe1ac41fb">More...</a><br /></td></tr>
 <tr class="separator:acb6396fe7735e825be8143fbe1ac41fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,20 +99,25 @@ MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsDi
 <tr class="memitem:ad9696b0c5f01a4e963318f04dc259687"><td class="memItemLeft" align="right" valign="top">MENU_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ad9696b0c5f01a4e963318f04dc259687">utilsMenuInit</a> ()</td></tr>
 <tr class="memdesc:ad9696b0c5f01a4e963318f04dc259687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the user menus and clears the screen.  <a href="utils_8c.html#ad9696b0c5f01a4e963318f04dc259687">More...</a><br /></td></tr>
 <tr class="separator:ad9696b0c5f01a4e963318f04dc259687"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00848b5503bd6dea2abbd23d9da80b1e"><td class="memItemLeft" align="right" valign="top"><a id="a00848b5503bd6dea2abbd23d9da80b1e"></a>
-MENU_ButtonTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsMenuGetSelect</b> ()</td></tr>
-<tr class="separator:a00848b5503bd6dea2abbd23d9da80b1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6f710d0518b19fcbeda41a21114e9a8"><td class="memItemLeft" align="right" valign="top"><a id="ab6f710d0518b19fcbeda41a21114e9a8"></a>
-MENU_ButtonTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsMenuGetCancel</b> ()</td></tr>
-<tr class="separator:ab6f710d0518b19fcbeda41a21114e9a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17c33a659c0673447d36b2e200273e60"><td class="memItemLeft" align="right" valign="top"><a id="a17c33a659c0673447d36b2e200273e60"></a>
 MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsDrawScreen</b> (MENU_HandleTypeDef menu_h)</td></tr>
 <tr class="separator:a17c33a659c0673447d36b2e200273e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85672bd407abeb12b6b59c7a47305cb"><td class="memItemLeft" align="right" valign="top"><a id="ac85672bd407abeb12b6b59c7a47305cb"></a>
+PLOT_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsPlotWrite</b> (char *data)</td></tr>
+<tr class="separator:ac85672bd407abeb12b6b59c7a47305cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433d29c8eccb188bc8b4bf7f8127cdb7"><td class="memItemLeft" align="right" valign="top"><a id="a433d29c8eccb188bc8b4bf7f8127cdb7"></a>
+PLOT_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsPlotRead</b> (char *data)</td></tr>
+<tr class="separator:a433d29c8eccb188bc8b4bf7f8127cdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d395b6e1b8602fce0d5e62a7edff79"><td class="memItemLeft" align="right" valign="top">PLOT_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="utils_8c.html#ac3d395b6e1b8602fce0d5e62a7edff79">utilsPlotOpen</a> (PLOT_HandletypeDef plot_h)</td></tr>
+<tr class="separator:ac3d395b6e1b8602fce0d5e62a7edff79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ded8551ce491f312e6f1e2dc9c02a31"><td class="memItemLeft" align="right" valign="top"><a id="a9ded8551ce491f312e6f1e2dc9c02a31"></a>
+MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsManMove</b> ()</td></tr>
+<tr class="separator:a9ded8551ce491f312e6f1e2dc9c02a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Daniel Adamkovic </dd></dl>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Daniel Adamkovic (<a href="#" onclick="location.href='mai'+'lto:'+'dad'+'am'+'kov'+'ic'+'@pr'+'ot'+'onm'+'ai'+'l.c'+'h'; return false;">dadam<span style="display: none;">.nosp@m.</span>kovi<span style="display: none;">.nosp@m.</span>c@pro<span style="display: none;">.nosp@m.</span>tonm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>h</a>) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2023-01-15</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>22-01-2023</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="acb6396fe7735e825be8143fbe1ac41fb"></a>
@@ -157,43 +158,6 @@ MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsDr
 
 </div>
 </div>
-<a id="a4081e420af6b5a346e3d4fdbd4ba6f1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4081e420af6b5a346e3d4fdbd4ba6f1c">&#9670;&nbsp;</a></span>floatToChar()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char* floatToChar </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>p</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Converts float to string with precison of 2 decimal places. Can only convert numbers that are up to 12 unit points long. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x</td><td>float to be converted </td></tr>
-    <tr><td class="paramname">p</td><td>pointer to array where the converted float is to be strored </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="adcdb1d00a3d12841e481712df840320c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adcdb1d00a3d12841e481712df840320c">&#9670;&nbsp;</a></span>uartGetData()</h2>
 
@@ -223,12 +187,12 @@ MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsDr
 <p>Fetches data as long as it keeps comming or runs our of space. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uart_h</td><td></td></tr>
-    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">uart_h</td><td>UART handle from HAL </td></tr>
+    <tr><td class="paramname">data</td><td>Pointer to a buffer loaded with data </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t RETURN_OK || RETURN_FAIL </dd></dl>
 
 </div>
 </div>
@@ -314,6 +278,32 @@ MENU_ReturnTypeDef&#160;</td><td class="memItemRight" valign="bottom"><b>utilsDr
 
 <p>Initializes the user menus and clears the screen. </p>
 <dl class="section return"><dt>Returns</dt><dd>Menu* pointer to startup Menu with allocated memory </dd></dl>
+
+</div>
+</div>
+<a id="ac3d395b6e1b8602fce0d5e62a7edff79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d395b6e1b8602fce0d5e62a7edff79">&#9670;&nbsp;</a></span>utilsPlotOpen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PLOT_ReturnTypeDef utilsPlotOpen </td>
+          <td>(</td>
+          <td class="paramtype">PLOT_HandletypeDef&#160;</td>
+          <td class="paramname"><em>plot_h</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plot_h</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>PLOT_ReturnTypeDef</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This needs somehow handle the errors </dd></dl>
 
 </div>
 </div>

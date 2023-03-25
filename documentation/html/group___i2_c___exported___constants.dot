@@ -1,0 +1,29 @@
+digraph "I2C Exported Constants"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node4 [label="I2C addressing mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c__addressing__mode.html",tooltip=" "];
+  Node10 [label="I2C XferOptions definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c___xfer_options__definition.html",tooltip=" "];
+  Node1 [label="I2C Exported Constants",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="I2C",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c.html",tooltip="I2C HAL module driver."];
+  Node11 [label="I2C Interrupt configuration\l definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c___interrupt__configuration__definition.html",tooltip="I2C Interrupt definition Elements values convention: 0xXXXXXXXX."];
+  Node3 [label="I2C duty cycle in fast mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c__duty__cycle__in__fast__mode.html",tooltip=" "];
+  Node7 [label="I2C nostretch mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c__nostretch__mode.html",tooltip=" "];
+  Node6 [label="I2C general call addressing mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c__general__call__addressing__mode.html",tooltip=" "];
+  Node8 [label="I2C Memory Address Size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c___memory___address___size.html",tooltip=" "];
+  Node12 [label="I2C Flag definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c___flag__definition.html",tooltip=" "];
+  Node9 [label="I2C XferDirection definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c___xfer_direction__definition.html",tooltip=" "];
+  Node5 [label="I2C dual addressing mode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___i2_c__dual__addressing__mode.html",tooltip=" "];
+  Node2->Node1 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node8 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node9 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node10 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node11 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node12 [shape=plaintext, dir="back", style="solid"];
+}

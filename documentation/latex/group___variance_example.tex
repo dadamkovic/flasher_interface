@@ -1,0 +1,54 @@
+\hypertarget{group___variance_example}{}\doxysection{Variance Example}
+\label{group___variance_example}\index{Variance Example@{Variance Example}}
+Collaboration diagram for Variance Example\+:
+% FIG 0
+\begin{DoxyParagraph}{Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Demonstrates the use of Basic Math and Support Functions to calculate the variance of an input sequence with N samples. Uniformly distributed white noise is taken as input.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Algorithm\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The variance of a sequence is the mean of the squared deviation of the sequence from its mean. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+This is denoted by the following equation\+: 
+\begin{DoxyPre} variance = ((x[0] -\/ x') * (x[0] -\/ x') + (x[1] -\/ x') * (x[1] -\/ x') + ... + * (x[n-\/1] -\/ x') * (x[n-\/1] -\/ x')) / (N-\/1)\end{DoxyPre}
+ where, {\ttfamily x\mbox{[}n\mbox{]}} is the input sequence, {\ttfamily N} is the number of input samples, and {\ttfamily x\textquotesingle{}} is the mean value of the input sequence, {\ttfamily x\mbox{[}n\mbox{]}}. 
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The mean value {\ttfamily x\textquotesingle{}} is defined as\+: 
+\begin{DoxyPre} x' = (x[0] + x[1] + ... + x[n-\/1]) / N\end{DoxyPre}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Block Diagram\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{Variables Description\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+\begin{DoxyItemize}
+\item {\ttfamily test\+Input\+\_\+f32} points to the input data \item {\ttfamily wire1}, {\ttfamily wir2}, {\ttfamily wire3} temporary buffers \item {\ttfamily block\+Size} number of samples processed at a time \item {\ttfamily ref\+Variance\+Out} reference variance value\end{DoxyItemize}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{CMSIS DSP Software Library Functions Used\+:}
+
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{group__dot__prod_ga55418d4362f6ba84c327f9b4f089a8c3}{arm\+\_\+dot\+\_\+prod\+\_\+f32()}}
+\item \mbox{\hyperlink{group___basic_mult_gaca3f0b8227da431ab29225b88888aa32}{arm\+\_\+mult\+\_\+f32()}}
+\item \mbox{\hyperlink{group___basic_sub_ga7f975a472de286331134227c08aad826}{arm\+\_\+sub\+\_\+f32()}}
+\item \mbox{\hyperlink{group___fill_ga2248e8d3901b4afb7827163132baad94}{arm\+\_\+fill\+\_\+f32()}}
+\item \mbox{\hyperlink{group__copy_gadd1f737e677e0e6ca31767c7001417b3}{arm\+\_\+copy\+\_\+f32()}}
+\end{DoxyItemize}
+\end{DoxyParagraph}
+{\bfseries{ Refer }} \mbox{\hyperlink{arm_variance_example_f32_8c-example}{arm\+\_\+variance\+\_\+example\+\_\+f32.\+c}} 

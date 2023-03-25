@@ -1,0 +1,134 @@
+\hypertarget{group___basic_add}{}\doxysection{Vector Addition}
+\label{group___basic_add}\index{Vector Addition@{Vector Addition}}
+Collaboration diagram for Vector Addition\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___basic_add_ga6a904a547413b10565dd1d251c6bafbd}{arm\+\_\+add\+\_\+f32}} (float32\+\_\+t $\ast$p\+SrcA, float32\+\_\+t $\ast$p\+SrcB, float32\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Floating-\/point vector addition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___basic_add_gabb51285a41f511670bbff62fc0e1bf62}{arm\+\_\+add\+\_\+q15}} (q15\+\_\+t $\ast$p\+SrcA, q15\+\_\+t $\ast$p\+SrcB, q15\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Q15 vector addition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___basic_add_ga24d6c3f7f8b9fae4847c0c3f26a39a3b}{arm\+\_\+add\+\_\+q31}} (q31\+\_\+t $\ast$p\+SrcA, q31\+\_\+t $\ast$p\+SrcB, q31\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Q31 vector addition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___basic_add_gaed633f415a7840a66861debca2dfb96b}{arm\+\_\+add\+\_\+q7}} (q7\+\_\+t $\ast$p\+SrcA, q7\+\_\+t $\ast$p\+SrcB, q7\+\_\+t $\ast$p\+Dst, uint32\+\_\+t block\+Size)
+\begin{DoxyCompactList}\small\item\em Q7 vector addition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Element-\/by-\/element addition of two vectors.
+
+
+\begin{DoxyPre}
+    pDst[n] = pSrcA[n] + pSrcB[n],   0 <= n < blockSize.
+\end{DoxyPre}
+
+
+There are separate functions for floating-\/point, Q7, Q15, and Q31 data types. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___basic_add_ga6a904a547413b10565dd1d251c6bafbd}\label{group___basic_add_ga6a904a547413b10565dd1d251c6bafbd}} 
+\index{Vector Addition@{Vector Addition}!arm\_add\_f32@{arm\_add\_f32}}
+\index{arm\_add\_f32@{arm\_add\_f32}!Vector Addition@{Vector Addition}}
+\doxysubsubsection{\texorpdfstring{arm\_add\_f32()}{arm\_add\_f32()}}
+{\footnotesize\ttfamily void arm\+\_\+add\+\_\+f32 (\begin{DoxyParamCaption}\item[{float32\+\_\+t $\ast$}]{p\+SrcA,  }\item[{float32\+\_\+t $\ast$}]{p\+SrcB,  }\item[{float32\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Floating-\/point vector addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & points to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & points to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{group___basic_add_gabb51285a41f511670bbff62fc0e1bf62}\label{group___basic_add_gabb51285a41f511670bbff62fc0e1bf62}} 
+\index{Vector Addition@{Vector Addition}!arm\_add\_q15@{arm\_add\_q15}}
+\index{arm\_add\_q15@{arm\_add\_q15}!Vector Addition@{Vector Addition}}
+\doxysubsubsection{\texorpdfstring{arm\_add\_q15()}{arm\_add\_q15()}}
+{\footnotesize\ttfamily void arm\+\_\+add\+\_\+q15 (\begin{DoxyParamCaption}\item[{q15\+\_\+t $\ast$}]{p\+SrcA,  }\item[{q15\+\_\+t $\ast$}]{p\+SrcB,  }\item[{q15\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Q15 vector addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & points to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & points to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q15 range \mbox{[}0x8000 0x7\+FFF\mbox{]} will be saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group___basic_add_ga24d6c3f7f8b9fae4847c0c3f26a39a3b}\label{group___basic_add_ga24d6c3f7f8b9fae4847c0c3f26a39a3b}} 
+\index{Vector Addition@{Vector Addition}!arm\_add\_q31@{arm\_add\_q31}}
+\index{arm\_add\_q31@{arm\_add\_q31}!Vector Addition@{Vector Addition}}
+\doxysubsubsection{\texorpdfstring{arm\_add\_q31()}{arm\_add\_q31()}}
+{\footnotesize\ttfamily void arm\+\_\+add\+\_\+q31 (\begin{DoxyParamCaption}\item[{q31\+\_\+t $\ast$}]{p\+SrcA,  }\item[{q31\+\_\+t $\ast$}]{p\+SrcB,  }\item[{q31\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Q31 vector addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & points to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & points to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q31 range\mbox{[}0x80000000 0x7\+FFFFFFF\mbox{]} will be saturated. 
+\end{DoxyParagraph}
+\mbox{\Hypertarget{group___basic_add_gaed633f415a7840a66861debca2dfb96b}\label{group___basic_add_gaed633f415a7840a66861debca2dfb96b}} 
+\index{Vector Addition@{Vector Addition}!arm\_add\_q7@{arm\_add\_q7}}
+\index{arm\_add\_q7@{arm\_add\_q7}!Vector Addition@{Vector Addition}}
+\doxysubsubsection{\texorpdfstring{arm\_add\_q7()}{arm\_add\_q7()}}
+{\footnotesize\ttfamily void arm\+\_\+add\+\_\+q7 (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{p\+SrcA,  }\item[{q7\+\_\+t $\ast$}]{p\+SrcB,  }\item[{q7\+\_\+t $\ast$}]{p\+Dst,  }\item[{uint32\+\_\+t}]{block\+Size }\end{DoxyParamCaption})}
+
+
+
+Q7 vector addition. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcA} & points to the first input vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em $\ast$p\+SrcB} & points to the second input vector \\
+\hline
+\mbox{\texttt{ out}}  & {\em $\ast$p\+Dst} & points to the output vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em block\+Size} & number of samples in each vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Scaling and Overflow Behavior\+:}} \begin{DoxyParagraph}{}
+The function uses saturating arithmetic. Results outside of the allowable Q7 range \mbox{[}0x80 0x7F\mbox{]} will be saturated. 
+\end{DoxyParagraph}

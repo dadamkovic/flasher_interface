@@ -14,6 +14,9 @@ Include dependency graph for usart.\+c\+:
 \mbox{\Hypertarget{usart_8c_a57d1167735baafab8e3288526c424929}\label{usart_8c_a57d1167735baafab8e3288526c424929}} 
 void {\bfseries MX\+\_\+\+USART1\+\_\+\+UART\+\_\+\+Init} (void)
 \item 
+\mbox{\Hypertarget{usart_8c_a052088fe5bb3f807a4b2502e664fd4fd}\label{usart_8c_a052088fe5bb3f807a4b2502e664fd4fd}} 
+void {\bfseries MX\+\_\+\+USART2\+\_\+\+UART\+\_\+\+Init} (void)
+\item 
 \mbox{\Hypertarget{usart_8c_a3d04b903a77089f6ce08dd0bf1c81a81}\label{usart_8c_a3d04b903a77089f6ce08dd0bf1c81a81}} 
 void {\bfseries MX\+\_\+\+USART3\+\_\+\+UART\+\_\+\+Init} (void)
 \item 
@@ -26,6 +29,9 @@ void \mbox{\hyperlink{usart_8c_a94cd2c58add4f2549895a03bf267622e}{HAL\+\_\+\+UAR
 \item 
 \mbox{\Hypertarget{usart_8c_a2cf715bef37f7e8ef385a30974a5f0d5}\label{usart_8c_a2cf715bef37f7e8ef385a30974a5f0d5}} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart1}
+\item 
+\mbox{\Hypertarget{usart_8c_aa9479c261d65eecedd3d9582f7f0f89c}\label{usart_8c_aa9479c261d65eecedd3d9582f7f0f89c}} 
+UART\+\_\+\+Handle\+Type\+Def {\bfseries huart2}
 \item 
 \mbox{\Hypertarget{usart_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}\label{usart_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}} 
 UART\+\_\+\+Handle\+Type\+Def {\bfseries huart3}
@@ -51,6 +57,8 @@ This software is licensed under terms that can be found in the LICENSE file in t
 
 USART1 GPIO Configuration PA9 -\/-\/-\/---$>$ USART1\+\_\+\+TX PA10 -\/-\/-\/---$>$ USART1\+\_\+\+RX
 
+USART2 GPIO Configuration PA2 -\/-\/-\/---$>$ USART2\+\_\+\+TX PA3 -\/-\/-\/---$>$ USART2\+\_\+\+RX
+
 USART3 GPIO Configuration PB10 -\/-\/-\/---$>$ USART3\+\_\+\+TX PB11 -\/-\/-\/---$>$ USART3\+\_\+\+RX\mbox{\Hypertarget{usart_8c_a62a25476866998c7aadfb5c0864fa349}\label{usart_8c_a62a25476866998c7aadfb5c0864fa349}} 
 \index{usart.c@{usart.c}!HAL\_UART\_MspInit@{HAL\_UART\_MspInit}}
 \index{HAL\_UART\_MspInit@{HAL\_UART\_MspInit}!usart.c@{usart.c}}
@@ -58,5 +66,7 @@ USART3 GPIO Configuration PB10 -\/-\/-\/---$>$ USART3\+\_\+\+TX PB11 -\/-\/-\/--
 {\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{uart\+Handle }\end{DoxyParamCaption})}
 
 USART1 GPIO Configuration PA9 -\/-\/-\/---$>$ USART1\+\_\+\+TX PA10 -\/-\/-\/---$>$ USART1\+\_\+\+RX
+
+USART2 GPIO Configuration PA2 -\/-\/-\/---$>$ USART2\+\_\+\+TX PA3 -\/-\/-\/---$>$ USART2\+\_\+\+RX
 
 USART3 GPIO Configuration PB10 -\/-\/-\/---$>$ USART3\+\_\+\+TX PB11 -\/-\/-\/---$>$ USART3\+\_\+\+RX

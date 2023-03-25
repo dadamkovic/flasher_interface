@@ -1,0 +1,98 @@
+\hypertarget{group___pooling}{}\doxysection{Neural Network Pooling Functions}
+\label{group___pooling}\index{Neural Network Pooling Functions@{Neural Network Pooling Functions}}
+Collaboration diagram for Neural Network Pooling Functions\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___pooling_ga99afcdcc61eaf429ab3ee823702e44ce}{arm\+\_\+maxpool\+\_\+q7\+\_\+\+HWC}} (q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q7\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$Im\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Q7 max pooling function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___pooling_gae4a7b07f97ec4313524c9fb9fbcb1f6a}{arm\+\_\+avepool\+\_\+q7\+\_\+\+HWC}} (q7\+\_\+t $\ast$Im\+\_\+in, const uint16\+\_\+t dim\+\_\+im\+\_\+in, const uint16\+\_\+t ch\+\_\+im\+\_\+in, const uint16\+\_\+t dim\+\_\+kernel, const uint16\+\_\+t padding, const uint16\+\_\+t stride, const uint16\+\_\+t dim\+\_\+im\+\_\+out, q7\+\_\+t $\ast$bufferA, q7\+\_\+t $\ast$Im\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Q7 average pooling function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Perform pooling functions, including max pooling and average pooling 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___pooling_gae4a7b07f97ec4313524c9fb9fbcb1f6a}\label{group___pooling_gae4a7b07f97ec4313524c9fb9fbcb1f6a}} 
+\index{Neural Network Pooling Functions@{Neural Network Pooling Functions}!arm\_avepool\_q7\_HWC@{arm\_avepool\_q7\_HWC}}
+\index{arm\_avepool\_q7\_HWC@{arm\_avepool\_q7\_HWC}!Neural Network Pooling Functions@{Neural Network Pooling Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_avepool\_q7\_HWC()}{arm\_avepool\_q7\_HWC()}}
+{\footnotesize\ttfamily void arm\+\_\+avepool\+\_\+q7\+\_\+\+HWC (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q7\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Q7 average pooling function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 2$\ast$dim\+\_\+im\+\_\+out$\ast$ch\+\_\+im\+\_\+in
+
+The pooling function is implemented as split x-\/pooling then y-\/pooling.
+
+This pooling function is input-\/destructive. Input data is undefined after calling this function. \mbox{\Hypertarget{group___pooling_ga99afcdcc61eaf429ab3ee823702e44ce}\label{group___pooling_ga99afcdcc61eaf429ab3ee823702e44ce}} 
+\index{Neural Network Pooling Functions@{Neural Network Pooling Functions}!arm\_maxpool\_q7\_HWC@{arm\_maxpool\_q7\_HWC}}
+\index{arm\_maxpool\_q7\_HWC@{arm\_maxpool\_q7\_HWC}!Neural Network Pooling Functions@{Neural Network Pooling Functions}}
+\doxysubsubsection{\texorpdfstring{arm\_maxpool\_q7\_HWC()}{arm\_maxpool\_q7\_HWC()}}
+{\footnotesize\ttfamily void arm\+\_\+maxpool\+\_\+q7\+\_\+\+HWC (\begin{DoxyParamCaption}\item[{q7\+\_\+t $\ast$}]{Im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{ch\+\_\+im\+\_\+in,  }\item[{const uint16\+\_\+t}]{dim\+\_\+kernel,  }\item[{const uint16\+\_\+t}]{padding,  }\item[{const uint16\+\_\+t}]{stride,  }\item[{const uint16\+\_\+t}]{dim\+\_\+im\+\_\+out,  }\item[{q7\+\_\+t $\ast$}]{bufferA,  }\item[{q7\+\_\+t $\ast$}]{Im\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Q7 max pooling function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+in} & pointer to input tensor \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+in} & input tensor dimention \\
+\hline
+\mbox{\texttt{ in}}  & {\em ch\+\_\+im\+\_\+in} & number of input tensor channels \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+kernel} & filter kernel size \\
+\hline
+\mbox{\texttt{ in}}  & {\em padding} & padding sizes \\
+\hline
+\mbox{\texttt{ in}}  & {\em stride} & convolution stride \\
+\hline
+\mbox{\texttt{ in}}  & {\em dim\+\_\+im\+\_\+out} & output tensor dimension \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em bufferA} & pointer to buffer space for input \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em Im\+\_\+out} & pointer to output tensor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none.
+\end{DoxyReturn}
+{\bfseries{Buffer size\+:}}
+
+bufferA size\+: 0
+
+The pooling function is implemented as split x-\/pooling then y-\/pooling.
+
+This pooling function is input-\/destructive. Input data is undefined after calling this function. 

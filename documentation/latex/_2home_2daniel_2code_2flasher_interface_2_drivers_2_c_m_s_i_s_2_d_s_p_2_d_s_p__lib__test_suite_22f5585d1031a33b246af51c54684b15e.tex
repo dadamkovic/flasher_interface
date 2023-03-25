@@ -1,0 +1,159 @@
+\hypertarget{_2home_2daniel_2code_2flasher_interface_2_drivers_2_c_m_s_i_s_2_d_s_p_2_d_s_p__lib__test_suite_22f5585d1031a33b246af51c54684b15e}{}\doxysection{/home/daniel/code/flasher\+\_\+interface/\+Drivers/\+CMSIS/\+DSP/\+DSP\+\_\+\+Lib\+\_\+\+Test\+Suite/\+Common/\+JTest/inc/arr\+\_\+desc/arr\+\_\+desc.\+h}
+Creat an \#\+ARR\+\_\+\+DESC\+\_\+t which points to the data in an existing array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+\_\+idx} & Offset in array\+\_\+ptr of first element. \\
+\hline
+{\em element\+\_\+cnt} & Number of elements to include in the \#\+ARR\+\_\+\+DESC\+\_\+t.\\
+\hline
+\end{DoxyParams}
+float my\+\_\+floats\mbox{[}4\mbox{]} = \{0.\+0f, 1.\+0f, 2.\+0f, 3.\+0f\};
+
+ARR\+\_\+\+DESC\+\_\+\+DEFINE\+\_\+\+USING\+\_\+\+ARR(my\+\_\+arr\+\_\+desc, my\+\_\+floats, 1, 3);
+
+printf(\char`\"{}\+Element 0\+: \%f\textbackslash{}n\char`\"{}, ARR\+\_\+\+DESC\+\_\+\+ELT(float, 0, \&my\+\_\+arr\+\_\+desc)); printf(\char`\"{}\+Element 1\+: \%f\textbackslash{}n\char`\"{}, ARR\+\_\+\+DESC\+\_\+\+ELT(float, 1, \&my\+\_\+arr\+\_\+desc));
+
+Outputs\+:
+
+Element 0\+: 1.\+000000 Element 1\+: 2.\+000000
+
+\begin{DoxyWarning}{Warning}
+There are no checks in place to catch invalid start indices; This is left to the user.
+\end{DoxyWarning}
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef \_ARR\_DESC\_H\_}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define \_ARR\_DESC\_H\_}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{comment}{/* Includes */}}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <string.h>}             \textcolor{comment}{/* memset() */}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}../util/util.h"{}}       \textcolor{comment}{/* CONCAT() */}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{comment}{/* Type Definitions */}}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_a_r_r___d_e_s_c__struct}{ARR\_DESC\_struct}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} *  data\_ptr;                \textcolor{comment}{/* Pointer to the array contents. */}}
+\DoxyCodeLine{    int32\_t element\_count;           \textcolor{comment}{/* Number of current elements. */}}
+\DoxyCodeLine{    int32\_t element\_size;            \textcolor{comment}{/* Size of current elements in bytes. */}}
+\DoxyCodeLine{    int32\_t underlying\_size;         \textcolor{comment}{/* Size of underlying array in bytes. */}}
+\DoxyCodeLine{\} \mbox{\hyperlink{struct_a_r_r___d_e_s_c__struct}{ARR\_DESC\_t}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\textcolor{comment}{/* Macros and Defines */}}
+\DoxyCodeLine{\textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_ARR\_PREFIX ARR\_DESC\_ARR\_}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_ARR\_NAME(name)                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    CONCAT(ARR\_DESC\_ARR\_PREFIX, name)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_INTERNAL\_DEFINE(name, data\_ptr,                \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                 element\_count, element\_size)   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    ARR\_DESC\_t name = \{                                         \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        data\_ptr,                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        element\_count,                                          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        element\_size,                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        element\_count * element\_size                            \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \}                                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_DEFINE(type, name, element\_count, content)             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    type ARR\_DESC\_ARR\_NAME(name)[element\_count] = content;              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    ARR\_DESC\_INTERNAL\_DEFINE(name,                                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             \&ARR\_DESC\_ARR\_NAME(name),                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             element\_count,                             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             sizeof(type)) }\textcolor{comment}{/* Note the lacking semicolon */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_DEFINE\_SUBSET(name, original, element\_cnt)         \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    ARR\_DESC\_INTERNAL\_DEFINE(name,                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             \&ARR\_DESC\_ARR\_NAME(original),          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             element\_cnt,                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             sizeof(ARR\_DESC\_ARR\_NAME(original)[0]) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        ) }\textcolor{comment}{/* Note the lacking semicolon */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_DEFINE\_USING\_ARR(type, name, array\_ptr, start\_idx, element\_cnt) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    ARR\_DESC\_INTERNAL\_DEFINE(                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        name,                                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        (type *) (array\_ptr + start\_idx),                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        element\_cnt,                                                    \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        sizeof(type)                                                    \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        ) }\textcolor{comment}{/* Note the lacking semicolon*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_DECLARE(name)                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    extern ARR\_DESC\_t name }\textcolor{comment}{/* Note the lacking semicolon */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_BYTES(arr\_desc\_ptr)                                \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    ((arr\_desc\_ptr)-\/>element\_count * (arr\_desc\_ptr)-\/>element\_size)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_MEMSET(arr\_desc\_ptr, value, bytes)     \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        memset((arr\_desc\_ptr)-\/>data\_ptr,                \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{               value,                                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{               BOUND(0,                                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                     (arr\_desc\_ptr)-\/>underlying\_size,   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                     bytes)                             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            );                                          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_MEMCPY(arr\_desc\_dest\_ptr, arr\_desc\_src\_ptr, bytes) \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        memcpy((arr\_desc\_dest\_ptr)-\/>data\_ptr,                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{               (arr\_desc\_src\_ptr)-\/>data\_ptr,                        \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{               BOUND(0,                                             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                     (arr\_desc\_dest\_ptr)-\/>underlying\_size,          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                     bytes));                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_COPYABLE(arr\_desc\_dest\_ptr, arr\_desc\_src\_ptr)  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{      (ARR\_DESC\_BYTES(arr\_desc\_src\_ptr) <=                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{       (arr\_desc\_dest\_ptr)-\/>underlying\_size)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_COPY(arr\_desc\_dest\_ptr, arr\_desc\_src\_ptr)      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    do                                                          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \{                                                           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        if (ARR\_DESC\_COPYABLE(arr\_desc\_dest\_ptr,                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                             arr\_desc\_src\_ptr))                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \{                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            ARR\_DESC\_MEMCPY(arr\_desc\_dest\_ptr,                  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                            arr\_desc\_src\_ptr,                   \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                            ARR\_DESC\_BYTES(arr\_desc\_src\_ptr));  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            }\textcolor{comment}{/* Update the properties*/}\textcolor{preprocessor}{                          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            (arr\_desc\_dest\_ptr)-\/>element\_count =                \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                (arr\_desc\_src\_ptr)-\/>element\_count;              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            (arr\_desc\_dest\_ptr)-\/>element\_size =                 \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                (arr\_desc\_src\_ptr)-\/>element\_size;               \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        \}                                                       \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{    \} while (0)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_MEMCMP(arr\_desc\_ptr\_a, arr\_desc\_ptr\_b, bytes)  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        memcmp((arr\_desc\_ptr\_a)-\/>data\_ptr,                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{            (arr\_desc\_ptr\_b)-\/>data\_ptr,                         \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{               bytes) }\textcolor{comment}{/* Note the lacking semicolon */}\textcolor{preprocessor}{          \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_ZERO(arr\_desc\_ptr)             \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        ARR\_DESC\_MEMSET(arr\_desc\_ptr,           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                        0,                      \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                        (arr\_desc\_ptr)-\/>underlying\_size)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_DATA\_ADDR(type, arr\_desc\_ptr, offset)  \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        ((void*)(((type *)                              \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                  ((arr\_desc\_ptr)-\/>data\_ptr))           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                 + offset))}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define ARR\_DESC\_ELT(type, idx, arr\_desc\_ptr)           \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{        (*((type *) ARR\_DESC\_DATA\_ADDR(type,            \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                       arr\_desc\_ptr,    \(\backslash\)}}
+\DoxyCodeLine{\textcolor{preprocessor}{                                       idx)))}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_ARR\_DESC\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCodeInclude}
+ 

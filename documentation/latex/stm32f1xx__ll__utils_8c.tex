@@ -1,0 +1,69 @@
+\hypertarget{stm32f1xx__ll__utils_8c}{}\doxysection{STM32\+F1xx\+\_\+\+HAL\+\_\+\+Driver/\+Src/stm32f1xx\+\_\+ll\+\_\+utils.c File Reference}
+\label{stm32f1xx__ll__utils_8c}\index{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_ll\_utils.c@{STM32F1xx\_HAL\_Driver/Src/stm32f1xx\_ll\_utils.c}}
+
+
+UTILS LL module driver.  
+
+
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+ll\+\_\+rcc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+ll\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f1xx\+\_\+ll\+\_\+system.\+h\char`\"{}}\newline
+Include dependency graph for stm32f1xx\+\_\+ll\+\_\+utils.\+c\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stm32f1xx__ll__utils_8c_a631dea7b230e600555f979c62af1de21}\label{stm32f1xx__ll__utils_8c_a631dea7b230e600555f979c62af1de21}} 
+\#define {\bfseries assert\+\_\+param}(expr)~((void)0U)
+\item 
+\#define \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga3edafc754826e07341fecc87bf2c9a39}{UTILS\+\_\+\+PLL\+\_\+\+OUTPUT\+\_\+\+MAX}}~RCC\+\_\+\+MAX\+\_\+\+FREQUENCY
+\item 
+\#define \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga54bf4e9960d84bf9364ce893bc5464e3}{UTILS\+\_\+\+PLL2\+\_\+\+OUTPUT\+\_\+\+MAX}}~RCC\+\_\+\+MAX\+\_\+\+FREQUENCY
+\item 
+\#define \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga7bc514193367ab0d598fe4c3bedd6066}{UTILS\+\_\+\+HSE\+\_\+\+FREQUENCY\+\_\+\+MIN}}~RCC\+\_\+\+HSE\+\_\+\+MIN
+\item 
+\#define \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_gae3407ef407af85f72bbba3db982a1826}{UTILS\+\_\+\+HSE\+\_\+\+FREQUENCY\+\_\+\+MAX}}~RCC\+\_\+\+HSE\+\_\+\+MAX
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+SYSCLK\+\_\+\+DIV}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+APB1\+\_\+\+DIV}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+APB2\+\_\+\+DIV}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+PLLMUL\+\_\+\+VALUE}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+PREDIV\+\_\+\+VALUE}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) == LL\+\_\+\+RCC\+\_\+\+PREDIV\+\_\+\+DIV\+\_\+1)  $\vert$$\vert$ ((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) == LL\+\_\+\+RCC\+\_\+\+PREDIV\+\_\+\+DIV\+\_\+2))
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+PLL\+\_\+\+FREQUENCY}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga3edafc754826e07341fecc87bf2c9a39}{UTILS\+\_\+\+PLL\+\_\+\+OUTPUT\+\_\+\+MAX}})
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+HSE\+\_\+\+BYPASS}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+LL\+\_\+\+UTILS\+\_\+\+HSE\+\_\+\+FREQUENCY}(\+\_\+\+\_\+\+FREQUENCY\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+FREQUENCY\+\_\+\+\_\+) $>$= \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga7bc514193367ab0d598fe4c3bedd6066}{UTILS\+\_\+\+HSE\+\_\+\+FREQUENCY\+\_\+\+MIN}}) \&\& ((\+\_\+\+\_\+\+FREQUENCY\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_gae3407ef407af85f72bbba3db982a1826}{UTILS\+\_\+\+HSE\+\_\+\+FREQUENCY\+\_\+\+MAX}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga485805c708e3aa0820454523782d4de4}{LL\+\_\+\+Init1ms\+Tick}} (uint32\+\_\+t HCLKFrequency)
+\begin{DoxyCompactList}\small\item\em This function configures the Cortex-\/M Sys\+Tick source to have 1ms time base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga7b7ca6d9cbec320c3e9f326b203807aa}{LL\+\_\+m\+Delay}} (uint32\+\_\+t Delay)
+\begin{DoxyCompactList}\small\item\em This function provides accurate delay (in milliseconds) based on Sys\+Tick counter flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga5af902d59c4c2d9dc5e189df0bc71ecd}{LL\+\_\+\+Set\+System\+Core\+Clock}} (uint32\+\_\+t HCLKFrequency)
+\begin{DoxyCompactList}\small\item\em This function sets directly System\+Core\+Clock CMSIS variable. \end{DoxyCompactList}\item 
+Error\+Status \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga7ada5e4210f6ef80ef9f55bf9dd048c6}{LL\+\_\+\+PLL\+\_\+\+Config\+System\+Clock\+\_\+\+HSI}} (\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\+\_\+\+UTILS\+\_\+\+PLLInit\+Type\+Def}} $\ast$UTILS\+\_\+\+PLLInit\+Struct, \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\+\_\+\+UTILS\+\_\+\+Clk\+Init\+Type\+Def}} $\ast$UTILS\+\_\+\+Clk\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em Update number of Flash wait states in line with new frequency and current voltage range. \end{DoxyCompactList}\item 
+Error\+Status \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_gaf6c8553d03464d4646b63321b97d25e2}{LL\+\_\+\+PLL\+\_\+\+Config\+System\+Clock\+\_\+\+HSE}} (uint32\+\_\+t HSEFrequency, uint32\+\_\+t HSEBypass, \mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\+\_\+\+UTILS\+\_\+\+PLLInit\+Type\+Def}} $\ast$UTILS\+\_\+\+PLLInit\+Struct, \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\+\_\+\+UTILS\+\_\+\+Clk\+Init\+Type\+Def}} $\ast$UTILS\+\_\+\+Clk\+Init\+Struct)
+\begin{DoxyCompactList}\small\item\em This function configures system clock with HSE as clock source of the PLL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UTILS LL module driver. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2016 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

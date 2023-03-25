@@ -1,0 +1,133 @@
+\hypertarget{state__machine_8c}{}\doxysection{Core/\+Lib/state\+\_\+machine/state\+\_\+machine.c File Reference}
+\label{state__machine_8c}\index{Core/Lib/state\_machine/state\_machine.c@{Core/Lib/state\_machine/state\_machine.c}}
+{\ttfamily \#include \char`\"{}state\+\_\+machine.\+h\char`\"{}}\newline
+Include dependency graph for state\+\_\+machine.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+SM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{state__machine_8c_a8438a4bb219c56a76ccc265f5cfdec53}{sm\+Add\+State}} (SM\+\_\+\+State\+Func $\ast$state\+\_\+func)
+\begin{DoxyCompactList}\small\item\em Adds a new state into the state machine diagram. \end{DoxyCompactList}\item 
+SM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{state__machine_8c_ad34178aa86d320908070ad5273039b48}{sm\+Init}} (SM\+\_\+\+Init\+Func $\ast$init\+\_\+f)
+\begin{DoxyCompactList}\small\item\em Wrapper around user initialization function. \end{DoxyCompactList}\item 
+SM\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{state__machine_8c_ad3a32b43e95b0b461a523db0477f3926}{sm\+Add\+Transition}} (SM\+\_\+\+Handle\+Type\+Def root\+\_\+id, SM\+\_\+\+Handle\+Type\+Def dest\+\_\+id, SM\+\_\+\+Transition\+Func $\ast$trans\+\_\+c)
+\begin{DoxyCompactList}\small\item\em Adds state transition between the root state and dest state. \end{DoxyCompactList}\item 
+SM\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{state__machine_8c_a25a067362a806f783750436e34501d7c}{sm\+Next\+State}} (SM\+\_\+\+Handle\+Type\+Def sm\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Evaluates the transition conditions and returns handle to next state. \end{DoxyCompactList}\item 
+SM\+\_\+\+Return\+Type\+Def \mbox{\hyperlink{state__machine_8c_a3f58320a8b963fa99844f37e93daba23}{sm\+Run\+State}} (SM\+\_\+\+Handle\+Type\+Def sm\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Runs the state function in the given state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{state__machine_8c_af9aace1b44b73111e15aa39f06f43456}\label{state__machine_8c_af9aace1b44b73111e15aa39f06f43456}} 
+{\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+} ((weak))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Daniel Adamkovic (\href{mailto:dadamkovic@protonmail.ch}{\texttt{ dadamkovic@protonmail.\+ch}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+05-\/02-\/2023
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{state__machine_8c_a8438a4bb219c56a76ccc265f5cfdec53}\label{state__machine_8c_a8438a4bb219c56a76ccc265f5cfdec53}} 
+\index{state\_machine.c@{state\_machine.c}!smAddState@{smAddState}}
+\index{smAddState@{smAddState}!state\_machine.c@{state\_machine.c}}
+\doxysubsubsection{\texorpdfstring{smAddState()}{smAddState()}}
+{\footnotesize\ttfamily SM\+\_\+\+Handle\+Type\+Def sm\+Add\+State (\begin{DoxyParamCaption}\item[{SM\+\_\+\+State\+Func $\ast$}]{state\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Adds a new state into the state machine diagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+\_\+func} & Function to be ran inside the new state node (can be NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SM\+\_\+\+Return\+Type\+Def Handle of the newly created node or SM\+\_\+\+ERROR\+\_\+\+HANDLE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{state__machine_8c_ad3a32b43e95b0b461a523db0477f3926}\label{state__machine_8c_ad3a32b43e95b0b461a523db0477f3926}} 
+\index{state\_machine.c@{state\_machine.c}!smAddTransition@{smAddTransition}}
+\index{smAddTransition@{smAddTransition}!state\_machine.c@{state\_machine.c}}
+\doxysubsubsection{\texorpdfstring{smAddTransition()}{smAddTransition()}}
+{\footnotesize\ttfamily SM\+\_\+\+Return\+Type\+Def sm\+Add\+Transition (\begin{DoxyParamCaption}\item[{SM\+\_\+\+Handle\+Type\+Def}]{root\+\_\+id,  }\item[{SM\+\_\+\+Handle\+Type\+Def}]{dest\+\_\+id,  }\item[{SM\+\_\+\+Transition\+Func $\ast$}]{trans\+\_\+c }\end{DoxyParamCaption})}
+
+
+
+Adds state transition between the root state and dest state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\+\_\+id} & Handle of the root state \\
+\hline
+{\em dest\+\_\+id} & Handle of the destination state \\
+\hline
+{\em trans\+\_\+c} & Function pointer to eval. transition condition \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SM\+\_\+\+Return\+Type\+Def SM\+\_\+\+FAIL or SM\+\_\+\+OK 
+\end{DoxyReturn}
+\mbox{\Hypertarget{state__machine_8c_ad34178aa86d320908070ad5273039b48}\label{state__machine_8c_ad34178aa86d320908070ad5273039b48}} 
+\index{state\_machine.c@{state\_machine.c}!smInit@{smInit}}
+\index{smInit@{smInit}!state\_machine.c@{state\_machine.c}}
+\doxysubsubsection{\texorpdfstring{smInit()}{smInit()}}
+{\footnotesize\ttfamily SM\+\_\+\+Handle\+Type\+Def sm\+Init (\begin{DoxyParamCaption}\item[{SM\+\_\+\+Init\+Func $\ast$}]{init\+\_\+f }\end{DoxyParamCaption})}
+
+
+
+Wrapper around user initialization function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em init\+\_\+f} & User initialization function pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SM\+\_\+\+Handle\+Type\+Def 
+\end{DoxyReturn}
+\mbox{\Hypertarget{state__machine_8c_a25a067362a806f783750436e34501d7c}\label{state__machine_8c_a25a067362a806f783750436e34501d7c}} 
+\index{state\_machine.c@{state\_machine.c}!smNextState@{smNextState}}
+\index{smNextState@{smNextState}!state\_machine.c@{state\_machine.c}}
+\doxysubsubsection{\texorpdfstring{smNextState()}{smNextState()}}
+{\footnotesize\ttfamily SM\+\_\+\+Handle\+Type\+Def sm\+Next\+State (\begin{DoxyParamCaption}\item[{SM\+\_\+\+Handle\+Type\+Def}]{sm\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Evaluates the transition conditions and returns handle to next state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sm\+\_\+id} & Current state handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SM\+\_\+\+Handle\+Type\+Def Next state handle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{state__machine_8c_a3f58320a8b963fa99844f37e93daba23}\label{state__machine_8c_a3f58320a8b963fa99844f37e93daba23}} 
+\index{state\_machine.c@{state\_machine.c}!smRunState@{smRunState}}
+\index{smRunState@{smRunState}!state\_machine.c@{state\_machine.c}}
+\doxysubsubsection{\texorpdfstring{smRunState()}{smRunState()}}
+{\footnotesize\ttfamily SM\+\_\+\+Return\+Type\+Def sm\+Run\+State (\begin{DoxyParamCaption}\item[{SM\+\_\+\+Handle\+Type\+Def}]{sm\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Runs the state function in the given state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sm\+\_\+id} & State handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SM\+\_\+\+Return\+Type\+Def 
+\end{DoxyReturn}

@@ -1,0 +1,19 @@
+digraph "Complex Math Functions"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=box];
+  rankdir=LR;
+  Node7 [label="Complex-by-Real Multiplication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___cmplx_by_real_mult.html",tooltip=" "];
+  Node6 [label="Complex-by-Complex\l Multiplication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___cmplx_by_cmplx_mult.html",tooltip=" "];
+  Node1 [label="Complex Math Functions",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 [label="Complex Conjugate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__cmplx__conj.html",tooltip=" "];
+  Node4 [label="Complex Magnitude",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__cmplx__mag.html",tooltip=" "];
+  Node5 [label="Complex Magnitude Squared",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__cmplx__mag__squared.html",tooltip=" "];
+  Node3 [label="Complex Dot Product",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__cmplx__dot__prod.html",tooltip=" "];
+  Node1->Node2 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node3 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node4 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node5 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node6 [shape=plaintext, dir="back", style="solid"];
+  Node1->Node7 [shape=plaintext, dir="back", style="solid"];
+}

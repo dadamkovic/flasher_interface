@@ -1,0 +1,13 @@
+digraph "CMSIS/Device/ST/STM32F1xx/Include/stm32f107xc.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="CMSIS/Device/ST/STM32F1xx\l/Include/stm32f107xc.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="CMSIS Cortex-M3 Device Peripheral Access Layer Header File. This file contains all the peripheral reg..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="core_cm3.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="system_stm32f1xx.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$system__stm32f1xx_8h_source.html",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="stdint.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

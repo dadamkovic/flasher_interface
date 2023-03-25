@@ -1,0 +1,36 @@
+\hypertarget{group___r_t_c_ex___i_s___r_t_c___definitions}{}\doxysection{Private macros to check input parameters}
+\label{group___r_t_c_ex___i_s___r_t_c___definitions}\index{Private macros to check input parameters@{Private macros to check input parameters}}
+Collaboration diagram for Private macros to check input parameters\+:
+% FIG 0
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group___r_t_c_ex___i_s___r_t_c___definitions_ga01051baf88be14af5376479b497fd627}\label{group___r_t_c_ex___i_s___r_t_c___definitions_ga01051baf88be14af5376479b497fd627}} 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+TAMPER}(\+\_\+\+\_\+\+TAMPER\+\_\+\+\_\+)~((\+\_\+\+\_\+\+TAMPER\+\_\+\+\_\+) == \mbox{\hyperlink{group___r_t_c_ex___tamper___pins___definitions_ga339f9515dea38efe31fbae679887c7b5}{RTC\+\_\+\+TAMPER\+\_\+1}})
+\item 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+TRIGGER}(\+\_\+\+\_\+\+TRIGGER\+\_\+\+\_\+)
+\item 
+\mbox{\Hypertarget{group___r_t_c_ex___i_s___r_t_c___definitions_ga7dfcd70f7d46d2a71155b4e4e12d0a60}\label{group___r_t_c_ex___i_s___r_t_c___definitions_ga7dfcd70f7d46d2a71155b4e4e12d0a60}} 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+BKP}(BKP)~((BKP) $<$= (uint32\+\_\+t)RTC\+\_\+\+BKP\+\_\+\+NUMBER)
+\item 
+\mbox{\Hypertarget{group___r_t_c_ex___i_s___r_t_c___definitions_ga509308a28a9fc1addfeb21b5b0eb5604}\label{group___r_t_c_ex___i_s___r_t_c___definitions_ga509308a28a9fc1addfeb21b5b0eb5604}} 
+\#define {\bfseries IS\+\_\+\+RTC\+\_\+\+SMOOTH\+\_\+\+CALIB\+\_\+\+MINUS}(\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+)~((\+\_\+\+\_\+\+VALUE\+\_\+\+\_\+) $<$= 0x0000007\+FU)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_t_c_ex___i_s___r_t_c___definitions_gaad0e1dc3705f06f38978dc8f7d11bde6}\label{group___r_t_c_ex___i_s___r_t_c___definitions_gaad0e1dc3705f06f38978dc8f7d11bde6}} 
+\index{Private macros to check input parameters@{Private macros to check input parameters}!IS\_RTC\_TAMPER\_TRIGGER@{IS\_RTC\_TAMPER\_TRIGGER}}
+\index{IS\_RTC\_TAMPER\_TRIGGER@{IS\_RTC\_TAMPER\_TRIGGER}!Private macros to check input parameters@{Private macros to check input parameters}}
+\doxysubsubsection{\texorpdfstring{IS\_RTC\_TAMPER\_TRIGGER}{IS\_RTC\_TAMPER\_TRIGGER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+RTC\+\_\+\+TAMPER\+\_\+\+TRIGGER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+TRIGGER\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                             (((\_\_TRIGGER\_\_) == \mbox{\hyperlink{group___r_t_c_ex___tamper___trigger___definitions_ga20c580db49e266f2295aeed5a6915b4e}{RTC\_TAMPERTRIGGER\_LOWLEVEL}}) || \(\backslash\)}
+\DoxyCodeLine{                                             ((\_\_TRIGGER\_\_) == \mbox{\hyperlink{group___r_t_c_ex___tamper___trigger___definitions_gae3a6644686f404fa94d23ccab6f5165b}{RTC\_TAMPERTRIGGER\_HIGHLEVEL}}))}
+
+\end{DoxyCode}

@@ -27,7 +27,7 @@ static _MENU_ControlTypeDef _menu_control;
  * @param can_f Pointer to function returning the state of the cancel button
  * @param pos_f Pointer to function returning the state of the joypad
  * @param draw_f Pointer to function that draws the menu screen
- * @return MENU_HandleTypeDef Menu handle or MENU_HANDLE_ERROR
+ * @return MENU_HandleTypeDef Menu handle or MENU_WRONG_HANDLE
  */
 MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func, 
                             MENU_ButtonFuncTypeDef *sel_f, 
@@ -35,7 +35,7 @@ MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func,
                             MENU_PositionTypeFunc *pos_f,
                             MENU_DrawScreenTypeFunc *draw_f){
   
-  MENU_HandleTypeDef menu_id = MENU_HANDLE_ERROR;
+  MENU_HandleTypeDef menu_id = MENU_WRONG_HANDLE;
   if(func != NULL){
     menu_id = func();
   }
@@ -48,7 +48,7 @@ MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func,
   }
 
   menuErrorHandler(MENU_NULL_INIT_FUNC_ERR);
-  return MENU_HANDLE_ERROR;
+  return MENU_WRONG_HANDLE;
 }
 
 
@@ -57,18 +57,18 @@ MENU_HandleTypeDef menuInit(MENU_InitFuncTypeDef *func,
  * 
  * @param title Title of the menu screen
  * @param cont  Description
- * @return MENU_HandleTypeDef MENU_HANDLE_ERROR or menu handle 
+ * @return MENU_HandleTypeDef MENU_WRONG_HANDLE or menu handle 
  */
 MENU_HandleTypeDef menuCreate(char *title, char *cont){
   MENU_HandleTypeDef menu_id = _menuGetFreeMenu();
-  if(menu_id == MENU_HANDLE_ERROR){
+  if(menu_id == MENU_WRONG_HANDLE){
     menuErrorHandler(MENU_HANDLE_ERR);
-    return MENU_HANDLE_ERROR;
+    return MENU_WRONG_HANDLE;
   }
 
   if((strlen(title) > MAX_CHAR_CNT) || (strlen(cont) > MAX_CHAR_CNT)){
     menuErrorHandler(MENU_TEXT_LEN_ERR);
-    return MENU_HANDLE_ERROR;
+    return MENU_WRONG_HANDLE;
   }
 
   strncpy(_menu_status[menu_id].title, title, MAX_CHAR_CNT);
@@ -92,7 +92,7 @@ static MENU_HandleTypeDef _menuGetFreeMenu(){
     }
   }
 
-  return MENU_HANDLE_ERROR;
+  return MENU_WRONG_HANDLE;
 }
 
 
@@ -163,7 +163,7 @@ MENU_ReturnTypeDef menuLink(MENU_HandleTypeDef menu_l_id, MENU_HandleTypeDef men
  */
 MENU_HandleTypeDef menuNextState(MENU_HandleTypeDef menu_id){
 
-  static MENU_HandleTypeDef old_id = MENU_HANDLE_ERROR;
+  static MENU_HandleTypeDef old_id = MENU_WRONG_HANDLE;
   MENU_PositionTypeDef user_com;
   
   MENU_ButtonTypeDef select_but = _menu_control.getSelect();
